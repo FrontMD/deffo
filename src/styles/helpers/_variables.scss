@@ -1,0 +1,41 @@
+:root {}
+
+// шрифты
+$ff-montserrat: 'Montserrat', sans-serif;
+
+// media
+$media-list: (
+    'xs': 500,
+    'mobile': 767,
+    'tablet': 1023,
+    'laptop': 1350,
+    'large': 1800,
+    'full': 2000,
+);
+
+// Цвета
+$c-white: #fff;
+$c-black: #000;
+$c-accent: #000;
+$c-accent-hover: rgba(0, 0, 0, 0.7);
+$c-bg-main: #F3F3F3;
+$c-bg-grey: #d5d5d5;
+$c-bg-dark: #1C1C1C;
+$c-text: #111;
+$c-text-grey: #969696;
+$c-text-btn: #1c1c1c;
+$c-text-light: #7B7B7B;
+$c-error: #EA4C3A;
+$c-link: #2A66B0;
+$c-border: #d8d8d8;
+$c-green: #81B952;
+
+// скругления
+
+$br-10: 10px;
+$br-20: 20px;
+$br-30: 30px;
+
+// переходы
+$tr: .3s linear;
+$tr-long: .5s linear;

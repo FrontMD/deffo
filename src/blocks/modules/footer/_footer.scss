@@ -1,0 +1,255 @@
+.site-footer {
+    position: relative;
+    color: $c-white;
+
+    &__container {
+        padding-bottom: 40px;
+
+        @include max(large) {
+            padding-bottom: 30px;
+        }
+
+        @include max(laptop) {
+            padding-bottom: 20px;
+        }
+
+        @include max(tablet) {
+            padding-bottom: 0;
+        }
+    }
+
+    &__main {
+        position: relative;
+        background-color: $c-bg-dark;
+        padding: 50px 50px 40px;
+        border-radius: $br-20;
+
+        @include max(laptop) {
+            padding: 30px 24px;
+        }
+
+        @include max(tablet) {
+            border-radius: 10px 10px 0 0;
+        }
+
+        @include max(mobile) {
+            padding: 20px 10px;
+        }
+
+        .pattern-bg {
+            opacity: 0.05;
+        }
+    }
+
+    &__top {
+        position: relative;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 24px;
+
+        @include max(laptop) {
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        @include max(mobile) {
+            gap: 40px;
+        }
+    }
+
+    &__column {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 40px;
+        flex: 0 0 316px;
+
+        @include max(large) {
+            flex: 0 0 250px;
+        }
+
+        @include max(laptop) {
+            flex: 0 0 200px;
+        }
+
+        @include max(tablet) {
+            flex: 0 0 calc(50% - 50px);
+        }
+
+        @include max(mobile) {
+            flex: 0 0 100%;
+        }
+
+        &--stretch {
+            flex: 1 1 100%;
+            min-width: 330px;
+
+            @include max(large) {
+                flex: 1 1 100%;
+            }
+
+            @include max(laptop) {
+                flex: 1 1 auto;
+            }
+        }
+
+        &--contacts {
+            gap: 27px;
+
+            @include max(laptop) {
+                flex: 0 0 250px;
+            }
+        }
+
+        &--first {
+            @include max(laptop) {
+                flex: 0 0 100%;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            @include max(tablet) {
+                flex: 0 0 100%;
+            }
+
+            @include max(mobile) {
+                flex-direction: column;
+                align-items: flex-start;
+                display: contents;
+            }
+        }
+    }
+
+    &__logo {
+        width: 143px;
+        height: 64px;
+
+        @include max(laptop) {
+            margin-right: auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__socials {
+        @include max(mobile) {
+            order: 2;
+        }
+    }
+
+    &__callback {
+        margin-top: auto;
+
+        @include max(laptop) {
+            margin-top: 0;
+        }
+
+        @include max(mobile) {
+            order: 2;
+        }
+    }
+
+    &__title {
+        font-family: $ff-montserrat;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $c-bg-grey;
+
+        @include max(mobile) {
+            font-size: 18px;
+        }
+    }
+
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include max(mobile) {
+            gap: 15px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+
+        @include max(mobile) {
+            gap: 15px;
+        }
+    }
+
+    &__item {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 137.5%;
+        color: $c-white;
+        transition: all $tr;
+        opacity: 1;
+
+        p+p {
+            margin-top: 4px;
+        }
+    }
+
+    a.site-footer__item:hover,
+    a.site-footer__title:hover {
+        opacity: 0.7;
+    }
+
+    &__bottom {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        color: $c-bg-main;
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: 1px solid $c-border;
+
+        @include max(mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+        }
+    }
+
+    &__docs {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 133%;
+    }
+
+    &__developer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        a {
+            line-height: 0;
+            display: block;
+            padding: 0;
+            margin: 0;
+        }
+
+        svg {
+            width: 117px;
+            height: 13px;
+        }
+    }
+
+}
