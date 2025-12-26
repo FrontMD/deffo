@@ -1,0 +1,41 @@
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &__item {
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        color: $c-white;
+        color: red;
+        background-color: $c-bg-grey;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        transition: all $tr;
+
+        &:hover {
+            color: $c-accent;
+        }
+
+        svg {
+            color: red;
+            max-width: 17px;
+            max-height: 17px;
+        }
+
+    }
+}
+
+.socials {
+    &--header {
+        gap: 25px;
+    }
+
+    &--header &__item {
+        background-color: transparent;
+        width: 17px;
+        height: 17px;
+    }
+}

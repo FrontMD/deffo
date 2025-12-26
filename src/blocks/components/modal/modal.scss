@@ -1,0 +1,82 @@
+.modal.hystmodal {
+    .hystmodal__window {
+        transition: all 0.3s linear;
+        transform: scale(0);
+        opacity: 0;
+        width: auto;
+        background-color: transparent;
+    }
+}
+
+.modal.hystmodal--active {
+    .hystmodal__window {
+        margin: 0;
+        transition: all 0.3s linear;
+        transform: scale(1);
+        opacity: 1;
+
+        @include max(tablet) {
+            margin: 0;
+        }
+    }
+}
+
+.modal {
+    box-sizing: border-box;
+
+    &__close {
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: auto;
+        min-width: auto;
+        cursor: pointer;
+        z-index: 20;
+        color: $c-white;
+        transition: color $tr;
+
+        @include max(tablet) {
+            right: 20px;
+            top: 20px;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background: $c-black;
+        width: 100%;
+        max-width: 700px;
+        z-index: 9999;
+        padding: 30px 50px 40px;
+        max-height: 95vh;
+        border-radius: $br-20;
+
+        @include max(tablet) {
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        @include max(mobile) {
+            padding: 20px 10px;
+            border-radius: 0;
+            max-height: 100vh;
+            height: 100vh;
+            height: 100dvh;
+        }
+    }
+
+}

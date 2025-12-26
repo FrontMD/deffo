@@ -1,5 +1,3 @@
-:root {}
-
 // шрифты
 $ff-montserrat: 'Montserrat', sans-serif;
 
@@ -8,7 +6,7 @@ $media-list: (
     'xs': 500,
     'mobile': 767,
     'tablet': 1023,
-    'laptop': 1350,
+    'laptop': 1270,
     'large': 1800,
     'full': 2000,
 );
@@ -16,18 +14,22 @@ $media-list: (
 // Цвета
 $c-white: #fff;
 $c-black: #000;
-$c-accent: #000;
+$c-bg-grey: #434342;
+$c-bg-grey-dark: #1B1B1A;
+$c-accent: #E7BDA9;
+$c-bg-main: #000;
+$c-text-grey: #B1B1B1;
+$c-error: #EA4C3A;
+$c-border: #727271;
+
+
 $c-accent-hover: rgba(0, 0, 0, 0.7);
-$c-bg-main: #F3F3F3;
-$c-bg-grey: #d5d5d5;
+$c-bg-input: #F3F3F3;
 $c-bg-dark: #1C1C1C;
 $c-text: #111;
-$c-text-grey: #969696;
 $c-text-btn: #1c1c1c;
 $c-text-light: #7B7B7B;
-$c-error: #EA4C3A;
 $c-link: #2A66B0;
-$c-border: #d8d8d8;
 $c-green: #81B952;
 
 // скругления
