@@ -1,0 +1,25 @@
+-
+    const defaultSDownloadProps = {
+        classes: '',
+    }
+
+mixin s-download(props= defaultSDownloadProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSDownloadProps.classes
+        }
+
+    section.s-download.section.section--fh(class= checkProps.classes)&attributes(attributes)  
+        .section__bg
+            img(src='img/home/download.webp' alt='').s-about__bg
+
+        .d-container.s-download__content
+            +title({
+                text: 'Скачайте каталог <br>наших решений',
+                tag: 'h2'
+            })
+            .s-download__desc.text-editor В каталоге более подробно представлен перечень наших товаров, а так же информация о компании
+            +btn({
+                name: 'Скачать каталог',
+                tag: 'h2'
+            })

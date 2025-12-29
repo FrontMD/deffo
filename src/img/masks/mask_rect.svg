@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <mask id="square-hole">
+      <!-- весь элемент видимый -->
+      <rect width="100" height="100" fill="white"/>
+      <!-- квадратная дыра 30x30px по центру (30% от viewBox) -->
+      <rect x="35" y="35" width="30" height="30" fill="black" rx="5"/>
+    </mask>
+  </defs>
+</svg>

@@ -1,0 +1,57 @@
+-
+    const defaultCatalogProps = {
+        classes: '',
+    }
+
+mixin s-catalog(props= defaultCatalogProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultCatalogProps.classes
+        }
+
+    section.s-catalog.section(class= checkProps.classes)&attributes(attributes)    
+        .section__bg
+            picture
+                img(src='img/home/blured_bg.webp' alt='')
+
+        .d-container
+            .s-catalog__list
+                .s-catalog__block
+                    .catalog-card.catalog-card--full
+                        .catalog-card__bg
+                            img(src="img/catalog/card_1.webp" alt="")
+                        .catalog-card__title
+                            span Виды продукции
+                        a(href="javascript:void(0);").catalog-card__link
+                    .catalog-card
+                        .catalog-card__bg
+                            img(src="img/catalog/card_2.webp" alt="")
+                        .catalog-card__title
+                            span Торцы фасадов
+                        a(href="javascript:void(0);").catalog-card__link
+                    .catalog-card
+                        .catalog-card__bg
+                            img(src="img/catalog/card_3.webp" alt="")
+                        .catalog-card__title
+                            span Патина
+                        a(href="javascript:void(0);").catalog-card__link
+
+                .s-catalog__block
+                    .catalog-card
+                        .catalog-card__bg
+                            img(src="img/catalog/card_4.webp" alt="")
+                        .catalog-card__title
+                            span фрезеровки
+                        a(href="javascript:void(0);").catalog-card__link
+                    .catalog-card
+                        .catalog-card__bg
+                            img(src="img/catalog/card_5.webp" alt="")
+                        .catalog-card__title
+                            span Типы покрытия
+                        a(href="javascript:void(0);").catalog-card__link
+                    .catalog-card.catalog-card--full
+                        .catalog-card__bg
+                            img(src="img/catalog/card_6.webp" alt="")
+                        .catalog-card__title
+                            span декоративные элементы
+                        a(href="javascript:void(0);").catalog-card__link

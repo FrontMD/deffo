@@ -1,0 +1,107 @@
+.s-about {
+    display: flex;
+    align-items: stretch;
+
+    &__decor {
+        display: flex;
+        align-items: stretch;
+        position: absolute;
+        left: 0;
+        height: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__video {
+        position: relative;
+        flex: 0 0 62.3%;
+        z-index: 1;
+        margin-left: -21%;
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__bg {
+        position: relative;
+        flex: 0 0 58.7%;
+        z-index: 3;
+        overflow: hidden;
+        mask-size: 100%;
+        margin: -1px 0;
+        object-position: center left;
+        object-fit: cover;
+    }
+
+    &__logo {
+        position: absolute;
+        left: 4px;
+        top: calc(10.556vh + 19.53vw + 7px);
+        width: 813px;
+        transform: translateY(-100%);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 5;
+        padding-top: calc(17.8vw + 10.556vh);
+        padding-bottom: 6.667vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    &__desc {
+        max-width: 750px;
+    }
+
+    &__cards {
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: auto;
+    }
+
+    &__card {
+        flex: 0 0 auto;
+        max-width: 347px;
+        padding: 20px 20px 40px;
+        background-color: rgba(67, 67, 66, 0.7);
+        backdrop-filter: blur(40px);
+    }
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 12px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+        color: $c-white;
+
+    }
+
+    &__text {
+        margin-top: 5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: $c-text-grey;
+
+    }
+
+}

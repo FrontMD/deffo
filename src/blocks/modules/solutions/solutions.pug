@@ -1,0 +1,40 @@
+-
+    const defaultSolutionsProps = {
+        classes: '',
+    }
+
+mixin solutions(props= defaultSolutionsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSolutionsProps.classes,
+        }
+
+    section.solutions.section(class= checkProps.classes)&attributes(attributes)    
+        .section__bg
+            picture
+                img(src='img/home/blured_bg.webp' alt='')
+
+        .d-container
+            .section__header
+                .section__title-block
+                    +title({
+                        text: 'Готовые решения',
+                        tag: 'h2'
+                    })
+                +btn({
+                    name: 'Каталог фасадов'
+                })
+            .solutions__slider(data-js="solutionsSlider")
+                .swiper-wrapper
+                    .swiper-slide.solutions-card
+                        .solutions-card__bg
+                            img(src="img/solutions/solutions_1.webp" alt="")
+                        a(href="javascript:void(0);").solutions-card__link Эворон
+                    .swiper-slide.solutions-card
+                        .solutions-card__bg
+                            img(src="img/solutions/solutions_2.webp" alt="")
+                        a(href="javascript:void(0);").solutions-card__link Гокли
+                    .swiper-slide.solutions-card
+                        .solutions-card__bg
+                            img(src="img/solutions/solutions_3.webp" alt="")
+                        a(href="javascript:void(0);").solutions-card__link Эльтон
