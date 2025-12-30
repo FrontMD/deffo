@@ -41,16 +41,12 @@
                               <form class="form form--modal" action="#" data-validate novalidate>
                                 <div class="form__content" data-js="formContent">
                                   <div class="form__title">Оставить заявку</div>
-                                  <div class="form__text">Мы ищем надёжных партнёров для долгосрочного и взаимовыгодного сотрудничества. Оставьте заявку — и в ближайшее время мы обсудим детали возможного партнёрства.</div>
                                   <div class="form__fields" data-js="formFields">
                                         <label class="field     " data-js="formField">
-                                          <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters">
+                                          <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
                                         </label>
                                         <label class="field     " data-js="formField">
-                                          <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone">
-                                        </label>
-                                        <label class="field     " data-js="formField">
-                                          <textarea class="field__textarea" rows="7" placeholder="Комментарий"></textarea>
+                                          <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
                                         </label>
                                   </div>
                                   <div class="form__privacy form-privacy" data-js="formField">
@@ -74,7 +70,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="modal hystmodal" id="orderModal" aria-hidden="true" data-js="orderModal">
+                <div class="modal hystmodal" id="faqModal" aria-hidden="true" data-js="faqModal">
                   <div class="hystmodal__wrap">
                     <div class="hystmodal__window" role="dialog" aria-modal="true">
                       <div class="modal__content">
@@ -86,23 +82,16 @@
                         <div class="modal__inner" data-js="modalInner">
                               <form class="form form--modal" action="#" data-validate novalidate>
                                 <div class="form__content" data-js="formContent">
-                                  <div class="form__title">Оставить заявку</div>
-                                  <div class="form__text">Мы ищем надёжных партнёров для долгосрочного и взаимовыгодного сотрудничества. Оставьте заявку — и в ближайшее время мы обсудим детали возможного партнёрства.</div>
+                                  <div class="form__title">Задать вопрос</div>
                                   <div class="form__fields" data-js="formFields">
                                         <label class="field     " data-js="formField">
-                                          <input class="field__input" type="text" placeholder="Ваше имя" required="" data-type="letters">
+                                          <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
                                         </label>
                                         <label class="field     " data-js="formField">
-                                          <input class="field__input" type="text" placeholder="Компания" required="">
+                                          <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
                                         </label>
                                         <label class="field     " data-js="formField">
-                                          <input class="field__input" type="tel" placeholder="Ваш телефон" data-type="phoneNumber" required="" data-v-name="phone">
-                                        </label>
-                                        <label class="field     " data-js="formField">
-                                          <input class="field__input" type="email" placeholder="Ваша почта" required="" data-v-name="email">
-                                        </label>
-                                        <label class="field     " data-js="formField">
-                                          <textarea class="field__textarea" rows="7" placeholder="Комментарий"></textarea>
+                                          <textarea class="field__textarea" rows="7" placeholder="Вопрос"></textarea>
                                         </label>
                                   </div>
                                   <div class="form__privacy form-privacy" data-js="formField">
@@ -112,53 +101,11 @@
                                       </label><span class="form-privacy__text">Я согласен с <a href="javascript:void(0);" target="_blank">Политикой конфиденциальности</a></span>
                                     </div><span class="field__error" data-js="fieldError"></span>
                                   </div>
-                                      <button class="d-btn form__submit d-btn--bordered" type="submit"><span>Отправить заявку</span>
+                                      <button class="d-btn form__submit d-btn--bordered" type="submit"><span>Отправить вопрос</span>
                                       </button>
                                 </div>
                                 <div class="form__thanks" data-js="form-thanks">
                                   <div class="form__title">Ваша заявка отправлена!</div>
-                                  <div class="form__image-success"><img src="img/success.png"></div>
-                                  <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
-                                </div>
-                              </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal hystmodal" id="subscribeModal" aria-hidden="true" data-js="subscribeModal">
-                  <div class="hystmodal__wrap">
-                    <div class="hystmodal__window" role="dialog" aria-modal="true">
-                      <div class="modal__content">
-                        <div class="modal__close" data-hystclose>
-                          <svg> 
-                            <use xlink:href="./img/sprites/sprite.svg#close"></use>
-                          </svg>
-                        </div>
-                        <div class="modal__inner" data-js="modalInner">
-                              <form class="form form--modal" action="#" data-validate novalidate>
-                                <div class="form__content" data-js="formContent">
-                                  <div class="form__title">Подписка на рассылку</div>
-                                  <div class="form__fields" data-js="formFields">
-                                        <label class="field     " data-js="formField">
-                                          <input class="field__input" type="text" placeholder="Ваше имя" required="" data-type="letters">
-                                        </label>
-                                        <label class="field     " data-js="formField">
-                                          <input class="field__input" type="email" placeholder="Ваша почта" required="" data-v-name="email">
-                                        </label>
-                                  </div>
-                                  <div class="form__privacy form-privacy" data-js="formField">
-                                    <div class="form-privacy__flex">
-                                      <label>
-                                        <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
-                                      </label><span class="form-privacy__text">Нажимая кнопку, вы соглашаетесь с <a href="javascript:void(0);" target="_blank">Политикой конфиденциальности</a> и даёте согласие на обработку персональных данных и согласие на получение рассылки рекламных материалов.</span>
-                                    </div><span class="field__error" data-js="fieldError"></span>
-                                  </div>
-                                      <button class="d-btn form__submit d-btn--bordered" type="submit"><span>Подписаться</span>
-                                      </button>
-                                </div>
-                                <div class="form__thanks" data-js="form-thanks">
-                                  <div class="form__title">Подписка оформлена!</div>
                                   <div class="form__image-success"><img src="img/success.png"></div>
                                   <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
                                 </div>
@@ -282,7 +229,7 @@
                     <div class="separator__center"></div>
                     <div class="separator__side separator__side--right"></div>
                   </div>
-                  <div class="home-intro__subtitle">Фасады, создающие уникальный стиль вашего интерьера.</div><a class="d-btn  d-btn--" href="#homeCatalog"><span>Каталог фасадов</span></a>
+                  <div class="home-intro__subtitle">Фасады, создающие уникальный стиль вашего интерьера.</div><a class="d-btn" href="#homeCatalog"><span>Каталог фасадов</span></a>
                 </div>
               </section>
               <section class="s-catalog section" id="homeCatalog">   
@@ -332,7 +279,7 @@
                           <div class="title  title--60">
                             <h2>Готовые решения</h2>
                           </div>
-                    </div><a class="d-btn  d-btn--" href="javascript:void(0);"><span>Каталог фасадов</span></a>
+                    </div><a class="d-btn" href="javascript:void(0);"><span>Каталог фасадов</span></a>
                   </div>
                   <div class="solutions__slider" data-js="solutionsSlider">
                     <div class="swiper-wrapper">
@@ -380,10 +327,12 @@
                   </div>
                 </div>
                 <div class="d-container s-about__content">
-                      <div class="title  title--60">
-                        <h2>Компания</h2>
-                      </div>
-                  <div class="s-about__desc text-editor">Ваш надёжный партнёр, который всегда изготовит качественные мебельные фасады. Многолетний опыт, профессиональные сотрудники, а также современное оборудование и широкий выбор ассортимента наших каталогов позволяют с лёгкостью решать любые вопросы, которые могут возникать перед нашими клиентами. Ниже представлена информация для связи с нашими офисами. Вы можете нам позвонить, написать или заказать обратный звонок и мы с радостью вам поможем.</div>
+                  <div class="section__title-block">
+                        <div class="title  title--60">
+                          <h2>Компания</h2>
+                        </div>
+                    <div class="text-editor">Ваш надёжный партнёр, который всегда изготовит качественные мебельные фасады. Многолетний опыт, профессиональные сотрудники, а также современное оборудование и широкий выбор ассортимента наших каталогов позволяют с лёгкостью решать любые вопросы, которые могут возникать перед нашими клиентами. Ниже представлена информация для связи с нашими офисами. Вы можете нам позвонить, написать или заказать обратный звонок и мы с радостью вам поможем.</div>
+                  </div>
                   <div class="s-about__cards">
                     <div class="s-about__card">
                       <div class="s-about__icon"><img src="img/about/about_card_1.svg" alt=""></div>
@@ -409,12 +358,252 @@
                 </div>
               </section>
               <section class="s-download section section--fh"> 
-                <div class="section__bg"><img class="s-about__bg" src="img/home/download.webp" alt=""></div>
+                <div class="section__bg"><img class="s-download__bg" src="img/home/download.webp" alt=""></div>
                 <div class="d-container s-download__content">
                       <div class="title  title--60">
                         <h2>Скачайте каталог <br>наших решений</h2>
                       </div>
-                  <div class="s-download__desc text-editor">В каталоге более подробно представлен перечень наших товаров, а так же информация о компании</div><a class="d-btn  d-btn--" href="javascript:void(0);"><span>Скачать каталог</span></a>
+                  <div class="s-download__desc text-editor">В каталоге более подробно представлен перечень наших товаров, а так же информация о компании</div><a class="d-btn" href="javascript:void(0);"><span>Скачать каталог</span></a>
+                </div>
+              </section>
+              <section class="s-stocks section">
+                <div class="d-container">
+                  <div class="section__header s-stocks__header">
+                    <div class="section__title-block">
+                          <div class="title  title--60">
+                            <h2>Акции</h2>
+                          </div>
+                      <div class="s-stocks__desc text-editor">Знаете, что может быть лучше фасадов, произведённых компанией Дядя Федор? Фасады, произведённые компанией Дядя Федор на специальных условиях. Мы делаем всё, чтобы наши фасады оставались доступными, а условия выбирали вы.</div>
+                    </div><a class="d-btn" href="javascript:void(0);"><span>Все акции</span></a>
+                  </div>
+                  <div class="s-stocks__slider" data-js="stocksSlider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide s-stocks__card">
+                        <div class="s-stocks__bg"><img src="img/stocks/stock_1.webp" alt=""></div><a class="s-stocks__link" href="javascript:void(0);"></a>
+                      </div>
+                      <div class="swiper-slide s-stocks__card">
+                        <div class="s-stocks__bg"><img src="img/stocks/stock_2.webp" alt=""></div><a class="s-stocks__link" href="javascript:void(0);"></a>
+                      </div>
+                      <div class="swiper-slide s-stocks__card">
+                        <div class="s-stocks__bg"><img src="img/stocks/stock_3.webp" alt=""></div><a class="s-stocks__link" href="javascript:void(0);"></a>
+                      </div>
+                      <div class="swiper-slide s-stocks__card">
+                        <div class="s-stocks__bg"><img src="img/stocks/stock_4.webp" alt=""></div><a class="s-stocks__link" href="javascript:void(0);"></a>
+                      </div>
+                      <div class="swiper-slide s-stocks__card">
+                        <div class="s-stocks__bg"><img src="img/stocks/stock_5.webp" alt=""></div><a class="s-stocks__link" href="javascript:void(0);"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="s-news section" data-js="sNews">
+                <div class="d-container s-news__container">
+                  <div class="s-news__header">
+                        <div class="title  title--60">
+                          <h2>Новости</h2>
+                        </div>
+                    <div class="s-news__desc text-editor">Будьте в курсе последних новостей и событий от компании Дядя Федор. Узнайте о новинках мебельной индустрии, акциях и событиях нашей компании.</div><a class="d-btn" href="javascript:void(0);"><span>Все новости</span></a>
+                        <div class="slider-controls s-news__controls" data-js="sliderControls">
+                          <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_slider"></use>
+                            </svg>
+                          </button>
+                          <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_slider"></use>
+                            </svg>
+                          </button>
+                        </div>
+                  </div>
+                  <div class="s-news__slider" data-js="sNewsSlider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide news-card">
+                        <div class="news-card__img"><img src="img/news/news_1.webp" alt=""></div>
+                        <div class="news-card__title">Каталоги DEFFO</div>
+                        <div class="separator">
+                          <div class="separator__side separator__side--left"></div>
+                          <div class="separator__center"></div>
+                          <div class="separator__side separator__side--right"></div>
+                        </div>
+                        <div class="news-card__desc">
+                          <div class="news-card__date">12-03-2025</div>
+                          <div class="news-card__text">Хотите быстро подобрать фасады под проект? Мы собрали для вас актуальные каталоги DEFFO — всё, что нужно для вдохновения и точного выбора</div>
+                        </div><a class="news-card__link" href="javascript:void(0);"><span>Посмотреть подробности</span>
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_chevron_right"></use>
+                          </svg></a>
+                      </div>
+                      <div class="swiper-slide news-card">
+                        <div class="news-card__img"><img src="img/news/news_2.webp" alt=""></div>
+                        <div class="news-card__title">Ребрендинг компании</div>
+                        <div class="separator">
+                          <div class="separator__side separator__side--left"></div>
+                          <div class="separator__center"></div>
+                          <div class="separator__side separator__side--right"></div>
+                        </div>
+                        <div class="news-card__desc">
+                          <div class="news-card__date">24-03-2025</div>
+                          <div class="news-card__text">Компания «Дядя Федор» прошла процесс ребрендинга. Теперь это привычное вам высокое качество, сервис и надёжное партнёрство под брендом DEFFO.</div>
+                        </div><a class="news-card__link" href="javascript:void(0);"><span>Посмотреть подробности</span>
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_chevron_right"></use>
+                          </svg></a>
+                      </div>
+                      <div class="swiper-slide news-card">
+                        <div class="news-card__img"><img src="img/news/news_3.webp" alt=""></div>
+                        <div class="news-card__title">Как фотографировать</div>
+                        <div class="separator">
+                          <div class="separator__side separator__side--left"></div>
+                          <div class="separator__center"></div>
+                          <div class="separator__side separator__side--right"></div>
+                        </div>
+                        <div class="news-card__desc">
+                          <div class="news-card__date">12-03-2025</div>
+                          <div class="news-card__text">Фото, которые продают: как мебельщику фотографировать готовые проекты Если пройтись по объявлениям на Авито, то половина кухонь выглядит «дёшево»</div>
+                        </div><a class="news-card__link" href="javascript:void(0);"><span>Посмотреть подробности</span>
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_chevron_right"></use>
+                          </svg></a>
+                      </div>
+                      <div class="swiper-slide news-card">
+                        <div class="news-card__img"><img src="img/news/news_4.webp" alt=""></div>
+                        <div class="news-card__title">Каталоги DEFFO</div>
+                        <div class="separator">
+                          <div class="separator__side separator__side--left"></div>
+                          <div class="separator__center"></div>
+                          <div class="separator__side separator__side--right"></div>
+                        </div>
+                        <div class="news-card__desc">
+                          <div class="news-card__date">24-03-2025</div>
+                          <div class="news-card__text">Коллеги, важная информация по ценам. С 1 января 2026 года корректируем прайс: стоимость фасадов и сопутствующих позиций вырастет на 5–7%.</div>
+                        </div><a class="news-card__link" href="javascript:void(0);"><span>Посмотреть подробности</span>
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_chevron_right"></use>
+                          </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="s-faq section">   
+                <div class="d-container s-faq__container">
+                  <div class="s-faq__video">
+                    <video autoplay muted loop playsinline>
+                      <source src="public/video/faq.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="s-faq__content">
+                    <div class="section__header">
+                      <div class="section__title-block">
+                            <div class="title  title--60">
+                              <h2>Вопросы и ответы</h2>
+                            </div>
+                        <div class="text-editor">От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.</div>
+                      </div><a class="d-btn" href="javascript:void(0);" data-modal="#faqModal"><span>Задать свой вопрос</span></a>
+                    </div>
+                        <div class="accordion s-faq__accordion" data-js="accordion">
+                          <div class="spoiler" data-js="spoiler">
+                            <div class="spoiler__intro">
+                              <div class="spoiler__title">Из каких материалов вы изготавливаете мебельные фасады?</div>
+                              <div class="spoiler__icon">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="spoiler__content" data-js="spoilerContent">
+                              <div class="text-editor">Да, мы изготавливаем мебельные фасады по индивидуальным размерам и проектам. Вы можете выбрать материал, тип покрытия, цвет, фрезеровку и другие параметры — мы адаптируем производство под ваши требования и техническое задание. Перед запуском в работу все размеры и детали согласовываются, чтобы фасады идеально подошли к вашей мебели.</div>
+                            </div>
+                          </div>
+                          <div class="spoiler" data-js="spoiler">
+                            <div class="spoiler__intro">
+                              <div class="spoiler__title">Какие сроки производства фасадов?</div>
+                              <div class="spoiler__icon">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="spoiler__content" data-js="spoilerContent">
+                              <div class="text-editor">Да, мы изготавливаем мебельные фасады по индивидуальным размерам и проектам. Вы можете выбрать материал, тип покрытия, цвет, фрезеровку и другие параметры — мы адаптируем производство под ваши требования и техническое задание. Перед запуском в работу все размеры и детали согласовываются, чтобы фасады идеально подошли к вашей мебели.</div>
+                            </div>
+                          </div>
+                          <div class="spoiler" data-js="spoiler">
+                            <div class="spoiler__intro">
+                              <div class="spoiler__title">Можно ли изготовить фасады по индивидуальным размерам и дизайну?</div>
+                              <div class="spoiler__icon">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="spoiler__content" data-js="spoilerContent">
+                              <div class="text-editor">Да, мы изготавливаем мебельные фасады по индивидуальным размерам и проектам. Вы можете выбрать материал, тип покрытия, цвет, фрезеровку и другие параметры — мы адаптируем производство под ваши требования и техническое задание. Перед запуском в работу все размеры и детали согласовываются, чтобы фасады идеально подошли к вашей мебели.</div>
+                            </div>
+                          </div>
+                          <div class="spoiler" data-js="spoiler">
+                            <div class="spoiler__intro">
+                              <div class="spoiler__title">Какие покрытия и виды отделки вы используете?</div>
+                              <div class="spoiler__icon">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="spoiler__content" data-js="spoilerContent">
+                              <div class="text-editor">Да, мы изготавливаем мебельные фасады по индивидуальным размерам и проектам. Вы можете выбрать материал, тип покрытия, цвет, фрезеровку и другие параметры — мы адаптируем производство под ваши требования и техническое задание. Перед запуском в работу все размеры и детали согласовываются, чтобы фасады идеально подошли к вашей мебели.</div>
+                            </div>
+                          </div>
+                          <div class="spoiler" data-js="spoiler">
+                            <div class="spoiler__intro">
+                              <div class="spoiler__title">Как ухаживать за мебельными фасадами, чтобы они дольше сохраняли внешний вид?</div>
+                              <div class="spoiler__icon">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="spoiler__content" data-js="spoilerContent">
+                              <div class="text-editor">Да, мы изготавливаем мебельные фасады по индивидуальным размерам и проектам. Вы можете выбрать материал, тип покрытия, цвет, фрезеровку и другие параметры — мы адаптируем производство под ваши требования и техническое задание. Перед запуском в работу все размеры и детали согласовываются, чтобы фасады идеально подошли к вашей мебели.</div>
+                            </div>
+                          </div>
+                          <div class="spoiler" data-js="spoiler">
+                            <div class="spoiler__intro">
+                              <div class="spoiler__title">Предоставляете ли вы гарантию на продукцию?</div>
+                              <div class="spoiler__icon">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="spoiler__content" data-js="spoilerContent">
+                              <div class="text-editor">Да, мы изготавливаем мебельные фасады по индивидуальным размерам и проектам. Вы можете выбрать материал, тип покрытия, цвет, фрезеровку и другие параметры — мы адаптируем производство под ваши требования и техническое задание. Перед запуском в работу все размеры и детали согласовываются, чтобы фасады идеально подошли к вашей мебели.</div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              </section>
+              <section class="section s-map" data-js="sMap">
+                <div class="section__bg"><img src="img/home/map.webp" alt=""></div>
+                <div class="d-container">
+                  <div class="s-map__items">
+                    <div class="s-map__item address-item" data-js="sMapItem" data-coords="44.114722, 43.088393">
+                      <div class="address-item__icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#location"></use>
+                        </svg>
+                      </div>
+                      <div class="address-item__content">
+                        <div class="address-item__title">Офис в г. Пятигорск</div>
+                        <div class="address-item__link"><span>Тел.:</span><a href="tel:+79282662615">+7 (928) 266-26-15</a></div>
+                        <div class="address-item__text">Ставропольский край, пос. Иноземцево, ул. Промышленная, д.11</div>
+                        <div class="address-item__ws">График работы: пн - пт, 09:00 - 18:00</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </section>
         </div>
@@ -580,16 +769,12 @@
                           <form class="form form--modal" action="#" data-validate novalidate>
                             <div class="form__content" data-js="formContent">
                               <div class="form__title">Оставить заявку</div>
-                              <div class="form__text">Мы ищем надёжных партнёров для долгосрочного и взаимовыгодного сотрудничества. Оставьте заявку — и в ближайшее время мы обсудим детали возможного партнёрства.</div>
                               <div class="form__fields" data-js="formFields">
                                     <label class="field     " data-js="formField">
-                                      <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters">
+                                      <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
                                     </label>
                                     <label class="field     " data-js="formField">
-                                      <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone">
-                                    </label>
-                                    <label class="field     " data-js="formField">
-                                      <textarea class="field__textarea" rows="7" placeholder="Комментарий"></textarea>
+                                      <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
                                     </label>
                               </div>
                               <div class="form__privacy form-privacy" data-js="formField">
@@ -613,7 +798,7 @@
                 </div>
               </div>
             </div>
-            <div class="modal hystmodal" id="orderModal" aria-hidden="true" data-js="orderModal">
+            <div class="modal hystmodal" id="faqModal" aria-hidden="true" data-js="faqModal">
               <div class="hystmodal__wrap">
                 <div class="hystmodal__window" role="dialog" aria-modal="true">
                   <div class="modal__content">
@@ -625,23 +810,16 @@
                     <div class="modal__inner" data-js="modalInner">
                           <form class="form form--modal" action="#" data-validate novalidate>
                             <div class="form__content" data-js="formContent">
-                              <div class="form__title">Оставить заявку</div>
-                              <div class="form__text">Мы ищем надёжных партнёров для долгосрочного и взаимовыгодного сотрудничества. Оставьте заявку — и в ближайшее время мы обсудим детали возможного партнёрства.</div>
+                              <div class="form__title">Задать вопрос</div>
                               <div class="form__fields" data-js="formFields">
                                     <label class="field     " data-js="formField">
-                                      <input class="field__input" type="text" placeholder="Ваше имя" required="" data-type="letters">
+                                      <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
                                     </label>
                                     <label class="field     " data-js="formField">
-                                      <input class="field__input" type="text" placeholder="Компания" required="">
+                                      <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
                                     </label>
                                     <label class="field     " data-js="formField">
-                                      <input class="field__input" type="tel" placeholder="Ваш телефон" data-type="phoneNumber" required="" data-v-name="phone">
-                                    </label>
-                                    <label class="field     " data-js="formField">
-                                      <input class="field__input" type="email" placeholder="Ваша почта" required="" data-v-name="email">
-                                    </label>
-                                    <label class="field     " data-js="formField">
-                                      <textarea class="field__textarea" rows="7" placeholder="Комментарий"></textarea>
+                                      <textarea class="field__textarea" rows="7" placeholder="Вопрос"></textarea>
                                     </label>
                               </div>
                               <div class="form__privacy form-privacy" data-js="formField">
@@ -651,53 +829,11 @@
                                   </label><span class="form-privacy__text">Я согласен с <a href="javascript:void(0);" target="_blank">Политикой конфиденциальности</a></span>
                                 </div><span class="field__error" data-js="fieldError"></span>
                               </div>
-                                  <button class="d-btn form__submit d-btn--bordered" type="submit"><span>Отправить заявку</span>
+                                  <button class="d-btn form__submit d-btn--bordered" type="submit"><span>Отправить вопрос</span>
                                   </button>
                             </div>
                             <div class="form__thanks" data-js="form-thanks">
                               <div class="form__title">Ваша заявка отправлена!</div>
-                              <div class="form__image-success"><img src="img/success.png"></div>
-                              <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
-                            </div>
-                          </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal hystmodal" id="subscribeModal" aria-hidden="true" data-js="subscribeModal">
-              <div class="hystmodal__wrap">
-                <div class="hystmodal__window" role="dialog" aria-modal="true">
-                  <div class="modal__content">
-                    <div class="modal__close" data-hystclose>
-                      <svg> 
-                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
-                      </svg>
-                    </div>
-                    <div class="modal__inner" data-js="modalInner">
-                          <form class="form form--modal" action="#" data-validate novalidate>
-                            <div class="form__content" data-js="formContent">
-                              <div class="form__title">Подписка на рассылку</div>
-                              <div class="form__fields" data-js="formFields">
-                                    <label class="field     " data-js="formField">
-                                      <input class="field__input" type="text" placeholder="Ваше имя" required="" data-type="letters">
-                                    </label>
-                                    <label class="field     " data-js="formField">
-                                      <input class="field__input" type="email" placeholder="Ваша почта" required="" data-v-name="email">
-                                    </label>
-                              </div>
-                              <div class="form__privacy form-privacy" data-js="formField">
-                                <div class="form-privacy__flex">
-                                  <label>
-                                    <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
-                                  </label><span class="form-privacy__text">Нажимая кнопку, вы соглашаетесь с <a href="javascript:void(0);" target="_blank">Политикой конфиденциальности</a> и даёте согласие на обработку персональных данных и согласие на получение рассылки рекламных материалов.</span>
-                                </div><span class="field__error" data-js="fieldError"></span>
-                              </div>
-                                  <button class="d-btn form__submit d-btn--bordered" type="submit"><span>Подписаться</span>
-                                  </button>
-                            </div>
-                            <div class="form__thanks" data-js="form-thanks">
-                              <div class="form__title">Подписка оформлена!</div>
                               <div class="form__image-success"><img src="img/success.png"></div>
                               <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
                             </div>

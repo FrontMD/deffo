@@ -1,0 +1,27 @@
+-
+	const defaultSMapProps = {
+		classes: '',
+	}
+
+mixin s-map(props = defaultSMapProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultSMapProps.classes,
+		}
+
+	section.section.s-map(class= checkProps.classes data-js="sMap")&attributes(attributes)
+		.section__bg
+			img(src="img/home/map.webp" alt="")
+		.d-container
+			.s-map__items
+				.s-map__item.address-item(data-js="sMapItem" data-coords="44.114722, 43.088393")
+					.address-item__icon
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#location`)
+					.address-item__content
+						.address-item__title Офис в г. Пятигорск
+						.address-item__link
+							span Тел.:
+							a(href="tel:+79282662615") +7 (928) 266-26-15
+						.address-item__text Ставропольский край, пос. Иноземцево, ул. Промышленная, д.11
+						.address-item__ws График работы: пн - пт, 09:00 - 18:00

@@ -24,23 +24,3 @@
     }
 
 }
-
-.separator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    &__center {
-        width: 7px;
-        height: 7px;
-        border-radius: 100%;
-        background-color: $c-accent;
-    }
-
-    &__side {
-        width: 150px;
-        height: 1px;
-        background-color: $c-accent;
-    }
-}

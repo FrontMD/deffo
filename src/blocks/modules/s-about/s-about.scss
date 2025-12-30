@@ -55,10 +55,6 @@
         gap: 40px;
     }
 
-    &__desc {
-        max-width: 750px;
-    }
-
     &__cards {
         display: flex;
         align-items: stretch;
@@ -68,14 +64,31 @@
     }
 
     &__card {
+        position: relative;
         flex: 0 0 auto;
         max-width: 347px;
         padding: 20px 20px 40px;
-        background-color: rgba(67, 67, 66, 0.7);
-        backdrop-filter: blur(40px);
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(67, 67, 66, 0.7);
+            backdrop-filter: blur(40px);
+            transition: all $tr-long;
+        }
+
+        &:hover::after {
+            transform: scale(1.07);
+        }
     }
 
     &__icon {
+        position: relative;
+        z-index: 1;
         width: 32px;
         height: 32px;
 
@@ -87,6 +100,8 @@
     }
 
     &__subtitle {
+        position: relative;
+        z-index: 1;
         margin-top: 12px;
         font-weight: 500;
         font-size: 18px;
@@ -96,6 +111,8 @@
     }
 
     &__text {
+        position: relative;
+        z-index: 1;
         margin-top: 5px;
         font-weight: 400;
         font-size: 16px;

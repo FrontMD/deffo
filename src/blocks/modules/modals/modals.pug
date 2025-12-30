@@ -7,7 +7,7 @@ noindex
             +form({
                 classes: 'form--modal',
                 title: 'Оставить заявку',
-                text: 'Мы ищем надёжных партнёров для долгосрочного и взаимовыгодного сотрудничества. Оставьте заявку — и в ближайшее время мы обсудим детали возможного партнёрства.',
+                text: '',
                 btnText: 'Отправить заявку',
                 })
                     +field({
@@ -19,6 +19,7 @@ noindex
                             'required': '',
                             'data-type': 'letters'
                         },
+                        hasError: true
                     })
                     +field({
                         classes: '',
@@ -30,99 +31,44 @@ noindex
                             'required': '',
                             'data-v-name': 'phone'
                         },
-                    })
-                    +field({
-                        classes: '',
-                        tag: 'textarea',
-                        type: '',
-                        title: '',
-                        placeholder: 'Комментарий',
+                        hasError: true
                     })
 
-        //- заявка в интро
-        +modal({modalId:"orderModal"})(data-js="orderModal")
+        //- обратный звонок
+        +modal({modalId:"faqModal"})(data-js="faqModal")
             +form({
                 classes: 'form--modal',
-                title: 'Оставить заявку',
-                text: 'Мы ищем надёжных партнёров для долгосрочного и взаимовыгодного сотрудничества. Оставьте заявку — и в ближайшее время мы обсудим детали возможного партнёрства.',
-                btnText: 'Отправить заявку',
+                title: 'Задать вопрос',
+                text: '',
+                btnText: 'Отправить вопрос',
                 })
                     +field({
                         classes: '',
                         type: 'text',
                         title: '',
-                        placeholder: 'Ваше имя',
+                        placeholder: 'Имя',
                         inputAttr: {
                             'required': '',
                             'data-type': 'letters'
                         },
-                    })
-                    +field({
-                        classes: '',
-                        type: 'text',
-                        title: '',
-                        placeholder: 'Компания',
-                        inputAttr: {
-                            'required': '',
-                        },
+                        hasError: true
                     })
                     +field({
                         classes: '',
                         type: 'tel',
                         title: '',
-                        placeholder: 'Ваш телефон',
+                        placeholder: 'Телефон',
                         inputAttr: {
                             'data-type': 'phoneNumber',
                             'required': '',
                             'data-v-name': 'phone'
                         },
-                    })
-                    +field({
-                        classes: '',
-                        type: 'email',
-                        title: '',
-                        placeholder: 'Ваша почта',
-                        inputAttr: {
-                            'required': '',
-                            'data-v-name': 'email'
-                        },
+                        hasError: true
                     })
                     +field({
                         classes: '',
                         tag: 'textarea',
                         type: '',
                         title: '',
-                        placeholder: 'Комментарий',
-                    })
-
-        //- подписка
-        +modal({modalId:"subscribeModal"})(data-js="subscribeModal")
-            +form({
-                classes: 'form--modal',
-                title: 'Подписка на рассылку',
-                text: '',
-                btnText: 'Подписаться',
-                privacyText: 'Нажимая кнопку, вы соглашаетесь с <a href="javascript:void(0);" target="_blank">Политикой конфиденциальности</a> и даёте согласие на обработку персональных данных и согласие на получение рассылки рекламных материалов.',
-                successTitle: 'Подписка оформлена!',
-                successText: ''
-                })
-                    +field({
-                        classes: '',
-                        type: 'text',
-                        title: '',
-                        placeholder: 'Ваше имя',
-                        inputAttr: {
-                            'required': '',
-                            'data-type': 'letters'
-                        },
-                    })
-                    +field({
-                        classes: '',
-                        type: 'email',
-                        title: '',
-                        placeholder: 'Ваша почта',
-                        inputAttr: {
-                            'required': '',
-                            'data-v-name': 'email'
-                        },
+                        placeholder: 'Вопрос',
                     })

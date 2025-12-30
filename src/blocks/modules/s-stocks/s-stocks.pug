@@ -1,0 +1,45 @@
+-
+    const defaultSStocksProps = {
+        classes: '',
+    }
+
+mixin s-stocks(props= defaultSStocksProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSStocksProps.classes
+        }
+
+    section.s-stocks.section(class= checkProps.classes)&attributes(attributes)
+        .d-container
+            .section__header.s-stocks__header
+                .section__title-block
+                    +title({
+                        text: 'Акции',
+                        tag: 'h2'
+                    })
+                    .s-stocks__desc.text-editor Знаете, что может быть лучше фасадов, произведённых компанией Дядя Федор? Фасады, произведённые компанией Дядя Федор на специальных условиях. Мы делаем всё, чтобы наши фасады оставались доступными, а условия выбирали вы.
+                +btn({
+                    name: 'Все акции'
+                })
+            .s-stocks__slider(data-js="stocksSlider")
+                .swiper-wrapper
+                    .swiper-slide.s-stocks__card
+                        .s-stocks__bg
+                            img(src="img/stocks/stock_1.webp" alt="")
+                        a.s-stocks__link(href="javascript:void(0);")
+                    .swiper-slide.s-stocks__card
+                        .s-stocks__bg
+                            img(src="img/stocks/stock_2.webp" alt="")
+                        a.s-stocks__link(href="javascript:void(0);")
+                    .swiper-slide.s-stocks__card
+                        .s-stocks__bg
+                            img(src="img/stocks/stock_3.webp" alt="")
+                        a.s-stocks__link(href="javascript:void(0);")
+                    .swiper-slide.s-stocks__card
+                        .s-stocks__bg
+                            img(src="img/stocks/stock_4.webp" alt="")
+                        a.s-stocks__link(href="javascript:void(0);")
+                    .swiper-slide.s-stocks__card
+                        .s-stocks__bg
+                            img(src="img/stocks/stock_5.webp" alt="")
+                        a.s-stocks__link(href="javascript:void(0);")

@@ -1,0 +1,30 @@
+-
+    const defaultSFaqProps = {
+        classes: '',
+    }
+
+mixin s-faq(props= defaultSFaqProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSFaqProps.classes,
+        }
+
+    section.s-faq.section(class= checkProps.classes)&attributes(attributes)    
+        .d-container.s-faq__container
+            .s-faq__video
+                video(autoplay muted loop playsinline)
+                    source(src="public/video/faq.mp4" type="video/mp4")
+            .s-faq__content
+                .section__header
+                    .section__title-block
+                        +title({
+                            text: 'Вопросы и ответы',
+                            tag: 'h2'
+                        })
+                        .text-editor От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.
+                    +btn({
+                        name: 'Задать свой вопрос'
+                    })(data-modal="#faqModal")
+                +accordion({
+                    classes: 's-faq__accordion'
+                })

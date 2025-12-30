@@ -1,0 +1,90 @@
+-
+    const defaultSNewsProps = {
+        classes: '',
+    }
+
+mixin s-news(props= defaultSNewsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSNewsProps.classes
+        }
+
+    section.s-news.section(class= checkProps.classes data-js="sNews")&attributes(attributes)
+        .d-container.s-news__container
+            .s-news__header
+                +title({
+                    text: 'Новости',
+                    tag: 'h2'
+                })
+                .s-news__desc.text-editor Будьте в курсе последних новостей и событий от компании Дядя Федор. Узнайте о новинках мебельной индустрии, акциях и событиях нашей компании.
+                +btn({
+                    name: 'Все новости'
+                })
+                +slider-controls({
+                    classes: 's-news__controls'
+                })
+            .s-news__slider(data-js="sNewsSlider")
+                .swiper-wrapper
+                    .swiper-slide.news-card
+                        .news-card__img
+                            img(src="img/news/news_1.webp" alt="")
+                        .news-card__title Каталоги DEFFO
+                        .separator
+                            .separator__side.separator__side--left
+                            .separator__center
+                            .separator__side.separator__side--right
+                        .news-card__desc
+                            .news-card__date 12-03-2025
+                            .news-card__text Хотите быстро подобрать фасады под проект? Мы собрали для вас актуальные каталоги DEFFO — всё, что нужно для вдохновения и точного выбора
+                        a.news-card__link(href="javascript:void(0);")
+                            span Посмотреть подробности
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_chevron_right`)
+
+                    .swiper-slide.news-card
+                        .news-card__img
+                            img(src="img/news/news_2.webp" alt="")
+                        .news-card__title Ребрендинг компании
+                        .separator
+                            .separator__side.separator__side--left
+                            .separator__center
+                            .separator__side.separator__side--right
+                        .news-card__desc
+                            .news-card__date 24-03-2025
+                            .news-card__text Компания «Дядя Федор» прошла процесс ребрендинга. Теперь это привычное вам высокое качество, сервис и надёжное партнёрство под брендом DEFFO.
+                        a.news-card__link(href="javascript:void(0);")
+                            span Посмотреть подробности
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_chevron_right`)
+
+                    .swiper-slide.news-card
+                        .news-card__img
+                            img(src="img/news/news_3.webp" alt="")
+                        .news-card__title Как фотографировать
+                        .separator
+                            .separator__side.separator__side--left
+                            .separator__center
+                            .separator__side.separator__side--right
+                        .news-card__desc
+                            .news-card__date 12-03-2025
+                            .news-card__text Фото, которые продают: как мебельщику фотографировать готовые проекты Если пройтись по объявлениям на Авито, то половина кухонь выглядит «дёшево»
+                        a.news-card__link(href="javascript:void(0);")
+                            span Посмотреть подробности
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_chevron_right`)
+
+                    .swiper-slide.news-card
+                        .news-card__img
+                            img(src="img/news/news_4.webp" alt="")
+                        .news-card__title Каталоги DEFFO
+                        .separator
+                            .separator__side.separator__side--left
+                            .separator__center
+                            .separator__side.separator__side--right
+                        .news-card__desc
+                            .news-card__date 24-03-2025
+                            .news-card__text Коллеги, важная информация по ценам. С 1 января 2026 года корректируем прайс: стоимость фасадов и сопутствующих позиций вырастет на 5–7%.
+                        a.news-card__link(href="javascript:void(0);")
+                            span Посмотреть подробности
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_chevron_right`)

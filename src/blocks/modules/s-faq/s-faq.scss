@@ -1,0 +1,26 @@
+.s-faq {
+    padding-top: 160px;
+    padding-bottom: 40px;
+
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        gap: 100px;
+    }
+
+    &__video {
+        flex: 0 0 442px;
+
+        video {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        flex: 1 1 auto;
+    }
+
+    &__accordion {
+        margin-top: 80px;
+    }
+}

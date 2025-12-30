@@ -1,1 +1,24 @@
-.s-download {}
+.s-download {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+
+    .section__bg {
+        max-width: 1240px;
+    }
+
+    &__content {
+        max-width: 753px;
+        margin-right: 155px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    &__desc {
+        margin-bottom: 15px;
+    }
+
+}

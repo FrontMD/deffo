@@ -1,8 +1,6 @@
 function selects() {
 	const formSelects = document.querySelectorAll("[data-js='formSelect']")
 
-    console.log(formSelects)
-
 	formSelects.forEach(formSelect => {
 		let placeholder = $(formSelect).attr('data-placeholder')
 		let clear = $(formSelect).attr('data-clear')

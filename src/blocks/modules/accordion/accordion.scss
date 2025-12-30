@@ -1,0 +1,57 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.spoiler {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+    &__intro {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        padding: 25px 20px 25px 30px;
+        background-color: rgba(67, 67, 66, 0.4);
+        color: $c-white;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+    }
+
+    &__icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        flex-grow: 0;
+        transition: all $tr;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            transition: all $tr;
+        }
+    }
+
+    &.active &__icon svg {
+        transform: rotate(-180deg);
+    }
+
+    &__content {
+        display: none;
+        overflow: hidden;
+        padding: 30px 20px 30px 30px;
+    }
+}
