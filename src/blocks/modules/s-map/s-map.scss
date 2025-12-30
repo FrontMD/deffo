@@ -1,3 +1,150 @@
 .s-map {
     padding-top: 160px;
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    &__wrapper {
+        position: relative;
+        margin-top: 32px;
+    }
+
+    &__el {
+        height: 400px;
+        transition: all $tr-long;
+    }
+
+    &__wrapper.full &__el {
+        height: 800px;
+    }
+
+    &__wrapper.full &__full {
+        svg {
+            transform: rotate(180deg);
+        }
+
+        .d-show {
+            display: none;
+        }
+
+        .d-hide {
+            display: block;
+        }
+    }
+
+    &__full {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 25px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+        color: $c-white;
+        transition: all $tr;
+        background-color: rgba(11, 11, 11, 0.7);
+        backdrop-filter: blur(20px);
+        cursor: pointer;
+
+        .d-show {
+            display: block;
+        }
+
+        .d-hide {
+            display: none;
+        }
+
+        &:hover {
+            color: $c-accent;
+        }
+
+        svg {
+            width: 18px;
+            height: 18px;
+            transition: all $tr-long;
+        }
+    }
+
+}
+
+.address-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 30px 20px;
+    background-color: rgba(67, 67, 66, 0.5);
+    backdrop-filter: blur(40px);
+    color: $c-white;
+
+    &__icon {
+        flex-shrink: 0;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__content {
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 130%;
+        text-transform: uppercase;
+    }
+
+    &__info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 20px;
+        margin-top: 20px;
+        border-top: 1px solid $c-bg-grey;
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+            font-weight: 600;
+        }
+
+        a {
+            transition: all $tr;
+        }
+
+        a:hover {
+            color: $c-accent;
+        }
+    }
+
+    &__text,
+    &__contact {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+    }
+
+    &__ws {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 160%;
+        color: $c-text-grey;
+    }
+
 }

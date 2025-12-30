@@ -5,6 +5,7 @@
 @@include("../../blocks/modules/s-stocks/s-stocks.js")
 @@include("../../blocks/modules/s-news/s-news.js")
 @@include("../../blocks/modules/accordion/accordion.js")
+@@include("../../blocks/modules/s-map/s-map.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -13,5 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     solutionsSlider();
     stocksSlider();
     newsSlider();
-    accordion()
+    accordion();
+    sMap();
 })

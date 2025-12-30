@@ -20,8 +20,101 @@ mixin s-map(props = defaultSMapProps)
 							use(xlink:href=`img/sprites/sprite.svg#location`)
 					.address-item__content
 						.address-item__title Офис в г. Пятигорск
-						.address-item__link
-							span Тел.:
-							a(href="tel:+79282662615") +7 (928) 266-26-15
-						.address-item__text Ставропольский край, пос. Иноземцево, ул. Промышленная, д.11
-						.address-item__ws График работы: пн - пт, 09:00 - 18:00
+						.address-item__info
+							.address-item__contact
+								span Тел.:
+								a(href="tel:+79282662615") +7 (928) 266-26-15
+							.address-item__contact
+								span Email:
+								a(href="mailto:fedis1@mail.ru") fedis1@mail.ru
+							.address-item__text Ставропольский край, <br>пос. Иноземцево, ул. Промышленная, д.11
+							.address-item__ws График работы: пн - пт, 09:00 - 18:00
+
+				.s-map__item.address-item(data-js="sMapItem" data-coords="45.030260, 39.018576")
+					.address-item__icon
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#location`)
+					.address-item__content
+						.address-item__title Офис в г. Краснодар
+						.address-item__info
+							.address-item__contact
+								span Тел.:
+								a(href="tel:+79385311031") +7 (938) 531-10-31
+							.address-item__contact
+								span Email:
+								a(href="mailto:d.f.krasnodar@mail.ru") d.f.krasnodar@mail.ru
+							.address-item__text г. Краснодар, <br>ул. Новороссийская, 3/10
+							.address-item__ws График работы: пн - пт, 09:00 - 18:00
+
+				.s-map__item.address-item(data-js="sMapItem" data-coords="59.900484, 30.324393")
+					.address-item__icon
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#location`)
+					.address-item__content
+						.address-item__title Офис в г. Санкт-Петербург
+						.address-item__info
+							.address-item__contact
+								span Тел.:
+								a(href="tel:+79111478660") +7 (911) 147-86-60
+							.address-item__contact
+								span Email:
+								a(href="mailto:fasaddf@mail.ru") fasaddf@mail.ru
+							.address-item__text г. Санкт-Петербург, <br>ул. Киевская, д. 5 литер ШГ
+							.address-item__ws График работы: пн - пт, 09:00 - 18:00
+
+				.s-map__item.address-item(data-js="sMapItem" data-coords="43.602024, 39.736707")
+					.address-item__icon
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#location`)
+					.address-item__content
+						.address-item__title Офис в г. Сочи
+						.address-item__info
+							.address-item__contact
+								span Тел.:
+								a(href="tel:+79286663455") +7 (928) 666-34-55
+							.address-item__contact
+								span Email:
+								a(href="mailto:d.f.sochi@mail.ru") d.f.sochi@mail.ru
+							.address-item__text г. Сочи, <br>ул. Пластунская, д. 50/1
+							.address-item__ws График работы: пн - пт, 10:00 - 17:00
+
+				.s-map__item.address-item(data-js="sMapItem" data-coords="44.584924, 33.512505")
+					.address-item__icon
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#location`)
+					.address-item__content
+						.address-item__title Офис в г. Севастополь
+						.address-item__info
+							.address-item__contact
+								span Тел.:
+								a(href="tel:+79787578579") +79787578579
+							.address-item__contact
+								span Email:
+								a(href="mailto:zakaz@mebel-fasad92.ru") zakaz@mebel-fasad92.ru
+							.address-item__text г. Севастополь, <br>ул. Соловьева, 6А
+							.address-item__ws График работы: пн - пт, 09:30 - 17:00
+
+				.s-map__item.address-item(data-js="sMapItem" data-coords="51.688438, 39.164570")
+					.address-item__icon
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#location`)
+					.address-item__content
+						.address-item__title Офис в г. Воронеж
+						.address-item__info
+							.address-item__contact
+								span Тел.:
+								a(href="tel:+79204275245") +7 (920) 427-52-45
+							.address-item__contact
+								span Email:
+								a(href="mailto:OSNOVA.dm@yandex.ru") OSNOVA.dm@yandex.ru
+							.address-item__text г. Воронеж, <br>ул. Солнечная, д. 33, 1 эт.
+							.address-item__ws График работы: пн - пт, 09:30 - 17:00
+
+			.s-map__wrapper(data-js="sMapWrap")
+				.s-map__el(data-js="sMapEl")
+				.s-map__full(data-js="sMapFull") 
+					span.d-show Развернуть карту
+					span.d-hide Свернуть карту
+					svg
+						use(xlink:href=`img/sprites/sprite.svg#arrow_chevron`)
+
