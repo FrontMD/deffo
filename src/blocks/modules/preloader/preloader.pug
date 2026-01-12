@@ -1,0 +1,37 @@
+-
+	const defaultPreloaderProps = {
+		classes: '',
+	}
+
+mixin preloader(props = defaultPreloaderProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultPreloaderProps.classes,
+		}
+
+	.preloader(class= checkProps.classes data-js="preloader")&attributes(attributes)
+		.preloader__bg
+			img(src="img/preloader/preloader_bg.webp" alt="")
+			.preloader__line.preloader__line--1
+				.preloader__innerline
+			.preloader__line.preloader__line--2
+				.preloader__innerline
+			.preloader__line.preloader__line--3
+				.preloader__innerline
+			.preloader__line.preloader__line--4
+				.preloader__innerline
+			.preloader__line.preloader__line--5
+				.preloader__innerline
+			.preloader__line.preloader__line--6
+				.preloader__innerline
+			.preloader__line.preloader__line--7
+				.preloader__innerline
+			.preloader__line.preloader__line--8
+				.preloader__innerline
+			.preloader__line.preloader__line--9
+				.preloader__innerline
+			.preloader__line.preloader__line--10
+				.preloader__innerline
+		.d-container.preloader__content
+
+

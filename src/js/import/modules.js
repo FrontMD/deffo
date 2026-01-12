@@ -1,4 +1,5 @@
 @@include("../../blocks/modules/header/header.js")
+@@include("../../blocks/modules/header/header.js")
 @@include("../../blocks/modules/modals/modals.js")
 @@include("../../blocks/modules/main-burger/main-burger.js")
 @@include("../../blocks/modules/solutions/solutions.js")
@@ -8,6 +9,7 @@
 @@include("../../blocks/modules/s-map/s-map.js")
 
 document.addEventListener('DOMContentLoaded', () => {
+    preloader();
     header();
     modalsInit();
     mainBurger();
