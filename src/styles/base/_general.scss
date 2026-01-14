@@ -648,6 +648,15 @@ iframe {
 
 }
 
+.height-anim {
+	position: relative;
+	height: 0;
+	display: flex;
+	align-items: flex-start;
+	overflow: hidden;
+	transition: all 2s linear;
+}
+
 /*.custom-scrollbar {
 	&::-webkit-scrollbar {
 		display: none;

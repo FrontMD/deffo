@@ -56,6 +56,20 @@ function sectionBgSlider() {
     })
 }
 
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function heightAnim(el) {
+    const content = el.querySelector('[data-js="heightAnimContent"]')
+
+    if(!content) return
+
+    const contentHeight = content.offsetHeight
+
+    el.style.height = contentHeight + 'px'
+}
+
 // Инициализация фансибокса
 /*function fancyboxInit() {
     Fancybox.bind("[data-fancybox]", {

@@ -7,6 +7,7 @@
 @@include("../../blocks/modules/s-news/s-news.js")
 @@include("../../blocks/modules/accordion/accordion.js")
 @@include("../../blocks/modules/s-map/s-map.js")
+@@include("../../blocks/modules/preloader/preloader.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     preloader();

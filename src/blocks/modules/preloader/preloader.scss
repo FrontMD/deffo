@@ -6,6 +6,8 @@
     height: 100vh;
     height: 100dvh;
     z-index: 99;
+    display: flex;
+    align-items: center;
 
     &__bg {
         position: absolute;
@@ -18,6 +20,21 @@
         img {
             width: 100%;
             height: 100%;
+            transition: all 3.5s linear;
+            transform: scale(1);
+        }
+
+        &--start img {
+            transform: scale(1.2);
+        }
+
+        ::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
         }
     }
 
@@ -27,7 +44,8 @@
         top: 0;
         height: 100%;
         width: 10%;
-        background-color: $c-black;
+        background-color: rgba(231, 189, 169, 0.5);
+        transition: all 2s ease-in-out;
 
         &--1 {
             left: 0;
@@ -69,5 +87,92 @@
             left: 90%;
         }
 
+        &--hidden {
+            height: 0;
+        }
+
+    }
+
+    &__innerline {
+        background-color: $c-black;
+        width: 100%;
+        height: 100%;
+        transition: all 1.4s ease-in-out;
+    }
+
+    &__line--hidden &__innerline {
+        height: 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 20px;
+    }
+
+    &__logo {
+        width: 290px;
+        height: 290px;
+        margin-bottom: 20px;
+        transition: all 2s linear;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &--start {
+            width: 450px;
+            height: 450px;
+            margin-bottom: -70px;
+        }
+    }
+
+    &__logotext {
+        color: $c-logo-light;
+
+        svg {
+            height: 135px;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 39px;
+        line-height: 100%;
+        letter-spacing: 0.09em;
+        color: $c-accent;
+    }
+
+    &__tag {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        position: relative;
+        font-weight: 400;
+        font-size: 29px;
+        line-height: 100%;
+        letter-spacing: 0.09em;
+        color: $c-white;
+
+        &::after,
+        &::before {
+            content: '';
+            width: 241px;
+            height: 1.2px;
+            background-color: $c-border;
+        }
+
+        /*&::after {
+            left: calc(100% + 13px);
+        }
+
+        &::before {
+            right: calc(100% + 13px);
+        }*/
     }
 }
