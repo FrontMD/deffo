@@ -24,8 +24,18 @@
         align-items: center;
         justify-content: center;
 
+        svg {
+            width: 140px;
+            height: 81px;
+        }
+
         @include max(tablet) {
             flex-basis: 70px;
+
+            svg {
+                width: 70px;
+                height: 40.5px;
+            }
         }
     }
 
@@ -91,15 +101,22 @@
         }
     }
 
+    &--fixed {
+        top: -101px;
 
-
-    /*&--fixed {
-        top: 20px;
-
-        @include max(mobile) {
-            top: 10px;
+        @include max(tablet) {
+            top: 0;
         }
-    }*/
+    }
+
+    .main-menu {
+        transition: background-color 0.3s linear;
+    }
+
+    &--fixed .main-menu {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(20px);
+    }
 
     &__burger {
         display: none;

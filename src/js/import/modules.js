@@ -10,8 +10,8 @@
 @@include("../../blocks/modules/preloader/preloader.js")
 
 document.addEventListener('DOMContentLoaded', () => {
-    preloader();
     header();
+    preloader();
     modalsInit();
     mainBurger();
     solutionsSlider();

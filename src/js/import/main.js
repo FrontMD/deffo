@@ -60,14 +60,20 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function heightAnim(el) {
+function heightAnim(el, dutation = '2s') {
+    
     const content = el.querySelector('[data-js="heightAnimContent"]')
-
+    
     if(!content) return
-
+    
     const contentHeight = content.offsetHeight
-
-    el.style.height = contentHeight + 'px'
+    el.style.transform = `translateY(${contentHeight*2}px)`
+    
+    setTimeout(() => {
+        el.style.transition = `all ${dutation} linear`
+        el.style.transform = 'translateY(0px)'
+        el.style.height = contentHeight + 'px'
+    }, 0)
 }
 
 // Инициализация фансибокса

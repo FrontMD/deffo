@@ -9,7 +9,7 @@ mixin preloader(props = defaultPreloaderProps)
             classes: props.classes ? props.classes : defaultPreloaderProps.classes,
         }
 
-    .preloader(class= checkProps.classes data-js="preloader")&attributes(attributes)
+    .preloader(class= checkProps.classes data-js="preloader" style="mask: url(#diamonds);")&attributes(attributes)
         .preloader__bg.preloader__bg--start(data-js="preloaderBg")
             img(src="img/preloader/preloader_bg.webp" alt="")
             .preloader__line.preloader__line--1(data-js="preloaderLine")
@@ -44,4 +44,13 @@ mixin preloader(props = defaultPreloaderProps)
             .height-anim(data-js="heightAnim")
                 .preloader__tag(data-js="heightAnimContent") Since 2012
 
+    <svg class="preloader-mask" style="width: 0px; height: 0px;">
+        <defs>
+            <mask id="diamonds">
+                <rect width="100vw" height="100vh" fill="white"></rect>
+
+                <rect class="preloader-mask__figure" data-js="preloaderMaskFigure" x="50vw" y="50vh" width="0" height="0" fill="black">
+                </rect>
+            </mask>
+        </defs>
 

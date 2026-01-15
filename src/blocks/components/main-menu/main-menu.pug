@@ -10,7 +10,7 @@ mixin main-menu(props = defaultMainMenuProps)
         }
 
     .main-menu
-        .main-menu__item
+        .main-menu__item(data-js="mainMenuItem")
             a.main-menu__link(href="javascript:void(0);") Каталог
             .main-menu__chevron
                 svg
@@ -29,7 +29,7 @@ mixin main-menu(props = defaultMainMenuProps)
                 .submenu__item
                     a.main-menu__link(href="javascript:void(0);") Патина
 
-        .main-menu__item
+        .main-menu__item(data-js="mainMenuItem")
             a.main-menu__link(href="javascript:void(0);") Готовые решения
             .main-menu__chevron
                 svg
@@ -42,17 +42,17 @@ mixin main-menu(props = defaultMainMenuProps)
                 .submenu__item
                     a.main-menu__link(href="javascript:void(0);") Эльтон
 
-        .main-menu__item
+        .main-menu__item(data-js="mainMenuItem")
             a.main-menu__link(href="javascript:void(0);") Галерея фасадов
 
-        .main-menu__item
+        .main-menu__item(data-js="mainMenuItem")
             a.main-menu__link(href="javascript:void(0);") Акции
 
-        .main-menu__item
+        .main-menu__item(data-js="mainMenuItem")
             a.main-menu__link(href="javascript:void(0);") Новости
 
-        .main-menu__item
+        .main-menu__item(data-js="mainMenuItem")
             a.main-menu__link(href="javascript:void(0);") Партнерам
 
-        .main-menu__item
+        .main-menu__item(data-js="mainMenuItem")
             a.main-menu__link(href="javascript:void(0);") Контакты
