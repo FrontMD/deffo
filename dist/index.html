@@ -235,7 +235,7 @@
     <main class="site-main">
       <style type="text/css">
         .pages-list {
-            padding: 140px 0 60px;
+            padding: 240px 0 0px;
         }
         
         .pages-list__links {
@@ -254,7 +254,7 @@
             position: relative;
             font-size: 26px;
             text-decoration: none;
-            color: var(--c-accent);
+            color: white;
             transition: color 0.3s linear;
             line-height: 1.02em;
             min-height: 3.06em;
@@ -365,10 +365,11 @@
       </style>
       <div class="page">
         <section class="section pages-list">
-          <div class="gkt-container">
-            <div class="gkt-container__inner">
-              <div class="pages-list__links"><a class="pages-list__link pages-list__link--work" href="home.html" target="_blank">Главная</a></div>
-            </div>
+          <div class="d-container">
+                <div class="title pages-list__title title--60">
+                  <h1>Страницы</h1>
+                </div>
+            <div class="pages-list__links"><a class="pages-list__link pages-list__link--work" href="home.html" target="_blank">Главная</a></div>
           </div>
         </section>
       </div>
@@ -485,14 +486,16 @@
               <div class="preloader__tag" data-js="heightAnimContent">Since 2012</div>
             </div>
           </div>
-        </div><svg class="preloader-mask" style="width: 0px; height: 0px;">
+        </div><svg class="preloader-mask" width="100%" height="100%" viewBox="0 0 344.8 344.8" preserveAspectRatio="xMidYMid meet">
 <defs>
 <mask id="diamonds">
 <rect width="100vw" height="100vh" fill="white"></rect>
-<rect class="preloader-mask__figure" data-js="preloaderMaskFigure" x="50vw" y="50vh" width="0" height="0" fill="black">
-</rect>
+<path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="0.2" d="M172.4 141.4L203.4 172.4L172.4 203.4L141.4 172.4L172.4 141.4ZM172.4 0L101.7 70.7L70.7 101.7L0 172.4L70.7 243.1L101.7 274.1L172.4 344.8L243.1 274.1L274.1 243.1L344.8 172.4L274.1 101.7L243.1 70.7L172.4 0Z" fill="#000"/>
+<path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="0.6" d="M172.402 141.399L203.402 172.399L172.402 203.399L141.402 172.399L172.402 141.399ZM172.402 70.6992L137.002 106.099L106.002 137.099L70.6016 172.499L106.002 207.899L137.002 238.899L172.402 274.299L207.802 238.899L238.802 207.899L274.202 172.499L238.802 137.099L207.802 106.099L172.402 70.6992Z" fill="#000"/>
+<path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="1" d="M141.4 172.4L172.4 203.4L203.4 172.4L172.4 141.4Z" fill="#000"/>
 </mask>
 </defs>
+</svg>
     <div class="main-burger" data-js="mainBurger">
       <div class="main-burger__overlay" data-js="mainBurgerClose"></div>
       <div class="main-burger__content">

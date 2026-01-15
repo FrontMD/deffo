@@ -68,6 +68,7 @@ function heightAnim(el, dutation = '2s') {
     
     const contentHeight = content.offsetHeight
     el.style.transform = `translateY(${contentHeight*2}px)`
+    el.style.transform = `translateY(20px)`
     
     setTimeout(() => {
         el.style.transition = `all ${dutation} linear`

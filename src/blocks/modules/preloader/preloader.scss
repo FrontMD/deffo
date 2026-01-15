@@ -9,6 +9,9 @@
     display: flex;
     align-items: center;
 
+    mask-position: center;
+    mask-repeat: no-repeat;
+
     &__bg {
         position: absolute;
         left: 0;
@@ -142,6 +145,7 @@
 
         svg {
             height: 135px;
+            width: 814px;
         }
     }
 
@@ -180,11 +184,11 @@
 
     &__figure {
         display: block;
-        position: relative;
-        transform: translate(0, 0);
-        width: 0vw;
-        height: 0vw;
-        transition: all 1.5s linear;
+        will-change: transform;
+        scale: 0.01;
+        opacity: 0;
+        translate: calc((100vw - 3.45px) / 2) calc((100vh - 3.45px) / 2);
+        transition: scale 3.5s linear, translate 3.5s linear;
         transition-delay: 1s;
     }
 }
