@@ -26,3 +26,4 @@
 @@include("./import/main.js")
 @@include("./import/components.js")
 @@include("./import/modules.js")
+@@include("./import/animations.js")

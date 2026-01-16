@@ -1,17 +1,26 @@
 .main-menu {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
     width: fit-content;
-
-    @include max(large) {
-        //gap: 12px;
-    }
 
     @include max(tablet) {
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: fit-content;
+
+        @include max(tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+        }
     }
 
     &__item {
@@ -138,4 +147,72 @@
         letter-spacing: 0;
 
     }
+}
+
+.menu-search {
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color $tr-long;
+
+    &--active {
+        background-color: $c-bg-main;
+    }
+
+    &__btn {
+        padding: 15px 20px;
+        color: $c-white;
+        transition: color $tr;
+        cursor: pointer;
+
+        &:hover {
+            color: $c-accent;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    &__icon--open {
+        display: flex;
+    }
+
+    &__icon--close {
+        display: none;
+    }
+
+    &--active &__icon--open {
+        display: none;
+    }
+
+    &--active &__icon--close {
+        display: flex;
+    }
+
+    &__body {
+        position: absolute;
+        right: 100%;
+        top: 0;
+        min-height: 100%;
+        width: 0;
+        background-color: $c-bg-main;
+        overflow: hidden;
+        transition: width $tr-long, padding-left $tr-long;
+        padding-left: 0;
+    }
+
+    &--active &__body {
+        padding-left: 10px;
+    }
+
 }

@@ -656,6 +656,17 @@ iframe {
 	overflow: hidden;
 }
 
+/* Анимации */
+[data-anim-type="opacity"] {
+	opacity: 0;
+	transition: opacity 0.5s linear;
+}
+
+[data-anim-type="textColor"] {
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
 /*.custom-scrollbar {
 	&::-webkit-scrollbar {
 		display: none;

@@ -1,27 +1,47 @@
 function header() {
-    const header = $('[data-js="siteHeader"]');
+    const header = document.querySelector("[data-js='siteHeader']");
+    const isFull = header.classList.contains('site-header--full') ? true : false
+    const headerSmall = header.querySelector("[data-js='siteHeaderSmall']")
     const initScroll = $(window).scrollTop();
 
-    headerAnim()
+    let headerSmallHeight = 0
 
-    if(initScroll > 20) {
-        header.addClass("site-header--fixed");
+    if(headerSmall) {
+        headerSmall.querySelectorAll('[data-js="siteHeaderSmallHeight"]').forEach(item => {
+            if(item.offsetHeight > headerSmallHeight) {
+                headerSmallHeight = item.offsetHeight
+            }
+        })
     }
 
-    $(window).scroll(function() {
-        const scroll = $(window).scrollTop();
-
-        if(scroll > 40) {
-            header.addClass("site-header--fixed");
+    if(isFull) {
+        if(initScroll > 20) {
+            header.classList.add("site-header--fixed");
+            headerSmall.style.height = headerSmallHeight + 'px';
+            headerAnim(header.querySelector('[data-js="siteHeaderMenuSmall"]'))
         } else {
-            header.removeClass("site-header--fixed");
+            headerAnim(header.querySelector('[data-js="siteHeaderMenu"]'))
         }
-    });
 
-    function headerAnim() {
-        const headerBlock = document.querySelector("[data-js='siteHeader']")
-        const menuItems = headerBlock.querySelectorAll("[data-js='mainMenuItem']")
-        const headerSides = headerBlock.querySelectorAll("[data-js='siteHeaderSide']")
+        $(window).scroll(function() {
+            const scroll = $(window).scrollTop();
+    
+            if(scroll > 40) {
+                header.classList.add("site-header--fixed");
+                headerSmall.style.height = headerSmallHeight + 'px';
+            } else {
+                header.classList.remove("site-header--fixed");
+                headerSmall.style.height = '0px';
+            }
+        });
+    } else {
+        headerAnim(header.querySelector('[data-js="siteHeaderMenu"]'))
+    }
+
+
+    function headerAnim(menu) {
+        const menuItems = menu.querySelectorAll("[data-js='mainMenuItem']")
+        const headerSides = header.querySelectorAll("[data-js='siteHeaderSide']")
 
         let delayCount = 100
         

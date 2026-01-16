@@ -37,7 +37,10 @@ html(lang="ru")
 		+mixins()
 
 		block header
-			include ../../blocks/modules/header/header
+			- if(fullHeader)
+				+header(true)
+			- else
+				+header
 
 		main.site-main
 			block content

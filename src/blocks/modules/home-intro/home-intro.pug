@@ -48,7 +48,7 @@ mixin home-intro(props= defaultHomeIntroProps)
 			contentSlides: props.contentSlides ? props.contentSlides : defaultHomeIntroProps.contentSlides
 		}
 
-	section.home-intro.section.section--top.section--fh(class= checkProps.classes)&attributes(attributes)    
+	section.home-intro.section.section--top.section--fh(class= checkProps.classes data-js="homeIntro")&attributes(attributes)    
 		.section__bg.section__bg--overlay(data-js="sectionBgSlider")
 			.swiper-wrapper
 				.swiper-slide
@@ -58,17 +58,18 @@ mixin home-intro(props= defaultHomeIntroProps)
 					picture
 						img(src='img/home/intro_bg.webp' alt='')
 		.d-container.home-intro__container
-			+title({
-				tag: 'h1',
-				text: 'Эксклюзивный дизайн'
-			})
-			.home-intro__sep.separator
+			div(data-js="homeIntroTitle" data-anim-type='opacity')
+				+title({
+					tag: 'h1',
+					text: 'Эксклюзивный дизайн'
+				})(data-anim-type='textColor')
+			.home-intro__sep.separator(data-js="homeIntroSeparator")
 				.separator__side.separator__side--left
 				.separator__center
 				.separator__side.separator__side--right
-
-			.home-intro__subtitle Фасады, создающие уникальный стиль вашего интерьера.
+			div(data-js="homeIntroSubtitle" data-anim-type='opacity')
+				.home-intro__subtitle(data-anim-type='textColor') Фасады, создающие уникальный стиль вашего интерьера.
 			+btn({
 				name: 'Каталог фасадов',
 				link: '#homeCatalog'
-			})
+			})(data-js="homeIntroBtn")

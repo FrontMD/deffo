@@ -8,6 +8,7 @@
 @@include("../../blocks/modules/accordion/accordion.js")
 @@include("../../blocks/modules/s-map/s-map.js")
 @@include("../../blocks/modules/preloader/preloader.js")
+@@include("../../blocks/modules/home-intro/home-intro.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();

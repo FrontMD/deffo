@@ -76,6 +76,7 @@ function preloader() {
             figures[0].closest('svg').remove();
             unlockBody();
             AOS.init();
+            homeIntroAnim();
         }, {once: true})
     
         figures.forEach(async (figure, i) => {
