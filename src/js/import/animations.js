@@ -1,11 +1,18 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-    preparation()
-})
+function opacityAnim(el) {
+    const textColorAnims = el.querySelectorAll('[data-anim-type="textColor"]')
 
-function preparation() {
-    
+    if(textColorAnims.length > 0) {
+        el.addEventListener('transitionend', () => {
+            textColorAnims.forEach(item => {
+                commonAnimation(item)
+            });
+        }, {once: true})
+    }
+
+    el.classList.add('animated')
+
 }
 
-function opacityAnim(el) {
-    el.style.opacity = '1'
+function commonAnimation(el) {
+    el.classList.add('animated')
 }

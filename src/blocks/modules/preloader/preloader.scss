@@ -189,7 +189,7 @@
         opacity: 0;
         translate: calc((100vw - 3.45px) / 2) calc((100vh - 3.45px) / 2);
         transition: scale 3s linear, translate 3s linear;
-        //transition: scale .35s linear, translate .35s linear;
+        transition: scale .35s linear, translate .35s linear;
         transition-delay: 1s;
     }
 }

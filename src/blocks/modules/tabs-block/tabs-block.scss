@@ -1,0 +1,92 @@
+.tabs-block {
+    width: 100%;
+    overflow: hidden;
+
+    &__header {
+        padding: 20px;
+
+        @include max(mobile) {
+            padding: 10px;
+        }
+    }
+
+    &__scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+    }
+
+    &__tabs {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    &__list {
+        display: flex;
+        align-items: stretch;
+        gap: 20px;
+        width: fit-content;
+        min-width: 100%;
+    }
+
+    &__tab {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 25px;
+        min-width: 190px;
+        white-space: nowrap;
+        color: $c-border;
+        border: 2px solid $c-border;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        text-transform: uppercase;
+        transition: all $tr;
+        cursor: pointer;
+
+        @include max(mobile) {
+            padding: 12px 20px;
+            font-size: 14px;
+        }
+
+        svg {
+            width: 10px;
+            height: 15px;
+        }
+
+        &:hover,
+        &.active {
+            color: $c-accent;
+            border: 2px solid;
+            border-image-source: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+            border-image-slice: 20;
+            border-image-repeat: stretch;
+        }
+
+    }
+
+    &__slides {
+        padding-top: 48px;
+    }
+
+    &__slide {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.tabs-block {
+    @include min(xs) {
+        &--content {
+            width: fit-content;
+            max-width: 100%;
+        }
+    }
+}

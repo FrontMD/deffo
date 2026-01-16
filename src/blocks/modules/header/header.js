@@ -3,6 +3,7 @@ function header() {
     const isFull = header.classList.contains('site-header--full') ? true : false
     const headerSmall = header.querySelector("[data-js='siteHeaderSmall']")
     const initScroll = $(window).scrollTop();
+    const headerSides = header.querySelectorAll("[data-js='siteHeaderSide']")
 
     let headerSmallHeight = 0
 
@@ -15,6 +16,17 @@ function header() {
     }
 
     if(isFull) {
+        let sideWidth = 0
+
+        headerSides.forEach(item => {
+            sideWidth = item.scrollWidth > sideWidth ? item.scrollWidth : sideWidth
+            console.log(sideWidth)
+        })
+
+        headerSides.forEach(item => {
+            item.style.minWidth = sideWidth + 'px'
+        })
+
         if(initScroll > 20) {
             header.classList.add("site-header--fixed");
             headerSmall.style.height = headerSmallHeight + 'px';
@@ -41,7 +53,6 @@ function header() {
 
     function headerAnim(menu) {
         const menuItems = menu.querySelectorAll("[data-js='mainMenuItem']")
-        const headerSides = header.querySelectorAll("[data-js='siteHeaderSide']")
 
         let delayCount = 100
         

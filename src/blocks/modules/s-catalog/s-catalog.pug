@@ -15,43 +15,98 @@ mixin s-catalog(props= defaultCatalogProps)
                 img(src='img/home/blured_bg.webp' alt='')
 
         .d-container
-            .s-catalog__list
-                .s-catalog__block
-                    .catalog-card.catalog-card--full
-                        .catalog-card__bg
-                            img(src="img/catalog/card_1.webp" alt="")
-                        .catalog-card__title
-                            span Виды продукции
-                        a(href="javascript:void(0);").catalog-card__link
-                    .catalog-card
-                        .catalog-card__bg
-                            img(src="img/catalog/card_2.webp" alt="")
-                        .catalog-card__title
-                            span Торцы фасадов
-                        a(href="javascript:void(0);").catalog-card__link
-                    .catalog-card
-                        .catalog-card__bg
-                            img(src="img/catalog/card_3.webp" alt="")
-                        .catalog-card__title
-                            span Патина
-                        a(href="javascript:void(0);").catalog-card__link
+            +tabs-block({
+                tabs: [
+                    {
+                        name: 'Категории',
+                        icon: ''
+                    },
+                    {
+                        name: 'Галерея фасадов',
+                        icon: ''
+                    },
+                ],
+            })
+                .tabs-block__slide.active(data-js="tabsBlockSlide")
+                    .s-catalog__list
+                        .s-catalog__block
+                            .catalog-card.catalog-card--full
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_1.webp" alt="")
+                                .catalog-card__title
+                                    span Виды продукции
+                                a(href="javascript:void(0);").catalog-card__link
+                            .catalog-card
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_2.webp" alt="")
+                                .catalog-card__title
+                                    span Торцы фасадов
+                                a(href="javascript:void(0);").catalog-card__link
+                            .catalog-card
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_3.webp" alt="")
+                                .catalog-card__title
+                                    span Патина
+                                a(href="javascript:void(0);").catalog-card__link
 
-                .s-catalog__block
-                    .catalog-card
-                        .catalog-card__bg
-                            img(src="img/catalog/card_4.webp" alt="")
-                        .catalog-card__title
-                            span фрезеровки
-                        a(href="javascript:void(0);").catalog-card__link
-                    .catalog-card
-                        .catalog-card__bg
-                            img(src="img/catalog/card_5.webp" alt="")
-                        .catalog-card__title
-                            span Типы покрытия
-                        a(href="javascript:void(0);").catalog-card__link
-                    .catalog-card.catalog-card--full
-                        .catalog-card__bg
-                            img(src="img/catalog/card_6.webp" alt="")
-                        .catalog-card__title
-                            span декоративные элементы
-                        a(href="javascript:void(0);").catalog-card__link
+                        .s-catalog__block
+                            .catalog-card
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_4.webp" alt="")
+                                .catalog-card__title
+                                    span фрезеровки
+                                a(href="javascript:void(0);").catalog-card__link
+                            .catalog-card
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_5.webp" alt="")
+                                .catalog-card__title
+                                    span Типы покрытия
+                                a(href="javascript:void(0);").catalog-card__link
+                            .catalog-card.catalog-card--full
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_6.webp" alt="")
+                                .catalog-card__title
+                                    span декоративные элементы
+                                a(href="javascript:void(0);").catalog-card__link
+
+                .tabs-block__slide(data-js="tabsBlockSlide")
+                    .s-catalog__list
+                        .s-catalog__block
+                            .catalog-card.catalog-card--full
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_1.webp" alt="")
+                                .catalog-card__title
+                                    span Фасад прямой с решеткой №1
+                                a(href="javascript:void(0);").catalog-card__link
+                            .catalog-card
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_2.webp" alt="")
+                                .catalog-card__title
+                                    span Фасад прямой с решеткой №2
+                                a(href="javascript:void(0);").catalog-card__link
+                            .catalog-card
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_3.webp" alt="")
+                                .catalog-card__title
+                                    span Фасад прямой с решеткой №3
+                                a(href="javascript:void(0);").catalog-card__link
+
+                        .s-catalog__block
+                            .catalog-card
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_4.webp" alt="")
+                                .catalog-card__title
+                                    span Фасад прямой под стекло 3 ВД
+                                a(href="javascript:void(0);").catalog-card__link
+                            .catalog-card
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_5.webp" alt="")
+                                .catalog-card__title
+                                    span Фасад прямой под стекло 3 ВД №1
+                                a(href="javascript:void(0);").catalog-card__link
+                            .catalog-card.catalog-card--full
+                                .catalog-card__bg
+                                    img(src="img/catalog/card_6.webp" alt="")
+                                .catalog-card__title
+                                    span Фасад прямой под стекло 3 ВД №2
+                                a(href="javascript:void(0);").catalog-card__link

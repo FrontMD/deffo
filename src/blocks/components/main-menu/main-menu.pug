@@ -71,7 +71,24 @@ mixin main-menu(props = defaultMainMenuProps)
                     classes: 'menu-search__field',
                     type: 'text',
                     title: '',
-                    placeholder: 'Поиск',
+                    placeholder: 'Поиск по товарам',
                 })
+
+                .menu-search__results.search-results
+                    .search-results__item
+                        .search-results__img
+                            img(src="img/catalog/search.webp" alt="")
+                        .search-results__info
+                            a.search-results__title(href="javascript:void(0);") Фасад прямой под стекло 3 ВД №3
+                            .search-results__price 5 000 ₽
+                    .search-results__item
+                        .search-results__img
+                            img(src="img/catalog/search.webp" alt="")
+                        .search-results__info
+                            a.search-results__title(href="javascript:void(0);") Фасад прямой 3 ВД №3
+                            .search-results__price 5 000 ₽
+
+
+
 
 

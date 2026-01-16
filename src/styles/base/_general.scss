@@ -659,12 +659,55 @@ iframe {
 /* Анимации */
 [data-anim-type="opacity"] {
 	opacity: 0;
-	transition: opacity 0.5s linear;
+	transition: opacity $tr-long;
+
+	&.animated {
+		opacity: 1;
+	}
 }
 
 [data-anim-type="textColor"] {
+	background: linear-gradient(to right, $c-white 0%, $c-white 50%, $c-border 50%, $c-border 100%);
 	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
 	background-clip: text;
+	color: transparent !important;
+	background-size: 200% 100%;
+	background-position: 100% 0;
+	transition: background-position $tr-long;
+
+	&.animated {
+		background-position: 0 0;
+	}
+}
+
+[data-anim-type="separator"] {
+	opacity: 0;
+	transition: opacity $tr-long;
+
+	&.animated {
+		opacity: 1;
+	}
+
+	.separator__side {
+		width: 0;
+		transition: width $tr-long;
+	}
+
+	&.animated .separator__side {
+		width: 150px;
+	}
+}
+
+[data-anim-type="opacityUp"] {
+	transform: translateY(20px);
+	opacity: 0;
+
+	&.animated {
+		transform: translateY(0);
+		opacity: 1;
+		transition: opacity $tr-long, transform $tr-long;
+	}
 }
 
 /*.custom-scrollbar {

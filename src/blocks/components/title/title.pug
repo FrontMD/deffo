@@ -1,20 +1,22 @@
 -
     const defaultTitleProps = {
+        classes: '',
         tag: '',
         size: '60',
         text: 'Заголовок',
         cMode: '', //dark - на светлом фоне
-        classes: '',
+        animColor: false
     }
 
 mixin title(props = defaultTitleProps)
     -
         const checkProps = {
+            classes: props.classes ? props.classes : defaultTitleProps.classes,
             tag: props.tag ? props.tag : defaultTitleProps.tag,
             size: props.size ? props.size : defaultTitleProps.size,
             text: props.text ? props.text : defaultTitleProps.text,
             cMode: props.cMode ? props.cMode : defaultTitleProps.cMode,
-            classes: props.classes ? props.classes : defaultTitleProps.classes
+            animColor: props.animColor ? props.animColor : defaultTitleProps.animColor,
         }
 
         let sizeClass = ` title--${checkProps.size}`
@@ -23,22 +25,44 @@ mixin title(props = defaultTitleProps)
     case checkProps.tag
         when 'h1'
             .title(class=checkProps.classes + sizeClass + colorClass)&attributes(attributes)
-                h1!= checkProps.text
+                - if(checkProps.animColor === true)
+                    h1(data-anim-type="textColor")!= checkProps.text
+                - else
+                    h1!= checkProps.text
         when 'h2'
             .title(class=checkProps.classes + sizeClass + colorClass)&attributes(attributes)
-                h2!= checkProps.text
+                - if(checkProps.animColor === true)
+                    h2(data-anim-type="textColor")!= checkProps.text
+                - else
+                    h2!= checkProps.text
         when 'h3'
             .title(class=checkProps.classes + sizeClass + colorClass)&attributes(attributes)
-                h3!= checkProps.text
+                - if(checkProps.animColor === true)
+                    h3(data-anim-type="textColor")!= checkProps.text
+                - else
+                    h3!= checkProps.text
         when 'h4'
             .title(class=checkProps.classes + sizeClass + colorClass)&attributes(attributes)
-                h4!= checkProps.text
+                - if(checkProps.animColor === true)
+                    h4(data-anim-type="textColor")!= checkProps.text
+                - else
+                    h4!= checkProps.text
         when 'h5'
             .title(class=checkProps.classes + sizeClass + colorClass)&attributes(attributes)
-                h5!= checkProps.text
+                - if(checkProps.animColor === true)
+                    h5(data-anim-type="textColor")!= checkProps.text
+                - else
+                    h5!= checkProps.text
         when 'h6'
             .title(class=checkProps.classes + sizeClass + colorClass)&attributes(attributes)
-                h6!= checkProps.text
+                - if(checkProps.animColor === true)
+                    h6(data-anim-type="textColor")!= checkProps.text
+                - else
+                    h6!= checkProps.text
         default	
-            .title(class=checkProps.classes + sizeClass + colorClass)&attributes(attributes)
-                != checkProps.text			
+            - if(checkProps.animColor === true)
+                .title(class=checkProps.classes + sizeClass + colorClass data-anim-type="textColor")&attributes(attributes)
+                    != checkProps.text
+            - else
+                .title(class=checkProps.classes + sizeClass + colorClass)&attributes(attributes)
+                    != checkProps.text

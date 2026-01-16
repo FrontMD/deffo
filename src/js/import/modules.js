@@ -9,6 +9,7 @@
 @@include("../../blocks/modules/s-map/s-map.js")
 @@include("../../blocks/modules/preloader/preloader.js")
 @@include("../../blocks/modules/home-intro/home-intro.js")
+@@include("../../blocks/modules/tabs-block/tabs-block.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -20,4 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
     newsSlider();
     accordion();
     sMap();
+    tabsBlockInit();
 })

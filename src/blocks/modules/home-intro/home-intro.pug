@@ -1,75 +1,76 @@
 -
-	const defaultHomeIntroProps = {
-		classes: '',
-		slides: [
-			{
-				title: 'Агропромышленное предприятие из&nbsp;Липецкой области',
-				topTitle: '',
-				img: 'img/home/home_intro_bg_1.webp',
-				isVideo: false
-			},
-			{
-				title: 'Агропромышленное предприятие из&nbsp;Липецкой области',
-				topTitle: '',
-				img: 'public/video/home_intro_bg_2.mp4',
-				isVideo: true
-			},
-			{
-				title: 'Агропромышленное предприятие из&nbsp;Липецкой области',
-				topTitle: '',
-				img: 'img/home/home_intro_bg_3.webp',
-				isVideo: false
-			},
-		],
-		contentSlides: [
-			{
-				num: '01',
-				title: 'Животноводство',
-				icon: 'img/home/home_intro_icon_1.svg'
-			},
-			{
-				num: '02',
-				title: 'Растениеводство',
-				icon: 'img/home/home_intro_icon_1.svg'
-			},
-			{
-				num: '03',
-				title: 'Трейдинг зерна',
-				icon: 'img/home/home_intro_icon_1.svg'
-			}
-		]
-	}
+    const defaultHomeIntroProps = {
+        classes: '',
+        slides: [
+            {
+                title: 'Агропромышленное предприятие из&nbsp;Липецкой области',
+                topTitle: '',
+                img: 'img/home/home_intro_bg_1.webp',
+                isVideo: false
+            },
+            {
+                title: 'Агропромышленное предприятие из&nbsp;Липецкой области',
+                topTitle: '',
+                img: 'public/video/home_intro_bg_2.mp4',
+                isVideo: true
+            },
+            {
+                title: 'Агропромышленное предприятие из&nbsp;Липецкой области',
+                topTitle: '',
+                img: 'img/home/home_intro_bg_3.webp',
+                isVideo: false
+            },
+        ],
+        contentSlides: [
+            {
+                num: '01',
+                title: 'Животноводство',
+                icon: 'img/home/home_intro_icon_1.svg'
+            },
+            {
+                num: '02',
+                title: 'Растениеводство',
+                icon: 'img/home/home_intro_icon_1.svg'
+            },
+            {
+                num: '03',
+                title: 'Трейдинг зерна',
+                icon: 'img/home/home_intro_icon_1.svg'
+            }
+        ]
+    }
 
 mixin home-intro(props= defaultHomeIntroProps)
-	-
-		const checkProps = {
-			classes: props.classes ? props.classes : defaultHomeIntroProps.classes,
-			slides: props.slides ? props.slides : defaultHomeIntroProps.slides,
-			contentSlides: props.contentSlides ? props.contentSlides : defaultHomeIntroProps.contentSlides
-		}
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultHomeIntroProps.classes,
+            slides: props.slides ? props.slides : defaultHomeIntroProps.slides,
+            contentSlides: props.contentSlides ? props.contentSlides : defaultHomeIntroProps.contentSlides
+        }
 
-	section.home-intro.section.section--top.section--fh(class= checkProps.classes data-js="homeIntro")&attributes(attributes)    
-		.section__bg.section__bg--overlay(data-js="sectionBgSlider")
-			.swiper-wrapper
-				.swiper-slide
-					picture
-						img(src='img/home/intro_bg.webp' alt='')
-				.swiper-slide
-					picture
-						img(src='img/home/intro_bg.webp' alt='')
-		.d-container.home-intro__container
-			div(data-js="homeIntroTitle" data-anim-type='opacity')
-				+title({
-					tag: 'h1',
-					text: 'Эксклюзивный дизайн'
-				})(data-anim-type='textColor')
-			.home-intro__sep.separator(data-js="homeIntroSeparator")
-				.separator__side.separator__side--left
-				.separator__center
-				.separator__side.separator__side--right
-			div(data-js="homeIntroSubtitle" data-anim-type='opacity')
-				.home-intro__subtitle(data-anim-type='textColor') Фасады, создающие уникальный стиль вашего интерьера.
-			+btn({
-				name: 'Каталог фасадов',
-				link: '#homeCatalog'
-			})(data-js="homeIntroBtn")
+    section.home-intro.section.section--top.section--fh(class= checkProps.classes data-js="homeIntro")&attributes(attributes)    
+        .section__bg.section__bg--overlay(data-js="sectionBgSlider")
+            .swiper-wrapper
+                .swiper-slide
+                    picture
+                        img(src='img/home/intro_bg.webp' alt='')
+                .swiper-slide
+                    picture
+                        img(src='img/home/intro_bg.webp' alt='')
+        .d-container.home-intro__container
+            div(data-js="homeIntroTitle" data-anim-type='opacity')
+                +title({
+                    tag: 'h1',
+                    text: 'Эксклюзивный дизайн',
+                    animColor: true
+                })
+            .home-intro__sep.separator(data-js="homeIntroSeparator" data-anim-type='separator')
+                .separator__side.separator__side--left
+                .separator__center
+                .separator__side.separator__side--right
+            div(data-js="homeIntroSubtitle" data-anim-type='opacity')
+                .home-intro__subtitle(data-anim-type='textColor') Фасады, создающие уникальный стиль вашего интерьера.
+            +btn({
+                name: 'Каталог фасадов',
+                link: '#homeCatalog'
+            })(data-js="homeIntroBtn" data-anim-type='opacityUp')

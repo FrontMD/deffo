@@ -253,8 +253,22 @@
                           </div>
                           <div class="menu-search__body" data-id="menuSearchBody">
                                 <label class="field menu-search__field    " data-js="formField">
-                                  <input class="field__input" type="text" placeholder="Поиск">
+                                  <input class="field__input" type="text" placeholder="Поиск по товарам">
                                 </label>
+                            <div class="menu-search__results search-results">
+                              <div class="search-results__item">
+                                <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                                <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                  <div class="search-results__price">5 000 ₽</div>
+                                </div>
+                              </div>
+                              <div class="search-results__item">
+                                <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                                <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой 3 ВД №3</a>
+                                  <div class="search-results__price">5 000 ₽</div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </form>
                       </div>
@@ -311,8 +325,22 @@
                             </div>
                             <div class="menu-search__body" data-id="menuSearchBody">
                                   <label class="field menu-search__field    " data-js="formField">
-                                    <input class="field__input" type="text" placeholder="Поиск">
+                                    <input class="field__input" type="text" placeholder="Поиск по товарам">
                                   </label>
+                              <div class="menu-search__results search-results">
+                                <div class="search-results__item">
+                                  <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                                  <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                    <div class="search-results__price">5 000 ₽</div>
+                                  </div>
+                                </div>
+                                <div class="search-results__item">
+                                  <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                                  <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой 3 ВД №3</a>
+                                    <div class="search-results__price">5 000 ₽</div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </form>
                         </div>
@@ -370,18 +398,18 @@
                 </div>
                 <div class="d-container home-intro__container">
                   <div data-js="homeIntroTitle" data-anim-type="opacity">
-                        <div class="title  title--60" data-anim-type="textColor">
-                          <h1>Эксклюзивный дизайн</h1>
+                        <div class="title  title--60">
+                          <h1 data-anim-type="textColor">Эксклюзивный дизайн</h1>
                         </div>
                   </div>
-                  <div class="home-intro__sep separator" data-js="homeIntroSeparator">
+                  <div class="home-intro__sep separator" data-js="homeIntroSeparator" data-anim-type="separator">
                     <div class="separator__side separator__side--left"></div>
                     <div class="separator__center"></div>
                     <div class="separator__side separator__side--right"></div>
                   </div>
                   <div data-js="homeIntroSubtitle" data-anim-type="opacity">
                     <div class="home-intro__subtitle" data-anim-type="textColor">Фасады, создающие уникальный стиль вашего интерьера.</div>
-                  </div><a class="d-btn" href="#homeCatalog" data-js="homeIntroBtn"><span>Каталог фасадов</span></a>
+                  </div><a class="d-btn" href="#homeCatalog" data-js="homeIntroBtn" data-anim-type="opacityUp"><span>Каталог фасадов</span></a>
                 </div>
               </section>
               <section class="s-catalog section" id="homeCatalog">   
@@ -389,36 +417,86 @@
                   <picture><img src="img/home/blured_bg.webp" alt=""></picture>
                 </div>
                 <div class="d-container">
-                  <div class="s-catalog__list">
-                    <div class="s-catalog__block">
-                      <div class="catalog-card catalog-card--full">
-                        <div class="catalog-card__bg"><img src="img/catalog/card_1.webp" alt=""></div>
-                        <div class="catalog-card__title"><span>Виды продукции</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                      <div class="tabs-block" data-js="tabsBlock">
+                        <div class="tabs-block__header">
+                          <div class="custom-scrollbar tabs-block__scroll" data-js="customScrollbar">
+                            <div class="tabs-block__tabs" data-js="tabsBlockList">
+                              <div class="tabs-block__list">
+                                <div class="tabs-block__tab active" data-index="0" data-js="tabsBlockTab"><span>Категории</span>
+                                </div>
+                                <div class="tabs-block__tab" data-index="1" data-js="tabsBlockTab"><span>Галерея фасадов</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tabs-block__slides">
+                          <div class="tabs-block__slide active" data-js="tabsBlockSlide">
+                            <div class="s-catalog__list">
+                              <div class="s-catalog__block">
+                                <div class="catalog-card catalog-card--full">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_1.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Виды продукции</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                                <div class="catalog-card">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_2.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Торцы фасадов</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                                <div class="catalog-card">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_3.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Патина</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                              </div>
+                              <div class="s-catalog__block">
+                                <div class="catalog-card">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_4.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>фрезеровки</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                                <div class="catalog-card">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_5.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Типы покрытия</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                                <div class="catalog-card catalog-card--full">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_6.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>декоративные элементы</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="tabs-block__slide" data-js="tabsBlockSlide">
+                            <div class="s-catalog__list">
+                              <div class="s-catalog__block">
+                                <div class="catalog-card catalog-card--full">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_1.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Фасад прямой с решеткой №1</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                                <div class="catalog-card">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_2.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Фасад прямой с решеткой №2</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                                <div class="catalog-card">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_3.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Фасад прямой с решеткой №3</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                              </div>
+                              <div class="s-catalog__block">
+                                <div class="catalog-card">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_4.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Фасад прямой под стекло 3 ВД</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                                <div class="catalog-card">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_5.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Фасад прямой под стекло 3 ВД №1</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                                <div class="catalog-card catalog-card--full">
+                                  <div class="catalog-card__bg"><img src="img/catalog/card_6.webp" alt=""></div>
+                                  <div class="catalog-card__title"><span>Фасад прямой под стекло 3 ВД №2</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="catalog-card">
-                        <div class="catalog-card__bg"><img src="img/catalog/card_2.webp" alt=""></div>
-                        <div class="catalog-card__title"><span>Торцы фасадов</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                      </div>
-                      <div class="catalog-card">
-                        <div class="catalog-card__bg"><img src="img/catalog/card_3.webp" alt=""></div>
-                        <div class="catalog-card__title"><span>Патина</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                      </div>
-                    </div>
-                    <div class="s-catalog__block">
-                      <div class="catalog-card">
-                        <div class="catalog-card__bg"><img src="img/catalog/card_4.webp" alt=""></div>
-                        <div class="catalog-card__title"><span>фрезеровки</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                      </div>
-                      <div class="catalog-card">
-                        <div class="catalog-card__bg"><img src="img/catalog/card_5.webp" alt=""></div>
-                        <div class="catalog-card__title"><span>Типы покрытия</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                      </div>
-                      <div class="catalog-card catalog-card--full">
-                        <div class="catalog-card__bg"><img src="img/catalog/card_6.webp" alt=""></div>
-                        <div class="catalog-card__title"><span>декоративные элементы</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </section>
               <section class="solutions section">   
@@ -1056,8 +1134,22 @@
                   </div>
                   <div class="menu-search__body" data-id="menuSearchBody">
                         <label class="field menu-search__field    " data-js="formField">
-                          <input class="field__input" type="text" placeholder="Поиск">
+                          <input class="field__input" type="text" placeholder="Поиск по товарам">
                         </label>
+                    <div class="menu-search__results search-results">
+                      <div class="search-results__item">
+                        <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                        <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                          <div class="search-results__price">5 000 ₽</div>
+                        </div>
+                      </div>
+                      <div class="search-results__item">
+                        <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                        <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой 3 ВД №3</a>
+                          <div class="search-results__price">5 000 ₽</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </form>
               </div>
