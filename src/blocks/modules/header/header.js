@@ -20,7 +20,6 @@ function header() {
 
         headerSides.forEach(item => {
             sideWidth = item.scrollWidth > sideWidth ? item.scrollWidth : sideWidth
-            console.log(sideWidth)
         })
 
         headerSides.forEach(item => {

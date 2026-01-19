@@ -8,8 +8,10 @@
 @@include("../../blocks/modules/accordion/accordion.js")
 @@include("../../blocks/modules/s-map/s-map.js")
 @@include("../../blocks/modules/preloader/preloader.js")
-@@include("../../blocks/modules/home-intro/home-intro.js")
 @@include("../../blocks/modules/tabs-block/tabs-block.js")
+@@include("../../blocks/modules/home-intro/home-intro.js")
+@@include("../../blocks/modules/s-catalog/s-catalog.js")
+@@include("../../blocks/modules/s-about/s-about.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -17,9 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
     modalsInit();
     mainBurger();
     solutionsSlider();
+    solutionsAnim();
     stocksSlider();
     newsSlider();
     accordion();
     sMap();
     tabsBlockInit();
+    sCatalogAnim();
+    sAboutAnim();
 })

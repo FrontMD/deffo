@@ -10,3 +10,28 @@ function solutionsSlider() {
         })
     })
 }
+
+function solutionsAnim() {
+    const solutionsBlocks = document.querySelectorAll('[data-js="solutions"]')
+
+    if(solutionsBlocks.length < 1) return
+
+    solutionsBlocks.forEach(solutions => {
+        const slider = solutions.querySelector('[data-js="solutionsSlider"]')
+        const title = solutions.querySelector('[data-js="solutionsTitle"]')
+        const slides = slider.querySelectorAll('.swiper-slide .solutions-card__bg');
+
+        if(slider) {
+            title.addEventListener('transitionend', () => {
+                textColorAnim(title)
+                slides.forEach(slide => {
+                    commonAnimation(slide)
+                })
+            }, {once: true})
+
+            slides.forEach(slide => {
+                slide.setAttribute('data-anim-type', 'zoomIn')
+            })
+        }
+    })
+}

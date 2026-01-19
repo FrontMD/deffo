@@ -12,11 +12,17 @@
         height: 100%;
     }
 
+    &__rect {
+        transition: width $tr-long, height $tr-long;
+    }
+
     &__video {
         position: relative;
         flex: 0 0 62.3%;
         z-index: 1;
         margin-left: -21%;
+        display: flex;
+        align-items: flex-end;
 
         video {
             width: 100%;

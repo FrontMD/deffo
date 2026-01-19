@@ -9,7 +9,7 @@ mixin solutions(props= defaultSolutionsProps)
             classes: props.classes ? props.classes : defaultSolutionsProps.classes,
         }
 
-    section.solutions.section(class= checkProps.classes)&attributes(attributes)    
+    section.solutions.section(class= checkProps.classes data-js="solutions")&attributes(attributes)    
         .section__bg
             picture
                 img(src='img/home/blured_bg.webp' alt='')
@@ -19,12 +19,13 @@ mixin solutions(props= defaultSolutionsProps)
                 .section__title-block
                     +title({
                         text: 'Готовые решения',
-                        tag: 'h2'
-                    })
+                        tag: 'h2',
+                        animColor: true
+                    })(data-js="solutionsTitle" data-aos-anchor="[data-js='solutions']" data-aos="fade-left" data-aos-anchor-placement='top-center' data-aos-duration='1000')
                 +btn({
                     name: 'Каталог фасадов'
-                })
-            .solutions__slider(data-js="solutionsSlider")
+                })(data-aos="fade-left" data-aos-anchor="[data-js='solutions']" data-aos-anchor-placement='top-center' data-aos-duration='1000' data-aos-delay="1300")
+            .solutions__slider(data-js="solutionsSlider" data-aos="fade-left" data-aos-anchor="[data-js='solutions']" data-aos-anchor-placement='top-center' data-aos-duration='1000' data-aos-delay="300")
                 .swiper-wrapper
                     .swiper-slide.solutions-card
                         .solutions-card__bg

@@ -699,6 +699,15 @@ iframe {
 	}
 }
 
+[data-anim-type="zoomIn"] {
+	transform: scale(0.9);
+	transition: opacity $tr-long;
+
+	&.animated {
+		transform: scale(1);
+	}
+}
+
 [data-anim-type="opacityUp"] {
 	transform: translateY(20px);
 	opacity: 0;
@@ -707,6 +716,29 @@ iframe {
 		transform: translateY(0);
 		opacity: 1;
 		transition: opacity $tr-long, transform $tr-long;
+	}
+}
+
+[data-anim-type="opacityUp100"] {
+	transform: translateY(100%);
+	opacity: 0;
+
+	&.animated {
+		transform: translateY(0);
+		opacity: 1;
+		transition: opacity $tr-long, transform $tr-long;
+	}
+}
+
+[data-anim-type="height"],
+img[data-anim-type="height"],
+picture[data-anim-type="height"],
+video[data-anim-type="height"] {
+	height: 0 !important;
+
+	&.animated {
+		height: 100% !important;
+		transition: height 1s linear;
 	}
 }
 

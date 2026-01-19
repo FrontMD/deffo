@@ -128,7 +128,7 @@
     }
 
     &--fixed {
-        top: -157px;
+        top: -177px;
         background-color: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(20px);
 
@@ -189,10 +189,11 @@
     &--full &__small {
         height: 0;
         overflow: hidden;
-        transition: height $tr-long;
+        transition: height $tr-long, padding-top $tr-long;
     }
 
     &--fixed &__small {
         overflow: visible;
+        padding-top: 20px;
     }
 }
