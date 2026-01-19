@@ -14,6 +14,7 @@
 @@include("../../blocks/modules/s-about/s-about.js")
 @@include("../../blocks/modules/s-download/s-download.js")
 @@include("../../blocks/modules/s-faq/s-faq.js")
+@@include("../../blocks/modules/s-docs/s-docs.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -30,4 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
     sAboutAnim();
     sDownloadAnim();
     sFaqAnim();
+    sDocsAnim();
 })

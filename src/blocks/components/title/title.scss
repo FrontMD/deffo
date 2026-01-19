@@ -29,8 +29,8 @@
     }
 
     &--60 {
-        font-weight: 500;
         font-size: 60px;
+        font-weight: 500;
         line-height: 100%;
         text-transform: uppercase;
 
@@ -51,14 +51,13 @@
         }*/
     }
 
-    /*&--40 {
+    &--40 {
         font-size: 40px;
         font-weight: 500;
-        line-height: 130%;
+        line-height: 100%;
         text-transform: uppercase;
-        letter-spacing: -0.04em;
 
-        @include max(laptop) {
+        /*@include max(laptop) {
             font-size: 32px;
         }
 
@@ -68,10 +67,10 @@
 
         @include max(xs) {
             font-size: 22px;
-        }
+        }*/
     }
 
-    &--30 {
+    /*&--30 {
         font-weight: 500;
         font-size: 30px;
         line-height: 130%;

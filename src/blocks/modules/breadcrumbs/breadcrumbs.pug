@@ -1,0 +1,36 @@
+-
+    const defaultBreadCrumbsProps = {
+        classes: '',
+        items: [
+            {
+                name: 'DEFFO',
+                link: 'javascript:void(0);'
+            },
+            {
+                name: 'Техническая информация',
+                link: 'javascript:void(0);'
+            }
+        ],
+    }
+
+mixin breadcrumbs(props = defaultBreadCrumbsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultBreadCrumbsProps.classes,
+            items: props.items ? props.items : defaultBreadCrumbsProps.items,
+        }
+
+    section.section.breadcrumbs(class=checkProps.classes)&attributes(attributes)
+        .d-container
+            .custom-scrollbar.breadcrumbs__scroll(data-js="customScrollbar")
+                ul.breadcrumbs__list
+                    each val, index in checkProps.items
+                        li.breadcrumbs__item(class= (index === checkProps.items.length - 1) ? "breadcrumbs__item--current" : "")
+                            if index === checkProps.items.length - 1
+                                span= val.name
+                            else
+                                a(href=`${val.link}`)= val.name
+                                span.breadcrumbs__separator
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_breadcrumbs`)
+

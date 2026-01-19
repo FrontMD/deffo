@@ -1,0 +1,31 @@
+-
+    const defaultSDocsProps = {
+        classes: '',
+    }
+
+mixin s-docs(props= defaultSDocsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSDocsProps.classes,
+        }
+
+    section.s-docs.section.section--inner(class= checkProps.classes data-js="sDocs")&attributes(attributes)
+        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sDocs']" data-aos-anchor-placement="top-center")
+        .d-container.s-docs__container
+            .s-docs__media(data-js="sDocsMedia")
+                .s-docs__cover(data-anim-type="widthReverse")
+                picture
+                    img(src='img/docs/docs.webp' alt='')
+            .s-docs__content
+                .section__header
+                    .section__title-block
+                        div(data-js="sFaqTitle" data-anim-type='opacity')
+                            +title({
+                                text: 'Техническая информация',
+                                tag: 'h1',
+                                size: '40',
+                                animColor: true
+                            })
+                        .text-editor(data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sDocs']" data-aos-anchor-placement="top-center") В этом разделе собраны технические характеристики, материалы и стандарты производства мебельных фасадов. Здесь вы найдёте точные параметры, рекомендации по применению и важные данные для проектирования, расчётов и монтажа.
+
+                .s-docs__list
