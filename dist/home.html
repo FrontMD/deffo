@@ -587,26 +587,29 @@
                   </div>
                 </div>
               </section>
-              <section class="s-download section section--fh"> 
+              <section class="s-download section section--fh" data-js="sDownload"> 
+                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sDownload']" data-aos-anchor-placement="top-center"></div>
                 <div class="section__bg"><img class="s-download__bg" src="img/home/download.webp" alt=""></div>
                 <div class="d-container s-download__content">
-                      <div class="title  title--60">
-                        <h2>Скачайте каталог <br>наших решений</h2>
-                      </div>
-                  <div class="s-download__desc text-editor">В каталоге более подробно представлен перечень наших товаров, а так же информация о компании</div><a class="d-btn" href="javascript:void(0);"><span>Скачать каталог</span></a>
+                  <div data-js="sDownloadTitle" data-anim-type="opacity">
+                        <div class="title  title--60">
+                          <h2 data-anim-type="textColor">Скачайте каталог <br>наших решений</h2>
+                        </div>
+                  </div>
+                  <div class="s-download__desc text-editor" data-js="sDownloadText" data-anim-type="opacity">В каталоге более подробно представлен перечень наших товаров, а так же информация о компании</div><a class="d-btn" href="javascript:void(0);" data-js="sDownloadBtn" data-anim-type="opacityUp100"><span>Скачать каталог</span></a>
                 </div>
               </section>
-              <section class="s-stocks section">
+              <section class="s-stocks section" data-js="stocks">
                 <div class="d-container">
-                  <div class="section__header s-stocks__header">
+                  <div class="section__header s-stocks__header" data-js="stocksHeader" data-anim-type="opacityLong">
                     <div class="section__title-block">
-                          <div class="title  title--60">
-                            <h2>Акции</h2>
+                          <div class="title  title--60" data-js="stocksTitle">
+                            <h2 data-anim-type="textColor">Акции</h2>
                           </div>
                       <div class="s-stocks__desc text-editor">Знаете, что может быть лучше фасадов, произведённых компанией Дядя Федор? Фасады, произведённые компанией Дядя Федор на специальных условиях. Мы делаем всё, чтобы наши фасады оставались доступными, а условия выбирали вы.</div>
                     </div><a class="d-btn" href="javascript:void(0);"><span>Все акции</span></a>
                   </div>
-                  <div class="s-stocks__slider" data-js="stocksSlider">
+                  <div class="s-stocks__slider" data-js="stocksSlider" data-aos="fade-left" data-aos-anchor="[data-js='stocks']" data-aos-duration="1000" data-aos-anchor-placement="top-center">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide s-stocks__card">
                         <div class="s-stocks__bg"><img src="img/stocks/stock_1.webp" alt=""></div><a class="s-stocks__link" href="javascript:void(0);"></a>
@@ -630,11 +633,13 @@
               <section class="s-news section" data-js="sNews">
                 <div class="d-container s-news__container">
                   <div class="s-news__header">
-                        <div class="title  title--60">
-                          <h2>Новости</h2>
-                        </div>
-                    <div class="s-news__desc text-editor">Будьте в курсе последних новостей и событий от компании Дядя Федор. Узнайте о новинках мебельной индустрии, акциях и событиях нашей компании.</div><a class="d-btn" href="javascript:void(0);"><span>Все новости</span></a>
-                        <div class="slider-controls s-news__controls" data-js="sliderControls">
+                    <div data-js="sNewsTitle" data-anim-type="opacity">
+                          <div class="title  title--60">
+                            <h2 data-anim-type="textColor">Новости</h2>
+                          </div>
+                    </div>
+                    <div class="s-news__desc text-editor" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement="top-center">Будьте в курсе последних новостей и событий от компании Дядя Федор. Узнайте о новинках мебельной индустрии, акциях и событиях нашей компании.</div><a class="d-btn" href="javascript:void(0);" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement="top-center"><span>Все новости</span></a>
+                        <div class="slider-controls s-news__controls" data-js="sliderControls" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement="top-center">
                           <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev"><svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path class="slider-control__rhombus" d="M42.9264 42.9264L28.7843 57.0686L0.500001 28.7843L28.7843 0.500029L42.9264 14.6422" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M26.7326 38.7843L16.6159 28.6676L26.7326 18.551" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -649,7 +654,7 @@
                           </button>
                         </div>
                   </div>
-                  <div class="s-news__slider" data-js="sNewsSlider">
+                  <div class="s-news__slider" data-js="sNewsSlider" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement="top-center">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide news-card">
                         <div class="news-card__img"><img src="img/news/news_1.webp" alt=""></div>
@@ -719,9 +724,11 @@
                   </div>
                 </div>
               </section>
-              <section class="s-faq section">   
+              <section class="s-faq section" data-js="sFaq">
+                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center"></div>
                 <div class="d-container s-faq__container">
-                  <div class="s-faq__video">
+                  <div class="s-faq__video" data-js="sFaqVideo">
+                    <div class="s-faq__cover" data-anim-type="widthReverse"></div>
                     <video autoplay muted loop playsinline>
                       <source src="public/video/faq.mp4" type="video/mp4">
                     </video>
@@ -729,11 +736,13 @@
                   <div class="s-faq__content">
                     <div class="section__header">
                       <div class="section__title-block">
-                            <div class="title  title--60">
-                              <h2>Вопросы и ответы</h2>
-                            </div>
-                        <div class="text-editor">От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.</div>
-                      </div><a class="d-btn" href="javascript:void(0);" data-modal="#faqModal"><span>Задать свой вопрос</span></a>
+                        <div data-js="sFaqTitle" data-anim-type="opacity">
+                              <div class="title  title--60">
+                                <h2 data-anim-type="textColor">Вопросы и ответы</h2>
+                              </div>
+                        </div>
+                        <div class="text-editor" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center">От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.</div>
+                      </div><a class="d-btn" href="javascript:void(0);" data-modal="#faqModal" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center"><span>Задать свой вопрос</span></a>
                     </div>
                         <div class="accordion s-faq__accordion" data-js="accordion">
                           <div class="spoiler" data-js="spoiler">

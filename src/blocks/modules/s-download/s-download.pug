@@ -9,17 +9,20 @@ mixin s-download(props= defaultSDownloadProps)
             classes: props.classes ? props.classes : defaultSDownloadProps.classes
         }
 
-    section.s-download.section.section--fh(class= checkProps.classes)&attributes(attributes)  
+    section.s-download.section.section--fh(class= checkProps.classes data-js="sDownload")&attributes(attributes)  
+        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sDownload']" data-aos-anchor-placement="top-center")
         .section__bg
             img(src='img/home/download.webp' alt='').s-download__bg
 
         .d-container.s-download__content
-            +title({
-                text: 'Скачайте каталог <br>наших решений',
-                tag: 'h2'
-            })
-            .s-download__desc.text-editor В каталоге более подробно представлен перечень наших товаров, а так же информация о компании
+            div(data-js="sDownloadTitle" data-anim-type='opacity')
+                +title({
+                    text: 'Скачайте каталог <br>наших решений',
+                    tag: 'h2',
+                    animColor: true
+
+                })
+            .s-download__desc.text-editor(data-js="sDownloadText" data-anim-type="opacity") В каталоге более подробно представлен перечень наших товаров, а так же информация о компании
             +btn({
                 name: 'Скачать каталог',
-                tag: 'h2'
-            })
+            })(data-js="sDownloadBtn" data-anim-type="opacityUp100")

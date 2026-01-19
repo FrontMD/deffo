@@ -12,18 +12,20 @@ mixin s-news(props= defaultSNewsProps)
     section.s-news.section(class= checkProps.classes data-js="sNews")&attributes(attributes)
         .d-container.s-news__container
             .s-news__header
-                +title({
-                    text: 'Новости',
-                    tag: 'h2'
-                })
-                .s-news__desc.text-editor Будьте в курсе последних новостей и событий от компании Дядя Федор. Узнайте о новинках мебельной индустрии, акциях и событиях нашей компании.
+                div(data-js="sNewsTitle" data-anim-type='opacity')
+                    +title({
+                        text: 'Новости',
+                        tag: 'h2',
+                        animColor: true
+                    })
+                .s-news__desc.text-editor(data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement='top-center') Будьте в курсе последних новостей и событий от компании Дядя Федор. Узнайте о новинках мебельной индустрии, акциях и событиях нашей компании.
                 +btn({
                     name: 'Все новости'
-                })
+                })(data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']"  data-aos-anchor-placement='top-center')
                 +slider-controls({
                     classes: 's-news__controls'
-                })
-            .s-news__slider(data-js="sNewsSlider")
+                })(data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']"  data-aos-anchor-placement='top-center')
+            .s-news__slider(data-js="sNewsSlider" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement='top-center')
                 .swiper-wrapper
                     .swiper-slide.news-card
                         .news-card__img

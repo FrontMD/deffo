@@ -9,22 +9,26 @@ mixin s-faq(props= defaultSFaqProps)
             classes: props.classes ? props.classes : defaultSFaqProps.classes,
         }
 
-    section.s-faq.section(class= checkProps.classes)&attributes(attributes)    
+    section.s-faq.section(class= checkProps.classes data-js="sFaq")&attributes(attributes)
+        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center")
         .d-container.s-faq__container
-            .s-faq__video
+            .s-faq__video(data-js="sFaqVideo")
+                .s-faq__cover(data-anim-type="widthReverse")
                 video(autoplay muted loop playsinline)
                     source(src="public/video/faq.mp4" type="video/mp4")
             .s-faq__content
                 .section__header
                     .section__title-block
-                        +title({
-                            text: 'Вопросы и ответы',
-                            tag: 'h2'
-                        })
-                        .text-editor От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.
+                        div(data-js="sFaqTitle" data-anim-type='opacity')
+                            +title({
+                                text: 'Вопросы и ответы',
+                                tag: 'h2',
+                                animColor: true
+                            })
+                        .text-editor(data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center") От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.
                     +btn({
                         name: 'Задать свой вопрос'
-                    })(data-modal="#faqModal")
+                    })(data-modal="#faqModal" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center")
                 +accordion({
                     classes: 's-faq__accordion'
                 })

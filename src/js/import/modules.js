@@ -12,6 +12,8 @@
 @@include("../../blocks/modules/home-intro/home-intro.js")
 @@include("../../blocks/modules/s-catalog/s-catalog.js")
 @@include("../../blocks/modules/s-about/s-about.js")
+@@include("../../blocks/modules/s-download/s-download.js")
+@@include("../../blocks/modules/s-faq/s-faq.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -19,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     modalsInit();
     mainBurger();
     solutionsSlider();
-    solutionsAnim();
     stocksSlider();
     newsSlider();
     accordion();
@@ -27,4 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     tabsBlockInit();
     sCatalogAnim();
     sAboutAnim();
+    sDownloadAnim();
+    sFaqAnim();
 })

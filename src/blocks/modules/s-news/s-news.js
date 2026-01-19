@@ -22,8 +22,26 @@ function newsSlider() {
                     if(swiper.slides.length > spaceBetween) {
                         controls.classList.add('active')
                     }
+                    sNewsAnim()
                 }
             }
         })
+    })
+}
+
+function sNewsAnim() {
+    const newsSections = document.querySelectorAll('[data-js="sNews"]')
+
+    if(newsSections.length < 1) return
+
+    newsSections.forEach(news => {
+        const slider = news.querySelector('[data-js="sNewsSlider"]')
+        const title = news.querySelector('[data-js="sNewsTitle"]')
+
+        if(slider) {
+            slider.addEventListener('transitionstart', function() {
+                opacityAnim(title)
+            }, {once: true})
+        }
     })
 }

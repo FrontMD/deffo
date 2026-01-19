@@ -9,19 +9,20 @@ mixin s-stocks(props= defaultSStocksProps)
             classes: props.classes ? props.classes : defaultSStocksProps.classes
         }
 
-    section.s-stocks.section(class= checkProps.classes)&attributes(attributes)
+    section.s-stocks.section(class= checkProps.classes data-js="stocks")&attributes(attributes)
         .d-container
-            .section__header.s-stocks__header
+            .section__header.s-stocks__header(data-js="stocksHeader" data-anim-type="opacityLong")
                 .section__title-block
                     +title({
                         text: 'Акции',
-                        tag: 'h2'
-                    })
+                        tag: 'h2',
+                        animColor: true
+                    })(data-js="stocksTitle")
                     .s-stocks__desc.text-editor Знаете, что может быть лучше фасадов, произведённых компанией Дядя Федор? Фасады, произведённые компанией Дядя Федор на специальных условиях. Мы делаем всё, чтобы наши фасады оставались доступными, а условия выбирали вы.
                 +btn({
                     name: 'Все акции'
                 })
-            .s-stocks__slider(data-js="stocksSlider")
+            .s-stocks__slider(data-js="stocksSlider" data-aos="fade-left" data-aos-anchor="[data-js='stocks']" data-aos-duration="1000" data-aos-anchor-placement='top-center')
                 .swiper-wrapper
                     .swiper-slide.s-stocks__card
                         .s-stocks__bg

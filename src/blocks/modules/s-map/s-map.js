@@ -4,7 +4,8 @@ function sMap() {
     if(!sMap) return
 
     const mapEl = sMap.querySelector('[data-js="sMapEl"]')
-    const pointsList = [... sMap.querySelectorAll('[data-js="sMapItem"]')].map(item => item.dataset.coords)
+    const pointsItems = sMap.querySelectorAll('[data-js="sMapItem"]')
+    const pointsList = [... pointsItems].map(item => item.dataset.coords)
     const startCenter = mapEl.dataset.center ? mapEl.dataset.center : '55.883459, 37.444566'
     const startZoom = mapEl.dataset.zoom ? parseInt(mapEl.dataset.center) : 12
 	const fullBtn = sMap.querySelector('[data-js="sMapFull"]')
@@ -75,6 +76,17 @@ function sMap() {
             }
     
         }
+    })
+
+    pointsItems.forEach((point, i) => {
+        setAttributes(point, {
+            'data-aos': 'fade-up',
+            'data-aos-anchor': `[data-js="sMap"]`,
+            'data-aos-duration': '600',
+            'data-aos-anchor-placement': 'top-center',
+            'data-aos-delay': `${i * 100}`
+        })
+        
     })
 
 }

@@ -6,7 +6,12 @@ function solutionsSlider() {
     solutionsSliders.forEach(slider => {
         const sliderEx = new Swiper(slider, {
             slidesPerView: 2.67,
-            spaceBetween: 5
+            spaceBetween: 5,
+            on: {
+                init: function() {
+                    solutionsAnim()
+                }
+            }
         })
     })
 }
