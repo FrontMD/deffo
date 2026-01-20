@@ -14,6 +14,10 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 30px;
+
+        @include max(large) {
+            flex: 0 0 400px;
+        }
     }
 
     &__controls {

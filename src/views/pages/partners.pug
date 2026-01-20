@@ -1,0 +1,51 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Партнерам"
+    - const fullHeader = false
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Партнерам',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+            +s-title({
+                title: 'Партнерам',
+                text: 'Приглашаем к взаимовыгодному сотрудничеству мебельные магазины и салоны, производителей <br>и сборщиков мебели, частных мастеров, дизайнеров.'
+            })
+            +s-conditions({
+                cards: [
+                    {
+                        icon: 'img/conditions/conditions_5.svg',
+                        title: 'Гарантируем, <br>что уложимся в бюджет',
+                        text: 'Подбор материалов и решений под бюджет.'
+                    },
+                    {
+                        icon: 'img/conditions/conditions_2.svg',
+                        title: 'Бесплатное <br>изготовление',
+                        text: '3D-макета командой дизейнеров'
+                    },
+                    {
+                        icon: 'img/conditions/conditions_3.svg',
+                        title: 'Бесплатный <br>замер',
+                        text: 'Вызови мастера на бесплатный замер для изготовление мебели' 
+                    },
+                    {
+                        icon: 'img/conditions/conditions_4.svg',
+                        title: 'Опыт работы <br>производства 10 лет',
+                        text: 'Изготавливаю шкафы на заказ с 2008 года.'
+                    }
+                ]
+            })
+            +img-text
+

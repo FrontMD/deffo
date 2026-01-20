@@ -1,0 +1,31 @@
+-
+    const defaultSTitleProps = {
+        classes: '',
+        title: '',
+        text: ''
+    }
+
+mixin s-title(props = defaultSTitleProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSTitleProps.classes,
+            title: props.title ? props.title : defaultSTitleProps.title,
+            text: props.text ? props.text : defaultSTitleProps.text
+        }
+
+    section.section.s-title.section--inner(class=checkProps.classes data-js="sTitle" data-anim-id="sTitle")&attributes(attributes)
+        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-anim-id='sTitle']" data-aos-anchor-placement="top-center")
+        .d-container
+            .s-title__container
+                - if(checkProps.title.length > 0)
+                    div(data-js="sTitleTitle" data-anim-type='opacity')
+                        +title({
+                            classes: 's-title__title',
+                            text: checkProps.title,
+                            tag: 'h2',
+                            size: '40',
+                            animColor: true
+                        })
+                - if(checkProps.text.length > 0)
+                    .s-title__text.text-editor(data-aos="fade-right" data-aos-duration="1000" data-aos-anchor='[data-js="sTitle"]' data-aos-anchor-placement='top-center')!= checkProps.text
+

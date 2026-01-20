@@ -4,6 +4,10 @@
     padding-top: 130px;
     padding-bottom: 40px;
 
+    @include max(large) {
+        padding-top: 60px;
+    }
+
     &__container {
         display: flex;
         flex-direction: column;

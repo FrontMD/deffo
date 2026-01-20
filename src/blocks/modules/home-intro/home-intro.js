@@ -4,8 +4,10 @@ function homeIntroAnim() {
     if(!homeIntro) return
 
     const menuItemsList = document.querySelector('[data-js="siteHeader"]')?.querySelectorAll('[data-js="mainMenuItem"][data-aos]')
+    const vw = window.innerWidth
+    const vwPoint = 1320
 
-    if(menuItemsList.length > 0) {
+    if(menuItemsList.length > 0 && vw > vwPoint) {
         menuItemsList[menuItemsList.length - 1].addEventListener('transitionend', hiAnim, {once: true})
     } else {
         hiAnim()

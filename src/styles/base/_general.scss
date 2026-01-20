@@ -230,6 +230,13 @@ iframe {
 		}
 	}
 
+	&__header--full {
+		@include max(laptop) {
+			flex-direction: row;
+			align-items: flex-end;
+		}
+	}
+
 	&__title-block {
 		flex: 1 1 auto;
 		display: flex;
@@ -294,6 +301,10 @@ iframe {
 		width: 150px;
 		height: 1px;
 		background-color: $c-accent;
+
+		@include max(large) {
+			width: 120px;
+		}
 	}
 }
 

@@ -16,7 +16,6 @@ function preloader() {
        diamonds()
     }
 
-
     async function linesHeight() {
         const linesList = preloader.querySelectorAll('[data-js="preloaderLine"]')
         const duration = parseFloat(window.getComputedStyle(linesList[0]).transitionDuration) * 1000;

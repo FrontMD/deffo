@@ -1,0 +1,87 @@
+-
+    const defaultImgTextProps = {
+        classes: '',
+        rows: [
+            {
+                img: "img/img-text/img_text_1.webp",
+                title: 'Мебельным фабрикам',
+                text: `
+                <p>Для крупных мебельных фабрик у нассуществуют особые условия по поставкам IDM «Eterno» и разработок собственных коллекций декоров для каждой фабрики.</p>
+                <p>Сделайте линейки Вашей мебели более востребованными и современными вместе с «Eterno», которое все больше набирает узнаваемость на рынке.</p>
+                <p><a href="javascript:void(0);">Подробнее</a></p>`,
+                imgRight: false,
+                btns: false,
+            },
+            {
+                img: "img/img-text/img_text_2.webp",
+                title: 'Образцы Фасадов',
+                text: `
+                <p>Мы создали удобный формат образцов «Eterno» в фирменной стильной коробке.</p>
+                <p>В связи с повышенным спросом на комплекты образцов мы рекомендуем оставить заявку на сайте, и мы забронируем образцы «Eterno» для Вас!</p>
+                `,
+                imgRight: true,
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        icon: 'arrow_breadcrumbs'
+                    }
+                ],
+            },
+            {
+                img: "img/img-text/img_text_2.webp",
+                title: 'Мебельные фасады для&nbsp;оптовых покупателей',
+                text: `
+                <p>Для крупных мебельных фабрик у нас существуют особые условия по поставкам IDM «Eterno» и разработок собственных коллекций декоров для каждой фабрики.</p>
+                <p>Сделайте линейки Вашей мебели более востребованными и современными вместе с «Eterno», которое все больше набирает узнаваемость на рынке.</p>
+                `,
+                imgRight: false,
+                btns: [
+                    {
+                        name: 'Техничическая документация',
+                        icon: 'arrow_breadcrumbs'
+                    },
+                    {
+                        name: 'Скачать каталог',
+                        icon: 'arrow_breadcrumbs'
+                    }
+                ],
+            },
+        ],
+    }
+
+mixin img-text(props= defaultImgTextProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultImgTextProps.classes,
+            rows: props.rows ? props.rows : defaultImgTextProps.rows,
+        }
+
+    section.img-text(class= checkProps.classes)&attributes(attributes)
+        .d-container
+            .img-text__container
+                - let rows = checkProps.rows 
+                - let count = 0
+
+                - while(count < rows.length)
+
+                    - let row = rows[count]
+                    - let dirClass = row.imgRight === true ? 'img-text__row--reverse' : ''
+
+                    .img-text__row(class=dirClass)
+                        .img-text__img(data-aos=`${row.imgRight === true ? 'fade-left' : 'fade-right'}` data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="top-bottom")
+                            img(src=row.img, alt="")
+                        .img-text__info
+                            +title({
+                                classes: 'img-text__title',
+                                text: row.title,
+                                size: '40'
+                            })(data-aos='fade-up' data-aos-duration="600" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom")
+                            .img-text__text.text-editor(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="top-bottom")!= row.text
+                            - if(row.btns !== false)
+                                - let btnsCount = 0
+                                - let btnsList = row.btns 
+                                - while(btnsCount < btnsList.length) 
+                                    +btn(btnsList[btnsCount])(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom")
+
+                                    - btnsCount++
+                    - count++

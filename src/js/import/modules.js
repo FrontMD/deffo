@@ -16,6 +16,7 @@
 @@include("../../blocks/modules/s-faq/s-faq.js")
 @@include("../../blocks/modules/s-docs/s-docs.js")
 @@include("../../blocks/modules/s-catalog/s-catalog.js")
+@@include("../../blocks/modules/s-title/s-title.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -34,4 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
     sFaqAnim();
     sDocsAnim();
     sCatalogAnim();
+    sTitleAnim();
 })

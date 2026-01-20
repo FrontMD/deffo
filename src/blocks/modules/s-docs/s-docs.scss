@@ -25,6 +25,10 @@
             flex: 0 0 270px;
         }
 
+        @include max(tablet) {
+            display: none;
+        }
+
         picture,
         img {
             width: 100%;

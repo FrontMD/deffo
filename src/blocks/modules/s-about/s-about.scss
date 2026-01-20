@@ -46,8 +46,24 @@
         position: absolute;
         left: 4px;
         top: calc(10.556vh + 19.53vw + 7px);
-        width: 813px;
+        width: 814px;
+        height: 136px;
         transform: translateY(-100%);
+
+        @include max(large) {
+            width: 630px;
+            height: 105px;
+        }
+
+        svg {
+            width: 814px;
+            height: 136px;
+
+            @include max(large) {
+                width: 630px;
+                height: 105px;
+            }
+        }
     }
 
     &__content {
@@ -74,6 +90,11 @@
         flex: 0 0 auto;
         max-width: 347px;
         padding: 20px 20px 40px;
+
+        @include max(large) {
+            max-width: 280px;
+            padding: 16px 16px 30px;
+        }
 
         &::after {
             content: '';

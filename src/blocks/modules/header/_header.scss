@@ -23,6 +23,10 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+
+        @include max(laptop) {
+            //display: none;
+        }
     }
 
     &__logo {

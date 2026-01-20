@@ -8,18 +8,28 @@ function newsSlider() {
         const controls = section.querySelector('[data-js="sliderControls"]')
         const prev = controls.querySelector('[data-js="sliderPrev"]')
         const next = controls.querySelector('[data-js="sliderNext"]')
-        const spaceBetween = 3
+        const vw = window.innerWidth
+        let slidesPerView = 3
+
+        if(vw < 1801) {
+            slidesPerView = 2.2
+        }
 
         const sliderEx = new Swiper(slider, {
-            slidesPerView: spaceBetween,
+            slidesPerView: slidesPerView,
             spaceBetween: 10,
             navigation: {
                 nextEl: next,
                 prevEl: prev,
             },
+            breakpoints: {
+                1801: {
+                    slidesPerView: slidesPerView
+                }
+            },
             on: {
                 init: function (swiper) {
-                    if(swiper.slides.length > spaceBetween) {
+                    if(swiper.slides.length > slidesPerView) {
                         controls.classList.add('active')
                     }
                     sNewsAnim()
