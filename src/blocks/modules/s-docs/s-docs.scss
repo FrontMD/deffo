@@ -3,11 +3,27 @@
         display: flex;
         align-items: flex-start;
         gap: 100px;
+
+        @include max(large) {
+            gap: 50px;
+        }
+
+        @include max(laptop) {
+            gap: 32px;
+        }
     }
 
     &__media {
         position: relative;
         flex: 0 0 442px;
+
+        @include max(large) {
+            flex: 0 0 400px;
+        }
+
+        @include max(laptop) {
+            flex: 0 0 270px;
+        }
 
         picture,
         img {
@@ -29,6 +45,14 @@
     }
 
     &__list {
-        margin-top: 80px;
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+
+        @include max(laptop) {
+            margin-top: 32px;
+        }
     }
 }

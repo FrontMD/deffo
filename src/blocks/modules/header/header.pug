@@ -107,7 +107,7 @@ mixin header(isFull=false)
                             +main-menu()(data-js="siteHeaderMenu")
 
                         .site-header__small(data-js="siteHeaderSmall")
-                            .site-header__side.site-header__side--center(data-js="siteHeaderSmallHeight")
+                            .site-header__side.site-header__side--center.site-header__side--mobile(data-js="siteHeaderSmallHeight")
                                 a.site-header__logo(href="/" data-aos="fade-right" data-aos-duration="600")
                                     img(src="img/logo.svg" alt="")
                                 +main-menu()(data-js="siteHeaderMenuSmall")
@@ -146,7 +146,7 @@ mixin header(isFull=false)
                 .d-container
                     .site-header__container
                         .site-header__small
-                            .site-header__side.site-header__side--center
+                            .site-header__side.site-header__side--center.site-header__side--mobile
                                 a.site-header__logo(href="/" data-aos="fade-right" data-aos-duration="600")
                                     img(src="img/logo.svg" alt="")
                                 +main-menu()(data-js="siteHeaderMenu")

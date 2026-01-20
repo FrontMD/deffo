@@ -135,6 +135,7 @@ body {
 body {
 	background-color: $c-bg-main;
 	font-family: $ff-montserrat;
+	color: $c-white;
 }
 
 *:focus {
@@ -179,6 +180,11 @@ iframe {
 	padding-left: 40px;
 	padding-right: 40px;
 
+	@include max(large) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
 	@include max(tablet) {
 		padding-left: 20px;
 		padding-right: 20px;
@@ -199,7 +205,13 @@ iframe {
 	}
 
 	&--inner {
+		padding-top: 30px;
 		padding-bottom: 30px;
+
+		@include max(mobile) {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
 	}
 
 	&__header {
@@ -207,6 +219,11 @@ iframe {
 		align-items: flex-end;
 		justify-content: space-between;
 		gap: 24px;
+
+		@include max(laptop) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
 
 		.d-btn {
 			flex: 0 0 auto;
@@ -221,6 +238,9 @@ iframe {
 		gap: 24px;
 		max-width: 753px;
 
+		@include max(laptop) {
+			gap: 12px;
+		}
 	}
 
 	&__bg {
@@ -282,6 +302,10 @@ iframe {
 	font-size: 18px;
 	line-height: 160%;
 	color: $c-text-grey;
+
+	@include max(laptop) {
+		font-size: 16px;
+	}
 
 	>*:first-child {
 		margin-top: 0 !important;
@@ -687,7 +711,8 @@ iframe {
 	color: transparent !important;
 	background-size: 200% 100%;
 	background-position: 100% 0;
-	transition: background-position $tr-long;
+	transition: background-position 1s;
+	width: fit-content;
 
 	&.animated {
 		background-position: 0 0;

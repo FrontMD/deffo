@@ -8,6 +8,11 @@
     padding-top: 20px;
     padding-bottom: 20px;
 
+    @include max(large) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
     @include max(mobile) {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -47,13 +52,27 @@
         align-items: flex-start;
         gap: 25px;
 
-        @include max(tablet) {
+        @include max(large) {
+            gap: 12px;
+        }
+
+        @include max(laptop) {
             display: none;
         }
     }
 
     &__side--center {
         align-items: center;
+    }
+
+    &__side--mobile {
+        @include max(laptop) {
+            display: flex;
+
+            .main-menu {
+                display: none;
+            }
+        }
     }
 
     &__address {
@@ -77,6 +96,10 @@
         flex-direction: column;
         align-items: flex-end;
         gap: 15px;
+
+        @include max(large) {
+            gap: 12px;
+        }
     }
 
     &__contact {
@@ -86,6 +109,10 @@
         line-height: 100%;
         letter-spacing: 0%;
         color: $c-white;
+
+        @include max(large) {
+            font-size: 16px;
+        }
     }
 
     a.site-header__contact,
@@ -103,6 +130,10 @@
         align-items: center;
         align-self: center;
         gap: 20px;
+
+        @include max(large) {
+            gap: 12px;
+        }
     }
 
     &__control {
@@ -114,6 +145,11 @@
         svg {
             width: 24px;
             height: 24px;
+
+            @include max(large) {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 
@@ -122,19 +158,14 @@
         display: flex;
         justify-content: center;
 
-        @include max(tablet) {
+        @include max(laptop) {
             display: none;
         }
     }
 
     &--fixed {
-        top: -177px;
         background-color: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(20px);
-
-        @include max(tablet) {
-            top: 0;
-        }
     }
 
     .main-menu {
@@ -160,7 +191,7 @@
             }
         }
 
-        @include max(tablet) {
+        @include max(laptop) {
             display: flex;
         }
     }
@@ -178,6 +209,12 @@
         height: 50px;
         flex: 0 0 50px;
 
+        @include max(laptop) {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+        }
+
         img {
             width: 100%;
             height: 100%;
@@ -189,11 +226,25 @@
     &--full &__small {
         height: 0;
         overflow: hidden;
-        transition: height $tr-long, padding-top $tr-long;
+        transition: height $tr-long, margin-top $tr-long;
     }
 
-    &--fixed &__small {
+    &--full.site-header--fixed &__small {
         overflow: visible;
-        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    &--full.site-header--fixed {
+        top: -177px;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(20px);
+
+        @include max(large) {
+            top: -157px;
+        }
+
+        @include max(tablet) {
+            top: 0;
+        }
     }
 }

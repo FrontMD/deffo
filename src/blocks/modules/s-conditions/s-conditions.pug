@@ -1,0 +1,42 @@
+-
+    const defaultSConditionsProps = {
+        classes: '',
+
+    }
+
+mixin s-conditions(props= defaultSConditionsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSConditionsProps.classes
+        }
+
+    section.s-conditions.section.section--inner(class= checkProps.classes data-anim-id="sConditions")&attributes(attributes) 
+        .d-container
+            .s-conditions__list
+                .condition-card(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom")
+                    .condition-card__num 01
+                    .condition-card__icon
+                        img(src="img/conditions/conditions_1.svg" alt="")
+                    .condition-card__title ДОСТАВКА <br>И СБОРКА МЕБЕЛИ
+                    .condition-card__text.text-editor Доставим ваш заказ и соберём мебель на квартире в один день
+
+                .condition-card(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom")
+                    .condition-card__num 02
+                    .condition-card__icon
+                        img(src="img/conditions/conditions_2.svg" alt="")
+                    .condition-card__title БЕСПЛАТНОЕ <br>ИЗГОТОВЛЕНИЕ
+                    .condition-card__text.text-editor 3D-макета командой дизайнеров
+
+                .condition-card(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom")
+                    .condition-card__num 03
+                    .condition-card__icon
+                        img(src="img/conditions/conditions_3.svg" alt="")
+                    .condition-card__title БЕСПЛАТНЫЙ <br>ЗАМЕР
+                    .condition-card__text.text-editor Вызови мастера на бесплатный замер для изготовления мебели
+
+                .condition-card(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom")
+                    .condition-card__num 04
+                    .condition-card__icon
+                        img(src="img/conditions/conditions_4.svg" alt="")
+                    .condition-card__title ГАРАНТИРУЕМ <br>ИЗГОТОВЛЕНИЕ В СРОК
+                    .condition-card__text.text-editor Выплачиваем неустойку 0,01% за каждый просроченный день

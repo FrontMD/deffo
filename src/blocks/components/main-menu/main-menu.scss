@@ -4,7 +4,7 @@
     gap: 5px;
     width: fit-content;
 
-    @include max(tablet) {
+    @include max(laptop) {
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
@@ -16,7 +16,7 @@
         gap: 5px;
         width: fit-content;
 
-        @include max(tablet) {
+        @include max(laptop) {
             flex-direction: column;
             align-items: flex-start;
             gap: 0;
@@ -35,11 +35,12 @@
         text-transform: uppercase;
         color: $c-white;
 
-        @include max(laptop) {
+        @include max(large) {
             padding: 10px;
+            font-size: 12px;
         }
 
-        @include max(tablet) {
+        @include max(laptop) {
             flex-direction: column;
             padding: 10px 0;
             align-items: flex-start;
@@ -54,7 +55,7 @@
         transition: all $tr;
         color: $c-white;
 
-        @include max(tablet) {
+        @include max(laptop) {
             display: none;
         }
 
@@ -85,7 +86,7 @@
 
     &__submenu {
 
-        @include min(tablet) {
+        @include min(laptop) {
             position: absolute;
             left: 0;
             top: 80%;
@@ -103,7 +104,7 @@
     border-radius: $br-10;
     padding: 15px 0;
 
-    @include max(tablet) {
+    @include max(laptop) {
         padding: 0px;
         background-color: transparent;
     }
@@ -167,6 +168,10 @@
         transition: color $tr;
         cursor: pointer;
 
+        @include max(large) {
+            padding: 11px 15px;
+        }
+
         &:hover {
             color: $c-accent;
         }
@@ -180,6 +185,11 @@
         svg {
             width: 22px;
             height: 22px;
+
+            @include max(large) {
+                width: 18px;
+                height: 18px;
+            }
         }
     }
 

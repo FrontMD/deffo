@@ -19,7 +19,7 @@ mixin s-docs(props= defaultSDocsProps)
             .s-docs__content
                 .section__header
                     .section__title-block
-                        div(data-js="sFaqTitle" data-anim-type='opacity')
+                        div(data-js="sDocsTitle" data-anim-type='opacity')
                             +title({
                                 text: 'Техническая информация',
                                 tag: 'h1',
@@ -28,4 +28,13 @@ mixin s-docs(props= defaultSDocsProps)
                             })
                         .text-editor(data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sDocs']" data-aos-anchor-placement="top-center") В этом разделе собраны технические характеристики, материалы и стандарты производства мебельных фасадов. Здесь вы найдёте точные параметры, рекомендации по применению и важные данные для проектирования, расчётов и монтажа.
 
-                .s-docs__list
+                .s-docs__list(data-js="sDocsList")
+                    +dl-btn
+                    +dl-btn({
+                        name: 'Правила эксплуатации мебельных фасадов с пленкой ПВХ',
+                        size: 'Размер: 3,2 Мб'
+                    })
+                    +dl-btn({
+                        name: 'Правила эксплуатации фасадов облицованных пленкой ПВХ',
+                        size: 'Размер: 1,5 Мб'
+                    })

@@ -123,7 +123,7 @@
             <div class="d-container">
               <div class="site-header__container">
                 <div class="site-header__small">
-                  <div class="site-header__side site-header__side--center"><a class="site-header__logo" href="/" data-aos="fade-right" data-aos-duration="600"><img src="img/logo.svg" alt=""></a>
+                  <div class="site-header__side site-header__side--center site-header__side--mobile"><a class="site-header__logo" href="/" data-aos="fade-right" data-aos-duration="600"><img src="img/logo.svg" alt=""></a>
                         <div class="main-menu" data-js="siteHeaderMenu">
                           <div class="main-menu__items">
                             <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Каталог</a>
@@ -234,7 +234,7 @@
     <main class="site-main">
       <div class="page" data-js="page">
         <div class="page-layout">
-              <section class="section breadcrumbs">
+              <section class="section breadcrumbs" data-aos="fade-right" data-duration="600" data-aos-delay="1000">
                 <div class="d-container">
                   <div class="custom-scrollbar breadcrumbs__scroll" data-js="customScrollbar">
                     <ul class="breadcrumbs__list">
@@ -259,7 +259,7 @@
                   <div class="s-docs__content">
                     <div class="section__header">
                       <div class="section__title-block">
-                        <div data-js="sFaqTitle" data-anim-type="opacity">
+                        <div data-js="sDocsTitle" data-anim-type="opacity">
                               <div class="title  title--40">
                                 <h1 data-anim-type="textColor">Техническая информация</h1>
                               </div>
@@ -267,7 +267,41 @@
                         <div class="text-editor" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sDocs']" data-aos-anchor-placement="top-center">В этом разделе собраны технические характеристики, материалы и стандарты производства мебельных фасадов. Здесь вы найдёте точные параметры, рекомендации по применению и важные данные для проектирования, расчётов и монтажа.</div>
                       </div>
                     </div>
-                    <div class="s-docs__list"></div>
+                    <div class="s-docs__list" data-js="sDocsList">
+                          <div class="dl-btn" data-js="dlBtn">
+                            <div class="dl-btn__icon"><img src="img/docs/pdf_icon.svg" alt=""></div>
+                            <div class="dl-btn__info">
+                              <div class="dl-btn__title">Правила эксплуатации мебельных фасадов облицованных пленкой ПВХ</div>
+                              <div class="dl-btn__date">Добавлен: 10.12.2025</div>
+                              <div class="dl-btn__size">Размер: 3,5 Мб</div>
+                            </div><a class="d-btn dl-btn__btn d-btn--accent-tr d-btn--reverse" href="javascript:void(0);"><span>Скачать</span>
+                                  <svg> 
+                                    <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                  </svg></a>
+                          </div>
+                          <div class="dl-btn" data-js="dlBtn">
+                            <div class="dl-btn__icon"><img src="img/docs/pdf_icon.svg" alt=""></div>
+                            <div class="dl-btn__info">
+                              <div class="dl-btn__title">Правила эксплуатации мебельных фасадов с пленкой ПВХ</div>
+                              <div class="dl-btn__date">Добавлен: 10.12.2025</div>
+                              <div class="dl-btn__size">Размер: 3,2 Мб</div>
+                            </div><a class="d-btn dl-btn__btn d-btn--accent-tr d-btn--reverse" href="javascript:void(0);"><span>Скачать</span>
+                                  <svg> 
+                                    <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                  </svg></a>
+                          </div>
+                          <div class="dl-btn" data-js="dlBtn">
+                            <div class="dl-btn__icon"><img src="img/docs/pdf_icon.svg" alt=""></div>
+                            <div class="dl-btn__info">
+                              <div class="dl-btn__title">Правила эксплуатации фасадов облицованных пленкой ПВХ</div>
+                              <div class="dl-btn__date">Добавлен: 10.12.2025</div>
+                              <div class="dl-btn__size">Размер: 1,5 Мб</div>
+                            </div><a class="d-btn dl-btn__btn d-btn--accent-tr d-btn--reverse" href="javascript:void(0);"><span>Скачать</span>
+                                  <svg> 
+                                    <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                  </svg></a>
+                          </div>
+                    </div>
                   </div>
                 </div>
               </section>

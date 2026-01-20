@@ -1,0 +1,24 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Каталог продукции"
+    - const fullHeader = false 
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Каталог',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+            +s-catalog
+            +s-conditions
+

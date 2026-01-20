@@ -1,0 +1,29 @@
+-
+    const defaultDlBtnProps = {
+        classes: '',
+        name: 'Правила эксплуатации мебельных фасадов облицованных пленкой ПВХ',
+        size: 'Размер: 3,5 Мб'
+    }
+
+mixin dl-btn(props = defaultDlBtnProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultDlBtnProps.classes,
+            name: props.name ? props.name : defaultDlBtnProps.name,
+            size: props.size ? props.size : defaultDlBtnProps.size
+        }
+
+    .dl-btn(class=checkProps.classes data-js="dlBtn")&attributes(attributes)
+        .dl-btn__icon
+            img(src="img/docs/pdf_icon.svg" alt="")
+        .dl-btn__info
+            .dl-btn__title!= checkProps.name
+            .dl-btn__date Добавлен: 10.12.2025
+            .dl-btn__size!= checkProps.size
+        +btn({
+            classes: 'dl-btn__btn',
+            name: 'Скачать',
+            icon: 'download',
+            cMode: 'accent-tr',
+            iconLeft: true
+        })

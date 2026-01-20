@@ -46,7 +46,21 @@ function header() {
             }
         });
     } else {
+        if(initScroll > 20) {
+            header.classList.add("site-header--fixed");
+        }
+
         headerAnim(header.querySelector('[data-js="siteHeaderMenu"]'))
+
+        $(window).scroll(function() {
+            const scroll = $(window).scrollTop();
+    
+            if(scroll > 40) {
+                header.classList.add("site-header--fixed");
+            } else {
+                header.classList.remove("site-header--fixed");
+            }
+        });
     }
 
 

@@ -29,6 +29,10 @@
 .socials {
     &--header {
         gap: 25px;
+
+        @include max(large) {
+            gap: 12px;
+        }
     }
 
     &--header &__item {

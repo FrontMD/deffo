@@ -6,11 +6,27 @@
         display: flex;
         align-items: flex-start;
         gap: 100px;
+
+        @include max(large) {
+            gap: 50px;
+        }
+
+        @include max(laptop) {
+            gap: 32px;
+        }
     }
 
     &__video {
         position: relative;
         flex: 0 0 442px;
+
+        @include max(large) {
+            flex: 0 0 400px;
+        }
+
+        @include max(laptop) {
+            flex: 0 0 270px;
+        }
 
         video {
             width: 100%;
@@ -32,5 +48,9 @@
 
     &__accordion {
         margin-top: 80px;
+
+        @include max(laptop) {
+            margin-top: 32px;
+        }
     }
 }

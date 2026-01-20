@@ -18,6 +18,10 @@
     cursor: pointer;
     transition: all $tr;
 
+    @include max(large) {
+        font-size: 12px;
+    }
+
     svg {
         width: 16px;
         height: 16px;
@@ -55,6 +59,33 @@
             border-color: $c-accent;
             color: $c-accent;
         }
+    }
+
+    &--accent-tr {
+        padding: 0;
+        color: $c-accent;
+        background-color: transparent;
+        background-image: none;
+        min-height: auto;
+
+        svg {
+            width: 36px;
+            height: 36px;
+
+            @include max(laptop) {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        &:hover {
+            color: #865F46;
+            background-image: none;
+        }
+    }
+
+    &--reverse {
+        flex-direction: row-reverse;
     }
 
 
@@ -216,10 +247,8 @@
         &:hover {
             background: rgba(104, 91, 82, 0.2);
         }
-    }
-
-    &--reverse {
-        flex-direction: row-reverse;
     }*/
+
+
 
 }

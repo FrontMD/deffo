@@ -34,21 +34,17 @@
         line-height: 100%;
         text-transform: uppercase;
 
-        /*@include max(large) {
-            font-size: 52px;
+        @include max(large) {
+            font-size: 48px;
         }
 
-        @include max(laptop) {
-            font-size: 42px;
-        }
-
-        @include max(tablet) {
-            font-size: 34px;
+        @include max(mobile) {
+            font-size: 38px;
         }
 
         @include max(xs) {
-            font-size: 26px;
-        }*/
+            font-size: 30px;
+        }
     }
 
     &--40 {
@@ -57,17 +53,17 @@
         line-height: 100%;
         text-transform: uppercase;
 
-        /*@include max(laptop) {
+        @include max(large) {
             font-size: 32px;
         }
 
-        @include max(tablet) {
+        @include max(mobile) {
             font-size: 26px;
         }
 
         @include max(xs) {
             font-size: 22px;
-        }*/
+        }
     }
 
     /*&--30 {

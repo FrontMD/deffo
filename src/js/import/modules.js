@@ -10,11 +10,12 @@
 @@include("../../blocks/modules/preloader/preloader.js")
 @@include("../../blocks/modules/tabs-block/tabs-block.js")
 @@include("../../blocks/modules/home-intro/home-intro.js")
-@@include("../../blocks/modules/s-catalog/s-catalog.js")
+@@include("../../blocks/modules/home-catalog/home-catalog.js")
 @@include("../../blocks/modules/s-about/s-about.js")
 @@include("../../blocks/modules/s-download/s-download.js")
 @@include("../../blocks/modules/s-faq/s-faq.js")
 @@include("../../blocks/modules/s-docs/s-docs.js")
+@@include("../../blocks/modules/s-catalog/s-catalog.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -27,9 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     accordion();
     sMap();
     tabsBlockInit();
-    sCatalogAnim();
+    homeCatalogAnim();
     sAboutAnim();
     sDownloadAnim();
     sFaqAnim();
     sDocsAnim();
+    sCatalogAnim();
 })

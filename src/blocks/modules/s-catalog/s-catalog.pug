@@ -1,112 +1,63 @@
 -
-    const defaultCatalogProps = {
+    const defaultSCatalogProps = {
         classes: '',
+
     }
 
-mixin s-catalog(props= defaultCatalogProps)
+mixin s-catalog(props= defaultSCatalogProps)
     -
         const checkProps = {
-            classes: props.classes ? props.classes : defaultCatalogProps.classes
+            classes: props.classes ? props.classes : defaultSCatalogProps.classes
         }
 
-    section.s-catalog.section(class= checkProps.classes data-js="sCatalog")&attributes(attributes)    
-        .section__bg
-            picture
-                img(src='img/home/blured_bg.webp' alt='')
+    section.s-catalog.section.section--inner(class= checkProps.classes data-js="sCatalog")&attributes(attributes) 
+        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sCatalog']" data-aos-anchor-placement="top-center") 
+        div(data-js="sCatalogTitle" data-anim-type='opacity') 
+            +title({
+                text: 'Каталог продукции',
+                tag: 'h1',
+                size: '40',
+                animColor: true
+            }) 
+        .s-catalog__list
+            .catalog-card(data-js="catalogCard")
+                .catalog-card__bg
+                    img(src="img/catalog/card_1.webp" alt="")
+                .catalog-card__title(data-js="catalogCardTitle")
+                    span Виды продукции
+                a(href="javascript:void(0);").catalog-card__link
 
-        .d-container
-            +tabs-block({
-                tabs: [
-                    {
-                        name: 'Категории',
-                        icon: ''
-                    },
-                    {
-                        name: 'Галерея фасадов',
-                        icon: ''
-                    },
-                ],
-            })
-                .tabs-block__slide.active(data-js="tabsBlockSlide")
-                    .s-catalog__list
-                        .s-catalog__block
-                            .catalog-card.catalog-card--full(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_1.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Виды продукции
-                                a(href="javascript:void(0);").catalog-card__link
-                            .catalog-card(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_2.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Торцы фасадов
-                                a(href="javascript:void(0);").catalog-card__link
-                            .catalog-card(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_3.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Патина
-                                a(href="javascript:void(0);").catalog-card__link
+            .catalog-card(data-js="catalogCard")
+                .catalog-card__bg
+                    img(src="img/catalog/card_2.webp" alt="")
+                .catalog-card__title(data-js="catalogCardTitle")
+                    span Торцы фасадов
+                a(href="javascript:void(0);").catalog-card__link
 
-                        .s-catalog__block
-                            .catalog-card(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_4.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span фрезеровки
-                                a(href="javascript:void(0);").catalog-card__link
-                            .catalog-card(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_5.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Типы покрытия
-                                a(href="javascript:void(0);").catalog-card__link
-                            .catalog-card.catalog-card--full(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_6.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span декоративные элементы
-                                a(href="javascript:void(0);").catalog-card__link
+            .catalog-card(data-js="catalogCard")
+                .catalog-card__bg
+                    img(src="img/catalog/card_3.webp" alt="")
+                .catalog-card__title(data-js="catalogCardTitle")
+                    span Патина
+                a(href="javascript:void(0);").catalog-card__link
 
-                .tabs-block__slide(data-js="tabsBlockSlide")
-                    .s-catalog__list
-                        .s-catalog__block
-                            .catalog-card.catalog-card--full(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_1.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Фасад прямой с решеткой №1
-                                a(href="javascript:void(0);").catalog-card__link
-                            .catalog-card(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_2.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Фасад прямой с решеткой №2
-                                a(href="javascript:void(0);").catalog-card__link
-                            .catalog-card(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_3.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Фасад прямой с решеткой №3
-                                a(href="javascript:void(0);").catalog-card__link
+            .catalog-card(data-js="catalogCard")
+                .catalog-card__bg
+                    img(src="img/catalog/card_4.webp" alt="")
+                .catalog-card__title(data-js="catalogCardTitle")
+                    span фрезеровки
+                a(href="javascript:void(0);").catalog-card__link
 
-                        .s-catalog__block
-                            .catalog-card(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_4.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Фасад прямой под стекло 3 ВД
-                                a(href="javascript:void(0);").catalog-card__link
-                            .catalog-card(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_5.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Фасад прямой под стекло 3 ВД №1
-                                a(href="javascript:void(0);").catalog-card__link
-                            .catalog-card.catalog-card--full(data-js="catalogCard")
-                                .catalog-card__bg
-                                    img(src="img/catalog/card_6.webp" alt="")
-                                .catalog-card__title(data-js="catalogCardTitle")
-                                    span Фасад прямой под стекло 3 ВД №2
-                                a(href="javascript:void(0);").catalog-card__link
+            .catalog-card(data-js="catalogCard")
+                .catalog-card__bg
+                    img(src="img/catalog/card_5.webp" alt="")
+                .catalog-card__title(data-js="catalogCardTitle")
+                    span Типы покрытия
+                a(href="javascript:void(0);").catalog-card__link
+
+            .catalog-card(data-js="catalogCard")
+                .catalog-card__bg
+                    img(src="img/catalog/card_6.webp" alt="")
+                .catalog-card__title(data-js="catalogCardTitle")
+                    span декоративные элементы
+                a(href="javascript:void(0);").catalog-card__link
