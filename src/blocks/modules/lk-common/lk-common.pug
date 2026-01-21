@@ -1,0 +1,51 @@
+-
+    const defaultLkCommonProps = {
+        classes: ''
+    }
+
+mixin lk-common(props= defaultLkCommonProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultLkCommonProps.classes
+        }
+
+    .lk-common(class= checkProps.classes)&attributes(attributes)
+        .lk-common__card
+            .lk-common__icon
+                img(src="img/conditions/conditions_4.svg" alt="")
+                span 2
+            .lk-common__info
+                .lk-common__title История заказов
+                .lk-common__text.text-editor Просмотр выполненных заказов
+            .lk-common__bottom
+                +btn({
+                    name: 'Открыть',
+                    cMode: 'accent-tr'
+                })
+
+        .lk-common__card
+            .lk-common__icon
+                img(src="img/conditions/conditions_6.svg" alt="")
+            .lk-common__info
+                .lk-common__title Смена пароля
+                .lk-common__text.text-editor Обновите пароль для безопасности аккаунта
+            .lk-common__bottom
+                +btn({
+                    name: 'Сменить',
+                    cMode: 'accent-tr'
+                })
+
+        .lk-common__card
+            .lk-common__icon
+                img(src="img/conditions/conditions_7.svg" alt="")
+                span 15
+            .lk-common__info
+                .lk-common__title Избранное
+                .lk-common__text.text-editor Сохраняйте понравившиеся фасады, чтобы вернуться к ним позже
+            .lk-common__bottom
+                +btn({
+                    name: 'Открыть',
+                    cMode: 'accent-tr'
+                })
+
+

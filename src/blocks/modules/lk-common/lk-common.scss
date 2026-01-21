@@ -1,0 +1,65 @@
+.lk-common {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 25px 30px;
+        background-color: rgba(67, 67, 66, 0.4);
+    }
+
+    &__icon {
+        position: relative;
+        width: 44px;
+        height: 44px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        span {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #C21717;
+            border-radius: 100%;
+            min-width: 20px;
+            min-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 100%;
+
+        }
+    }
+
+    &__info {
+        margin-bottom: auto;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+    }
+
+    &__text {
+        color: $c-text-light;
+        font-size: 15px;
+        margin-top: 5px;
+        margin-bottom: auto;
+    }
+
+    &__bottom {
+        padding-top: 30px;
+        border-top: 1px solid $c-bg-grey;
+    }
+}

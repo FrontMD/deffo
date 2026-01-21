@@ -205,7 +205,7 @@ iframe {
 	}
 
 	&--top {
-		padding-top: 180px;
+		padding-top: 172px;
 	}
 
 	&--inner {
@@ -320,6 +320,10 @@ iframe {
 
 	@include max(laptop) {
 		font-size: 16px;
+	}
+
+	@include max(xs) {
+		font-size: 14px;
 	}
 
 	>*:first-child {

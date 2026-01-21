@@ -17,15 +17,17 @@ mixin prod-card(props = defaultProdCardProps)
             isFavorite: props.isFavorite ? props.isFavorite : defaultDlBtnProps.isFavorite,
         }
 
-    .prod-card(class=checkProps.classes data-js="prodCard")&attributes(attributes)
+        let favoriteClass = checkProps.isFavorite === true ? ' prod-card--favorite' : ''
+
+    .prod-card(class=checkProps.classes + favoriteClass data-js="prodCard")&attributes(attributes)
+        a.prod-card__link(href="javascript:void(0);")
         .prod-card__top
             .prod-card__img
                 img(src=checkProps.img, alt="")
 
-            - if(checkProps.isFavorite === true)
-                a.prod-card__favorite(href="javascript:void(0);")
-                    svg
-                        use(xlink:href=`img/sprites/sprite.svg#c_favorite`)
+            a.prod-card__favorite(href="javascript:void(0);")
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#c_favorite`)
 
             - if(checkProps.tags && checkProps.tags.length > 0)
                 .prod-card__tags
@@ -33,7 +35,8 @@ mixin prod-card(props = defaultProdCardProps)
                     - let tagsList = checkProps.tags
                     - while(tagsCount < tagsList.length)
                         - let tag = tagsList[tagsCount]
-                        .prod-card__tag
+                        - let color = tag.icon.includes('sale') ? '#B10024' : '#0D6E00'
+                        .prod-card__tag(style=`background-color: ${color}`)
                             img(src=tag.icon, alt="")
                             span!= tag.text
 

@@ -1,0 +1,40 @@
+-
+    const defaultLkLayoutProps = {
+        classes: '',
+        page: '',
+        title: 'Персональный раздел'
+    }
+
+mixin lk-layout(props= defaultLkLayoutProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultProdsListProps.classes,
+            page: props.page ? props.page : defaultProdsListProps.page,
+            title: props.title ? props.title : defaultProdsListProps.title,
+        }
+
+    section.lk-layout.section.section--top(class= checkProps.classes)&attributes(attributes)
+        .d-container
+            +title({
+                classes: 'lk-layout__title',
+                text: checkProps.title,
+                size: 40,
+                tag: 'h1'
+            })
+            .lk-layout__container
+                .lk-layout__body
+                    - if(page === 'orders')
+                        .lk-sidebar
+                    - else if(page === 'order')
+                        .lk-sidebar
+                    - else if(page === 'basket')
+                        .lk-sidebar
+                    - else
+                        +lk-common
+                .lk-layout__sidebar
+                    - if(page === 'basket')
+                        .lk-sidebar
+                    - else
+                        .lk-sidebar
+
+

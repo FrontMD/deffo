@@ -48,7 +48,7 @@ mixin home-intro(props= defaultHomeIntroProps)
             contentSlides: props.contentSlides ? props.contentSlides : defaultHomeIntroProps.contentSlides
         }
 
-    section.home-intro.section.section--top.section--fh(class= checkProps.classes data-js="homeIntro")&attributes(attributes)    
+    section.home-intro.section.section--fh(class= checkProps.classes data-js="homeIntro")&attributes(attributes)    
         .section__bg.section__bg--overlay(data-js="sectionBgSlider")
             .swiper-wrapper
                 .swiper-slide

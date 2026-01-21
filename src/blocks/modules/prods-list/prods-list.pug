@@ -13,7 +13,7 @@
                 tags: [
                     {
                         text: 'Распродажа',
-                        icon: 'img/catalog/sale.svg'
+                        icon: 'img/catalog/tag_sale.svg'
                     }
                 ]
             },
@@ -31,7 +31,7 @@
                 tags: [
                     {
                         text: 'Новинка',
-                        icon: 'img/catalog/new.svg'
+                        icon: 'img/catalog/tag_new.svg'
                     }
                 ]
             },
@@ -57,7 +57,7 @@
                 tags: [
                     {
                         text: 'Новинка',
-                        icon: 'img/catalog/new.svg'
+                        icon: 'img/catalog/tag_new.svg'
                     }
                 ]
             },
@@ -73,21 +73,22 @@ mixin prods-list(props= defaultProdsListProps)
         }
 
     section.prods-list.section.section--inner(class= checkProps.classes data-js="prodsList")&attributes(attributes)
-        - if(checkProps.title)
-            div(data-js="scrollTrigger") 
-            div(data-js="prodsListTitle" data-anim-type='opacity') 
-                +title({
-                    text: checkProps.title,
-                    tag: 'h2',
-                    size: '26',
-                    animColor: true
-                })
+        .d-container
+            - if(checkProps.title)
+                div(data-js="scrollTrigger") 
+                div(data-js="prodsListTitle" data-anim-type='opacity') 
+                    +title({
+                        text: checkProps.title,
+                        tag: 'h2',
+                        size: '26',
+                        animColor: true
+                    })
 
-        .prods-list__items(data-js="prodsList")
-            - let cardsCount = 0
-            - let cardsList = checkProps.cards
-            - while(cardsCount < cardsList.length)
-                +prod-card(cardsList[cardsCount])
+            .prods-list__items(data-js="prodsList")
+                - let cardsCount = 0
+                - let cardsList = checkProps.cards
+                - while(cardsCount < cardsList.length)
+                    +prod-card(cardsList[cardsCount])
 
-                - cardsCount++
+                    - cardsCount++
 

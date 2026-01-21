@@ -1,0 +1,26 @@
+.lk-layout {
+    &__title {
+        text-transform: none;
+    }
+
+    &__container {
+        margin-top: 64px;
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+    }
+
+    &__body {
+        flex: 1 1 auto;
+    }
+
+    &__sidebar {
+        flex: 0 0 442px;
+    }
+}
+
+.lk-sidebar {
+    width: 100%;
+    background-color: rgba(67, 67, 66, 0.4);
+    padding: 25px 30px;
+}

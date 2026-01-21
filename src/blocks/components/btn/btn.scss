@@ -88,6 +88,10 @@
         flex-direction: row-reverse;
     }
 
+    &--full {
+        width: 100%;
+    }
+
 
     /*&--light {
         color: $c-text-btn;
@@ -172,9 +176,7 @@
         }
     }
 
-    &--full {
-        width: 100%;
-    }
+    
 
     &--card {
         padding: 9px 14px 9px 19px;

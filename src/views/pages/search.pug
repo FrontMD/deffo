@@ -1,0 +1,60 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Результаты поиска"
+    - const fullHeader = false
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Результаты поиска',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+
+            +s-title({
+                title: 'Результаты поиска',
+                text: 'По запросу "фасад" найдено 70 записи (-ей)'
+            })
+
+            +prods-list({
+                title: 'Каталог «Виды продукции»',
+            })
+
+            +prods-list({
+                title: 'Чаще ищут',
+                cards: [
+                    {
+                        title: 'Фасад прямой под стекло 3 ВД №3',
+                        img: 'img/catalog/prod_2.webp'
+                    },
+                    {
+                        title: 'Фасад прямой под стекло 3 ВД №5 (3*2)',
+                        img: 'img/catalog/prod_5.webp',
+                        tags: [
+                            {
+                                text: 'Новинка',
+                                icon: 'img/catalog/tag_new.svg'
+                            }
+                        ]
+                    },
+                    {
+                        title: 'Фасад прямой с решеткой №2',
+                        img: 'img/catalog/prod_6.webp'
+                    },
+                    {
+                        title: 'Фасад прямой под стекло 3 ВД №6',
+                        img: 'img/catalog/prod_7.webp'
+                    },
+                ]
+            })
+
+
