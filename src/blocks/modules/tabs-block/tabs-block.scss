@@ -5,7 +5,7 @@
     &__header {
         padding: 20px;
 
-        @include max(mobile) {
+        @include max(tablet) {
             padding: 10px;
         }
     }
@@ -48,7 +48,7 @@
         transition: all $tr;
         cursor: pointer;
 
-        @include max(mobile) {
+        @include max(tablet) {
             padding: 12px 20px;
             font-size: 14px;
         }
@@ -71,6 +71,10 @@
 
     &__slides {
         padding-top: 48px;
+
+        @include max(tablet) {
+            padding-top: 24px;
+        }
     }
 
     &__slide {

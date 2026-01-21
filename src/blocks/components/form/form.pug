@@ -8,7 +8,8 @@
         innerThanks: true,
         privacyText: 'Я согласен с <a href="javascript:void(0);" target="_blank">Политикой конфиденциальности</a>',
         successTitle: 'Ваша заявка отправлена!',
-        successText: 'Менеджер свяжется с вами в ближайшее время'
+        successText: 'Менеджер свяжется с вами в ближайшее время',
+        design2: false
     }
 
 mixin form(props = defaultFormProps)
@@ -23,9 +24,12 @@ mixin form(props = defaultFormProps)
             privacyText: props.privacyText ? props.privacyText : defaultFormProps.privacyText,
             successTitle: props.successTitle ? props.successTitle : defaultFormProps.successTitle,
             successText: props.successText ? props.successText : defaultFormProps.successText,
+            design2: props.design2 ? props.design2 : defaultFormProps.design2
         }
 
-    form.form(action="#" class= checkProps.classes data-validate novalidate)&attributes(attributes)
+        let design2Class = checkProps.design2 === true ? ' form--design2' : '';
+
+    form.form(action="#" class=checkProps.classes + design2Class data-validate novalidate)&attributes(attributes)
         .form__content(data-js='formContent')
             - if(checkProps.title.length > 0)
                 .form__title!= checkProps.title

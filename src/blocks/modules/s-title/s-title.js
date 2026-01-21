@@ -3,8 +3,6 @@ function sTitleAnim() {
 
     if(sTitles.length < 1) return
 
-    console.log(sTitles)
-
     sTitles.forEach(sTitle => {
         const title = sTitle.querySelector('[data-js="sTitleTitle"]')
         const trigger = sTitle.querySelector('[data-js="scrollTrigger"]')

@@ -146,6 +146,21 @@
         }
     }
 
+    &--design2 .form-privacy {
+        &__text {
+            color: $c-white;
+
+            a {
+                color: $c-text-light;
+            }
+
+            a:hover {
+                color: $c-accent;
+            }
+
+        }
+    }
+
     &__submit {
         position: relative;
         overflow: hidden;

@@ -856,3 +856,28 @@
         }
     }
 }*/
+
+.form--design2 {
+    .field {
+
+        &__input,
+        &__textarea {
+            padding: 24px 25px;
+            line-height: 100%;
+            color: $c-white;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid $c-border;
+
+            &::placeholder {
+                color: $c-text-light;
+                opacity: 1;
+            }
+        }
+
+        &--invalid &__input,
+        &--invalid &__textarea,
+        &--invalid .select2 {
+            border-color: $c-error !important;
+        }
+    }
+}

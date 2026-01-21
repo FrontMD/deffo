@@ -5,12 +5,15 @@ function sAboutAnim() {
 
     sAbouts.forEach(sAbout => {
         const video = sAbout.querySelector('[data-js="sAboutVideo"]');
+        const maskBg = sAbout.querySelector('[data-js="sAboutMaskBg"]');
         const rect = sAbout.querySelector('[data-js="sAboutRect"]');
         const text = sAbout.querySelector('[data-js="sAboutText"]');
         const title = sAbout.querySelector('[data-js="sAboutTitle"]');
         const cards = sAbout.querySelector('[data-js="sAboutCards"]');
         const logo = sAbout.querySelector('[data-js="sAboutLogo"]');
         const pathList = logo.querySelectorAll('[data-anim-type="opacityUp100"]')
+
+        maskBg?.setAttribute('height', `${sAbout.offsetHeight + 5}px`)
 
         if(video) {
             const videoAnimEl = video.querySelector('[data-anim-type]')

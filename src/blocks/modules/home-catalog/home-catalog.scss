@@ -33,6 +33,10 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
+
+        @include max(tablet) {
+            gap: 16px;
+        }
     }
 
     &__block {
@@ -40,6 +44,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
         grid-auto-rows: max-content;
+
+        @include max(tablet) {
+            gap: 16px;
+        }
     }
 
 }

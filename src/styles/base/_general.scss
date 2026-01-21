@@ -198,6 +198,10 @@ iframe {
 	&--fh {
 		min-height: 100vh;
 		min-height: 100dvh;
+
+		@include max(tablet) {
+			min-height: auto;
+		}
 	}
 
 	&--top {
@@ -326,6 +330,30 @@ iframe {
 		margin-bottom: 0 !important;
 	}
 
+	p {
+		display: block;
+	}
+
+	h2,
+	p,
+	ul,
+	iframe,
+	video,
+	img {
+		margin: 0 0 1.25em;
+	}
+
+	a {
+		color: $c-accent;
+		transition: all $tr;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+			color: $c-accent;
+		}
+	}
+
 	/*h2 {
 		font-family: $ff-montserrat;
 		font-weight: 500;
@@ -344,18 +372,6 @@ iframe {
 		}
 	}
 
-	p {
-		display: block;
-	}
-
-	h2,
-	p,
-	ul,
-	iframe,
-	video,
-	img {
-		margin: 0 0 1.33em;
-	}
 
 	ul {
 		padding-left: 1.5em;
@@ -593,15 +609,6 @@ iframe {
 			svg {
 				width: 14px;
 				height: 14px;
-			}
-		}
-
-		a {
-			text-decoration: underline;
-			transition: all $tr;
-
-			&:hover {
-				opacity: 0.7;
 			}
 		}
 

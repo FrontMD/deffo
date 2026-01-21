@@ -23,10 +23,6 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
-
-        @include max(laptop) {
-            //display: none;
-        }
     }
 
     &__logo {
@@ -63,6 +59,10 @@
         @include max(laptop) {
             display: none;
         }
+    }
+
+    &__logo+&__side {
+        justify-content: flex-end;
     }
 
     &__side--center {
@@ -227,15 +227,39 @@
 }
 
 .site-header {
+    &--full {
+        @include max(laptop) {
+            top: -101px;
+        }
+
+        @include max(tablet) {
+            top: -61px;
+        }
+    }
+
     &--full &__small {
         height: 0;
         overflow: hidden;
         transition: height $tr-long, margin-top $tr-long;
+
+        @include max(laptop) {
+            height: auto !important;
+            overflow: visible;
+            margin-top: 20px;
+        }
+
+        @include max(tablet) {
+            margin-top: 15px;
+        }
     }
 
     &--full.site-header--fixed &__small {
         overflow: visible;
         margin-top: 20px;
+
+        @include max(tablet) {
+            margin-top: 15px;
+        }
     }
 
     &--full.site-header--fixed {
@@ -247,8 +271,12 @@
             top: -157px;
         }
 
+        @include max(laptop) {
+            top: -101px;
+        }
+
         @include max(tablet) {
-            top: 0;
+            top: -61px;
         }
     }
 }

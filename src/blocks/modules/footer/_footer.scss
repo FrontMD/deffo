@@ -20,7 +20,7 @@
             gap: 80px;
         }
 
-        @include max(laptop) {
+        @include max(forFooter) {
             flex-wrap: wrap;
             gap: 150px;
         }
@@ -52,7 +52,7 @@
         &--first {
             gap: 40px;
 
-            @include max(laptop) {
+            @include max(forFooter) {
                 margin-right: auto;
             }
 
@@ -66,7 +66,7 @@
             margin-left: auto;
             max-width: 400px;
 
-            @include max(laptop) {
+            @include max(forFooter) {
                 margin-left: 0;
             }
 
@@ -80,7 +80,7 @@
     &__logo {
         width: 140px;
 
-        @include max(laptop) {
+        @include max(forFooter) {
             margin-right: auto;
         }
 

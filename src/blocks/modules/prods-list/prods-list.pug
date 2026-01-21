@@ -1,0 +1,93 @@
+-
+    const defaultProdsListProps = {
+        classes: '',
+        title: '',
+        cards: [
+            {
+                title: 'Фасад прямой с решеткой №3',
+                img: 'img/catalog/prod_1.webp'
+            },
+            {
+                title: 'Фасад прямой под стекло 3 ВД №3',
+                img: 'img/catalog/prod_2.webp',
+                tags: [
+                    {
+                        text: 'Распродажа',
+                        icon: 'img/catalog/sale.svg'
+                    }
+                ]
+            },
+            {
+                title: 'Фасад прямой с решеткой №1',
+                img: 'img/catalog/prod_3.webp',
+            },
+            {
+                title: 'Фасад прямой под стекло 3 ВД №4',
+                img: 'img/catalog/prod_4.webp',
+            },
+            {
+                title: 'Фасад прямой под стекло 3 ВД №5 (3*2)',
+                img: 'img/catalog/prod_5.webp',
+                tags: [
+                    {
+                        text: 'Новинка',
+                        icon: 'img/catalog/new.svg'
+                    }
+                ]
+            },
+            {
+                title: 'Фасад прямой с решеткой №2',
+                img: 'img/catalog/prod_6.webp',
+            },
+            {
+                title: 'Фасад прямой под стекло 3 ВД №6',
+                img: 'img/catalog/prod_7.webp',
+            },
+            {
+                title: 'Фасад прямой под стекло 3 ВД №3',
+                img: 'img/catalog/prod_2.webp',
+            },
+            {
+                title: 'Фасад прямой под стекло 3 ВД №6',
+                img: 'img/catalog/prod_7.webp',
+            },
+            {
+                title: 'Фасад прямой под стекло 3 ВД №5 (3*2)',
+                img: 'img/catalog/prod_5.webp',
+                tags: [
+                    {
+                        text: 'Новинка',
+                        icon: 'img/catalog/new.svg'
+                    }
+                ]
+            },
+        ]
+    }
+
+mixin prods-list(props= defaultProdsListProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultProdsListProps.classes,
+            title: props.title ? props.title : defaultProdsListProps.title,
+            cards: props.cards ? props.cards : defaultProdsListProps.cards,
+        }
+
+    section.prods-list.section.section--inner(class= checkProps.classes data-js="prodsList")&attributes(attributes)
+        - if(checkProps.title)
+            div(data-js="scrollTrigger") 
+            div(data-js="prodsListTitle" data-anim-type='opacity') 
+                +title({
+                    text: checkProps.title,
+                    tag: 'h2',
+                    size: '26',
+                    animColor: true
+                })
+
+        .prods-list__items(data-js="prodsList")
+            - let cardsCount = 0
+            - let cardsList = checkProps.cards
+            - while(cardsCount < cardsList.length)
+                +prod-card(cardsList[cardsCount])
+
+                - cardsCount++
+

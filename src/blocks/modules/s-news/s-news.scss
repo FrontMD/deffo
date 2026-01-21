@@ -1,11 +1,19 @@
 .s-news {
-    margin-top: 160px;
-    margin-bottom: 40px;
+    padding-top: 160px;
+    padding-bottom: 40px;
+
+    @include max(large) {
+        padding-top: 60px;
+    }
 
     &__container {
         display: flex;
         align-items: stretch;
         gap: 50px;
+
+        @include max(laptop) {
+            gap: 32px;
+        }
     }
 
     &__header {
@@ -17,6 +25,10 @@
 
         @include max(large) {
             flex: 0 0 400px;
+        }
+
+        @include max(laptop) {
+            flex: 0 0 270px;
         }
     }
 
@@ -30,6 +42,16 @@
         overflow: hidden;
         margin-right: -40px;
         padding-right: 40px;
+
+        @include max(large) {
+            max-width: calc(100% - 400px - 50px + 30px);
+            margin-right: -30px;
+            padding-right: 30px;
+        }
+
+        @include max(laptop) {
+            max-width: calc(100% - 270px - 32px + 30px);
+        }
     }
 
 }
@@ -42,6 +64,10 @@
     padding: 20px 20px 40px;
     background-color: rgba(67, 67, 66, 0.4);
     color: $c-white;
+
+    @include max(laptop) {
+        padding: 12px 12px 32px;
+    }
 
     &__img {
         width: 100%;
@@ -61,6 +87,11 @@
         letter-spacing: 0px;
         text-align: center;
         text-transform: uppercase;
+        margin-bottom: auto;
+
+        @include max(laptop) {
+            font-size: 18px;
+        }
     }
 
     &__desc {

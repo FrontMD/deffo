@@ -29,7 +29,7 @@
             },
             {
                 img: "img/img-text/img_text_2.webp",
-                title: 'Мебельные фасады для&nbsp;оптовых покупателей',
+                title: 'Мебельные фасады <br>для оптовых покупателей',
                 text: `
                 <p>Для крупных мебельных фабрик у нас существуют особые условия по поставкам IDM «Eterno» и разработок собственных коллекций декоров для каждой фабрики.</p>
                 <p>Сделайте линейки Вашей мебели более востребованными и современными вместе с «Eterno», которое все больше набирает узнаваемость на рынке.</p>
@@ -56,7 +56,7 @@ mixin img-text(props= defaultImgTextProps)
             rows: props.rows ? props.rows : defaultImgTextProps.rows,
         }
 
-    section.img-text(class= checkProps.classes)&attributes(attributes)
+    section.img-text.section.section--inner(class= checkProps.classes)&attributes(attributes)
         .d-container
             .img-text__container
                 - let rows = checkProps.rows 
@@ -67,7 +67,7 @@ mixin img-text(props= defaultImgTextProps)
                     - let row = rows[count]
                     - let dirClass = row.imgRight === true ? 'img-text__row--reverse' : ''
 
-                    .img-text__row(class=dirClass)
+                    .img-text__row(class=dirClass data-aos=`fade-up` data-aos-duration="600" data-aos-anchor-placement="top-bottom")
                         .img-text__img(data-aos=`${row.imgRight === true ? 'fade-left' : 'fade-right'}` data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="top-bottom")
                             img(src=row.img, alt="")
                         .img-text__info
@@ -78,10 +78,11 @@ mixin img-text(props= defaultImgTextProps)
                             })(data-aos='fade-up' data-aos-duration="600" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom")
                             .img-text__text.text-editor(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="top-bottom")!= row.text
                             - if(row.btns !== false)
-                                - let btnsCount = 0
-                                - let btnsList = row.btns 
-                                - while(btnsCount < btnsList.length) 
-                                    +btn(btnsList[btnsCount])(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom")
+                                .img-text__btns
+                                    - let btnsCount = 0
+                                    - let btnsList = row.btns 
+                                    - while(btnsCount < btnsList.length) 
+                                        +btn(btnsList[btnsCount])(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom")
 
-                                    - btnsCount++
+                                        - btnsCount++
                     - count++

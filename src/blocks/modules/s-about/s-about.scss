@@ -55,6 +55,16 @@
             height: 105px;
         }
 
+        @include max(laptop) {
+            width: 480px;
+            height: 80.2px;
+        }
+
+        @include max(tablet) {
+            width: 360px;
+            height: 60.1px;
+        }
+
         svg {
             width: 814px;
             height: 136px;
@@ -62,6 +72,16 @@
             @include max(large) {
                 width: 630px;
                 height: 105px;
+            }
+
+            @include max(laptop) {
+                width: 480px;
+                height: 80.2px;
+            }
+
+            @include max(tablet) {
+                width: 360px;
+                height: 60.1px;
             }
         }
     }
@@ -75,6 +95,10 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 40px;
+    }
+
+    &__desc {
+        max-width: 55vw;
     }
 
     &__cards {
@@ -95,6 +119,17 @@
             max-width: 280px;
             padding: 16px 16px 30px;
         }
+
+        @include max(laptop) {
+            max-width: 220px;
+            padding: 12px 12px 24px;
+        }
+
+        @include max(tablet) {
+            width: 100%;
+            max-width: calc((100% - 20px) / 2);
+        }
+
 
         &::after {
             content: '';
@@ -135,6 +170,10 @@
         line-height: 140%;
         color: $c-white;
 
+        @include max(laptop) {
+            font-size: 16px;
+        }
+
     }
 
     &__text {
@@ -145,6 +184,10 @@
         font-size: 16px;
         line-height: 160%;
         color: $c-text-grey;
+
+        @include max(laptop) {
+            font-size: 14px;
+        }
 
     }
 

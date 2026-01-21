@@ -38,6 +38,10 @@
             font-size: 48px;
         }
 
+        @include max(tablet) {
+            font-size: 42px;
+        }
+
         @include max(mobile) {
             font-size: 38px;
         }
@@ -66,12 +70,10 @@
         }
     }
 
-    /*&--30 {
-        font-weight: 500;
+    &--30 {
         font-size: 30px;
-        line-height: 130%;
-        text-transform: uppercase;
-        letter-spacing: -0.04em;
+        font-weight: 500;
+        line-height: 150%;
 
         @include max(laptop) {
             font-size: 24px;
@@ -82,13 +84,12 @@
         }
     }
 
-    &--24 {
+    &--26 {
         font-weight: 500;
-        font-size: 24px;
-        line-height: 129%;
-        letter-spacing: -0.04em;
+        font-size: 26px;
+        line-height: 120%;
 
-        @include max(laptop) {
+        @include max(tablet) {
             font-size: 20px;
         }
 
@@ -97,6 +98,7 @@
         }
     }
 
+    /*
     &--22 {
         font-weight: 500;
         font-size: 22px;

@@ -74,7 +74,9 @@ function preloader() {
             preloader.remove();
             figures[0].closest('svg').remove();
             unlockBody();
-            AOS.init();
+            AOS.init({
+                once: true
+            });
             homeIntroAnim();
         }, {once: true})
     

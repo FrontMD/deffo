@@ -1,0 +1,75 @@
+-
+    const defaultPartnerFormProps = {
+        classes: '',
+    }
+
+mixin partner-form(props= defaultPartnerFormProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultPartnerFormProps.classes
+        }
+
+    section.partner-form.section.section--inner(class= checkProps.classes data-anim-id="partnerForm")&attributes(attributes)  
+        .d-container
+            .partner-form__content
+                .partner-form__decor
+                    img(src="img/logo_grey.svg" alt="")
+                .partner-form__info
+                    +title({
+                        classes: 'partner-form__title',
+                        text: 'Давайте вместе развивать <br>взаимовыгодные партнёрства!',
+                        tag: 'h2',
+                        size: '30'
+                    })(data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400" data-aos-anchor="[data-anim-id='partnerForm']" data-aos-anchor-placement="top-bottom")
+                    .partner-form__text.text-editor(data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600" data-aos-anchor="[data-anim-id='partnerForm']" data-aos-anchor-placement="top-bottom")
+                        p Сотрудничая с нами, вы приобретаете надежного и компетентного партнера. Свяжитесь по телефону, указанному в разделе «Контакты» или напишите на электронную почту. Мы сделаем такое предложение, от которого будет трудно отказаться.
+                        p Убедитесь в этом сами!
+
+                .partner-form__form(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" data-aos-anchor="[data-anim-id='partnerForm']" data-aos-anchor-placement="top-bottom")
+                    +form({
+                        btnText: 'Стать партнером',
+                        btnCMode: 'accent',
+                        privacyText: 'Я прочитал и согласен с <a href="javascript:void(0);" target="_blank">политикой</a> в отношении обработки персональных данных',
+                        design2: true,
+                    })
+                        +field({
+                            placeholder: 'Ваше имя',
+                            inputAttr: {
+                                'required': '',
+                                'data-type': 'letters'
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            placeholder: 'Телефон',
+                            type: 'tel',
+                            inputAttr: {
+                                'data-type': 'phoneNumber',
+                                'required': '',
+                                'data-v-name': 'phone'
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            placeholder: 'Email',
+                            type: 'tel',
+                            inputAttr: {
+                                'required': '',
+                                'data-v-name': 'email'
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            placeholder: 'Адрес',
+                            inputAttr: {
+                                'required': '',
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            classes: '',
+                            tag: 'textarea',
+                            type: '',
+                            title: '',
+                            placeholder: 'Комментарий',
+                        })

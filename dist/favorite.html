@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Избранное</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ec8353bc-e4c0-44ee-8f5b-822d005a189e&amp;lang=ru_RU"></script>
+  </head>
+  <body>
+        <noindex>
+          <div>
+                <div class="modal hystmodal" id="callbackModal" aria-hidden="true" data-js="callbackModal">
+                  <div class="hystmodal__wrap">
+                    <div class="hystmodal__window" role="dialog" aria-modal="true">
+                      <div class="modal__content">
+                        <div class="modal__close" data-hystclose>
+                          <svg> 
+                            <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                          </svg>
+                        </div>
+                        <div class="modal__inner" data-js="modalInner">
+                              <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                                <div class="form__content" data-js="formContent">
+                                  <div class="form__title">Оставить заявку</div>
+                                  <div class="form__fields" data-js="formFields">
+                                        <label class="field     " data-js="formField">
+                                          <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                        <label class="field     " data-js="formField">
+                                          <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                  </div>
+                                  <div class="form__privacy form-privacy" data-js="formField">
+                                    <div class="form-privacy__flex">
+                                      <label>
+                                        <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                      </label><span class="form-privacy__text">Я прочитал и согласен с <a href="javascript:void(0);" target="_blank">политикой</a> в отношении обработки персональных данных</span>
+                                    </div><span class="field__error" data-js="fieldError"></span>
+                                  </div>
+                                      <button class="d-btn form__submit d-btn--accent" type="submit"><span>Отправить заявку</span>
+                                      </button>
+                                </div>
+                                <div class="form__thanks" data-js="form-thanks">
+                                  <div class="form__title">Ваша заявка отправлена!</div>
+                                  <div class="form__image-success"><img src="img/success.png"></div>
+                                  <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
+                                </div>
+                              </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal hystmodal" id="faqModal" aria-hidden="true" data-js="faqModal">
+                  <div class="hystmodal__wrap">
+                    <div class="hystmodal__window" role="dialog" aria-modal="true">
+                      <div class="modal__content">
+                        <div class="modal__close" data-hystclose>
+                          <svg> 
+                            <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                          </svg>
+                        </div>
+                        <div class="modal__inner" data-js="modalInner">
+                              <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                                <div class="form__content" data-js="formContent">
+                                  <div class="form__title">Задать вопрос</div>
+                                  <div class="form__fields" data-js="formFields">
+                                        <label class="field     " data-js="formField">
+                                          <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                        <label class="field     " data-js="formField">
+                                          <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
+                                        </label>
+                                        <label class="field     " data-js="formField">
+                                          <textarea class="field__textarea" rows="6" placeholder="Вопрос"></textarea>
+                                        </label>
+                                  </div>
+                                  <div class="form__privacy form-privacy" data-js="formField">
+                                    <div class="form-privacy__flex">
+                                      <label>
+                                        <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                      </label><span class="form-privacy__text">Я прочитал и согласен с <a href="javascript:void(0);" target="_blank">политикой</a> в отношении обработки персональных данных</span>
+                                    </div><span class="field__error" data-js="fieldError"></span>
+                                  </div>
+                                      <button class="d-btn form__submit d-btn--accent" type="submit"><span>Отправить вопрос</span>
+                                      </button>
+                                </div>
+                                <div class="form__thanks" data-js="form-thanks">
+                                  <div class="form__title">Ваша заявка отправлена!</div>
+                                  <div class="form__image-success"><img src="img/success.png"></div>
+                                  <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
+                                </div>
+                              </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </noindex>
+        <header class="site-header" data-js="siteHeader">
+          <div class="section">
+            <div class="d-container">
+              <div class="site-header__container">
+                <div class="site-header__small">
+                  <div class="site-header__side site-header__side--center site-header__side--mobile"><a class="site-header__logo" href="/" data-aos="fade-right" data-aos-duration="600"><img src="img/logo.svg" alt=""></a>
+                        <div class="main-menu" data-js="siteHeaderMenu">
+                          <div class="main-menu__items">
+                            <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Каталог</a>
+                              <div class="main-menu__chevron">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                                </svg>
+                              </div>
+                              <div class="submenu main-menu__submenu">
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Виды продукции</a></div>
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Декоративные элементы</a></div>
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Фрезеровки</a></div>
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Типы покрытия</a></div>
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Торцы фасадов</a></div>
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Патина</a></div>
+                              </div>
+                            </div>
+                            <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Готовые решения</a>
+                              <div class="main-menu__chevron">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                                </svg>
+                              </div>
+                              <div class="submenu main-menu__submenu">
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Эворон</a></div>
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Гокли</a></div>
+                                <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Эльтон</a></div>
+                              </div>
+                            </div>
+                            <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Галерея фасадов</a></div>
+                            <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Акции</a></div>
+                            <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Новости</a></div>
+                            <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Партнерам</a></div>
+                            <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Контакты</a></div>
+                          </div>
+                          <form class="main-menu__search menu-search" action="#" data-js="menuSearch">
+                            <div class="menu-search__btn" data-js="mainMenuItem" data-id="menuSearchToggle">
+                              <div class="menu-search__icon menu-search__icon--open">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="menu-search__icon menu-search__icon--close">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="menu-search__body" data-id="menuSearchBody">
+                                  <label class="field menu-search__field    " data-js="formField">
+                                    <input class="field__input" type="text" placeholder="Поиск по товарам">
+                                  </label>
+                              <div class="menu-search__results search-results">
+                                <div class="search-results__item">
+                                  <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                                  <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                    <div class="search-results__price">5 000 ₽</div>
+                                  </div>
+                                </div>
+                                <div class="search-results__item">
+                                  <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                                  <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой 3 ВД №3</a>
+                                    <div class="search-results__price">5 000 ₽</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                  </div>
+                  <div class="site-header__side" data-aos="fade-left" data-aos-duration="600">
+                        <div class="socials  socials--header"><a class="socials__item" href="javascript:void(0);">
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#telegram"></use>
+                            </svg></a><a class="socials__item" href="javascript:void(0);">
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#whatsapp"></use>
+                            </svg></a>
+                        </div>
+                    <div class="site-header__contacts"><a class="site-header__contact" href="tel:+78002220026">+7 (800) 222-00-26</a>
+                          <button class="d-btn  d-btn--transparent" type="button" data-modal="#callbackModal"><span>Заказать звонок</span>
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#arrow_top_right"></use>
+                            </svg>
+                          </button>
+                    </div>
+                    <div class="site-header__controls"><a class="site-header__control" href="javascript:void(0);">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#favorite"></use>
+                        </svg></a><a class="site-header__control" href="javascript:void(0);">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#bascket"></use>
+                        </svg></a><a class="site-header__control" href="javascript:void(0);">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#lk"></use>
+                        </svg></a></div>
+                  </div>
+                  <div class="site-header__burger" data-js="mainBurgerOpen" data-aos="fade-left" data-aos-duration="600">
+                    <svg> 
+                      <use xlink:href="img/sprites/sprite.svg#main_burger"></use>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+    <main class="site-main">
+      <div class="page" data-js="page">
+        <div class="page-layout">
+              <section class="section breadcrumbs" data-aos="fade-right" data-duration="600" data-aos-delay="1000">
+                <div class="d-container">
+                  <div class="custom-scrollbar breadcrumbs__scroll" data-js="customScrollbar">
+                    <ul class="breadcrumbs__list">
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">DEFFO</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_breadcrumbs"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Избранное</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <section class="section s-title section--inner" data-js="sTitle" data-anim-id="sTitle">
+                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-anim-id='sTitle']" data-aos-anchor-placement="top-center"></div>
+                <div class="d-container">
+                  <div class="s-title__container">
+                    <div data-js="sTitleTitle" data-anim-type="opacity">
+                          <div class="title s-title__title title--40">
+                            <h2 data-anim-type="textColor">Избранное</h2>
+                          </div>
+                    </div>
+                    <div class="s-title__text text-editor" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js=&quot;sTitle&quot;]" data-aos-anchor-placement="top-center">Многолетний опыт, профессиональные сотрудники, а также современное оборудование <br>и широкий выбор ассортимента наших каталогов позволяют с легкостью решать любые вопросы, <br>которые могут возникать перед нашими клиентами.</div>
+                  </div>
+                </div>
+              </section>
+              <section class="prods-list section section--inner" data-js="prodsList">
+                <div data-js="scrollTrigger"> </div>
+                <div data-js="prodsListTitle" data-anim-type="opacity"> 
+                      <div class="title  title--26">
+                        <h2 data-anim-type="textColor">Избранные элементы каталога «Виды продукции»</h2>
+                      </div>
+                </div>
+                <div class="prods-list__items" data-js="prodsList">
+                      <div class="prod-card" data-js="prodCard">
+                        <div class="prod-card__top">
+                          <div class="prod-card__img"><img src="img/catalog/prod_2.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                            </svg></a>
+                          <div class="prod-card__tags">
+                            <div class="prod-card__tag"><img src="img/catalog/sale.svg" alt=""><span>Распродажа</span></div>
+                          </div>
+                        </div>
+                        <div class="prod-card__title">Фасад прямой с решеткой №3</div>
+                      </div>
+                      <div class="prod-card" data-js="prodCard">
+                        <div class="prod-card__top">
+                          <div class="prod-card__img"><img src="img/catalog/prod_4.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                            </svg></a>
+                        </div>
+                        <div class="prod-card__title">Фасад прямой под стекло 3 ВД №3</div>
+                      </div>
+                      <div class="prod-card" data-js="prodCard">
+                        <div class="prod-card__top">
+                          <div class="prod-card__img"><img src="img/catalog/prod_5.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                            </svg></a>
+                          <div class="prod-card__tags">
+                            <div class="prod-card__tag"><img src="img/catalog/new.svg" alt=""><span>Новинка</span></div>
+                          </div>
+                        </div>
+                        <div class="prod-card__title">Фасад прямой с решеткой №1</div>
+                      </div>
+                      <div class="prod-card" data-js="prodCard">
+                        <div class="prod-card__top">
+                          <div class="prod-card__img"><img src="img/catalog/prod_1.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                            </svg></a>
+                        </div>
+                        <div class="prod-card__title">Фасад прямой под стекло 3 ВД №4</div>
+                      </div>
+                      <div class="prod-card" data-js="prodCard">
+                        <div class="prod-card__top">
+                          <div class="prod-card__img"><img src="img/catalog/prod_6.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                            </svg></a>
+                        </div>
+                        <div class="prod-card__title">Фасад прямой под стекло 3 ВД №5 (3*2)</div>
+                      </div>
+                      <div class="prod-card" data-js="prodCard">
+                        <div class="prod-card__top">
+                          <div class="prod-card__img"><img src="img/catalog/prod_3.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                            </svg></a>
+                        </div>
+                        <div class="prod-card__title">Фасад прямой с решеткой №2</div>
+                      </div>
+                      <div class="prod-card" data-js="prodCard">
+                        <div class="prod-card__top">
+                          <div class="prod-card__img"><img src="img/catalog/prod_7.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                            </svg></a>
+                        </div>
+                        <div class="prod-card__title">Фасад прямой под стекло 3 ВД №6</div>
+                      </div>
+                </div>
+              </section>
+        </div>
+      </div>
+    </main>
+        <footer class="site-footer section">
+          <div class="d-container">
+            <div class="site-footer__container">
+              <div class="site-footer__top">
+                <div class="site-footer__column site-footer__column--first">
+                  <div class="site-footer__logo"><img src="img/logo_full.svg" alt="Deffo логотип"></div>
+                  <div class="site-footer__copyright">© 2025. Все права защищены. <br>DEFFO - фасады для вашей мебели</div>
+                      <div class="socials site-footer__socials socials--footer"><a class="socials__item" href="javascript:void(0);">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#telegram"></use>
+                          </svg></a><a class="socials__item" href="javascript:void(0);">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#whatsapp"></use>
+                          </svg></a><a class="socials__item" href="javascript:void(0);">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#phone"></use>
+                          </svg></a>
+                      </div>
+                </div>
+                <div class="site-footer__column">
+                  <div class="site-footer__title">Продукция:</div>
+                  <ul class="site-footer__list"><a class="site-footer__item" href="javascript:void(0);">Каталог</a><a class="site-footer__item" href="javascript:void(0);">Готовые решения</a><a class="site-footer__item" href="javascript:void(0);">Галерея фасадов</a></ul>
+                </div>
+                <div class="site-footer__column">
+                  <div class="site-footer__title">Компания:</div>
+                  <ul class="site-footer__list"><a class="site-footer__item" href="javascript:void(0);">Акции</a><a class="site-footer__item" href="javascript:void(0);">Новости</a><a class="site-footer__item" href="javascript:void(0);">Партнерам</a><a class="site-footer__item" href="javascript:void(0);">Контакты</a></ul>
+                </div>
+                <div class="site-footer__column site-footer__column--last">
+                  <div class="site-footer__title">Связаться с менеджером:</div>
+                      <form class="form" action="#" data-validate novalidate>
+                        <div class="form__content" data-js="formContent">
+                          <div class="form__fields" data-js="formFields">
+                                <label class="field     " data-js="formField">
+                                  <input class="field__input" type="text" placeholder="Ваше имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field     " data-js="formField">
+                                  <input class="field__input" type="tel" placeholder="Ваш телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                          </div>
+                          <div class="form__privacy form-privacy" data-js="formField">
+                            <div class="form-privacy__flex">
+                              <label>
+                                <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                              </label><span class="form-privacy__text">Я согласен с <a href="javascript:void(0);" target="_blank">Политикой конфиденциальности</a></span>
+                            </div><span class="field__error" data-js="fieldError"></span>
+                          </div>
+                              <button class="d-btn form__submit d-btn--bordered" type="submit"><span>Заказать звонок</span>
+                              </button>
+                        </div>
+                        <div class="form__thanks" data-js="form-thanks">
+                          <div class="form__title">Ваша заявка отправлена!</div>
+                          <div class="form__image-success"><img src="img/success.png"></div>
+                          <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
+                        </div>
+                      </form>
+                </div>
+              </div>
+              <div class="site-footer__bottom"><a class="site-footer__policy" href="javascript:void(0);">Политика конфиденциальности</a>
+                <div class="site-footer__developer">Разработан в <a href="https://itspace.group/" target="_blank">ITS.GROUP</a></div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <div class="preloader" data-js="preloader" style="mask: url(#diamonds);">
+          <div class="preloader__bg preloader__bg--start" data-js="preloaderBg"><img src="img/preloader/preloader_bg.webp" alt="">
+            <div class="preloader__line preloader__line--1" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--2" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--3" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--4" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--5" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--6" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--7" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--8" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--9" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+            <div class="preloader__line preloader__line--10" data-js="preloaderLine">
+              <div class="preloader__innerline"></div>
+            </div>
+          </div>
+          <div class="d-container preloader__content">
+            <div class="preloader__logo preloader__logo--start" data-js="preloaderLogo"><img src="img/logo.svg" alt=""></div>
+            <div class="height-anim" data-js="heightAnim">
+              <div class="preloader__logotext" data-js="heightAnimContent">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#logo_text"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="height-anim" data-js="heightAnim">
+              <div class="preloader__title" data-js="heightAnimContent">Фасады для Вашей мебели</div>
+            </div>
+            <div class="height-anim" data-js="heightAnim">
+              <div class="preloader__tag" data-js="heightAnimContent">Since 2012</div>
+            </div>
+          </div>
+        </div><svg class="preloader-mask" width="100%" height="100%" viewBox="0 0 344.8 344.8" preserveAspectRatio="xMidYMid meet">
+<defs>
+<mask id="diamonds">
+<rect width="100vw" height="100vh" fill="white"></rect>
+<path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="0.2" d="M172.4 141.4L203.4 172.4L172.4 203.4L141.4 172.4L172.4 141.4ZM172.4 0L101.7 70.7L70.7 101.7L0 172.4L70.7 243.1L101.7 274.1L172.4 344.8L243.1 274.1L274.1 243.1L344.8 172.4L274.1 101.7L243.1 70.7L172.4 0Z" fill="#000"/>
+<path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="0.6" d="M172.402 141.399L203.402 172.399L172.402 203.399L141.402 172.399L172.402 141.399ZM172.402 70.6992L137.002 106.099L106.002 137.099L70.6016 172.499L106.002 207.899L137.002 238.899L172.402 274.299L207.802 238.899L238.802 207.899L274.202 172.499L238.802 137.099L207.802 106.099L172.402 70.6992Z" fill="#000"/>
+<path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="1" d="M141.4 172.4L172.4 203.4L203.4 172.4L172.4 141.4Z" fill="#000"/>
+</mask>
+</defs>
+</svg>
+    <div class="main-burger" data-js="mainBurger">
+      <div class="main-burger__overlay" data-js="mainBurgerClose"></div>
+      <div class="main-burger__content">
+        <div class="main-burger__header">
+          <div class="site-header__location">
+            <form class="site-header__region" action="#">
+                  <label class="field   field--noFormSelect  " data-js="formField">
+                    <select class="field__select" data-placeholder="Выберите город" data-js="formSelect">
+                      <option value="Воронеж">Воронеж</option>
+                      <option value="Краснодар">Краснодар</option>
+                      <option value="Пятигорск" selected>Пятигорск</option>
+                      <option value="Санкт-Петербург">Санкт-Петербург</option>
+                      <option value="Севастополь">Севастополь</option>
+                      <option value="Сочи">Сочи</option>
+                    </select>
+                  </label>
+            </form>
+            <div class="site-header__address">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#location"></use>
+              </svg><span>пос. Иноземцево, ул. Промышленная, д.11</span>
+            </div>
+          </div>
+          <div class="main-burger__close" data-js="mainBurgerClose">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#close"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="main-burger__body">
+              <div class="main-menu">
+                <div class="main-menu__items">
+                  <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Каталог</a>
+                    <div class="main-menu__chevron">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                      </svg>
+                    </div>
+                    <div class="submenu main-menu__submenu">
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Виды продукции</a></div>
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Декоративные элементы</a></div>
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Фрезеровки</a></div>
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Типы покрытия</a></div>
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Торцы фасадов</a></div>
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Патина</a></div>
+                    </div>
+                  </div>
+                  <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Готовые решения</a>
+                    <div class="main-menu__chevron">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_chevron"></use>
+                      </svg>
+                    </div>
+                    <div class="submenu main-menu__submenu">
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Эворон</a></div>
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Гокли</a></div>
+                      <div class="submenu__item"><a class="main-menu__link" href="javascript:void(0);">Эльтон</a></div>
+                    </div>
+                  </div>
+                  <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Галерея фасадов</a></div>
+                  <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Акции</a></div>
+                  <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Новости</a></div>
+                  <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Партнерам</a></div>
+                  <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Контакты</a></div>
+                </div>
+                <form class="main-menu__search menu-search" action="#" data-js="menuSearch">
+                  <div class="menu-search__btn" data-js="mainMenuItem" data-id="menuSearchToggle">
+                    <div class="menu-search__icon menu-search__icon--open">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#search"></use>
+                      </svg>
+                    </div>
+                    <div class="menu-search__icon menu-search__icon--close">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="menu-search__body" data-id="menuSearchBody">
+                        <label class="field menu-search__field    " data-js="formField">
+                          <input class="field__input" type="text" placeholder="Поиск по товарам">
+                        </label>
+                    <div class="menu-search__results search-results">
+                      <div class="search-results__item">
+                        <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                        <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                          <div class="search-results__price">5 000 ₽</div>
+                        </div>
+                      </div>
+                      <div class="search-results__item">
+                        <div class="search-results__img"><img src="img/catalog/search.webp" alt=""></div>
+                        <div class="search-results__info"><a class="search-results__title" href="javascript:void(0);">Фасад прямой 3 ВД №3</a>
+                          <div class="search-results__price">5 000 ₽</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+          <div class="site-header__contacts"><a class="site-header__contact" href="tel:+78002220026">+7 (800) 222-00-26</a>
+                <div class="socials  socials--header"><a class="socials__item" href="javascript:void(0);">
+                    <svg> 
+                      <use xlink:href="img/sprites/sprite.svg#telegram"></use>
+                    </svg></a><a class="socials__item" href="javascript:void(0);">
+                    <svg> 
+                      <use xlink:href="img/sprites/sprite.svg#whatsapp"></use>
+                    </svg></a>
+                </div>
+                <button class="d-btn  d-btn--transparent" type="button" data-modal="#callbackModal"><span>Заказать звонок</span>
+                  <svg> 
+                    <use xlink:href="img/sprites/sprite.svg#arrow_top_right"></use>
+                  </svg>
+                </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <noindex>
+      <div>
+            <div class="modal hystmodal" id="callbackModal" aria-hidden="true" data-js="callbackModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="formContent">
+                              <div class="form__title">Оставить заявку</div>
+                              <div class="form__fields" data-js="formFields">
+                                    <label class="field     " data-js="formField">
+                                      <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field     " data-js="formField">
+                                      <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                              </div>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <div class="form-privacy__flex">
+                                  <label>
+                                    <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                  </label><span class="form-privacy__text">Я прочитал и согласен с <a href="javascript:void(0);" target="_blank">политикой</a> в отношении обработки персональных данных</span>
+                                </div><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                                  <button class="d-btn form__submit d-btn--accent" type="submit"><span>Отправить заявку</span>
+                                  </button>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="form__title">Ваша заявка отправлена!</div>
+                              <div class="form__image-success"><img src="img/success.png"></div>
+                              <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal" id="faqModal" aria-hidden="true" data-js="faqModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="formContent">
+                              <div class="form__title">Задать вопрос</div>
+                              <div class="form__fields" data-js="formFields">
+                                    <label class="field     " data-js="formField">
+                                      <input class="field__input" type="text" placeholder="Имя" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field     " data-js="formField">
+                                      <input class="field__input" type="tel" placeholder="Телефон" data-type="phoneNumber" required="" data-v-name="phone"><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field     " data-js="formField">
+                                      <textarea class="field__textarea" rows="6" placeholder="Вопрос"></textarea>
+                                    </label>
+                              </div>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <div class="form-privacy__flex">
+                                  <label>
+                                    <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                  </label><span class="form-privacy__text">Я прочитал и согласен с <a href="javascript:void(0);" target="_blank">политикой</a> в отношении обработки персональных данных</span>
+                                </div><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                                  <button class="d-btn form__submit d-btn--accent" type="submit"><span>Отправить вопрос</span>
+                                  </button>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="form__title">Ваша заявка отправлена!</div>
+                              <div class="form__image-success"><img src="img/success.png"></div>
+                              <div class="form__text">Менеджер свяжется с вами в ближайшее время</div>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </noindex>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

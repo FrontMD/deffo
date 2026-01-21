@@ -48,7 +48,7 @@ mixin field(props = defaultFieldProps)
                     span.field__error(data-js='fieldError')
 
         - if(checkProps.tag === 'textarea')
-            textarea.field__textarea(rows="7" placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
+            textarea.field__textarea(rows="6" placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
             - if(checkProps.hasError === true)
                 span.field__error(data-js='fieldError')
 

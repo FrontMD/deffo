@@ -1,10 +1,18 @@
 .s-map {
     padding-top: 160px;
 
+    @include max(large) {
+        padding-top: 60px;
+    }
+
     &__items {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 24px;
+
+        @include max(laptop) {
+            gap: 12px;
+        }
     }
 
     &__wrapper {
@@ -85,6 +93,11 @@
     backdrop-filter: blur(40px);
     color: $c-white;
 
+    @include max(laptop) {
+        padding: 24px 16px;
+        gap: 12px;
+    }
+
     &:before {
         content: '';
         position: absolute;
@@ -113,6 +126,11 @@
         svg {
             width: 24px;
             height: 24px;
+
+            @include max(laptop) {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 
@@ -126,6 +144,10 @@
         font-size: 18px;
         line-height: 130%;
         text-transform: uppercase;
+
+        @include max(laptop) {
+            font-size: 16px;
+        }
     }
 
     &__info {
@@ -138,7 +160,13 @@
         margin-top: 20px;
         border-top: 1px solid $c-bg-grey;
         transition: all 0.5s linear;
+
+        @include max(laptop) {
+            padding-top: 12px;
+            margin-top: 12px;
+        }
     }
+
 
     &:hover &__info {
         border-color: #707070;
@@ -167,6 +195,10 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 150%;
+
+        @include max(laptop) {
+            font-size: 15px;
+        }
     }
 
     &__ws {
@@ -174,6 +206,10 @@
         font-size: 16px;
         line-height: 160%;
         color: $c-text-grey;
+
+        @include max(laptop) {
+            font-size: 13px;
+        }
     }
 
 }

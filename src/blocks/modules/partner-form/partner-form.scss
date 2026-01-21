@@ -1,0 +1,66 @@
+.partner-form {
+    &__content {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 50px;
+        padding: 50px 0;
+
+        @include max(laptop) {
+            padding: 0;
+        }
+
+        @include max(tablet) {
+            gap: 32px;
+        }
+
+        @include max(mobile) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+        left: 0;
+        top: 11px;
+        width: 32%;
+        height: auto;
+
+        @include max(mobile) {
+            left: auto;
+            right: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex: 0 1 50%;
+        padding-top: 10px;
+        max-width: 751px;
+        text-align: end;
+
+        @include max(mobile) {
+            align-items: flex-start;
+            text-align: start;
+            margin-top: 0;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        margin-top: 14px;
+    }
+
+    &__form {
+        flex: 0 1 50%;
+        max-width: 751px;
+    }
+}

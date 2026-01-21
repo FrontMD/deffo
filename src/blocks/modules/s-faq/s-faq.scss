@@ -2,6 +2,10 @@
     padding-top: 160px;
     padding-bottom: 40px;
 
+    @include max(large) {
+        padding-top: 60px;
+    }
+
     &__container {
         display: flex;
         align-items: flex-start;
