@@ -95,6 +95,11 @@
         padding: 12px 12px 32px;
     }
 
+    @include max(xs) {
+        padding: 10px 10px 24px;
+        gap: 20px;
+    }
+
     &__img {
         width: 100%;
         aspect-ratio: 1 / 1;
@@ -118,6 +123,10 @@
         @include max(laptop) {
             font-size: 18px;
         }
+
+        @include max(xs) {
+            font-size: 16px;
+        }
     }
 
     &__desc {
@@ -126,6 +135,10 @@
         font-size: 16px;
         line-height: 160%;
         text-align: center;
+
+        @include max(xs) {
+            font-size: 14px;
+        }
     }
 
     &__date {
@@ -151,6 +164,10 @@
         color: $c-white;
         transition: all $tr;
 
+        @include max(xs) {
+            font-size: 11px;
+        }
+
         &:hover {
             color: $c-accent;
         }
@@ -158,6 +175,11 @@
         svg {
             width: 18px;
             height: 18px;
+
+            @include max(xs) {
+                width: 14px;
+                height: 14px;
+            }
         }
     }
 }

@@ -6,6 +6,11 @@
         padding-top: 60px;
     }
 
+    @include max(mobile) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
     &__container {
         display: flex;
         align-items: flex-start;

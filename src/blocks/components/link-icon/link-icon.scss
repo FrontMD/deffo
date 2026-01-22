@@ -1,0 +1,39 @@
+.link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    font-family: $ff-montserrat;
+    color: $c-accent;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    cursor: pointer;
+    transition: all $tr;
+
+    &:hover {
+        color: $c-accent-hover;
+    }
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    &--36 {
+        img {
+            width: 36px;
+            height: 36px;
+
+            @include max(laptop) {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    &--reverse {
+        flex-direction: row-reverse;
+    }
+}

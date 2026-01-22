@@ -3,10 +3,10 @@
     color: $c-white;
 
     &__container {
-        padding: 100px 0 60px;
+        padding: 0 0 60px;
 
         @include max(tablet) {
-            padding: 50px 0;
+            padding: 0 0 50px;
         }
     }
 
@@ -15,6 +15,9 @@
         display: flex;
         align-items: stretch;
         gap: 150px;
+        margin-top: 60px;
+        padding-top: 60px;
+        border-top: 1px solid $c-bg-grey;
 
         @include max(large) {
             gap: 80px;
@@ -32,6 +35,8 @@
         @include max(mobile) {
             flex-direction: column;
             gap: 40px;
+            margin-top: 30px;
+            padding-top: 30px;
         }
     }
 

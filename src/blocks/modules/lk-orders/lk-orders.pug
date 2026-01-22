@@ -10,6 +10,37 @@ mixin lk-orders(props= defaultLkOrdersProps)
         }
 
     .lk-orders(class= checkProps.classes)&attributes(attributes)
+        .order-card
+            .order-card__header
+                .order-card__title Заказ №4 от 12.11.2025
+                .order-card__status(style="background-color: #947700;") Ожидается оплата
+            .order-card__bottom
+                .order-card__desc
+                    .order-card__text Счет №4/1 от 12.11.2025
+                    .order-card__text Сумма к оплате по счету: 1 999 ₽
+
+                +link-icon({
+                    classes: 'order-card__link',
+                    name: 'Подробнее о заказе',
+                    icon: 'img/conditions/conditions_10.svg',
+                    iconLeft: true,
+                })
+
+        .order-card
+            .order-card__header
+                .order-card__title Заказ №3 от 10.10.2025
+                .order-card__status(style="background-color: #0D6E00;") Оплачен
+            .order-card__bottom
+                .order-card__desc
+                    .order-card__text Счет №4/1 от 12.11.2025
+                    .order-card__text Сумма к оплате по счету: 1 999 ₽
+
+                +link-icon({
+                    classes: 'order-card__link',
+                    name: 'Подробнее о заказе',
+                    icon: 'img/conditions/conditions_10.svg',
+                    iconLeft: true,
+                })
 
 
 

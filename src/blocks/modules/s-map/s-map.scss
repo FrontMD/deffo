@@ -5,6 +5,11 @@
         padding-top: 60px;
     }
 
+    @include max(mobile) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
     &__items {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -106,6 +111,11 @@
         gap: 12px;
     }
 
+    @include max(xs) {
+        padding: 20px 12px;
+        gap: 10px;
+    }
+
     &:before {
         content: '';
         position: absolute;
@@ -139,6 +149,11 @@
                 width: 20px;
                 height: 20px;
             }
+
+            @include max(xs) {
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 
@@ -155,6 +170,10 @@
 
         @include max(laptop) {
             font-size: 16px;
+        }
+
+        @include max(xs) {
+            font-size: 14px;
         }
     }
 
@@ -207,6 +226,10 @@
         @include max(laptop) {
             font-size: 15px;
         }
+
+        @include max(xs) {
+            font-size: 14px;
+        }
     }
 
     &__ws {
@@ -217,6 +240,10 @@
 
         @include max(laptop) {
             font-size: 13px;
+        }
+
+        @include max(xs) {
+            font-size: 12px;
         }
     }
 

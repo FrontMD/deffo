@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Каталог продукции</title>
+    <title>Заказ (детальная)</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -234,81 +234,77 @@
     <main class="site-main">
       <div class="page" data-js="page">
         <div class="page-layout">
-              <section class="section breadcrumbs" data-aos="fade-right" data-duration="600" data-aos-delay="1000">
+              <section class="lk-layout section section--top">
                 <div class="d-container">
-                  <div class="custom-scrollbar breadcrumbs__scroll" data-js="customScrollbar">
-                    <ul class="breadcrumbs__list">
-                      <li class="breadcrumbs__item"><a href="javascript:void(0);">DEFFO</a><span class="breadcrumbs__separator">
-                          <svg>
-                            <use xlink:href="img/sprites/sprite.svg#arrow_breadcrumbs"></use>
-                          </svg></span>
-                      </li>
-                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Каталог</span>
-                      </li>
-                    </ul>
+                  <div class="lk-layout__header"><a class="lk-layout__back" href="javascript:void(0)">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_breadcrumbs"></use>
+                      </svg><span>К списку заказов</span></a>
+                        <div class="title lk-layout__title title--40">
+                          <h1>Заказ №1</h1>
+                        </div>
+                    <div class="lk-layout__date">от 12.11.2025</div>
                   </div>
-                </div>
-              </section>
-              <section class="s-catalog section section--inner" data-js="sCatalog"> 
-                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sCatalog']" data-aos-anchor-placement="top-center"> </div>
-                <div data-js="sCatalogTitle" data-anim-type="opacity"> 
-                      <div class="title  title--40">
-                        <h1 data-anim-type="textColor">Каталог продукции</h1>
+                  <div class="lk-layout__container">
+                    <div class="lk-layout__body">
+                          <div class="lk-order">
+                            <div class="lk-order__info">
+                              <div class="lk-order__title">Информация о заказе:</div>
+                              <div class="lk-order__chars">
+                                <div class="lk-order__char">
+                                  <div class="lk-order__param">ФИО:</div>
+                                  <div class="lk-order__value">Мищенко Сергей Сергеевич</div>
+                                </div>
+                                <div class="lk-order__char">
+                                  <div class="lk-order__param">Текущий статус:</div>
+                                  <div class="lk-order__value">выполнен</div>
+                                </div>
+                                <div class="lk-order__char">
+                                  <div class="lk-order__param">Сумма:</div>
+                                  <div class="lk-order__value">150 000 ₽</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="lk-order__prods">
+                                  <div class="order-prod">
+                                    <div class="order-prod__img"><img src="img/catalog/prod_2.webp" alt=""></div>
+                                    <div class="order-prod__info"><a class="order-prod__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                      <div class="order-prod__text">5 000 ₽</div>
+                                      <div class="order-prod__text">12 шт.</div>
+                                    </div>
+                                  </div>
+                                  <div class="order-prod">
+                                    <div class="order-prod__img"><img src="img/catalog/prod_3.webp" alt=""></div>
+                                    <div class="order-prod__info"><a class="order-prod__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                      <div class="order-prod__text">5 000 ₽</div>
+                                      <div class="order-prod__text">2 шт.</div>
+                                    </div>
+                                  </div>
+                                  <div class="order-prod">
+                                    <div class="order-prod__img"><img src="img/catalog/prod_7.webp" alt=""></div>
+                                    <div class="order-prod__info"><a class="order-prod__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                      <div class="order-prod__text">5 000 ₽</div>
+                                      <div class="order-prod__text">20 шт.</div>
+                                    </div>
+                                  </div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="lk-layout__sidebar">
+                      <div class="lk-sidebar">
+                        <div class="lk-sidebar__block">
+                          <div class="lk-sidebar__company">ООО «Современные технологии»</div>
+                          <div class="lk-sidebar__name">Смородинова Анастасия</div><a class="d-btn  d-btn--rounded" href="javascript:void(0);"><span>Ваша скидка 15%</span></a>
+                        </div>
+                        <div class="lk-sidebar__block">
+                          <div class="lk-sidebar__links"><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_4.svg" alt=""><span>История заказов</span></a><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_7.svg" alt=""><span>Избранное</span></a><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_6.svg" alt=""><span>Сменить пароль</span></a>
+                          </div>
+                        </div>
+                        <div class="lk-sidebar__block">
+                          <div class="lk-sidebar__links"><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_8.svg" alt=""><span>Выход</span></a>
+                          </div>
+                        </div>
                       </div>
-                </div>
-                <div class="s-catalog__list">
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_1.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>Виды продукции</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_2.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>Торцы фасадов</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_3.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>Патина</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_4.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>фрезеровки</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_5.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>Типы покрытия</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_6.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>декоративные элементы</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                </div>
-              </section>
-              <section class="s-conditions section section--inner" data-anim-id="sConditions"> 
-                <div class="d-container">
-                  <div class="s-conditions__list">
-                    <div class="condition-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom">
-                      <div class="condition-card__num">01</div>
-                      <div class="condition-card__icon"><img src="img/conditions/conditions_1.svg" alt=""></div>
-                      <div class="condition-card__title">ДОСТАВКА <br>И СБОРКА МЕБЕЛИ</div>
-                      <div class="condition-card__text text-editor">Доставим ваш заказ и соберём мебель на квартире в один день</div>
-                    </div>
-                    <div class="condition-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom">
-                      <div class="condition-card__num">02</div>
-                      <div class="condition-card__icon"><img src="img/conditions/conditions_2.svg" alt=""></div>
-                      <div class="condition-card__title">БЕСПЛАТНОЕ <br>ИЗГОТОВЛЕНИЕ</div>
-                      <div class="condition-card__text text-editor">3D-макета командой дизайнеров</div>
-                    </div>
-                    <div class="condition-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom">
-                      <div class="condition-card__num">03</div>
-                      <div class="condition-card__icon"><img src="img/conditions/conditions_3.svg" alt=""></div>
-                      <div class="condition-card__title">БЕСПЛАТНЫЙ <br>ЗАМЕР</div>
-                      <div class="condition-card__text text-editor">Вызови мастера на бесплатный замер для изготовления мебели</div>
-                    </div>
-                    <div class="condition-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom">
-                      <div class="condition-card__num">04</div>
-                      <div class="condition-card__icon"><img src="img/conditions/conditions_4.svg" alt=""></div>
-                      <div class="condition-card__title">ГАРАНТИРУЕМ <br>ИЗГОТОВЛЕНИЕ В СРОК</div>
-                      <div class="condition-card__text text-editor">Выплачиваем неустойку 0,01% за каждый просроченный день</div>
                     </div>
                   </div>
                 </div>

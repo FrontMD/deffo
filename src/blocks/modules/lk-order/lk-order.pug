@@ -1,0 +1,49 @@
+-
+    const defaultLkOrderProps = {
+        classes: ''
+    }
+
+mixin lk-order(props= defaultLkOrderProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultLkOrderProps.classes
+        }
+
+    .lk-order(class= checkProps.classes)&attributes(attributes)
+        .lk-order__info
+            .lk-order__title Информация о заказе:
+            .lk-order__chars
+                .lk-order__char
+                    .lk-order__param ФИО:
+                    .lk-order__value Мищенко Сергей Сергеевич
+                .lk-order__char
+                    .lk-order__param Текущий статус:
+                    .lk-order__value выполнен
+                .lk-order__char
+                    .lk-order__param Сумма:
+                    .lk-order__value 150 000 ₽
+
+        .lk-order__prods
+            +order-prod({
+                texts: [
+                    '5 000 ₽',
+                    '12 шт.'
+                ]
+            })
+            +order-prod({
+                img: 'img/catalog/prod_3.webp',
+                texts: [
+                    '5 000 ₽',
+                    '2 шт.'
+                ]
+            })
+            +order-prod({
+                img: 'img/catalog/prod_7.webp',
+                texts: [
+                    '5 000 ₽',
+                    '20 шт.'
+                ]
+            })
+
+
+

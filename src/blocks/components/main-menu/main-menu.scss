@@ -241,49 +241,11 @@
 }
 
 .search-results {
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(40px);
 
-    &__item {
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        gap: 24px;
-    }
 
     &__item+&__item {
         border-top: 2px solid $c-bg-grey;
     }
 
-    &__img {
-        flex: 0 0 70px;
 
-        img {
-            width: 100%;
-        }
-    }
-
-    &__title {
-        color: $c-white;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 100%;
-    }
-
-    a.search-results__title {
-        transition: color $tr;
-
-        &:hover {
-            color: $c-accent;
-        }
-    }
-
-    &__price {
-        margin-top: 7px;
-        color: $c-text-light;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 100%;
-    }
 }

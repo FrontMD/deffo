@@ -25,6 +25,10 @@
         @include max(laptop) {
             padding: 20px 16px 20px 20px;
         }
+
+        @include max(mobile) {
+            padding: 12px 10px 12px 12px;
+        }
     }
 
     &__title {
@@ -34,6 +38,10 @@
 
         @include max(tablet) {
             font-size: 16px;
+        }
+
+        @include max(xs) {
+            font-size: 15px;
         }
     }
 
@@ -50,6 +58,11 @@
             width: 18px;
             height: 18px;
             transition: all $tr;
+
+            @include max(mobile) {
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 
@@ -64,6 +77,10 @@
 
         @include max(laptop) {
             padding: 20px;
+        }
+
+        @include max(mobile) {
+            padding: 12px;
         }
     }
 }

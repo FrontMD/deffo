@@ -1,0 +1,27 @@
+-
+    const defaultLinkIconProps = {
+        classes: '',
+        name: 'Кнопка',
+        icon: '',
+        sMode: '',
+        iconLeft: false
+    }
+
+mixin link-icon(props = defaultLinkIconProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultLinkIconProps.classes,
+            name: props.name ? props.name : defaultLinkIconProps.name,
+            icon: props.icon ? props.icon : defaultLinkIconProps.icon,
+            sMode: props.sMode ? props.sMode : defaultLinkIconProps.sMode,
+            iconLeft: props.iconLeft ? props.iconLeft : defaultLinkIconProps.iconLeft,
+        }
+
+        let iconPosClass = checkProps.iconLeft === true ? ` link-icon--reverse` : ''
+        let iconSizeClass = checkProps.sMode.length > 0 ? ` link-icon--${checkProps.sMode}` : ''
+
+    a.link-icon(class=checkProps.classes + iconPosClass + iconSizeClass href="javascript:void(0);")&attributes(attributes)
+        - if(checkProps.icon.length > 0)
+            img(src=checkProps.icon, alt="")
+        span!= checkProps.name
+

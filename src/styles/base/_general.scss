@@ -322,6 +322,10 @@ iframe {
 		@include max(large) {
 			width: 120px;
 		}
+
+		@include max(xs) {
+			width: 100px;
+		}
 	}
 }
 

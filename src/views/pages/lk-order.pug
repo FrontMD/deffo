@@ -1,0 +1,17 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Заказ (детальная)"
+    - const fullHeader = false
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +lk-layout({
+                page: 'order',
+                title: 'Заказ №1',
+                date: 'от 12.11.2025',
+                hasBackBtn: true
+            })
+
+

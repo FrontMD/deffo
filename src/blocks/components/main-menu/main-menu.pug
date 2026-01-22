@@ -75,13 +75,27 @@ mixin main-menu(props = defaultMainMenuProps)
                 })
 
                 .menu-search__results.search-results
-                    .search-results__item
+                    +order-prod({
+                        title: 'Фасад прямой под стекло 3 ВД №3',
+                        classes: 'search-results__item',
+                        texts: [
+                            '5 000 ₽'
+                        ]
+                    })
+                    +order-prod({
+                        title: 'Фасад прямой 3 ВД №3',
+                        classes: 'search-results__item',
+                        texts: [
+                            '5 000 ₽'
+                        ]
+                    })
+                    //-.search-results__item
                         .search-results__img
                             img(src="img/catalog/search.webp" alt="")
                         .search-results__info
                             a.search-results__title(href="javascript:void(0);") Фасад прямой под стекло 3 ВД №3
                             .search-results__price 5 000 ₽
-                    .search-results__item
+                    //-.search-results__item
                         .search-results__img
                             img(src="img/catalog/search.webp" alt="")
                         .search-results__info

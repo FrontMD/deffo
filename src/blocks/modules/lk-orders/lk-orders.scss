@@ -1,1 +1,100 @@
-.lk-orders {}
+.lk-orders {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+
+    @include max(laptop) {
+        gap: 20px;
+    }
+}
+
+.order-card {
+    padding: 25px 30px;
+    background-color: rgba(67, 67, 66, 0.4);
+
+    @include max(laptop) {
+        padding: 20px 12px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+
+        @include max(xs) {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 150%;
+
+        @include max(laptop) {
+            font-size: 20px;
+        }
+
+        @include max(xs) {
+            font-size: 18px;
+        }
+
+    }
+
+    &__status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 15px;
+        min-height: 33px;
+        border-radius: 20px;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 130%;
+        text-align: center;
+
+        @include max(laptop) {
+            min-height: 28px;
+            font-size: 11px;
+        }
+    }
+
+    &__bottom {
+        margin-top: 20px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include max(tablet) {
+            gap: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__desc {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 130%;
+        color: $c-text-light;
+
+        @include max(xs) {
+            font-size: 14px;
+        }
+    }
+
+    &__link {
+        flex: 0 0 auto;
+    }
+}

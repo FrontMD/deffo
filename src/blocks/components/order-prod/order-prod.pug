@@ -1,0 +1,30 @@
+-
+    const defaultOrderProdProps = {
+        classes: '',
+        title: 'Фасад прямой под стекло 3 ВД №3',
+        img: 'img/catalog/prod_2.webp',
+        texts: []
+    }
+
+mixin order-prod(props = defaultOrderProdProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultOrderProdProps.classes,
+            title: props.title ? props.title : defaultOrderProdProps.title,
+            img: props.img ? props.img : defaultOrderProdProps.img,
+            texts: props.texts ? props.texts : defaultOrderProdProps.texts,
+        }
+
+    .order-prod(class=checkProps.classes)&attributes(attributes)
+        .order-prod__img
+            img(src=checkProps.img alt="")
+        .order-prod__info
+            a.order-prod__title(href="javascript:void(0);") Фасад прямой под стекло 3 ВД №3
+            - if(checkProps.texts && checkProps.texts.length > 0)
+                - let textsCount = 0
+                - let textsList = checkProps.texts
+                - while(textsCount < textsList.length)
+                    .order-prod__text!= textsList[textsCount]
+
+                    - textsCount++
+

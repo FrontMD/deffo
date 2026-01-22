@@ -5,8 +5,46 @@
         margin-bottom: 50px;
     }
 
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        gap: 30px;
+    }
+
+    &__back {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        color: $c-accent;
+        transition: color $tr;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+
+        svg {
+            width: 21px;
+            height: 21px;
+            transform: rotate(-180deg);
+        }
+    }
+
     &__title {
+        flex: 0 1 auto;
         text-transform: none;
+    }
+
+    &__date {
+        flex: 0 0 auto;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        color: $c-text-light;
+
     }
 
     &__container {

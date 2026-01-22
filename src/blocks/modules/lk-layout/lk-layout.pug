@@ -2,31 +2,43 @@
     const defaultLkLayoutProps = {
         classes: '',
         page: '',
-        title: 'Персональный раздел'
+        title: 'Персональный раздел',
+        date: '',
+        hasBackBtn: false
     }
 
 mixin lk-layout(props= defaultLkLayoutProps)
     -
         const checkProps = {
-            classes: props.classes ? props.classes : defaultProdsListProps.classes,
-            page: props.page ? props.page : defaultProdsListProps.page,
-            title: props.title ? props.title : defaultProdsListProps.title,
+            classes: props.classes ? props.classes : defaultLkLayoutProps.classes,
+            page: props.page ? props.page : defaultLkLayoutProps.page,
+            title: props.title ? props.title : defaultLkLayoutProps.title,
+            date: props.date ? props.date : defaultLkLayoutProps.date,
+            hasBackBtn: props.hasBackBtn ? props.hasBackBtn : defaultLkLayoutProps.hasBackBtn,
         }
 
     section.lk-layout.section.section--top(class= checkProps.classes)&attributes(attributes)
         .d-container
-            +title({
-                classes: 'lk-layout__title',
-                text: checkProps.title,
-                size: 40,
-                tag: 'h1'
-            })
+            .lk-layout__header
+                - if(checkProps.hasBackBtn === true)
+                    a(href="javascript:void(0)").lk-layout__back
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#arrow_breadcrumbs`)
+                        span К списку заказов
+                +title({
+                    classes: 'lk-layout__title',
+                    text: checkProps.title,
+                    size: 40,
+                    tag: 'h1'
+                })
+                - if(checkProps.date.length > 0)
+                    .lk-layout__date!= checkProps.date
             .lk-layout__container
                 .lk-layout__body
                     - if(checkProps.page === 'orders')
                         +lk-orders
                     - else if(checkProps.page === 'order')
-                        .lk-sidebar
+                        +lk-order
                     - else if(checkProps.page === 'basket')
                         .lk-sidebar
                     - else
@@ -45,17 +57,21 @@ mixin lk-layout(props= defaultLkLayoutProps)
                                 })
                             .lk-sidebar__block
                                 .lk-sidebar__links
-                                    a(href="javascript:void(0);").lk-sidebar__link
-                                        img(src="img/conditions/conditions_4.svg" alt="")
-                                        | История заказов
-                                    a(href="javascript:void(0);").lk-sidebar__link
-                                        img(src="img/conditions/conditions_7.svg" alt="")
-                                        | Избранное
-                                    a(href="javascript:void(0);").lk-sidebar__link
-                                        img(src="img/conditions/conditions_6.svg" alt="")
-                                        | Сменить пароль
+                                    +link-icon({
+                                        name: 'История заказов',
+                                        icon: 'img/conditions/conditions_4.svg'
+                                    })
+                                    +link-icon({
+                                        name: 'Избранное',
+                                        icon: 'img/conditions/conditions_7.svg'
+                                    })
+                                    +link-icon({
+                                        name: 'Сменить пароль',
+                                        icon: 'img/conditions/conditions_6.svg'
+                                    })
                             .lk-sidebar__block
                                 .lk-sidebar__links
-                                    a(href="javascript:void(0);").lk-sidebar__link
-                                        img(src="img/conditions/conditions_8.svg" alt="")
-                                        | Выход
+                                    +link-icon({
+                                        name: 'Выход',
+                                        icon: 'img/conditions/conditions_8.svg'
+                                    })

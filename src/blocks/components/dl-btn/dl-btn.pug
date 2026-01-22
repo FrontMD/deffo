@@ -20,10 +20,9 @@ mixin dl-btn(props = defaultDlBtnProps)
             .dl-btn__title!= checkProps.name
             .dl-btn__date Добавлен: 10.12.2025
             .dl-btn__size!= checkProps.size
-        +btn({
-            classes: 'dl-btn__btn',
+        +link-icon({
+            classes: '',
+            sMode: '36',
             name: 'Скачать',
-            icon: 'c_download',
-            cMode: 'accent-tr',
-            iconLeft: true
+            icon: 'img/conditions/conditions_9.svg'
         })
