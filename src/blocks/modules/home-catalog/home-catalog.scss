@@ -8,6 +8,10 @@
         padding-top: 60px;
     }
 
+    @include max(mobile) {
+        padding-top: 30px;
+    }
+
     &__container {
         display: flex;
         flex-direction: column;
@@ -37,6 +41,14 @@
         @include max(tablet) {
             gap: 16px;
         }
+
+        @include max(mobile) {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        @include max(xs) {
+            gap: 12px;
+        }
     }
 
     &__block {
@@ -47,6 +59,10 @@
 
         @include max(tablet) {
             gap: 16px;
+        }
+
+        @include max(xs) {
+            gap: 12px;
         }
     }
 

@@ -11,7 +11,9 @@ function newsSlider() {
         const vw = window.innerWidth
         let slidesPerView = 3
 
-        if(vw < 1801) {
+        if(vw < 768) {
+            slidesPerView = 1.2
+        } else if(vw < 1801) {
             slidesPerView = 2.2
         }
 
@@ -21,11 +23,6 @@ function newsSlider() {
             navigation: {
                 nextEl: next,
                 prevEl: prev,
-            },
-            breakpoints: {
-                1801: {
-                    slidesPerView: slidesPerView
-                }
             },
             on: {
                 init: function (swiper) {

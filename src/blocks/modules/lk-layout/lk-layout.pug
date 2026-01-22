@@ -23,11 +23,11 @@ mixin lk-layout(props= defaultLkLayoutProps)
             })
             .lk-layout__container
                 .lk-layout__body
-                    - if(page === 'orders')
+                    - if(checkProps.page === 'orders')
+                        +lk-orders
+                    - else if(checkProps.page === 'order')
                         .lk-sidebar
-                    - else if(page === 'order')
-                        .lk-sidebar
-                    - else if(page === 'basket')
+                    - else if(checkProps.page === 'basket')
                         .lk-sidebar
                     - else
                         +lk-common
@@ -36,5 +36,26 @@ mixin lk-layout(props= defaultLkLayoutProps)
                         .lk-sidebar
                     - else
                         .lk-sidebar
-
-
+                            .lk-sidebar__block
+                                .lk-sidebar__company ООО «Современные технологии»
+                                .lk-sidebar__name Смородинова Анастасия
+                                +btn({
+                                    name: 'Ваша скидка 15%',
+                                    cMode: 'rounded'
+                                })
+                            .lk-sidebar__block
+                                .lk-sidebar__links
+                                    a(href="javascript:void(0);").lk-sidebar__link
+                                        img(src="img/conditions/conditions_4.svg" alt="")
+                                        | История заказов
+                                    a(href="javascript:void(0);").lk-sidebar__link
+                                        img(src="img/conditions/conditions_7.svg" alt="")
+                                        | Избранное
+                                    a(href="javascript:void(0);").lk-sidebar__link
+                                        img(src="img/conditions/conditions_6.svg" alt="")
+                                        | Сменить пароль
+                            .lk-sidebar__block
+                                .lk-sidebar__links
+                                    a(href="javascript:void(0);").lk-sidebar__link
+                                        img(src="img/conditions/conditions_8.svg" alt="")
+                                        | Выход

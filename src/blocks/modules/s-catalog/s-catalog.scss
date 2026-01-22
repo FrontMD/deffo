@@ -83,6 +83,11 @@
             font-size: 14px;
         }
 
+        @include max(mobile) {
+            min-height: 50px;
+            font-size: 12px;
+        }
+
         span {
             position: relative;
             z-index: 1;

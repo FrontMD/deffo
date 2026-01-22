@@ -5,11 +5,17 @@ function stocksSlider() {
 
     stocksSliders.forEach(slider => {
         const sliderEx = new Swiper(slider, {
-            slidesPerView: 4,
-            spaceBetween: 20,
+            slidesPerView: 1.67,
+            spaceBetween: 12,
             on: {
                 init: function() {
                     stocksAnim()
+                }
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
                 }
             }
         })

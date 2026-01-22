@@ -1,4 +1,10 @@
 .lk-layout {
+    margin-bottom: 70px;
+
+    @include max(large) {
+        margin-bottom: 50px;
+    }
+
     &__title {
         text-transform: none;
     }
@@ -8,6 +14,21 @@
         display: flex;
         align-items: flex-start;
         gap: 50px;
+
+        @include max(large) {
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        @include max(tablet) {
+            gap: 24px;
+        }
+
+        @include max(mobile) {
+            flex-direction: column;
+            align-items: stretch;
+            margin-top: 32px;
+        }
     }
 
     &__body {
@@ -16,6 +37,18 @@
 
     &__sidebar {
         flex: 0 0 442px;
+
+        @include max(large) {
+            flex: 0 0 400px;
+        }
+
+        @include max(laptop) {
+            flex: 0 0 300px;
+        }
+
+        @include max(tablet) {
+            flex: 0 0 270px;
+        }
     }
 }
 
@@ -23,4 +56,65 @@
     width: 100%;
     background-color: rgba(67, 67, 66, 0.4);
     padding: 25px 30px;
+
+    @include max(large) {
+        padding: 25px 20px;
+    }
+
+    @include max(laptop) {
+        padding: 20px 12px;
+    }
+
+    &__company {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+    }
+
+    &__name {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: $c-text-light;
+    }
+
+    &__block+&__block {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid $c-bg-grey;
+
+        @include max(tablet) {
+            margin-top: 24px;
+            padding-top: 24px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 130%;
+        color: $c-accent;
+        transition: color $tr;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+    }
 }

@@ -27,6 +27,10 @@
         gap: 20px;
         width: fit-content;
         min-width: 100%;
+
+        @include max(mobile) {
+            gap: 10px;
+        }
     }
 
     &__tab {
@@ -50,7 +54,8 @@
 
         @include max(tablet) {
             padding: 12px 20px;
-            font-size: 14px;
+            min-width: 120px;
+            font-size: 12px;
         }
 
         svg {
@@ -62,9 +67,13 @@
         &.active {
             color: $c-accent;
             border: 2px solid;
-            border-image-source: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+            border-image-source: linear-gradient(90deg, #B68C74 0%, $c-accent-hover 100%);
             border-image-slice: 20;
             border-image-repeat: stretch;
+
+            @include max(tablet) {
+                border-image-slice: 13;
+            }
         }
 
     }

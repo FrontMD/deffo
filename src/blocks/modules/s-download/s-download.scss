@@ -3,8 +3,17 @@
     align-items: stretch;
     justify-content: flex-end;
 
+    @include max(tablet) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
     .section__bg {
         max-width: 1240px;
+
+        @include max(laptop) {
+            opacity: 0.5;
+        }
     }
 
     &__content {
@@ -15,6 +24,11 @@
         justify-content: center;
         align-items: flex-start;
         gap: 25px;
+
+        @include max(mobile) {
+            margin-right: 0;
+            gap: 20px;
+        }
     }
 
     &__desc {

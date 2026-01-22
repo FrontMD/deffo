@@ -1,0 +1,15 @@
+-
+    const defaultLkOrdersProps = {
+        classes: ''
+    }
+
+mixin lk-orders(props= defaultLkOrdersProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultLkOrdersProps.classes
+        }
+
+    .lk-orders(class= checkProps.classes)&attributes(attributes)
+
+
+

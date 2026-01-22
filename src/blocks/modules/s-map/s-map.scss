@@ -13,6 +13,14 @@
         @include max(laptop) {
             gap: 12px;
         }
+
+        @include max(tablet) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include max(mobile) {
+            grid-template-columns: minmax(0, 1fr);
+        }
     }
 
     &__wrapper {

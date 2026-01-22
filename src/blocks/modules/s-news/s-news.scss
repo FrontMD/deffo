@@ -6,6 +6,11 @@
         padding-top: 60px;
     }
 
+    @include max(mobile) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
     &__container {
         display: flex;
         align-items: stretch;
@@ -13,6 +18,10 @@
 
         @include max(laptop) {
             gap: 32px;
+        }
+
+        @include max(tablet) {
+            flex-direction: column;
         }
     }
 
@@ -30,10 +39,21 @@
         @include max(laptop) {
             flex: 0 0 270px;
         }
+
+        @include max(tablet) {
+            position: relative;
+            flex: 0 0 auto;
+        }
     }
 
     &__controls {
         margin-top: auto;
+
+        @include max(tablet) {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
     }
 
     &__slider {
@@ -51,6 +71,12 @@
 
         @include max(laptop) {
             max-width: calc(100% - 270px - 32px + 30px);
+        }
+
+        @include max(tablet) {
+            max-width: calc(100% + 20px);
+            margin-right: -20px;
+            padding-right: 20px;
         }
     }
 

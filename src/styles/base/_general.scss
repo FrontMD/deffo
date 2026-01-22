@@ -206,6 +206,14 @@ iframe {
 
 	&--top {
 		padding-top: 172px;
+
+		@include max(laptop) {
+			padding-top: 120px;
+		}
+
+		@include max(mobile) {
+			padding-top: 100px;
+		}
 	}
 
 	&--inner {
@@ -238,6 +246,11 @@ iframe {
 		@include max(laptop) {
 			flex-direction: row;
 			align-items: flex-end;
+		}
+
+		@include max(mobile) {
+			flex-direction: column;
+			align-items: flex-start;
 		}
 	}
 

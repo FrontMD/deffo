@@ -31,6 +31,10 @@
         font-weight: 500;
         font-size: 18px;
         line-height: 130%;
+
+        @include max(tablet) {
+            font-size: 16px;
+        }
     }
 
     &__icon {

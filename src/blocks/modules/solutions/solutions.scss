@@ -6,6 +6,10 @@
         padding-top: 60px;
     }
 
+    @include max(mobile) {
+        padding-top: 30px;
+    }
+
     &__slider {
         margin-top: 50px;
     }
@@ -50,5 +54,9 @@
         text-align: center;
         text-transform: uppercase;
         color: $c-white;
+
+        @include max(mobile) {
+            font-size: 20px;
+        }
     }
 }

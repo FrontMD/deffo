@@ -48,7 +48,7 @@ mixin home-intro(props= defaultHomeIntroProps)
             contentSlides: props.contentSlides ? props.contentSlides : defaultHomeIntroProps.contentSlides
         }
 
-    section.home-intro.section.section--fh(class= checkProps.classes data-js="homeIntro")&attributes(attributes)    
+    section.home-intro.section(class= checkProps.classes data-js="homeIntro")&attributes(attributes)    
         .section__bg.section__bg--overlay(data-js="sectionBgSlider")
             .swiper-wrapper
                 .swiper-slide
@@ -60,6 +60,7 @@ mixin home-intro(props= defaultHomeIntroProps)
         .d-container.home-intro__container
             div(data-js="homeIntroTitle" data-anim-type='opacity')
                 +title({
+                    classes: 'home-intro__title',
                     tag: 'h1',
                     text: 'Эксклюзивный дизайн',
                     animColor: true

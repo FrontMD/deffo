@@ -7,7 +7,7 @@
     min-height: 59px;
     padding: 10px 25px;
     background-color: #fff;
-    background-image: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+    background-image: linear-gradient(90deg, #B68C74 0%, $c-accent-hover 100%);
     font-family: $ff-montserrat;
     color: $c-white;
     font-weight: 600;
@@ -20,6 +20,8 @@
 
     @include max(large) {
         font-size: 12px;
+        min-height: 54px;
+        padding: 10px 20px;
     }
 
     svg {
@@ -28,7 +30,7 @@
     }
 
     &:hover {
-        background-image: linear-gradient(180deg, #B68C74 0%, #865F46 100%);
+        background-image: linear-gradient(180deg, #B68C74 0%, $c-accent-hover 100%);
     }
 
     &--transparent {
@@ -68,6 +70,11 @@
         background-image: none;
         min-height: auto;
 
+        @include max(large) {
+            min-height: auto;
+            font-size: 13px;
+        }
+
         svg {
             width: 36px;
             height: 36px;
@@ -79,8 +86,33 @@
         }
 
         &:hover {
-            color: #865F46;
+            color: $c-accent-hover;
             background-image: none;
+        }
+    }
+
+    &--rounded {
+        padding: 13px 15px;
+        color: $c-black;
+        background-color: $c-accent;
+        background-image: none;
+        min-height: 39px;
+        border-radius: 20px;
+        transition: all $tr;
+
+        @include max(large) {
+            min-height: 39px;
+            font-size: 13px;
+        }
+
+        @include max(mobile) {
+            min-height: 39px;
+            font-size: 13px;
+        }
+
+        &:hover {
+            color: $c-white;
+            background-color: $c-accent-hover;
         }
     }
 
