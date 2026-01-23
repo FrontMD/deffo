@@ -32,15 +32,10 @@ const jsTemplatePath = (typeof SITE_TEMPLATE_PATH !== 'undefined' && SITE_TEMPLA
 
 document.addEventListener('DOMContentLoaded', () => {
     sectionBgSlider()
-    /*AOS.init({
-        once: true,
-        duration: 600,
-        offset: 100
-    });
-    $('[data-js="customScrollbar"]').each((index, el) => {
+    /*$('[data-js="customScrollbar"]').each((index, el) => {
         new SimpleBar(el, { autoHide: false });
-    })
-    fancyboxInit();*/
+    })*/
+    fancyboxInit();
 })
 
 // Фоновый слайдер
@@ -78,7 +73,7 @@ function heightAnim(el, dutation = '2s') {
 }
 
 // Инициализация фансибокса
-/*function fancyboxInit() {
+function fancyboxInit() {
     Fancybox.bind("[data-fancybox]", {
         placeFocusBack: false,
         mainClass: 'my-fancybox',
@@ -86,8 +81,8 @@ function heightAnim(el, dutation = '2s') {
         Carousel: {
             transition: "crossfade",
             Navigation: {
-                prevTpl: '<svg><use xlink:href="'+jsTemplatePath+'img/sprites/sprite.svg#arrow_slider_prev"></use></svg>',
-                nextTpl: '<svg><use xlink:href="'+jsTemplatePath+'img/sprites/sprite.svg#arrow_slider_next"></use></svg>',
+                prevTpl: '<svg><use xlink:href="'+jsTemplatePath+'img/sprites/sprite.svg#chevron_slider_prev"></use></svg>',
+                nextTpl: '<svg><use xlink:href="'+jsTemplatePath+'img/sprites/sprite.svg#chevron_slider_next"></use></svg>',
               },
         },
         Thumbs: {
@@ -105,4 +100,4 @@ function heightAnim(el, dutation = '2s') {
         }
 
     });
-}*/
+}

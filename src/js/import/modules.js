@@ -19,6 +19,7 @@
 @@include("../../blocks/modules/s-title/s-title.js")
 @@include("../../blocks/modules/prods-list/prods-list.js")
 @@include("../../blocks/modules/solution-intro/solution-intro.js")
+@@include("../../blocks/modules/gallery-slider/gallery-slider.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -39,4 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
     sCatalogAnim();
     sTitleAnim();
     prodsListAnim();
+    gallerySlider();
 })

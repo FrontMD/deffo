@@ -1,0 +1,28 @@
+-
+    const defaulSVideoProps = {
+        classes: '',
+        poster: 'img/solutions/solutions_3.webp',
+        video: 'public/video/solution.mp4',
+        iframe: false
+    }
+
+mixin s-video(props = defaulSVideoProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaulSVideoProps.classes,
+            video: props.video ? props.video : defaulSVideoProps.video,
+            poster: props.poster ? props.poster : defaulSVideoProps.poster,
+            iframe: props.iframe ? props.iframe : defaulSVideoProps.iframe
+        }
+
+    section.s-video.section.section--inner(class= checkProps.classes)&attributes(attributes)
+        .d-container
+            .s-video__poster
+                img(src=checkProps.poster)
+            - if(checkProps.iframe === true)
+                a.s-video__play(href=checkProps.video data-fancybox data-type="iframe" data-thumb=checkProps.poster)
+            - else
+                a.s-video__play(href=checkProps.video data-fancybox data-thumb=checkProps.poster)
+
+
+

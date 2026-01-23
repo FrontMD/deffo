@@ -18,17 +18,30 @@ function solutionIntroAnim() {
         const title = solutionIntro.querySelector('[data-js="solutionIntroTitle"]')
         const titleTextAnim = title.querySelector('[data-anim-type="textColor"]')
         const separator = solutionIntro.querySelector('[data-js="solutionIntroSeparator"]')
+        const tooltips = solutionIntro.querySelectorAll('[data-js="tooltip"]')
 
         if(titleTextAnim) {
             titleTextAnim.addEventListener('transitionend', () => {
                 commonAnimation(separator)
+                showTooltips()
             }, {once: true})
         } else {
             title.addEventListener('transitionend', () => {
                 commonAnimation(separator)
+                showTooltips()
             }, {once: true})
         }
 
         opacityAnim(title)
+
+        async function showTooltips() {
+            if(tooltips.length < 1) return
+
+            await delay(500)
+
+            tooltips.forEach(item => {
+                opacityAnim(item)
+            });
+        }
     }
 }

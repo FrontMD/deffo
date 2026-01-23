@@ -1,0 +1,36 @@
+-
+    const defaultGallerySliderProps = {
+        classes: '',
+    }
+
+mixin gallery-slider(props= defaultGallerySliderProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultGallerySliderProps.classes
+        }
+
+    section.gallery-slider.section.section--inner(class= checkProps.classes data-js="gallerySlider")&attributes(attributes)
+        .d-container
+            .slider-controls(class= checkProps.classes data-js="sliderControls")&attributes(attributes)
+                button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#chevron_slider_prev`)
+                button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#chevron_slider_next`)
+
+            .gallery-slider__slider(data-js="gallerySliderSlider" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement='top-center')
+                .swiper-wrapper
+                    .swiper-slide.gallery-slider__card
+                        a.gallery-slider__bg(href="img/solutions/solutions_4.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_4.webp")
+                            img(src="img/solutions/solutions_4.webp" alt="")
+                    .swiper-slide.gallery-slider__card
+                        a.gallery-slider__bg(href="img/solutions/solutions_5.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_5.webp")
+                            img(src="img/solutions/solutions_5.webp" alt="")
+                        a.s-stocks__link(href="javascript:void(0);")
+                    .swiper-slide.gallery-slider__card
+                        a.gallery-slider__bg(href="img/solutions/solutions_4.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_4.webp")
+                            img(src="img/solutions/solutions_4.webp" alt="")
+                    .swiper-slide.gallery-slider__card
+                        a.gallery-slider__bg(href="img/solutions/solutions_5.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_5.webp")
+                            img(src="img/solutions/solutions_5.webp" alt="")

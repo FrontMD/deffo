@@ -40,7 +40,7 @@
         opacity: 0;
     }
 
-    &:hover &__tooltip {
+    &.active &__tooltip {
         top: calc(100% - 5px);
         left: 13px;
         visibility: visible;
