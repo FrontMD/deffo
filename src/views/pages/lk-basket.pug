@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Корзина"
+    - const fullHeader = false
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +lk-layout({
+                page: 'basket',
+                title: 'Корзина'
+            })
+
+

@@ -1,0 +1,64 @@
+.solution-intro {
+    display: flex;
+    align-items: stretch;
+
+    &__top {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        min-height: 100dvh;
+        gap: 25px;
+        overflow: hidden;
+        z-index: 1;
+        color: $c-white;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__sep .separator__center,
+    &__sep .separator__side {
+        background-color: $c-white;
+    }
+
+    &__tooltip {
+        position: absolute;
+        z-index: 5;
+    }
+
+    &__info {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(220px, 22%);
+        align-items: stretch;
+        gap: 50px 40px;
+        padding: 40px;
+        margin-left: -40px;
+        margin-right: -40px;
+        background-color: #171717;
+
+        @include max(laptop) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include max(mobile) {
+            gap: 32px 16px;
+        }
+
+        @include max(xs) {
+            gap: 24px;
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    &__btn {
+        margin-left: auto;
+        align-self: center;
+    }
+
+}

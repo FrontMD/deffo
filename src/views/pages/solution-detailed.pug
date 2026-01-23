@@ -1,0 +1,11 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Готовое решение"
+    - const fullHeader = false 
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +solution-intro
+

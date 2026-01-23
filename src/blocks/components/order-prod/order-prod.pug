@@ -3,7 +3,8 @@
         classes: '',
         title: 'Фасад прямой под стекло 3 ВД №3',
         img: 'img/catalog/prod_2.webp',
-        texts: []
+        texts: [],
+        hasAmount: false
     }
 
 mixin order-prod(props = defaultOrderProdProps)
@@ -13,6 +14,7 @@ mixin order-prod(props = defaultOrderProdProps)
             title: props.title ? props.title : defaultOrderProdProps.title,
             img: props.img ? props.img : defaultOrderProdProps.img,
             texts: props.texts ? props.texts : defaultOrderProdProps.texts,
+            hasAmount: props.hasAmount ? props.hasAmount : defaultOrderProdProps.hasAmount,
         }
 
     .order-prod(class=checkProps.classes)&attributes(attributes)
@@ -27,4 +29,9 @@ mixin order-prod(props = defaultOrderProdProps)
                     .order-prod__text!= textsList[textsCount]
 
                     - textsCount++
+
+        - if(checkProps.hasAmount === true)
+            +amount-input({
+                classes: 'order-prod__amount'
+            })
 

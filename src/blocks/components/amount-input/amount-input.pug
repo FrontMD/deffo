@@ -1,0 +1,19 @@
+-
+    const defaultAmountInputProps = {
+        classes: ''
+    }
+
+mixin amount-input(props = defaultAmountInputProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultAmountInputProps.classes
+        }
+
+
+    .amount-input(class=checkProps.classes data-js="amountInput")&attributes(attributes)
+        span.amount-input__width
+        span.amount-input__text 25 000 Р <span>за шт</span>
+        span.amount-input__change.amount-input__minus.min -
+        input.amount-input__value(type="number" name="amount" value="1" autocomplete="off")
+        span.amount-input__change.amount-input__plus +
+        span.amount-input__text.amount-input__text--right 250 000 Р

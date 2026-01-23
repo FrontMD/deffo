@@ -78,11 +78,13 @@ function preloader() {
                 once: true
             });
             homeIntroAnim();
+            solutionIntroAnim();
         }, {once: true})
     
         figures.forEach(async (figure, i) => {
 
-            figure.style.translate = `${(vw - fullWidth * targetScale) / 2}px ${(vh - fullWidth * targetScale) / 2}px`
+           figure.style.translate = `${(vw - fullWidth * targetScale) / 2}px ${(vh - fullWidth * targetScale) / 2}px`
+
             figure.style.scale = `${targetScale}`
 
             await delay(700)

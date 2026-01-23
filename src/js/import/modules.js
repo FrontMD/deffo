@@ -18,6 +18,7 @@
 @@include("../../blocks/modules/s-catalog/s-catalog.js")
 @@include("../../blocks/modules/s-title/s-title.js")
 @@include("../../blocks/modules/prods-list/prods-list.js")
+@@include("../../blocks/modules/solution-intro/solution-intro.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();

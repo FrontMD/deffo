@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Персональный раздел</title>
+    <title>Корзина</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -238,55 +238,36 @@
                 <div class="d-container">
                   <div class="lk-layout__header">
                         <div class="title lk-layout__title title--40">
-                          <h1>Персональный раздел</h1>
+                          <h1>Корзина</h1>
                         </div>
                   </div>
                   <div class="lk-layout__container">
                     <div class="lk-layout__body">
-                          <div class="lk-common">
-                            <div class="lk-common__card">
-                              <div class="lk-common__icon"><img src="img/conditions/conditions_4.svg" alt=""><span>2</span></div>
-                              <div class="lk-common__info">
-                                <div class="lk-common__title">История заказов</div>
-                                <div class="lk-common__text text-editor">Просмотр выполненных заказов</div>
-                              </div>
-                              <div class="lk-common__bottom"><a class="d-btn  d-btn--accent-tr" href="javascript:void(0);"><span>Открыть</span></a>
-                              </div>
-                            </div>
-                            <div class="lk-common__card">
-                              <div class="lk-common__icon"><img src="img/conditions/conditions_6.svg" alt=""></div>
-                              <div class="lk-common__info">
-                                <div class="lk-common__title">Смена пароля</div>
-                                <div class="lk-common__text text-editor">Обновите пароль для безопасности аккаунта</div>
-                              </div>
-                              <div class="lk-common__bottom"><a class="d-btn  d-btn--accent-tr" href="javascript:void(0);"><span>Сменить</span></a>
-                              </div>
-                            </div>
-                            <div class="lk-common__card">
-                              <div class="lk-common__icon"><img src="img/conditions/conditions_7.svg" alt=""><span>15</span></div>
-                              <div class="lk-common__info">
-                                <div class="lk-common__title">Избранное</div>
-                                <div class="lk-common__text text-editor">Сохраняйте понравившиеся фасады, чтобы вернуться к ним позже</div>
-                              </div>
-                              <div class="lk-common__bottom"><a class="d-btn  d-btn--accent-tr" href="javascript:void(0);"><span>Открыть</span></a>
-                              </div>
-                            </div>
+                          <div class="lk-basket">
+                                <div class="order-prod">
+                                  <div class="order-prod__img"><img src="img/catalog/prod_1.webp" alt=""></div>
+                                  <div class="order-prod__info"><a class="order-prod__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                    <div class="order-prod__text">5 000 ₽</div>
+                                  </div>
+                                      <div class="amount-input order-prod__amount" data-js="amountInput"><span class="amount-input__width"></span><span class="amount-input__text">25 000 Р <span>за шт</span></span><span class="amount-input__change amount-input__minus min">-</span>
+                                        <input class="amount-input__value" type="number" name="amount" value="1" autocomplete="off"><span class="amount-input__change amount-input__plus">+</span><span class="amount-input__text amount-input__text--right">250 000 Р</span>
+                                      </div>
+                                </div>
+                                <div class="order-prod">
+                                  <div class="order-prod__img"><img src="img/catalog/prod_1.webp" alt=""></div>
+                                  <div class="order-prod__info"><a class="order-prod__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                    <div class="order-prod__text">5 000 ₽</div>
+                                  </div>
+                                      <div class="amount-input order-prod__amount" data-js="amountInput"><span class="amount-input__width"></span><span class="amount-input__text">25 000 Р <span>за шт</span></span><span class="amount-input__change amount-input__minus min">-</span>
+                                        <input class="amount-input__value" type="number" name="amount" value="1" autocomplete="off"><span class="amount-input__change amount-input__plus">+</span><span class="amount-input__text amount-input__text--right">250 000 Р</span>
+                                      </div>
+                                </div>
                           </div>
                     </div>
                     <div class="lk-layout__sidebar">
                       <div class="lk-sidebar">
-                        <div class="lk-sidebar__block">
-                          <div class="lk-sidebar__company">ООО «Современные технологии»</div>
-                          <div class="lk-sidebar__name">Смородинова Анастасия</div><a class="d-btn  d-btn--rounded" href="javascript:void(0);"><span>Ваша скидка 15%</span></a>
-                        </div>
-                        <div class="lk-sidebar__block">
-                          <div class="lk-sidebar__links"><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_4.svg" alt=""><span>История заказов</span></a><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_7.svg" alt=""><span>Избранное</span></a><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_6.svg" alt=""><span>Сменить пароль</span></a>
-                          </div>
-                        </div>
-                        <div class="lk-sidebar__block">
-                          <div class="lk-sidebar__links"><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_8.svg" alt=""><span>Выход</span></a>
-                          </div>
-                        </div>
+                        <div class="lk-sidebar__subtitle">Итого:</div>
+                        <div class="lk-sidebar__sum">250 000 Р</div><a class="d-btn lk-sidebar__btn" href="javascript:void(0);"><span>оформить заказ</span></a>
                       </div>
                     </div>
                   </div>

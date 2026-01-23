@@ -1,0 +1,20 @@
+-
+    const defaultTooltipProps = {
+        classes: '',
+        text: 'Аттестат выдает партнер гимназии',
+        icon: 'tooltip'
+    }
+
+mixin tooltip(props= defaultTooltipProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultTooltipProps.classes,
+            text: props.text ? props.text : defaultTooltipProps.text,
+            icon: props.icon ? props.icon : defaultTooltipProps.icon
+        }
+
+    .tooltip(class= checkProps.classes data-js="tooltip")&attributes(attributes)
+        .tooltip__tooltip!= checkProps.text
+        .tooltip__icon
+            svg
+                use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)

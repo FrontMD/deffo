@@ -1,0 +1,29 @@
+-
+    const defaultLkBasketProps = {
+        classes: ''
+    }
+
+mixin lk-basket(props= defaultLkBasketProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultLkBasketProps.classes
+        }
+
+    .lk-basket(class= checkProps.classes)&attributes(attributes)
+        +order-prod({
+            img: 'img/catalog/prod_1.webp',
+            texts: [
+                '5 000 ₽'
+            ],
+            hasAmount: true
+        })
+        +order-prod({
+            img: 'img/catalog/prod_1.webp',
+            texts: [
+                '5 000 ₽'
+            ],
+            hasAmount: true
+        })
+
+
+

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Персональный раздел</title>
+    <title>Готовое решение</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -234,61 +234,47 @@
     <main class="site-main">
       <div class="page" data-js="page">
         <div class="page-layout">
-              <section class="lk-layout section section--top">
+              <section class="solution-intro section" data-js="solutionIntro">   
+                <div class="section__bg section__bg--overlay">
+                  <picture><img src="img/solutions/solutions_3.webp" alt=""></picture>
+                </div>
                 <div class="d-container">
-                  <div class="lk-layout__header">
-                        <div class="title lk-layout__title title--40">
-                          <h1>Персональный раздел</h1>
+                  <div class="solution-intro__top">
+                    <div data-js="solutionIntroTitle" data-anim-type="opacity">
+                          <div class="title solution-intro__title title--60">
+                            <h1 data-anim-type="textColor">Эльтон</h1>
+                          </div>
+                    </div>
+                    <div class="solution-intro__sep separator" data-js="solutionIntroSeparator" data-anim-type="separator">
+                      <div class="separator__side separator__side--left"></div>
+                      <div class="separator__center"></div>
+                      <div class="separator__side separator__side--right"></div>
+                    </div>
+                        <div class="tooltip solution-intro__tooltip" data-js="tooltip" style="left: 50%; top: 20%;">
+                          <div class="tooltip__tooltip">Фасад прямой глухой 6А</div>
+                          <div class="tooltip__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#tooltip"></use>
+                            </svg>
+                          </div>
                         </div>
                   </div>
-                  <div class="lk-layout__container">
-                    <div class="lk-layout__body">
-                          <div class="lk-common">
-                            <div class="lk-common__card">
-                              <div class="lk-common__icon"><img src="img/conditions/conditions_4.svg" alt=""><span>2</span></div>
-                              <div class="lk-common__info">
-                                <div class="lk-common__title">История заказов</div>
-                                <div class="lk-common__text text-editor">Просмотр выполненных заказов</div>
-                              </div>
-                              <div class="lk-common__bottom"><a class="d-btn  d-btn--accent-tr" href="javascript:void(0);"><span>Открыть</span></a>
-                              </div>
-                            </div>
-                            <div class="lk-common__card">
-                              <div class="lk-common__icon"><img src="img/conditions/conditions_6.svg" alt=""></div>
-                              <div class="lk-common__info">
-                                <div class="lk-common__title">Смена пароля</div>
-                                <div class="lk-common__text text-editor">Обновите пароль для безопасности аккаунта</div>
-                              </div>
-                              <div class="lk-common__bottom"><a class="d-btn  d-btn--accent-tr" href="javascript:void(0);"><span>Сменить</span></a>
-                              </div>
-                            </div>
-                            <div class="lk-common__card">
-                              <div class="lk-common__icon"><img src="img/conditions/conditions_7.svg" alt=""><span>15</span></div>
-                              <div class="lk-common__info">
-                                <div class="lk-common__title">Избранное</div>
-                                <div class="lk-common__text text-editor">Сохраняйте понравившиеся фасады, чтобы вернуться к ним позже</div>
-                              </div>
-                              <div class="lk-common__bottom"><a class="d-btn  d-btn--accent-tr" href="javascript:void(0);"><span>Открыть</span></a>
-                              </div>
-                            </div>
-                          </div>
+                  <div class="solution-intro__info" data-anim-id="solutionIntroInfo">
+                    <div class="condition-card solution-intro__card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-anchor="[data-anim-id='solutionIntroInfo']" data-aos-anchor-placement="top-bottom">
+                      <div class="condition-card__icon"><img src="img/conditions/conditions_11.svg" alt=""></div>
+                      <div class="condition-card__title">Используемые покрытия:</div>
+                      <div class="condition-card__text text-editor">SWGM009 Walnut <br>Краска RAL9010</div>
                     </div>
-                    <div class="lk-layout__sidebar">
-                      <div class="lk-sidebar">
-                        <div class="lk-sidebar__block">
-                          <div class="lk-sidebar__company">ООО «Современные технологии»</div>
-                          <div class="lk-sidebar__name">Смородинова Анастасия</div><a class="d-btn  d-btn--rounded" href="javascript:void(0);"><span>Ваша скидка 15%</span></a>
-                        </div>
-                        <div class="lk-sidebar__block">
-                          <div class="lk-sidebar__links"><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_4.svg" alt=""><span>История заказов</span></a><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_7.svg" alt=""><span>Избранное</span></a><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_6.svg" alt=""><span>Сменить пароль</span></a>
-                          </div>
-                        </div>
-                        <div class="lk-sidebar__block">
-                          <div class="lk-sidebar__links"><a class="link-icon" href="javascript:void(0);"><img src="img/conditions/conditions_8.svg" alt=""><span>Выход</span></a>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="condition-card solution-intro__card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='solutionIntroInfo']" data-aos-anchor-placement="top-bottom">
+                      <div class="condition-card__icon"><img src="img/conditions/conditions_12.svg" alt=""></div>
+                      <div class="condition-card__title">Используемые фрезеровки:</div>
+                      <div class="condition-card__text text-editor">A6</div>
                     </div>
+                    <div class="condition-card solution-intro__card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-anchor="[data-anim-id='solutionIntroInfo']" data-aos-anchor-placement="top-bottom">
+                      <div class="condition-card__icon"><img src="img/conditions/conditions_13.svg" alt=""></div>
+                      <div class="condition-card__title">Используемые элементы:</div>
+                      <div class="condition-card__text text-editor">Фасад прямой глухой 6А <br>Фасад прямой с интегрированной ручкой</div>
+                    </div><a class="d-btn solution-intro__btn" href="javascript:void(0);" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-anchor="[data-anim-id='solutionIntroInfo']" data-aos-anchor-placement="top-bottom"><span>Заказать такой же</span></a>
                   </div>
                 </div>
               </section>

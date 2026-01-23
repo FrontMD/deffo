@@ -40,12 +40,18 @@ mixin lk-layout(props= defaultLkLayoutProps)
                     - else if(checkProps.page === 'order')
                         +lk-order
                     - else if(checkProps.page === 'basket')
-                        .lk-sidebar
+                        +lk-basket
                     - else
                         +lk-common
                 .lk-layout__sidebar
-                    - if(page === 'basket')
+                    - if(checkProps.page === 'basket')
                         .lk-sidebar
+                            .lk-sidebar__subtitle Итого:
+                            .lk-sidebar__sum 250 000 Р
+                            +btn({
+                                classes: 'lk-sidebar__btn',
+                                name: 'оформить заказ'
+                            })
                     - else
                         .lk-sidebar
                             .lk-sidebar__block
