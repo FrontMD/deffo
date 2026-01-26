@@ -23,6 +23,7 @@
 @@include("../../blocks/modules/cards-slider/cards-slider.js")
 @@include("../../blocks/modules/pc-slider/pc-slider.js")
 @@include("../../blocks/modules/samples-list/samples-list.js")
+@@include("../../blocks/modules/product-intro/product-intro.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -47,4 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
     cardsSlider();
     pcSlider();
     samplesListAnim();
+    productIntro();
 })

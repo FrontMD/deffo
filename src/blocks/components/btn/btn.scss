@@ -68,6 +68,20 @@
         }
     }
 
+    &--accent-br {
+        background-color: transparent;
+        background-image: none;
+        transition: all $tr;
+        border: solid 1px $c-border;
+        color: $c-accent;
+
+        &:hover {
+            background-image: none;
+            border-color: $c-accent;
+            color: $c-accent;
+        }
+    }
+
     &--accent-tr {
         padding: 0;
         color: $c-accent;

@@ -1,0 +1,77 @@
+-
+    const defaultProductIntroProps = {
+        classes: '',
+    }
+
+mixin product-intro(props= defaultProductIntroProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultProductIntroProps.classes
+        }
+
+    section.product-intro.section.section--inner(class= checkProps.classes data-js="productIntro")&attributes(attributes)
+        .d-container
+            .section__header
+                div(data-js="productIntroTitle" data-anim-type='opacity')
+                    +title({
+                        tag: 'h2',
+                        size: '40',
+                        text: 'Фасад прямой под стекло 3 ВД №5 (3*2)',
+                        animColor: true
+                    })
+            .product-intro__grid
+                .product-intro__side
+                    .pi-desc
+                        .pi-desc__text.text-editor
+                            p Фасад прямой под стекло — разновидность прямого фасада под стекло с различного вида перекрестиями, выполненными по одной из технологий (1,2,3,4) и имеющие определённые ограничения, связанные с технологией изготовления рисунка фрезеровки
+                        +btn({
+                            name: 'Технология в разрезе',
+                            cMode: 'accent-br'
+                        })
+                .product-intro__side
+                    .pi-slider(data-js="piSlider")
+                        .pi-slider__wrapper
+                            .pi-slider__slider(data-js="piSliderSlider")
+                                .swiper-wrapper
+                                    .swiper-slide.pi-slider__slide
+                                        img(src="img/catalog/prod_5.webp" alt="")
+                                    .swiper-slide.pi-slider__slide
+                                        img(src="img/catalog/prod_1.webp" alt="")
+
+                        .pi-slider__controls
+                            a.pi-slider__mo(href="javascript:void(0);")
+                                .pi-slider__3d 3D
+                                img(src="img/catalog/prod_5.webp" alt="")
+                            .pi-slider__thumbs(data-js="piSliderThumbs")
+                                .swiper-wrapper
+                                    .swiper-slide.pi-slider__thumb
+                                        img(src="img/catalog/prod_5.webp" alt="")
+                                    .swiper-slide.pi-slider__thumb
+                                        img(src="img/catalog/prod_1.webp" alt="")
+
+                .product-intro__side
+                    .pi-info
+                        .pi-info__block
+                            .product-intro__subtitle Допустимые толщины МДФ:
+                            .pi-info__tags
+                                .pi-info__tag МДФ 16 мм.
+                                .pi-info__tag МДФ 19 мм.
+                                .pi-info__tag МДФ 22 мм.
+                            .pi-info__controls
+                                +btn({
+                                    name: 'Заказать',
+                                    icon: 'basket'
+                                })
+
+                        .pi-info__block
+                            .product-intro__subtitle Фасад используется:
+                            .pi-info__cards
+                                +prod-card({
+                                    title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
+                                    img: 'img/catalog/prod_11.webp'
+                                })
+                                +prod-card({
+                                    title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
+                                    img: 'img/catalog/prod_11.webp'
+                                })
+
