@@ -1,28 +1,32 @@
 -
-    const defaulSVideoProps = {
+    const defaultSVideoProps = {
         classes: '',
         poster: 'img/solutions/solutions_3.webp',
         video: 'public/video/solution.mp4',
         iframe: false
     }
 
-mixin s-video(props = defaulSVideoProps)
+mixin s-video(props = defaultSVideoProps)
     -
         const checkProps = {
-            classes: props.classes ? props.classes : defaulSVideoProps.classes,
-            video: props.video ? props.video : defaulSVideoProps.video,
-            poster: props.poster ? props.poster : defaulSVideoProps.poster,
-            iframe: props.iframe ? props.iframe : defaulSVideoProps.iframe
+            classes: props.classes ? props.classes : defaultSVideoProps.classes,
+            video: props.video ? props.video : defaultSVideoProps.video,
+            poster: props.poster ? props.poster : defaultSVideoProps.poster,
+            iframe: props.iframe ? props.iframe : defaultSVideoProps.iframe
         }
 
-    section.s-video.section.section--inner(class= checkProps.classes)&attributes(attributes)
+    section.s-video.section.section--inner(class= checkProps.classes data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor-placement="top-center")&attributes(attributes)
         .d-container
             .s-video__poster
                 img(src=checkProps.poster)
             - if(checkProps.iframe === true)
                 a.s-video__play(href=checkProps.video data-fancybox data-type="iframe" data-thumb=checkProps.poster)
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#play`)
             - else
                 a.s-video__play(href=checkProps.video data-fancybox data-thumb=checkProps.poster)
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#play`)
 
 
 

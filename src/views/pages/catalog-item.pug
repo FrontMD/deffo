@@ -1,0 +1,74 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Карточка товара"
+    - const fullHeader = false 
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Каталог',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Фасады с решеткой',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Фасад прямой с решеткой 6 №7',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+            //-intro
+            +samples-list
+            +gallery-slider({
+                title: 'Готовые решения',
+                hasCaption: true
+            })
+            +pc-slider
+            +pc-slider({
+                title: 'Вы недавно смотрели',
+                cards: [
+                    {
+                        classes: 'swiper-slide',
+                        title: 'Фасад прямой под стекло 3 ВД №7',
+                        img: 'img/catalog/prod_8.webp',
+                        tags: [
+                            {
+                                text: 'Хит',
+                                icon: 'img/catalog/tag_sale.svg'
+                            }
+                        ]
+                    },
+                    {
+                        classes: 'swiper-slide',
+                        title: 'Фасад прямой под стекло 3 ВД №7',
+                        img: 'img/catalog/prod_8.webp',
+                        tags: [
+                            {
+                                text: 'Хит',
+                                icon: 'img/catalog/tag_sale.svg'
+                            }
+                        ]
+                    },
+                    {
+                        classes: 'swiper-slide',
+                        title: 'Фасад прямой под стекло 3 ВД №7',
+                        img: 'img/catalog/prod_8.webp',
+                        tags: [
+                            {
+                                text: 'Хит',
+                                icon: 'img/catalog/tag_sale.svg'
+                            }
+                        ]
+                    },
+                ]
+            })

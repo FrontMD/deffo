@@ -14,7 +14,9 @@ function menuSearch() {
 
             if(menuSearch.classList.contains('menu-search--active')) {
                 if(container) {
-                    menuSearchBody.style.width = `${container.offsetWidth - menuSearchToggle.offsetWidth}px`
+                    const coeff = window.innerWidth > 767 ? 0 : 55
+
+                    menuSearchBody.style.width = `${container.offsetWidth - menuSearchToggle.offsetWidth + coeff}px`
                 } else {
                     menuSearchBody.style.width = '300px'    
                 }

@@ -1,15 +1,17 @@
 -
     const defaultMainMenuProps = {
         classes: '',
+        hasSearch: false
     }
 
 mixin main-menu(props = defaultMainMenuProps)
     -
         const checkProps = {
-            classes: props.classes ? props.classes : defaultMainMenuProps.classes
+            classes: props.classes ? props.classes : defaultMainMenuProps.classes,
+            hasSearch: props.hasSearch ? props.hasSearch : defaultMainMenuProps.hasSearch,
         }
 
-    .main-menu()&attributes(attributes)
+    .main-menu(class= checkProps.classes)&attributes(attributes)
         .main-menu__items
             .main-menu__item(data-js="mainMenuItem")
                 a.main-menu__link(href="javascript:void(0);") Каталог
@@ -58,51 +60,36 @@ mixin main-menu(props = defaultMainMenuProps)
             .main-menu__item(data-js="mainMenuItem")
                 a.main-menu__link(href="javascript:void(0);") Контакты
 
-        form.main-menu__search.menu-search(action="#" data-js="menuSearch")
-            .menu-search__btn(data-js="mainMenuItem" data-id="menuSearchToggle")
-                .menu-search__icon.menu-search__icon--open
-                    svg
-                        use(xlink:href=`img/sprites/sprite.svg#search`)
-                .menu-search__icon.menu-search__icon--close
-                    svg
-                        use(xlink:href=`img/sprites/sprite.svg#close`)
-            .menu-search__body(data-id="menuSearchBody")
-                +field({
-                    classes: 'menu-search__field',
-                    type: 'text',
-                    title: '',
-                    placeholder: 'Поиск по товарам',
-                })
+        - if(checkProps.hasSearch === true) 
 
-                .menu-search__results.search-results
-                    +order-prod({
-                        title: 'Фасад прямой под стекло 3 ВД №3',
-                        classes: 'search-results__item',
-                        texts: [
-                            '5 000 ₽'
-                        ]
+            form.main-menu__search.menu-search(action="#" data-js="menuSearch")
+                .menu-search__btn(data-js="mainMenuItem" data-id="menuSearchToggle")
+                    .menu-search__icon.menu-search__icon--open
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#search`)
+                    .menu-search__icon.menu-search__icon--close
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#close`)
+                .menu-search__body(data-id="menuSearchBody")
+                    +field({
+                        classes: 'menu-search__field',
+                        type: 'text',
+                        title: '',
+                        placeholder: 'Поиск по товарам',
                     })
-                    +order-prod({
-                        title: 'Фасад прямой 3 ВД №3',
-                        classes: 'search-results__item',
-                        texts: [
-                            '5 000 ₽'
-                        ]
-                    })
-                    //-.search-results__item
-                        .search-results__img
-                            img(src="img/catalog/search.webp" alt="")
-                        .search-results__info
-                            a.search-results__title(href="javascript:void(0);") Фасад прямой под стекло 3 ВД №3
-                            .search-results__price 5 000 ₽
-                    //-.search-results__item
-                        .search-results__img
-                            img(src="img/catalog/search.webp" alt="")
-                        .search-results__info
-                            a.search-results__title(href="javascript:void(0);") Фасад прямой 3 ВД №3
-                            .search-results__price 5 000 ₽
 
-
-
-
-
+                    .menu-search__results.search-results
+                        +order-prod({
+                            title: 'Фасад прямой под стекло 3 ВД №3',
+                            classes: 'search-results__item',
+                            texts: [
+                                '5 000 ₽'
+                            ]
+                        })
+                        +order-prod({
+                            title: 'Фасад прямой 3 ВД №3',
+                            classes: 'search-results__item',
+                            texts: [
+                                '5 000 ₽'
+                            ]
+                        })

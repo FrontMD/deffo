@@ -104,13 +104,17 @@ mixin header(isFull=false)
                                     use(xlink:href=`img/sprites/sprite.svg#main_burger`)
 
                         nav.site-header__nav
-                            +main-menu()(data-js="siteHeaderMenu")
+                            +main-menu({
+                                hasSearch: true
+                            })(data-js="siteHeaderMenu")
 
                         .site-header__small(data-js="siteHeaderSmall")
                             .site-header__side.site-header__side--center.site-header__side--mobile(data-js="siteHeaderSmallHeight")
                                 a.site-header__logo(href="/" data-aos="fade-right" data-aos-duration="600")
                                     img(src="img/logo.svg" alt="")
-                                +main-menu()(data-js="siteHeaderMenuSmall")
+                                +main-menu({
+                                hasSearch: true
+                            })(data-js="siteHeaderMenuSmall")
 
                             .site-header__side(data-js="siteHeaderSmallHeight" data-aos="fade-left" data-aos-duration="600")
                                 +socials({
@@ -149,7 +153,9 @@ mixin header(isFull=false)
                             .site-header__side.site-header__side--center.site-header__side--mobile
                                 a.site-header__logo(href="/" data-aos="fade-right" data-aos-duration="600")
                                     img(src="img/logo.svg" alt="")
-                                +main-menu()(data-js="siteHeaderMenu")
+                                +main-menu({
+                                hasSearch: true
+                            })(data-js="siteHeaderMenu")
 
                             .site-header__side(data-aos="fade-left" data-aos-duration="600")
                                 +socials({

@@ -20,6 +20,9 @@
 @@include("../../blocks/modules/prods-list/prods-list.js")
 @@include("../../blocks/modules/solution-intro/solution-intro.js")
 @@include("../../blocks/modules/gallery-slider/gallery-slider.js")
+@@include("../../blocks/modules/cards-slider/cards-slider.js")
+@@include("../../blocks/modules/pc-slider/pc-slider.js")
+@@include("../../blocks/modules/samples-list/samples-list.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -41,4 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sTitleAnim();
     prodsListAnim();
     gallerySlider();
+    cardsSlider();
+    pcSlider();
+    samplesListAnim();
 })

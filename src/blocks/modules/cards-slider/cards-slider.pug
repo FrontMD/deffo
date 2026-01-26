@@ -1,0 +1,46 @@
+-
+    const defaultCardsSliderProps = {
+        classes: '',
+    }
+
+mixin cards-slider(props= defaultCardsSliderProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultCardsSliderProps.classes
+        }
+
+    section.cards-slider.section.section--inner(class= checkProps.classes data-js="cardsSlider")&attributes(attributes)
+        .d-container
+            .cards-slider__header
+                div(data-js="cardsSliderTitle" data-anim-type='opacity')
+                    +title({
+                        text: 'Популярные готовые решения',
+                        tag: 'h2',
+                        size: '40',
+                        animColor: true
+                    })
+                +slider-controls({
+                    classes: 'cards-slider__controls'
+                })(data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='cardsSlider']"  data-aos-anchor-placement='top-center')
+            .cards-slider__slider(data-js="cardsSliderSlider" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor="[data-js='cardsSlider']" data-aos-anchor-placement='top-center')
+                .swiper-wrapper
+                    .swiper-slide.sp-card
+                        a.sp-card__link(href="javascript:void(0);")
+                        .sp-card__img
+                            img(src="img/solutions/solutions_6.webp" alt="")
+                        .sp-card__title Уилпата
+                        .sp-card__text.text-editor Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1
+
+                    .swiper-slide.sp-card
+                        a.sp-card__link(href="javascript:void(0);")
+                        .sp-card__img
+                            img(src="img/solutions/solutions_1.webp" alt="")
+                        .sp-card__title Эворон
+                        .sp-card__text.text-editor Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1
+
+                    .swiper-slide.sp-card
+                        a.sp-card__link(href="javascript:void(0);")
+                        .sp-card__img
+                            img(src="img/solutions/solutions_2.webp" alt="")
+                        .sp-card__title Гокли
+                        .sp-card__text.text-editor Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1

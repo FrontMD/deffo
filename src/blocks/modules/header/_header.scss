@@ -72,8 +72,20 @@
     &__side--mobile {
         @include max(laptop) {
             display: flex;
+            flex: 1 1 auto;
 
             .main-menu {
+                flex: 1 1 auto;
+            }
+
+
+            .main-menu .main-menu__search {
+                margin-left: auto;
+            }
+        }
+
+        @include max(tablet) {
+            .main-menu .main-menu__items {
                 display: none;
             }
         }
@@ -206,6 +218,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 12px;
     }
 
     &__small &__logo {

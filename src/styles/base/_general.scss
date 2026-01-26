@@ -318,14 +318,6 @@ iframe {
 		width: 150px;
 		height: 1px;
 		background-color: $c-accent;
-
-		@include max(large) {
-			width: 120px;
-		}
-
-		@include max(xs) {
-			width: 100px;
-		}
 	}
 }
 
@@ -773,6 +765,14 @@ iframe {
 
 	&.animated .separator__side {
 		width: 150px;
+
+		@include max(large) {
+			width: 120px;
+		}
+
+		@include max(xs) {
+			width: 100px;
+		}
 	}
 }
 

@@ -1,0 +1,54 @@
+-
+    const defaultSamplesListProps = {
+        classes: '',
+        title: 'Образцы исполнения',
+        cards: [
+            {
+                desc: 'Фрезеровка: A6 <br>Покрытие: FS 305-2 Айс какао',
+                images: ['img/catalog/sample_1.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+            },
+
+            {
+                desc: 'Фрезеровка: A6 <br>Покрытие: FS 305-2 Айс какао',
+                images: ['img/catalog/sample_6.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+            },
+
+            {
+                desc: 'Фрезеровка: A6 <br>Покрытие: FS 305-2 Айс какао',
+                images: ['img/catalog/sample_12.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+            },
+
+            {
+                desc: 'Фрезеровка: A6 <br>Покрытие: FS 305-2 Айс какао',
+                images: ['img/catalog/sample_13.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
+            },
+        ],
+    }
+
+mixin samples-list(props= defaultSamplesListProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSamplesListProps.classes,
+            title: props.title ? props.title : defaultSamplesListProps.title,
+            cards: props.cards ? props.cards : defaultSamplesListProps.cards
+        }
+
+    section.samples-list.section.section--inner(class= checkProps.classes data-js="samplesList")&attributes(attributes)
+        div(data-js="scrollTrigger")
+        .d-container
+            .section__header
+                div(data-js="samplesListTitle" data-anim-type='opacity')
+                    +title({
+                        tag: 'h2',
+                        size: '40',
+                        text: checkProps.title,
+                        animColor: true
+                    })
+            .samples-list__items
+                - let cardsCount = 0
+                - let cardsList = checkProps.cards
+                - while(cardsCount < cardsList.length)
+                    +sl-card(cardsList[cardsCount])(data-anim-id="samplesListItem")
+
+                    - cardsCount++
+

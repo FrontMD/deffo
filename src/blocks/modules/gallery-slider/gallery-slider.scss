@@ -1,11 +1,26 @@
 .gallery-slider {
     position: relative;
-    padding-top: 60px;
+
+    &--pt {
+        padding-top: 60px;
+    }
+
+    .d-container+.d-container {
+        margin-top: 40px;
+    }
 
     &__slider {
         margin: 0 auto;
         overflow: hidden;
         width: calc(100% - 88px * 2);
+
+        @include max(laptop) {
+            width: calc(100% - 40px * 2);
+        }
+
+        @include max(xs) {
+            width: calc(100% - 34px * 2);
+        }
     }
 
     .slider-control {
@@ -16,11 +31,11 @@
     }
 
     .slider-control--prev {
-        left: 40px;
+        left: 0px;
     }
 
     .slider-control--next {
-        right: 40px;
+        right: 0px;
     }
 
     &__card {

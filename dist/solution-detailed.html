@@ -294,7 +294,7 @@
                   </div>
                 </div>
               </section>
-              <section class="gallery-slider section section--inner" data-js="gallerySlider">
+              <section class="gallery-slider section section--inner gallery-slider--pt" data-js="gallerySlider">
                 <div class="d-container">
                   <div class="slider-controls" data-js="sliderControls">
                     <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
@@ -318,9 +318,56 @@
                   </div>
                 </div>
               </section>
-              <section class="s-video section section--inner">
+              <section class="s-video section section--inner" data-aos="zoom-in" data-aos-duration="1000" data-aos-anchor-placement="top-center">
                 <div class="d-container">
-                  <div class="s-video__poster"><img src="img/solutions/solutions_3.webp"></div><a class="s-video__play" href="public/video/solution.mp4" data-fancybox data-thumb="img/solutions/solutions_3.webp"></a>
+                  <div class="s-video__poster"><img src="img/solutions/solutions_3.webp"></div><a class="s-video__play" href="public/video/solution.mp4" data-fancybox data-thumb="img/solutions/solutions_3.webp">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#play"></use>
+                    </svg></a>
+                </div>
+              </section>
+              <section class="cards-slider section section--inner" data-js="cardsSlider">
+                <div class="d-container">
+                  <div class="cards-slider__header">
+                    <div data-js="cardsSliderTitle" data-anim-type="opacity">
+                          <div class="title  title--40">
+                            <h2 data-anim-type="textColor">Популярные готовые решения</h2>
+                          </div>
+                    </div>
+                        <div class="slider-controls cards-slider__controls" data-js="sliderControls" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='cardsSlider']" data-aos-anchor-placement="top-center">
+                          <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev"><svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="slider-control__rhombus" d="M42.9264 42.9264L28.7843 57.0686L0.500001 28.7843L28.7843 0.500029L42.9264 14.6422" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26.7326 38.7843L16.6159 28.6676L26.7326 18.551" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="slider-control__arrow" d="M56.7834 28.6676L16.9014 28.6676" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                          </button>
+                          <button class="slider-control slider-control--next" type="button" data-js="sliderNext"><svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="slider-control__rhombus" d="M42.9264 42.9264L28.7843 57.0686L0.500001 28.7843L28.7843 0.500029L42.9264 14.6422" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26.7326 38.7843L16.6159 28.6676L26.7326 18.551" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="slider-control__arrow" d="M56.7834 28.6676L16.9014 28.6676" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                          </button>
+                        </div>
+                  </div>
+                  <div class="cards-slider__slider" data-js="cardsSliderSlider" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor="[data-js='cardsSlider']" data-aos-anchor-placement="top-center">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide sp-card"><a class="sp-card__link" href="javascript:void(0);"></a>
+                        <div class="sp-card__img"><img src="img/solutions/solutions_6.webp" alt=""></div>
+                        <div class="sp-card__title">Уилпата</div>
+                        <div class="sp-card__text text-editor">Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1</div>
+                      </div>
+                      <div class="swiper-slide sp-card"><a class="sp-card__link" href="javascript:void(0);"></a>
+                        <div class="sp-card__img"><img src="img/solutions/solutions_1.webp" alt=""></div>
+                        <div class="sp-card__title">Эворон</div>
+                        <div class="sp-card__text text-editor">Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1</div>
+                      </div>
+                      <div class="swiper-slide sp-card"><a class="sp-card__link" href="javascript:void(0);"></a>
+                        <div class="sp-card__img"><img src="img/solutions/solutions_2.webp" alt=""></div>
+                        <div class="sp-card__title">Гокли</div>
+                        <div class="sp-card__text text-editor">Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </section>
         </div>
@@ -482,7 +529,7 @@
           </div>
         </div>
         <div class="main-burger__body">
-              <div class="main-menu">
+              <div class="main-menu main-menu--burger">
                 <div class="main-menu__items">
                   <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Каталог</a>
                     <div class="main-menu__chevron">
@@ -517,39 +564,6 @@
                   <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Партнерам</a></div>
                   <div class="main-menu__item" data-js="mainMenuItem"><a class="main-menu__link" href="javascript:void(0);">Контакты</a></div>
                 </div>
-                <form class="main-menu__search menu-search" action="#" data-js="menuSearch">
-                  <div class="menu-search__btn" data-js="mainMenuItem" data-id="menuSearchToggle">
-                    <div class="menu-search__icon menu-search__icon--open">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#search"></use>
-                      </svg>
-                    </div>
-                    <div class="menu-search__icon menu-search__icon--close">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#close"></use>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="menu-search__body" data-id="menuSearchBody">
-                        <label class="field menu-search__field    " data-js="formField">
-                          <input class="field__input" type="text" placeholder="Поиск по товарам">
-                        </label>
-                    <div class="menu-search__results search-results">
-                          <div class="order-prod search-results__item">
-                            <div class="order-prod__img"><img src="img/catalog/prod_2.webp" alt=""></div>
-                            <div class="order-prod__info"><a class="order-prod__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
-                              <div class="order-prod__text">5 000 ₽</div>
-                            </div>
-                          </div>
-                          <div class="order-prod search-results__item">
-                            <div class="order-prod__img"><img src="img/catalog/prod_2.webp" alt=""></div>
-                            <div class="order-prod__info"><a class="order-prod__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
-                              <div class="order-prod__text">5 000 ₽</div>
-                            </div>
-                          </div>
-                    </div>
-                  </div>
-                </form>
               </div>
           <div class="site-header__contacts"><a class="site-header__contact" href="tel:+78002220026">+7 (800) 222-00-26</a>
                 <div class="socials  socials--header"><a class="socials__item" href="javascript:void(0);">

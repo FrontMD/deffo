@@ -35,7 +35,7 @@ mixin prod-card(props = defaultProdCardProps)
                     - let tagsList = checkProps.tags
                     - while(tagsCount < tagsList.length)
                         - let tag = tagsList[tagsCount]
-                        - let color = tag.icon.includes('sale') ? '#B10024' : '#0D6E00'
+                        - let color = tag.text.includes('Распродажа') ? '#B10024' : tag.text.includes('Хит') ? '#B75A00' : '#0D6E00'
                         .prod-card__tag(style=`background-color: ${color}`)
                             img(src=tag.icon, alt="")
                             span!= tag.text

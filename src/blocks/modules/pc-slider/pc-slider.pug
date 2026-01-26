@@ -1,0 +1,95 @@
+-
+    const defaultPcSliderProps = {
+        classes: '',
+        title: 'Возможно вас также заинтересует',
+        cards: [
+            {
+                classes: 'swiper-slide',
+                title: 'Фасад прямой под стекло 3 ВД №7',
+                img: 'img/catalog/prod_8.webp',
+                tags: [
+                    {
+                        text: 'Хит',
+                        icon: 'img/catalog/tag_sale.svg'
+                    }
+                ]
+            },
+            {
+                classes: 'swiper-slide',
+                title: 'Фасад прямой под стекло 3 ВД №8',
+                img: 'img/catalog/prod_9.webp'
+            },
+            {
+                classes: 'swiper-slide',
+                title: 'Фасад прямой под стекло 3 ВД №9',
+                img: 'img/catalog/prod_10.webp',
+                tags: [
+                    {
+                        text: 'Распродажа',
+                        icon: 'img/catalog/tag_sale.svg'
+                    }
+                ]
+            },
+            {
+                classes: 'swiper-slide',
+                title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
+                img: 'img/catalog/prod_11.webp'
+            },
+            {
+                classes: 'swiper-slide',
+                title: 'Фасад прямой под стекло 3 ВД №8',
+                img: 'img/catalog/prod_9.webp'
+            },
+            {
+                classes: 'swiper-slide',
+                title: 'Фасад прямой под стекло 3 ВД №9',
+                img: 'img/catalog/prod_10.webp',
+                tags: [
+                    {
+                        text: 'Распродажа',
+                        icon: 'img/catalog/tag_sale.svg'
+                    }
+                ]
+            },
+            {
+                classes: 'swiper-slide',
+                title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
+                img: 'img/catalog/prod_11.webp'
+            }
+        ],
+    }
+
+mixin pc-slider(props= defaultPcSliderProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultPcSliderProps.classes,
+            title: props.title ? props.title : defaultPcSliderProps.title,
+            cards: props.cards ? props.cards : defaultPcSliderProps.cards
+        }
+
+    section.pc-slider.section.section--inner(class= checkProps.classes data-js="pcSlider")&attributes(attributes)
+        .d-container
+            .section__header
+                div(data-js="pcSliderTitle" data-anim-type='opacity')
+                    +title({
+                        tag: 'h2',
+                        size: '40',
+                        text: checkProps.title,
+                        animColor: true
+                    })
+            .slider-controls(data-js="sliderControls")&attributes(attributes)
+                button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#chevron_slider_prev`)
+                button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#chevron_slider_next`)
+            .pc-slider__slider(data-js="pcSliderSlider" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement='top-center')
+                .swiper-wrapper
+                    - let cardsCount = 0
+                    - let cardsList = checkProps.cards
+                    - while(cardsCount < cardsList.length)
+                        +prod-card(cardsList[cardsCount])
+
+                        - cardsCount++
+

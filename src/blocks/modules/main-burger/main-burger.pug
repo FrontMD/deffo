@@ -46,7 +46,9 @@
                     use(xlink:href=`img/sprites/sprite.svg#close`)
 
         .main-burger__body
-            +main-menu
+            +main-menu({
+                classes: 'main-menu--burger'
+            })
 
             .site-header__contacts
                 a.site-header__contact(href="tel:+78002220026") +7 (800) 222-00-26

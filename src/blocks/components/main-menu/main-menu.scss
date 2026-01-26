@@ -4,11 +4,11 @@
     gap: 5px;
     width: fit-content;
 
-    @include max(laptop) {
+    /*@include max(laptop) {
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
-    }
+    }*/
 
     &__items {
         display: flex;
@@ -16,11 +16,11 @@
         gap: 5px;
         width: fit-content;
 
-        @include max(laptop) {
+        /*@include max(laptop) {
             flex-direction: column;
             align-items: flex-start;
             gap: 0;
-        }
+        }*/
     }
 
     &__item {
@@ -40,11 +40,11 @@
             font-size: 12px;
         }
 
-        @include max(laptop) {
+        /* @include max(laptop) {
             flex-direction: column;
             padding: 10px 0;
             align-items: flex-start;
-        }
+        }*/
     }
 
     &__chevron {
@@ -55,9 +55,9 @@
         transition: all $tr;
         color: $c-white;
 
-        @include max(laptop) {
+        /*@include max(laptop) {
             display: none;
-        }
+        }*/
 
         svg {
             width: 16px;
@@ -86,6 +86,18 @@
 
     &__submenu {
 
+        position: absolute;
+        left: 0;
+        top: 80%;
+        visibility: hidden;
+        opacity: 0;
+        transition: all $tr;
+        z-index: 10;
+
+    }
+
+    /*&__submenu {
+
         @include min(laptop) {
             position: absolute;
             left: 0;
@@ -95,6 +107,53 @@
             transition: all $tr;
             z-index: 10;
         }
+    }*/
+}
+
+.main-menu {
+
+    &--burger {
+        @include max(laptop) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+        }
+    }
+
+    &--burger &__items {
+
+        @include max(laptop) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+        }
+    }
+
+    &--burger &__item {
+        @include max(laptop) {
+            flex-direction: column;
+            padding: 10px 0;
+            align-items: flex-start;
+        }
+    }
+
+    &--burger &__chevron {
+        @include max(laptop) {
+            display: none;
+        }
+    }
+
+    &--burger &__submenu {
+        position: relative;
+        left: 0;
+        top: 0;
+        visibility: visible;
+        opacity: 1;
+        transition: all $tr;
+        z-index: 1;
+        padding: 0px;
+        background-color: transparent;
+
     }
 }
 
@@ -104,10 +163,10 @@
     border-radius: $br-10;
     padding: 15px 0;
 
-    @include max(laptop) {
+    /*@include max(laptop) {
         padding: 0px;
         background-color: transparent;
-    }
+    }*/
 
     &__item {
         position: relative;
@@ -172,6 +231,14 @@
             padding: 11px 15px;
         }
 
+        @include max(laptop) {
+            padding: 15px;
+        }
+
+        @include max(tablet) {
+            color: $c-accent;
+        }
+
         &:hover {
             color: $c-accent;
         }
@@ -229,6 +296,11 @@
     &__field .field__input {
         padding-top: 14px;
         padding-bottom: 14px;
+
+        @include max(laptop) {
+            padding-top: 9px;
+            padding-bottom: 9px;
+        }
     }
 
     &__results {
@@ -236,6 +308,10 @@
         top: 100%;
         left: 0;
         width: 100%;
+
+        @include max(mobile) {
+            width: calc(100% + 48px);
+        }
     }
 
 }

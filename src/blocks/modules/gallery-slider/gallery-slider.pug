@@ -1,36 +1,71 @@
 -
     const defaultGallerySliderProps = {
         classes: '',
+        title: '',
+        hasCaption: false,
     }
 
 mixin gallery-slider(props= defaultGallerySliderProps)
     -
         const checkProps = {
-            classes: props.classes ? props.classes : defaultGallerySliderProps.classes
+            classes: props.classes ? props.classes : defaultGallerySliderProps.classes,
+            title: props.title ? props.title : defaultGallerySliderProps.title,
+            hasCaption: props.hasCaption ? props.hasCaption : defaultGallerySliderProps.hasCaption
         }
 
     section.gallery-slider.section.section--inner(class= checkProps.classes data-js="gallerySlider")&attributes(attributes)
+        - if(checkProps.title.length > 0)
+            .d-container
+                .section__header
+                    div(data-js="gallerySliderTitle" data-anim-type='opacity')
+                        +title({
+                            tag: 'h2',
+                            size: '40',
+                            text: checkProps.title,
+                            animColor: true
+                        })
         .d-container
-            .slider-controls(class= checkProps.classes data-js="sliderControls")&attributes(attributes)
+            .slider-controls(data-js="sliderControls")&attributes(attributes)
                 button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
                     svg
                         use(xlink:href=`img/sprites/sprite.svg#chevron_slider_prev`)
                 button.slider-control.slider-control--next(type="button" data-js='sliderNext')
                     svg
                         use(xlink:href=`img/sprites/sprite.svg#chevron_slider_next`)
-
             .gallery-slider__slider(data-js="gallerySliderSlider" data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement='top-center')
                 .swiper-wrapper
-                    .swiper-slide.gallery-slider__card
-                        a.gallery-slider__bg(href="img/solutions/solutions_4.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_4.webp")
-                            img(src="img/solutions/solutions_4.webp" alt="")
-                    .swiper-slide.gallery-slider__card
-                        a.gallery-slider__bg(href="img/solutions/solutions_5.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_5.webp")
-                            img(src="img/solutions/solutions_5.webp" alt="")
-                        a.s-stocks__link(href="javascript:void(0);")
-                    .swiper-slide.gallery-slider__card
-                        a.gallery-slider__bg(href="img/solutions/solutions_4.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_4.webp")
-                            img(src="img/solutions/solutions_4.webp" alt="")
-                    .swiper-slide.gallery-slider__card
-                        a.gallery-slider__bg(href="img/solutions/solutions_5.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_5.webp")
-                            img(src="img/solutions/solutions_5.webp" alt="")
+                    - if(checkProps.hasCaption !== true)
+                        .swiper-slide.gallery-slider__card
+                            a.gallery-slider__bg(href="img/solutions/solutions_4.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_4.webp")
+                                img(src="img/solutions/solutions_4.webp" alt="")
+                        .swiper-slide.gallery-slider__card
+                            a.gallery-slider__bg(href="img/solutions/solutions_5.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_5.webp")
+                                img(src="img/solutions/solutions_5.webp" alt="")
+                            a.s-stocks__link(href="javascript:void(0);")
+                        .swiper-slide.gallery-slider__card
+                            a.gallery-slider__bg(href="img/solutions/solutions_4.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_4.webp")
+                                img(src="img/solutions/solutions_4.webp" alt="")
+                        .swiper-slide.gallery-slider__card
+                            a.gallery-slider__bg(href="img/solutions/solutions_5.webp" data-fancybox="solutionGallery" data-thumb="img/solutions/solutions_5.webp")
+                                img(src="img/solutions/solutions_5.webp" alt="")
+                    - else
+                        .swiper-slide.sp-card.sp-card--low
+                            a.sp-card__link(href="javascript:void(0);")
+                            .sp-card__img
+                                img(src="img/solutions/solutions_6.webp" alt="")
+                            .sp-card__title Уилпата
+                            .sp-card__text.text-editor Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1
+
+                        .swiper-slide.sp-card.sp-card--low
+                            a.sp-card__link(href="javascript:void(0);")
+                            .sp-card__img
+                                img(src="img/solutions/solutions_1.webp" alt="")
+                            .sp-card__title Эворон
+                            .sp-card__text.text-editor Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1
+
+                        .swiper-slide.sp-card.sp-card--low
+                            a.sp-card__link(href="javascript:void(0);")
+                            .sp-card__img
+                                img(src="img/solutions/solutions_2.webp" alt="")
+                            .sp-card__title Гокли
+                            .sp-card__text.text-editor Пленка ПВХ: Серый нубук <br>Фрезеровка: C112/1, C138/1

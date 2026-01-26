@@ -65,10 +65,16 @@
 
     .main-menu {
         flex: 0 1 auto;
+
+        &__search {
+            display: none;
+        }
+
+
     }
 
     .site-header__contacts {
-        @include max(tablet) {
+        @include max(laptop) {
             display: flex;
             flex-direction: column;
             align-items: flex-start;

@@ -1,0 +1,28 @@
+-
+    const defaultSlCardProps = {
+        classes: '',
+        desc: 'Фрезеровка: A6 <br>Покрытие: FS 305-2 Айс какао',
+        images: ['img/catalog/sample_1.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+    }
+
+mixin sl-card(props = defaultSlCardProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSlCardProps.classes,
+            desc: props.desc ? props.desc : defaultSlCardProps.desc,
+            images: props.images ? props.images : defaultSlCardProps.images,
+        }
+
+    .sl-card(class=checkProps.classes data-js="slCard")&attributes(attributes)
+        .sl-card__slider(data-js="slCardSlider")
+            .swiper-wrapper
+                - let imgCount = 0
+                - let imgList = checkProps.images 
+                - while(imgCount < imgList.length)
+                    a.swiper-slide.sl-card__img(href=imgList[imgCount] data-fancybox=`slCard${imgCount}` data-thumb=imgList[imgCount])
+                        img(src=imgList[imgCount], alt="")
+
+                    - imgCount++
+        .sl-card__pagination(data-js="slCardPagination")
+        .sl-card__text.text-editor!= checkProps.desc
+

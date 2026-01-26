@@ -40,6 +40,11 @@
         background-image: none;
         min-height: auto;
 
+        @include max(large) {
+            min-height: auto;
+            padding: 0;
+        }
+
         svg {
             color: $c-accent;
         }
