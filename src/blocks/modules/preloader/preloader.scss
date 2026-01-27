@@ -247,6 +247,19 @@
             }
         }
     }
+
+    &__svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        scale: 0.001;
+        opacity: 0;
+        will-change: transform;
+        transition: scale 2s ease-in;
+        transition-delay: 1s;
+        z-index: 1;
+    }
 }
 
 .preloader-mask {
@@ -256,11 +269,10 @@
     &__figure {
         display: block;
         will-change: transform;
-        scale: 0.01;
+        scale: 0.001;
         opacity: 0;
-        translate: calc((100vw - 3.45px) / 2) calc((100vh - 3.45px) / 2);
-        transition: scale 2s linear, translate 2s linear;
-        //transition: scale .35s linear, translate .35s linear;
+        translate: calc((100vw - 2.759px) / 2) calc((100vh - 2.759px) / 2);
+        transition: scale 2s ease-in, translate 2s ease-in;
         transition-delay: 1s;
     }
 }

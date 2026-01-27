@@ -43,8 +43,26 @@ mixin preloader(props = defaultPreloaderProps)
                 .preloader__title(data-js="heightAnimContent") Фасады для Вашей мебели
             .height-anim(data-js="heightAnim")
                 .preloader__tag(data-js="heightAnimContent") Since 2012
+        <svg class="preloader__svg" data-js="preloaderSVG" width="2759" height="2759" viewBox="0 0 2759 2759" preserveAspectRatio="xMidYMid meet">
+            <path fill-opacity="0.2" d="M1379.2 1131.2L1627.2 1379.2L1379.2 1627.2L1131.2 1379.2L1379.2 1131.2ZM1379.2 565.6L1096 848.8L848.001 1096.8L564.801 1380L848.001 1663.2L1096 1911.2L1379.2 2194.4L1662.4 1911.2L1910.4 1663.2L2193.6 1380L1910.4 1096.8L1662.4 848.8L1379.2 565.6Z" fill="#C8A996"/>
+                <path fill-opacity="0.2" d="M1379.2 1131.2L1627.2 1379.2L1379.2 1627.2L1131.2 1379.2L1379.2 1131.2ZM1379.2 0L813.6 565.6L565.6 813.6L0 1379.2L565.6 1944.8L813.6 2192.8L1379.2 2758.4L1944.8 2192.8L2192.8 1944.8L2758.4 1379.2L2192.8 813.6L1944.8 565.6L1379.2 0Z" fill="#C8A996"/>
+        </svg>
 
-    <svg class="preloader-mask" width="100%" height="100%" viewBox="0 0 344.8 344.8" preserveAspectRatio="xMidYMid meet">
+            //-<svg width="2759" height="2759" viewBox="0 0 2759 2759" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: relative; left: -300px;">
+                <g clip-path="url(#clip0_490_3480)">
+                <path id="innerRhombus" d="M1379.2 1126.2 L1632.2 1379.2 L1379.2 1632.2 L1126.2 1379.2 Z" fill="red"/>
+                <path fill-opacity="0.2" d="M1379.2 1131.2L1627.2 1379.2L1379.2 1627.2L1131.2 1379.2L1379.2 1131.2ZM1379.2 565.6L1096 848.8L848.001 1096.8L564.801 1380L848.001 1663.2L1096 1911.2L1379.2 2194.4L1662.4 1911.2L1910.4 1663.2L2193.6 1380L1910.4 1096.8L1662.4 848.8L1379.2 565.6Z" fill="#C8A996"/>
+                <path fill-opacity="0.2" d="M1379.2 1131.2L1627.2 1379.2L1379.2 1627.2L1131.2 1379.2L1379.2 1131.2ZM1379.2 0L813.6 565.6L565.6 813.6L0 1379.2L565.6 1944.8L813.6 2192.8L1379.2 2758.4L1944.8 2192.8L2192.8 1944.8L2758.4 1379.2L2192.8 813.6L1944.8 565.6L1379.2 0Z" fill="#C8A996"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_490_3480">
+                <rect width="2758.4" height="2758.4" fill="white"/>
+                </clipPath>
+                </defs>
+            //-</svg>
+
+
+    <svg class="preloader-mask" width="100%" height="100%" viewBox="0 0 2759 2759" preserveAspectRatio="xMidYMid meet">
         <defs>
             <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stop-color="red" />
@@ -52,9 +70,8 @@ mixin preloader(props = defaultPreloaderProps)
             </linearGradient>
             <mask id="diamonds">
                 <rect width="100vw" height="100vh" fill="white"></rect>
-                <path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="0.2" d="M172.4 141.4L203.4 172.4L172.4 203.4L141.4 172.4L172.4 141.4ZM172.4 0L101.7 70.7L70.7 101.7L0 172.4L70.7 243.1L101.7 274.1L172.4 344.8L243.1 274.1L274.1 243.1L344.8 172.4L274.1 101.7L243.1 70.7L172.4 0Z" fill="url(#myGradient)"/>
-                <path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="0.6" d="M172.402 141.399L203.402 172.399L172.402 203.399L141.402 172.399L172.402 141.399ZM172.402 70.6992L137.002 106.099L106.002 137.099L70.6016 172.499L106.002 207.899L137.002 238.899L172.402 274.299L207.802 238.899L238.802 207.899L274.202 172.499L238.802 137.099L207.802 106.099L172.402 70.6992Z" fill="url(#myGradient)"/>
-                <path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="1" d="M141.4 172.4L172.4 203.4L203.4 172.4L172.4 141.4Z" fill="#000"/>
+                <path class="preloader-mask__figure" data-js="preloaderMaskFigure" opacity="1" d="M1379.2 1101.2 L1637.2 1379.2 L1379.2 1637.2 L1101.2 1379.2 Z" fill="#000"/>
             </mask>
         </defs>
     </svg>
+

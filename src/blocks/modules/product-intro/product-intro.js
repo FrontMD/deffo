@@ -29,9 +29,7 @@ function productIntro() {
 }
 
 
-/*function prodsListAnim() {
-
-    
+/*function productIntroAnim() {
     prodsLists.forEach((prodsList, i) => {
         const currentId = `prodsList${i+1}`
         const cardsList = prodsList.querySelectorAll('[data-js="prodCard"]')
