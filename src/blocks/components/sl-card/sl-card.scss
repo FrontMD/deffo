@@ -5,6 +5,10 @@
     padding: 20px 56px;
     background-color: rgba(67, 67, 66, 0.7);
 
+    @include max(laptop) {
+        padding: 20px;
+    }
+
     &__slider {
         overflow: hidden;
         width: 100%;
@@ -37,5 +41,9 @@
     &__text {
         margin-top: 15px;
         color: $c-text-light;
+
+        @include max(laptop) {
+            font-size: 14px;
+        }
     }
 }

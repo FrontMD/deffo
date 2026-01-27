@@ -9,7 +9,7 @@ mixin product-intro(props= defaultProductIntroProps)
             classes: props.classes ? props.classes : defaultProductIntroProps.classes
         }
 
-    section.product-intro.section.section--inner(class= checkProps.classes data-js="productIntro")&attributes(attributes)
+    section.product-intro.section.section--inner(class= checkProps.classes data-js="productIntro" data-anim-id="productIntro")&attributes(attributes)
         .d-container
             .section__header
                 div(data-js="productIntroTitle" data-anim-type='opacity')
@@ -20,7 +20,7 @@ mixin product-intro(props= defaultProductIntroProps)
                         animColor: true
                     })
             .product-intro__grid
-                .product-intro__side
+                .product-intro__side(data-js="productIntroSide" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-anim-id='productIntro']" data-aos-anchor-placement="top-center")
                     .pi-desc
                         .pi-desc__text.text-editor
                             p Фасад прямой под стекло — разновидность прямого фасада под стекло с различного вида перекрестиями, выполненными по одной из технологий (1,2,3,4) и имеющие определённые ограничения, связанные с технологией изготовления рисунка фрезеровки
@@ -28,7 +28,7 @@ mixin product-intro(props= defaultProductIntroProps)
                             name: 'Технология в разрезе',
                             cMode: 'accent-br'
                         })
-                .product-intro__side
+                .product-intro__side(data-js="productIntroSide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='productIntro']" data-aos-anchor-placement="top-center")
                     .pi-slider(data-js="piSlider")
                         .pi-slider__wrapper
                             .pi-slider__slider(data-js="piSliderSlider")
@@ -51,7 +51,7 @@ mixin product-intro(props= defaultProductIntroProps)
                                     .swiper-slide.pi-slider__thumb
                                         img(src="img/catalog/prod_1.webp" alt="")
 
-                .product-intro__side
+                .product-intro__side.product-intro__side--last(data-js="productIntroSide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='productIntro']" data-aos-anchor-placement="top-center")
                     .pi-info
                         .pi-info__block
                             .product-intro__subtitle Допустимые толщины МДФ:
