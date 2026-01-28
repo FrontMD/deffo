@@ -12,8 +12,11 @@ function productIntro() {
 
             const thumbsEx = new Swiper(thumbs, {
                 slidesPerView: 'auto',
-                spaceBetween: 10,
+                spaceBetween: 6,
                 breakpoints: {
+                    501: {
+                        spaceBetween: 10
+                    },   
                     1801: {
                         spaceBetween: 20
                     }

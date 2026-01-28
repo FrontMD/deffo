@@ -9,6 +9,10 @@
         padding: 20px;
     }
 
+    @include max(tablet) {
+        padding: 12px;
+    }
+
     &__slider {
         overflow: hidden;
         width: 100%;
@@ -44,6 +48,10 @@
 
         @include max(laptop) {
             font-size: 14px;
+        }
+
+        @include max(tablet) {
+            margin-top: 10px;
         }
     }
 }

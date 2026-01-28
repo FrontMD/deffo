@@ -17,6 +17,10 @@ function pcSlider() {
                 prevEl: prev,
             },
             breakpoints: {
+                501: {
+                    slidesPerView: 2.2,
+                    spaceBetween: 12,
+                },
                 768: {
                     slidesPerView: 3,
                     spaceBetween: 12,

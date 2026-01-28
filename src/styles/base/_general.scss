@@ -831,44 +831,6 @@ video[data-anim-type="widthReverse"] {
 	}
 }
 
-/*.custom-scrollbar {
-	&::-webkit-scrollbar {
-		display: none;
-		width: 0;
-		height: 0;
-	}
-
-	.simplebar-wrapper {
-		padding-bottom: 5px;
-	}
-
-	.simplebar-track {
-		background-color: $c-bg-main;
-		opacity: 0.5;
-
-	}
-
-	.simplebar-scrollbar {
-		background-color: $c-text-light;
-	}
-
-	.simplebar-track.simplebar-vertical {
-		width: 3px;
-	}
-
-	.simplebar-track.simplebar-horizontal {
-		height: 3px;
-	}
-
-	.simplebar-content-wrapper::-webkit-scrollbar,
-	.simplebar-hide-scrollbar::-webkit-scrollbar {
-		display: initial;
-		width: initial;
-		height: initial;
-	}
-}
-
-*/
 /*.my-fancybox {
 	.fancybox__viewport {
 		.fancybox__slide {

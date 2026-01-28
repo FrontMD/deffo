@@ -32,9 +32,6 @@ const jsTemplatePath = (typeof SITE_TEMPLATE_PATH !== 'undefined' && SITE_TEMPLA
 
 document.addEventListener('DOMContentLoaded', () => {
     sectionBgSlider()
-    /*$('[data-js="customScrollbar"]').each((index, el) => {
-        new SimpleBar(el, { autoHide: false });
-    })*/
     fancyboxInit();
 })
 

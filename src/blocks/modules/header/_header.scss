@@ -4,7 +4,6 @@
     left: 0;
     width: 100%;
     z-index: 80;
-    transition: top $tr-long, background-color $tr-long;
     padding-top: 20px;
     padding-bottom: 20px;
 
@@ -241,6 +240,8 @@
 
 .site-header {
     &--full {
+        transition: top $tr-long 0.7s, background-color $tr-long;
+
         @include max(laptop) {
             top: -101px;
         }
@@ -253,11 +254,13 @@
     &--full &__small {
         height: 0;
         overflow: hidden;
-        transition: height $tr-long, margin-top $tr-long;
+        opacity: 0;
+        transition: height $tr-long, margin-top $tr-long, opacity $tr-long;
 
         @include max(laptop) {
             height: auto !important;
             overflow: visible;
+            opacity: 1;
             margin-top: 20px;
         }
 
@@ -269,6 +272,8 @@
     &--full.site-header--fixed &__small {
         overflow: visible;
         margin-top: 20px;
+        opacity: 1;
+        transition: height $tr-long 0.7s, margin-top $tr-long 0.7s, opacity $tr-long 0.7s;
 
         @include max(tablet) {
             margin-top: 15px;
@@ -279,6 +284,7 @@
         top: -177px;
         background-color: rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(20px);
+        transition: top $tr-long, background-color $tr-long 0.7s;
 
         @include max(large) {
             top: -157px;
