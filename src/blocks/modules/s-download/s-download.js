@@ -9,7 +9,12 @@ function sDownloadAnim() {
             const title = sDownload.querySelector('[data-js="sDownloadTitle"]')
             const text = sDownload.querySelector('[data-js="sDownloadText"]')
             const btn = sDownload.querySelector('[data-js="sDownloadBtn"]')
+            const bg = sDownload.querySelector('[data-js="sDownloadBg"]')
 
+            if(bg) {
+                commonAnimation(bg)
+            }
+            
             if(title) {
                 opacityAnim(title)
                 await delay(600)

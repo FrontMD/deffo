@@ -17,8 +17,10 @@
     }
 
     &__content {
+        min-height: 100%;
         max-width: 753px;
         margin-right: 155px;
+        margin-left: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;

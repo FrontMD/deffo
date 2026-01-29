@@ -9,7 +9,7 @@ function sAboutAnim() {
         const rect = sAbout.querySelector('[data-js="sAboutRect"]');
         const text = sAbout.querySelector('[data-js="sAboutText"]');
         const title = sAbout.querySelector('[data-js="sAboutTitle"]');
-        const cards = sAbout.querySelector('[data-js="sAboutCards"]');
+        const cards = sAbout.querySelectorAll('[data-js="sAboutCard"]');
         const logo = sAbout.querySelector('[data-js="sAboutLogo"]');
         const pathList = logo.querySelectorAll('[data-anim-type="opacityUp100"]')
 
@@ -24,7 +24,11 @@ function sAboutAnim() {
                 }, {once: true})
 
                 text?.setAttribute('data-aos-delay', '2400')
-                cards?.setAttribute('data-aos-delay', '3000')
+                if(cards.length) {
+                    [...cards].reverse().forEach((card, i) => {
+                        card.setAttribute('data-aos-delay', `${3000 - i * 100}`)
+                    })
+                }
             }
 
             if(rect && videoAnimEl) {
@@ -48,8 +52,8 @@ function sAboutAnim() {
             }
 
             if(logo) {
-                if(cards) {
-                    cards.addEventListener('transitionend', async function() {
+                if(cards.length > 0) {
+                    cards[0].addEventListener('transitionend', async function() {
                         for(let i = 0; i < pathList.length; i++) {
                             await delay(100)
                             opacityAnim(pathList[i])

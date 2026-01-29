@@ -9,23 +9,26 @@ mixin solutions(props= defaultSolutionsProps)
             classes: props.classes ? props.classes : defaultSolutionsProps.classes,
         }
 
-    section.solutions.section(class= checkProps.classes data-js="solutions")&attributes(attributes)    
+    section.solutions.section(class= checkProps.classes data-js="solutions")&attributes(attributes)
+        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-anchor="[data-js='solutions']" data-aos-offset="500" data-aos-duration='50')
         .section__bg
             picture
                 img(src='img/home/blured_bg.webp' alt='')
+        .solutions__decor(data-js="solutionsDecor")
+            img(src="img/solutions/solutions_bg.webp" alt="")
 
         .d-container
-            .section__header.section__header--full
+            .section__header.section__header--full.solutions__header(data-js="solutionsHeader")
                 .section__title-block
                     +title({
                         text: 'Готовые решения',
                         tag: 'h2',
                         animColor: true
-                    })(data-js="solutionsTitle" data-aos-anchor="[data-js='solutions']" data-aos="fade-left" data-aos-anchor-placement='top-center' data-aos-duration='1000')
+                    })(data-js="solutionsTitle")
                 +btn({
                     name: 'Каталог фасадов'
-                })(data-aos="fade-left" data-aos-anchor="[data-js='solutions']" data-aos-anchor-placement='top-center' data-aos-duration='1000' data-aos-delay="1300")
-            .solutions__slider(data-js="solutionsSlider" data-aos="fade-left" data-aos-anchor="[data-js='solutions']" data-aos-anchor-placement='top-center' data-aos-duration='1000' data-aos-delay="300")
+                })(data-js="solutionsBtn" data-anim-type="opacityToLeft")
+            .solutions__slider(data-js="solutionsSlider")
                 .swiper-wrapper
                     .swiper-slide.solutions-card
                         .solutions-card__bg

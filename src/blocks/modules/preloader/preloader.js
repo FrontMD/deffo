@@ -71,8 +71,6 @@ function preloader() {
         const innerWidth = fullWidth * 0.18
         const targetScale = vw >= vh ? Math.ceil(vw * 1.5 / innerWidth) : Math.ceil(vh * 1.5 / innerWidth)
 
-        console.log(targetScale)
-
         figures[0].addEventListener('transitionend', () => {
             preloader.remove();
             figures[0].closest('svg').remove();

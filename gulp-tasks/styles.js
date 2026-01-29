@@ -46,7 +46,7 @@ gulp.task("styles", () => {
                     removeDuplicateMediaBlocks: true,
                     removeDuplicateRules: true,
                     removeUnusedAtRules: false
-                }
+                },
             }
         })))
         .pipe(gulpif(production, rename({

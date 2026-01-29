@@ -50,23 +50,23 @@ mixin s-about(props= defaultSAboutProps)
                         animColor: true
                     })
                 .s-about__desc.text-editor(data-js="sAboutText" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor='[data-js="sAbout"]' data-aos-anchor-placement='top-center') Ваш надёжный партнёр, который всегда изготовит качественные мебельные фасады. Многолетний опыт, профессиональные сотрудники, а также современное оборудование и широкий выбор ассортимента наших каталогов позволяют с лёгкостью решать любые вопросы, которые могут возникать перед нашими клиентами. Ниже представлена информация для связи с нашими офисами. Вы можете нам позвонить, написать или заказать обратный звонок и мы с радостью вам поможем.
-            .s-about__cards(data-js="sAboutCards" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor='[data-js="sAbout"]' data-aos-anchor-placement='top-center')
-                .s-about__card
+            .s-about__cards(data-js="sAboutCards")
+                .s-about__card(data-js="sAboutCard" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor='[data-js="sAbout"]' data-aos-anchor-placement='top-center')
                     .s-about__icon
                         img(src="img/about/about_card_1.svg" alt="")
                     .s-about__subtitle Доставка <br>и сборка мебели
                     .s-about__text Доставим ваш заказ и соберём мебель на квартире в один день
-                .s-about__card
+                .s-about__card(data-js="sAboutCard" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor='[data-js="sAbout"]' data-aos-anchor-placement='top-center')
                     .s-about__icon
                         img(src="img/about/about_card_2.svg" alt="")
                     .s-about__subtitle Бесплатное <br>изготовление
                     .s-about__text 3D-макета командой дизейнеров
-                .s-about__card
+                .s-about__card(data-js="sAboutCard" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor='[data-js="sAbout"]' data-aos-anchor-placement='top-center')
                     .s-about__icon
                         img(src="img/about/about_card_3.svg" alt="")
                     .s-about__subtitle Бесплатный <br>замер
                     .s-about__text Вызови мастера на бесплатный замер для изготовление мебели
-                .s-about__card
+                .s-about__card(data-js="sAboutCard" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor='[data-js="sAbout"]' data-aos-anchor-placement='top-center')
                     .s-about__icon
                         img(src="img/about/about_card_4.svg" alt="")
                     .s-about__subtitle Гарантируем <br>изготовление в срок

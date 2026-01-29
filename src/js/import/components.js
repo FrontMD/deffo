@@ -4,6 +4,7 @@
 @@include("../../blocks/components/amount-input/amount-input.js")
 @@include("../../blocks/components/tooltip/tooltip.js")
 @@include("../../blocks/components/sl-card/sl-card.js")
+@@include("../../blocks/components/slider-controls/slider-controls.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     selects();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
     amountInput();
     tooltipsController();
     slCardSlider();
+    addSvgAnimStyle();
 })

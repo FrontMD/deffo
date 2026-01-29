@@ -1,15 +1,17 @@
 function solutionsSlider() {
-    const solutionsSliders = document.querySelectorAll('[data-js="solutionsSlider"]')
+    const solutionsBlocks = document.querySelectorAll('[data-js="solutions"]')
+    
+    if(solutionsBlocks.length < 1) return
+    
+    solutionsBlocks.forEach(solutions => {
+        const slider = solutions.querySelector('[data-js="solutionsSlider"]')
 
-    if(solutionsSliders.length < 1) return
-
-    solutionsSliders.forEach(slider => {
         const sliderEx = new Swiper(slider, {
             slidesPerView: 1.67,
             spaceBetween: 5,
             on: {
                 init: function() {
-                    solutionsAnim()
+                    solutionsAnim(solutions)
                 }
             },
             breakpoints: {
@@ -21,27 +23,65 @@ function solutionsSlider() {
     })
 }
 
-function solutionsAnim() {
-    const solutionsBlocks = document.querySelectorAll('[data-js="solutions"]')
+function solutionsAnim(solutions) {
+    const header = solutions.querySelector('[data-js="solutionsHeader"]')
+    const slider = solutions.querySelector('[data-js="solutionsSlider"]')
+    const title = solutions.querySelector('[data-js="solutionsTitle"]')
+    const slides = slider.querySelectorAll('.swiper-slide .solutions-card__bg');
+    const decor = solutions.querySelector('[data-js="solutionsDecor"]')
+    const btn = solutions.querySelector('[data-js="solutionsBtn"]')
+    const trigger = solutions.querySelector('[data-js="scrollTrigger"]')
 
-    if(solutionsBlocks.length < 1) return
+    
+    if(trigger) {
+        const tHeight = window.innerHeight - 100
+        const sHeight = solutions.offsetHeight
 
-    solutionsBlocks.forEach(solutions => {
-        const slider = solutions.querySelector('[data-js="solutionsSlider"]')
-        const title = solutions.querySelector('[data-js="solutionsTitle"]')
-        const slides = slider.querySelectorAll('.swiper-slide .solutions-card__bg');
+        if(sHeight >= tHeight) {
+            trigger.setAttribute('data-aos-offset', tHeight)
+        } else {
+            trigger.setAttribute('data-aos-offset', sHeight)
+        }
 
-        if(slider) {
-            title.addEventListener('transitionend', () => {
+        trigger.addEventListener('transitionend', () => {
+            anim()
+        }, {once: true})
+
+    } else {
+        anim()
+    }
+
+    slides?.forEach(slide => {
+        slide.setAttribute('data-anim-type', 'zoomIn')
+    })
+
+    async function anim() {
+        if(decor) {
+                decor.classList.add('animated')
+                await delay(700)
+            }
+
+            if(slider || header) {
+
+                if(slider) commonAnimation(slider)
+                if(header) commonAnimation(header)
+                
+                await delay(2000)
+            }
+
+            if(title) {
                 textColorAnim(title)
+            }
+
+            if(btn) {
+                commonAnimation(btn)
+            }
+
+            if(slides.length) {
                 slides.forEach(slide => {
                     commonAnimation(slide)
                 })
-            }, {once: true})
-
-            slides.forEach(slide => {
-                slide.setAttribute('data-anim-type', 'zoomIn')
-            })
-        }
-    })
+            }
+    }
+    
 }

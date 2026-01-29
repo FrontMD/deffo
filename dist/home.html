@@ -196,11 +196,6 @@
                           <use xlink:href="img/sprites/sprite.svg#lk"></use>
                         </svg></a></div>
                   </div>
-                  <div class="site-header__burger" data-js="mainBurgerOpen" data-aos="fade-left" data-aos-duration="600">
-                    <svg> 
-                      <use xlink:href="img/sprites/sprite.svg#main_burger"></use>
-                    </svg>
-                  </div>
                 </div>
                 <nav class="site-header__nav">
                       <div class="main-menu" data-js="siteHeaderMenu">
@@ -497,19 +492,21 @@
                       </div>
                 </div>
               </section>
-              <section class="solutions section" data-js="solutions">   
+              <section class="solutions section" data-js="solutions">
+                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-anchor="[data-js='solutions']" data-aos-offset="500" data-aos-duration="50"></div>
                 <div class="section__bg">
                   <picture><img src="img/home/blured_bg.webp" alt=""></picture>
                 </div>
+                <div class="solutions__decor" data-js="solutionsDecor"><img src="img/solutions/solutions_bg.webp" alt=""></div>
                 <div class="d-container">
-                  <div class="section__header section__header--full">
+                  <div class="section__header section__header--full solutions__header" data-js="solutionsHeader">
                     <div class="section__title-block">
-                          <div class="title  title--60" data-js="solutionsTitle" data-aos-anchor="[data-js='solutions']" data-aos="fade-left" data-aos-anchor-placement="top-center" data-aos-duration="1000">
+                          <div class="title  title--60" data-js="solutionsTitle">
                             <h2 data-anim-type="textColor">Готовые решения</h2>
                           </div>
-                    </div><a class="d-btn" href="javascript:void(0);" data-aos="fade-left" data-aos-anchor="[data-js='solutions']" data-aos-anchor-placement="top-center" data-aos-duration="1000" data-aos-delay="1300"><span>Каталог фасадов</span></a>
+                    </div><a class="d-btn" href="javascript:void(0);" data-js="solutionsBtn" data-anim-type="opacityToLeft"><span>Каталог фасадов</span></a>
                   </div>
-                  <div class="solutions__slider" data-js="solutionsSlider" data-aos="fade-left" data-aos-anchor="[data-js='solutions']" data-aos-anchor-placement="top-center" data-aos-duration="1000" data-aos-delay="300">
+                  <div class="solutions__slider" data-js="solutionsSlider">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide solutions-card">
                         <div class="solutions-card__bg"><img src="img/solutions/solutions_1.webp" alt=""></div><a class="solutions-card__link" href="javascript:void(0);">Эворон</a>
@@ -563,23 +560,23 @@
                     </div>
                     <div class="s-about__desc text-editor" data-js="sAboutText" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js=&quot;sAbout&quot;]" data-aos-anchor-placement="top-center">Ваш надёжный партнёр, который всегда изготовит качественные мебельные фасады. Многолетний опыт, профессиональные сотрудники, а также современное оборудование и широкий выбор ассортимента наших каталогов позволяют с лёгкостью решать любые вопросы, которые могут возникать перед нашими клиентами. Ниже представлена информация для связи с нашими офисами. Вы можете нам позвонить, написать или заказать обратный звонок и мы с радостью вам поможем.</div>
                   </div>
-                  <div class="s-about__cards" data-js="sAboutCards" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor="[data-js=&quot;sAbout&quot;]" data-aos-anchor-placement="top-center">
-                    <div class="s-about__card">
+                  <div class="s-about__cards" data-js="sAboutCards">
+                    <div class="s-about__card" data-js="sAboutCard" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor="[data-js=&quot;sAbout&quot;]" data-aos-anchor-placement="top-center">
                       <div class="s-about__icon"><img src="img/about/about_card_1.svg" alt=""></div>
                       <div class="s-about__subtitle">Доставка <br>и сборка мебели</div>
                       <div class="s-about__text">Доставим ваш заказ и соберём мебель на квартире в один день</div>
                     </div>
-                    <div class="s-about__card">
+                    <div class="s-about__card" data-js="sAboutCard" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor="[data-js=&quot;sAbout&quot;]" data-aos-anchor-placement="top-center">
                       <div class="s-about__icon"><img src="img/about/about_card_2.svg" alt=""></div>
                       <div class="s-about__subtitle">Бесплатное <br>изготовление</div>
                       <div class="s-about__text">3D-макета командой дизейнеров</div>
                     </div>
-                    <div class="s-about__card">
+                    <div class="s-about__card" data-js="sAboutCard" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor="[data-js=&quot;sAbout&quot;]" data-aos-anchor-placement="top-center">
                       <div class="s-about__icon"><img src="img/about/about_card_3.svg" alt=""></div>
                       <div class="s-about__subtitle">Бесплатный <br>замер</div>
                       <div class="s-about__text">Вызови мастера на бесплатный замер для изготовление мебели</div>
                     </div>
-                    <div class="s-about__card">
+                    <div class="s-about__card" data-js="sAboutCard" data-aos="fade-up" data-aos-duration="600" data-aos-delay="1000" data-aos-anchor="[data-js=&quot;sAbout&quot;]" data-aos-anchor-placement="top-center">
                       <div class="s-about__icon"><img src="img/about/about_card_4.svg" alt=""></div>
                       <div class="s-about__subtitle">Гарантируем <br>изготовление в срок</div>
                       <div class="s-about__text">Вылечиваем неустойку 0,01% за каждый просроченный день</div>
@@ -589,14 +586,16 @@
               </section>
               <section class="s-download section section--fh" data-js="sDownload"> 
                 <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sDownload']" data-aos-anchor-placement="top-center"></div>
-                <div class="section__bg"><img class="s-download__bg" src="img/home/download.webp" alt=""></div>
-                <div class="d-container s-download__content">
-                  <div data-js="sDownloadTitle" data-anim-type="opacity">
-                        <div class="title  title--60">
-                          <h2 data-anim-type="textColor">Скачайте каталог <br>наших решений</h2>
-                        </div>
+                <div class="section__bg"><img class="s-download__bg" src="img/home/download.webp" alt="" data-anim-type="opacityLong" data-js="sDownloadBg"></div>
+                <div class="d-container">
+                  <div class="s-download__content">
+                    <div data-js="sDownloadTitle" data-anim-type="opacity">
+                          <div class="title  title--60">
+                            <h2 data-anim-type="textColor">Скачайте каталог <br>наших решений</h2>
+                          </div>
+                    </div>
+                    <div class="s-download__desc text-editor" data-js="sDownloadText" data-anim-type="opacity">В каталоге более подробно представлен перечень наших товаров, а так же информация о компании</div><a class="d-btn" href="javascript:void(0);" data-js="sDownloadBtn" data-anim-type="opacityUp100"><span>Скачать каталог</span></a>
                   </div>
-                  <div class="s-download__desc text-editor" data-js="sDownloadText" data-anim-type="opacity">В каталоге более подробно представлен перечень наших товаров, а так же информация о компании</div><a class="d-btn" href="javascript:void(0);" data-js="sDownloadBtn" data-anim-type="opacityUp100"><span>Скачать каталог</span></a>
                 </div>
               </section>
               <section class="s-stocks section" data-js="stocks">
@@ -640,13 +639,13 @@
                     </div>
                     <div class="s-news__desc text-editor" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement="top-center">Будьте в курсе последних новостей и событий от компании Дядя Федор. Узнайте о новинках мебельной индустрии, акциях и событиях нашей компании.</div><a class="d-btn" href="javascript:void(0);" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement="top-center"><span>Все новости</span></a>
                         <div class="slider-controls s-news__controls" data-js="sliderControls" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js='sNews']" data-aos-anchor-placement="top-center">
-                          <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev"><svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev"><svg data-js="sliderControlsSvg" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path class="slider-control__rhombus" d="M42.9264 42.9264L28.7843 57.0686L0.500001 28.7843L28.7843 0.500029L42.9264 14.6422" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M26.7326 38.7843L16.6159 28.6676L26.7326 18.551" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path class="slider-control__arrow" d="M56.7834 28.6676L16.9014 28.6676" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
                           </button>
-                          <button class="slider-control slider-control--next" type="button" data-js="sliderNext"><svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <button class="slider-control slider-control--next" type="button" data-js="sliderNext"><svg data-js="sliderControlsSvg" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path class="slider-control__rhombus" d="M42.9264 42.9264L28.7843 57.0686L0.500001 28.7843L28.7843 0.500029L42.9264 14.6422" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M26.7326 38.7843L16.6159 28.6676L26.7326 18.551" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 <path class="slider-control__arrow" d="M56.7834 28.6676L16.9014 28.6676" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
