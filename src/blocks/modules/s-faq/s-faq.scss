@@ -26,7 +26,6 @@
     }
 
     &__video {
-        position: relative;
         flex: 0 0 442px;
 
         @include max(large) {
@@ -43,6 +42,8 @@
 
         video {
             width: 100%;
+            object-fit: cover;
+            z-index: 3;
         }
     }
 

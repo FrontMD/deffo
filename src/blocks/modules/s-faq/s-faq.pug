@@ -10,11 +10,10 @@ mixin s-faq(props= defaultSFaqProps)
         }
 
     section.s-faq.section(class= checkProps.classes data-js="sFaq")&attributes(attributes)
-        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center")
+        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sFaq']" )
         .d-container.s-faq__container
-            .s-faq__video(data-js="sFaqVideo")
-                .s-faq__cover(data-anim-type="widthReverse")
-                video(autoplay muted loop playsinline)
+            .s-faq__video(data-js="sFaqMedia")
+                video(data-js="sFaqMediaContent" autoplay muted loop playsinline preload="metadata")
                     source(src="public/video/faq.mp4" type="video/mp4")
             .s-faq__content
                 .section__header
@@ -25,10 +24,10 @@ mixin s-faq(props= defaultSFaqProps)
                                 tag: 'h2',
                                 animColor: true
                             })
-                        .text-editor(data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center") От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.
+                        .text-editor(data-aos="fade-up" data-js="needOffset" data-aos-duration="1000" data-aos-delay="2600" data-aos-anchor="[data-js='sFaq']" data-aos-offset="500") От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.
                     +btn({
                         name: 'Задать свой вопрос'
-                    })(data-modal="#faqModal" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center")
+                    })(data-modal="#faqModal" data-js="needOffset" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2600" data-aos-anchor="[data-js='sFaq']" data-aos-offset="500")
                 +accordion({
                     classes: 's-faq__accordion'
                 })

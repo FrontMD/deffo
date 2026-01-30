@@ -724,11 +724,10 @@
                 </div>
               </section>
               <section class="s-faq section" data-js="sFaq">
-                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center"></div>
+                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sFaq']"></div>
                 <div class="d-container s-faq__container">
-                  <div class="s-faq__video" data-js="sFaqVideo">
-                    <div class="s-faq__cover" data-anim-type="widthReverse"></div>
-                    <video autoplay muted loop playsinline>
+                  <div class="s-faq__video" data-js="sFaqMedia">
+                    <video data-js="sFaqMediaContent" autoplay muted loop playsinline preload="metadata">
                       <source src="public/video/faq.mp4" type="video/mp4">
                     </video>
                   </div>
@@ -740,8 +739,8 @@
                                 <h2 data-anim-type="textColor">Вопросы и ответы</h2>
                               </div>
                         </div>
-                        <div class="text-editor" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center">От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.</div>
-                      </div><a class="d-btn" href="javascript:void(0);" data-modal="#faqModal" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="[data-js='sFaq']" data-aos-anchor-placement="top-center"><span>Задать свой вопрос</span></a>
+                        <div class="text-editor" data-aos="fade-up" data-js="needOffset" data-aos-duration="1000" data-aos-delay="2600" data-aos-anchor="[data-js='sFaq']" data-aos-offset="500">От выбора материала до готового фасада — отвечаем на популярные вопросы о производстве, качестве и сроках. Прозрачно, по делу и без лишних формальностей.</div>
+                      </div><a class="d-btn" href="javascript:void(0);" data-modal="#faqModal" data-js="needOffset" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2600" data-aos-anchor="[data-js='sFaq']" data-aos-offset="500"><span>Задать свой вопрос</span></a>
                     </div>
                         <div class="accordion s-faq__accordion" data-js="accordion">
                           <div class="spoiler" data-js="spoiler">
