@@ -11,12 +11,13 @@ function sFaqAnim() {
         const trigger = sFaq.querySelector('[data-js="scrollTrigger"]')
         const needOffsetList = sFaq.querySelectorAll('[data-js="needOffset"]')
         const ww = window.innerWidth
+        const bp = 1024
 
         spoilers?.forEach(spoiler => {
             spoiler.setAttribute('data-anim-type', 'opacityUp')
         })
 
-        if(sFaqMediaContent && ww >= 1024) {
+        if(sFaqMediaContent && ww >= bp) {
             sFaqMediaContent.addEventListener('loadeddata', () => {
                 const mediaWidth = sFaqMedia.offsetWidth
                 const contentHeight = sFaqMediaContent.offsetHeight
@@ -59,7 +60,7 @@ function sFaqAnim() {
                 const tHeight = window.innerHeight - 100
                 const sHeight = sFaq.offsetHeight
 
-                if(ww >= 1024) {
+                if(ww >= bp) {
                     if(sHeight >= tHeight) {
                         trigger.setAttribute('data-aos-offset', tHeight)
                         needOffsetList.forEach(item => {
@@ -92,7 +93,7 @@ function sFaqAnim() {
 
         async function anim(mediaWidth, contentHeight) {
 
-            if(sFaqMedia && sFaqMediaContent && ww >= 1024) {
+            if(sFaqMedia && sFaqMediaContent && ww >= bp) {
                 sFaqMediaContent.style.width = mediaWidth + 'px'
                 sFaqMediaContent.style.height = contentHeight + 'px'
                 await delay(2100)

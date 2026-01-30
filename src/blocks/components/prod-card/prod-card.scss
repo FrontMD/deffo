@@ -20,7 +20,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #2F2F2E;
+        background-color: $c-cards-bg;
 
         @include max(laptop) {
             padding: 20px 24px 20px;

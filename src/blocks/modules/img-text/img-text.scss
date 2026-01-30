@@ -12,7 +12,7 @@
         align-items: center;
         gap: 60px;
         padding: 20px;
-        background-color: rgba(67, 67, 66, 0.7);
+        background-color: $c-cards-bg;
         backdrop-filter: blur(40px);
 
         @include max(large) {

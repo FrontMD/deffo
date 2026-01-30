@@ -6,11 +6,16 @@
         margin-top: 50px;
 
         @include max(large) {
-            gap: 40px;
             grid-template-columns: minmax(0, 35%) minmax(0, 25%) minmax(0, 40%);
         }
 
         @include max(laptop) {
+            gap: 50px 24px;
+            grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+        }
+
+        @include max(tablet) {
+            gap: 40px 20px;
             grid-template-columns: minmax(0, 60%) minmax(0, 40%);
         }
 
@@ -52,25 +57,53 @@
 }
 
 .pi-desc {
-    padding-right: 75px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 
-    @include max(large) {
-        padding-right: 0;
+    &__text {
+        background-color: $c-cards-bg;
+        margin-bottom: auto;
+        width: 100%;
+        padding: 30px;
+        font-size: 16px;
+
+        @include max(large) {
+            padding: 16px;
+        }
+
+        @include max(tablet) {
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        h2 {
+            color: $c-white;
+        }
     }
 }
 
 .pi-slider {
 
     &__wrapper {
-        padding: 42px 92px 87px;
-        background-color: rgba(67, 67, 66, 0.7);
+        padding: 42px 118px 87px;
+        background-color: $c-cards-bg;
 
         @include max(large) {
-            padding: 24px 50px 50px;
+            padding: 24px 30px 40px;
+        }
+
+        @include max(laptop) {
+            padding: 24px 50px 40px;
+        }
+
+        @include max(padding) {
+            padding: 24px 30px 40px;
         }
 
         @include max(mobile) {
-            padding: 24px 100px 50px;
+            padding: 24px 100px 40px;
         }
 
         @include max(xs) {
@@ -80,6 +113,8 @@
 
     &__slider {
         overflow: hidden;
+        width: fit-content;
+        max-width: 100%;
     }
 
     &__slide {
@@ -101,27 +136,52 @@
     }
 
     &__controls {
-        max-width: 100%;
-        display: flex;
-        justify-content: flex-start;
-        gap: 20px;
-        width: fit-content;
-        margin: -60px auto 0;
+        position: relative;
+        width: 100%;
+        margin: 24px auto 0;
+        padding: 0 40px;
 
         @include max(large) {
-            margin-top: -35px;
-            gap: 10px;
-        }
-
-        @include max(xs) {
-            margin-top: -25px;
-            gap: 6px;
+            padding: 0 30px;
         }
     }
 
-    &__mo {
-        flex: 0 0 auto;
-        position: relative;
+    .slider-controls {
+        display: block;
+    }
+
+    .slider-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $c-white;
+        z-index: 1;
+
+        svg {
+            width: 64px;
+            height: 64px;
+
+            @include max(large) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .slider-control--prev {
+        left: -10px;
+
+        @include max(large) {
+            left: -5px;
+        }
+    }
+
+    .slider-control--next {
+        right: -10px;
+
+        @include max(large) {
+            right: -5px;
+        }
     }
 
     &__3d {
@@ -159,18 +219,24 @@
     &__thumbs {
         flex: 0 1 auto;
         overflow: hidden;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
-    &__thumb,
-    &__mo {
+    &__thumb {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 120px;
         height: 120px;
         padding: 13px;
-        background-color: $c-bg-grey;
+        background-color: $c-cards-bg;
         cursor: pointer;
+
+        &:last-child {
+            margin-right: 0 !important;
+        }
 
         @include max(large) {
             width: 70px;
@@ -195,8 +261,9 @@
 .pi-info {
     display: flex;
     flex-direction: column;
-    gap: 106px;
+    gap: 40px;
     padding-left: 75px;
+    min-height: 100%;
 
     @include max(large) {
         padding-left: 0;
@@ -206,7 +273,13 @@
     @include max(laptop) {
         flex-direction: row;
         display: grid;
-        gap: 40px;
+        gap: 24px;
+        grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+
+    }
+
+    @include max(tablet) {
+        gap: 20px;
         grid-template-columns: minmax(0, 60%) minmax(0, 40%);
 
     }
@@ -229,7 +302,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgba(67, 67, 66, 0.5);
+        background-color: #1B1B1B;
         border-radius: 40px;
         font-weight: 400;
         font-size: 16px;
@@ -254,6 +327,13 @@
         align-items: stretch;
         gap: 20px;
         margin-top: 40px;
+    }
+
+    .pi-info__block:last-child {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        flex: 1 1 auto;
     }
 
     &__favorite {
@@ -281,9 +361,38 @@
         display: flex;
         align-items: flex-start;
         gap: 20px;
+        margin-bottom: 24px;
 
         @include max(tablet) {
             gap: 12px;
+        }
+    }
+
+    &__note {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 150%;
+        color: $c-text-light;
+
+        @include max(tablet) {
+            font-size: 12px;
+
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+            color: $c-accent;
+
+            @include max(tablet) {
+                width: 16px;
+                height: 16px;
+
+            }
         }
     }
 }
