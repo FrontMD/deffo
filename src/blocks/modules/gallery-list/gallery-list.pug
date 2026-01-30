@@ -1,0 +1,104 @@
+-
+    const defaultGalleryListProps = {
+        classes: '',
+        cards: [
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_1.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_2.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_3.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_4.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
+            },
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_5.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_6.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_7.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_8.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
+            },
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_9.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_10.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_11.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_12.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
+            },
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_13.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_14.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_15.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+            },
+
+            {
+                title: 'MI34 Мрамор Белый, С99/1',
+                images: ['img/catalog/sample_16.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
+            },
+        ],
+    }
+
+mixin gallery-list(props= defaultGalleryListProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultGalleryListProps.classes,
+            cards: props.cards ? props.cards : defaultGalleryListProps.cards
+        }
+
+    section.galeery-list.section.section--inner(class= checkProps.classes data-js="galleryList")&attributes(attributes)
+        .d-container
+            .gallery-list__items(data-js="galleryListGrid")
+                - let cardsCount = 0
+                - let cardsList = checkProps.cards
+                - while(cardsCount < cardsList.length)
+                    - cardsList[cardsCount].index = cardsCount
+                    +sl-card(cardsList[cardsCount])(data-anim-id="galleryListItem")
+
+                    - cardsCount++
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+

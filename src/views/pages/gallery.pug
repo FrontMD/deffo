@@ -1,0 +1,26 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Галерея фасадов"
+    - const fullHeader = false 
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Галерея фасадов',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+            +s-title({
+                title: 'Галерея фасадов',
+                text: 'В галерее представлены реализованные и типовые мебельные фасады — формы, фактуры и цвета, доступные к производству. Используйте примеры как источник идей для своих проектов.'
+            })
+            +gallery-list

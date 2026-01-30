@@ -24,6 +24,7 @@
 @@include("../../blocks/modules/pc-slider/pc-slider.js")
 @@include("../../blocks/modules/samples-list/samples-list.js")
 @@include("../../blocks/modules/product-intro/product-intro.js")
+@@include("../../blocks/modules/gallery-list/gallery-list.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -49,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
     pcSlider();
     samplesListAnim();
     productIntro();
+    galleryListAnim();
 })

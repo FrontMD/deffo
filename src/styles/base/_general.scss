@@ -114,6 +114,13 @@ body.no-scroll {
 	overflow: hidden;
 }
 
+body.lockScroll {
+	overflow: hidden !important;
+	height: 100vh !important;
+	position: fixed !important;
+	width: 100% !important;
+}
+
 .main {
 	flex-grow: 1;
 }

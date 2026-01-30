@@ -48,6 +48,7 @@ mixin samples-list(props= defaultSamplesListProps)
                 - let cardsCount = 0
                 - let cardsList = checkProps.cards
                 - while(cardsCount < cardsList.length)
+                    - cardsList[cardsCount].index = cardsCount
                     +sl-card(cardsList[cardsCount])(data-anim-id="samplesListItem")
 
                     - cardsCount++
