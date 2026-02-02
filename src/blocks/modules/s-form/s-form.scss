@@ -1,0 +1,85 @@
+.s-form {
+    &__content {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        overflow: hidden;
+        gap: 50px;
+        padding: 50px 0;
+        background-color: $c-cards-bg;
+
+        @include max(large) {
+            padding: 50px 40px 50px 0;
+        }
+
+        @include max(laptop) {
+            padding: 30px 30px 30px 0;
+        }
+
+        @include max(tablet) {
+            gap: 32px;
+            padding: 20px 20px 20px 0;
+        }
+
+        @include max(mobile) {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 20px 10px;
+            gap: 20px;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 28%;
+        height: auto;
+
+        @include max(laptop) {
+            width: 32%;
+        }
+
+        @include max(mobile) {
+            left: auto;
+            right: 0;
+            width: 42%;
+        }
+
+        img {
+            width: 100%;
+
+            @include max(mobile) {
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex: 0 1 50%;
+        padding-top: 10px;
+        max-width: 751px;
+        text-align: end;
+
+        @include max(mobile) {
+            align-items: flex-start;
+            text-align: start;
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        margin-top: 14px;
+    }
+
+    &__form {
+        flex: 0 1 50%;
+        max-width: 751px;
+    }
+}

@@ -1,0 +1,191 @@
+-
+	const defaultSContactsProps = {
+		classes: '',
+	}
+
+mixin s-contacts(props = defaultSContactsProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultSContactsProps.classes,
+		}
+
+	section.section.section--inner.s-contacts(class= checkProps.classes data-js="sContacts")&attributes(attributes)
+		.d-container
+			.s-contacts__container(data-js="sContactsBlock")
+				.s-contacts__content(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor-placement="top-bottom")
+					.field.s-contacts__select.active(data-js="sContactsTabsSelect")
+						select.field__select(data-js="formSelect")
+							option(data-js='sContactsTabsOption' data-coords="44.114722,43.088393" data-id="0" value="г. Пятигорск" selected) г. Пятигорск
+							option(data-js='sContactsTabsOption' data-coords="45.030260,39.018576" data-id="1" value="г. Краснодар") г. Краснодар
+							option(data-js='sContactsTabsOption' data-coords="59.900484,30.324393" data-id="2" value="г. Санкт-Петербург") г. Санкт-Петербург
+							option(data-js='sContactsTabsOption' data-coords="43.602024,39.736707" data-id="3" value="г. Сочи") г. Сочи
+							option(data-js='sContactsTabsOption' data-coords="44.584924, 33.512505" data-id="4" value="г. Севастополь") г. Севастополь
+							option(data-js='sContactsTabsOption' data-coords="51.688438, 39.164570" data-id="5" value="г. Воронеж") г. Воронеж
+
+					.s-contacts__info
+						.s-contacts__item.contacts-item.active(data-js="sContactsInfoItem")
+							.contacts-item__icon
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#c_location`)
+							.contacts-item__content
+								+title({
+									classes: 'contacts-item__title',
+									text: 'Пятигорск',
+									size: '40'
+								})
+
+								.contacts-item__block 
+									.contacts-item__row
+										.contacts-item__param График работы:
+										.contacts-item__value пн - пт, 09:00 - 18:00
+									.contacts-item__row
+										.contacts-item__param Телефон:
+										a.contacts-item__value(href="tel:+79282662615") +7 (928) 266-26-15
+									.contacts-item__row
+										.contacts-item__param Email:
+										a.contacts-item__value(href="mailto:fedis1@mail.ru") fedis1@mail.ru
+
+								.contacts-item__address Ставропольский край, пос. Иноземцево, ул. Промышленная, д.11
+
+								+btn({
+									classes: 'contacts-item__btn',
+									name: 'Оставить заявку',
+									icon: 'arrow_btn'
+								})(data-modal="#callbackModal")
+
+						.s-contacts__item.contacts-item(data-js="sContactsInfoItem")
+							.contacts-item__icon
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#c_location`)
+							.contacts-item__content
+								+title({
+									classes: 'contacts-item__title',
+									text: 'Краснодар',
+									size: '40'
+								})
+								.contacts-item__block 
+									.contacts-item__row
+										.contacts-item__param График работы:
+										.contacts-item__value пн - пт, 09:00 - 18:00
+									.contacts-item__row
+										.contacts-item__param Телефон:
+										a.contacts-item__value(href="tel:+79385311031") +7 (938) 531-10-31
+									.contacts-item__row
+										.contacts-item__param Email:
+										a.contacts-item__value(href="mailto:d.f.krasnodar@mail.ru") d.f.krasnodar@mail.ru
+								.contacts-item__address г. Краснодар, ул. Новороссийская, 3/10
+								+btn({
+									classes: 'contacts-item__btn',
+									name: 'Оставить заявку',
+									icon: 'arrow_btn'
+								})(data-modal="#callbackModal")
+
+						.s-contacts__item.contacts-item(data-js="sContactsInfoItem")
+							.contacts-item__icon
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#c_location`)
+							.contacts-item__content
+								+title({
+									classes: 'contacts-item__title',
+									text: 'Санкт-Петербург',
+									size: '40'
+								})
+								.contacts-item__block 
+									.contacts-item__row
+										.contacts-item__param График работы:
+										.contacts-item__value пн - пт, 09:00 - 18:00
+									.contacts-item__row
+										.contacts-item__param Телефон:
+										a.contacts-item__value(href="tel:+79111478660") +7 (911) 147-86-60
+									.contacts-item__row
+										.contacts-item__param Email:
+										a.contacts-item__value(href="mailto:fasaddf@mail.ru") fasaddf@mail.ru
+								.contacts-item__address г. Санкт-Петербург, ул. Киевская, д. 5 литер ШГ
+								+btn({
+									classes: 'contacts-item__btn',
+									name: 'Оставить заявку',
+									icon: 'arrow_btn'
+								})(data-modal="#callbackModal")
+
+						.s-contacts__item.contacts-item(data-js="sContactsInfoItem")
+							.contacts-item__icon
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#c_location`)
+							.contacts-item__content
+								+title({
+									classes: 'contacts-item__title',
+									text: 'Сочи',
+									size: '40'
+								})
+								.contacts-item__block 
+									.contacts-item__row
+										.contacts-item__param График работы:
+										.contacts-item__value пн - пт, 10:00 - 17:00
+									.contacts-item__row
+										.contacts-item__param Телефон:
+										a.contacts-item__value(href="tel:+79286663455") +7 (928) 666-34-55
+									.contacts-item__row
+										.contacts-item__param Email:
+										a.contacts-item__value(href="mailto:d.f.sochi@mail.ru") fd.f.sochi@mail.ru
+								.contacts-item__address г. Сочи, ул. Пластунская, д. 50/1
+								+btn({
+									classes: 'contacts-item__btn',
+									name: 'Оставить заявку',
+									icon: 'arrow_btn'
+								})(data-modal="#callbackModal")
+
+						.s-contacts__item.contacts-item(data-js="sContactsInfoItem")
+							.contacts-item__icon
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#c_location`)
+							.contacts-item__content
+								+title({
+									classes: 'contacts-item__title',
+									text: 'Севастополь',
+									size: '40'
+								})
+								.contacts-item__block 
+									.contacts-item__row
+										.contacts-item__param График работы:
+										.contacts-item__value пн - пт, 09:30 - 17:00
+									.contacts-item__row
+										.contacts-item__param Телефон:
+										a.contacts-item__value(href="tel:+79787578579") +7 (978) 757-85-79
+									.contacts-item__row
+										.contacts-item__param Email:
+										a.contacts-item__value(href="mailto:zakaz@mebel-fasad92.ru") zakaz@mebel-fasad92.ru
+								.contacts-item__address г. Севастополь, ул. Соловьева, 6А
+								+btn({
+									classes: 'contacts-item__btn',
+									name: 'Оставить заявку',
+									icon: 'arrow_btn'
+								})(data-modal="#callbackModal")
+
+						.s-contacts__item.contacts-item(data-js="sContactsInfoItem")
+							.contacts-item__icon
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#c_location`)
+							.contacts-item__content
+								+title({
+									classes: 'contacts-item__title',
+									text: 'Воронеж',
+									size: '40'
+								})
+								.contacts-item__block 
+									.contacts-item__row
+										.contacts-item__param График работы:
+										.contacts-item__value пн - пт, 09:30 - 17:00
+									.contacts-item__row
+										.contacts-item__param Телефон:
+										a.contacts-item__value(href="tel:+79204275245") +7 (920) 427-52-45
+									.contacts-item__row
+										.contacts-item__param Email:
+										a.contacts-item__value(href="mailto:OSNOVA.dm@yandex.ru") OSNOVA.dm@yandex.ru
+								.contacts-item__address г. Воронеж, ул. Солнечная, д. 33, 1 эт.
+								+btn({
+									classes: 'contacts-item__btn',
+									name: 'Оставить заявку',
+									icon: 'arrow_btn'
+								})(data-modal="#callbackModal")
+
+				.s-contacts__map(data-js="sContactsMap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-anchor-placement="top-bottom")

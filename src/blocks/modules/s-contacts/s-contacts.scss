@@ -1,0 +1,180 @@
+.s-contacts {
+    &__container {
+        display: flex;
+        align-items: stretch;
+        gap: 24px;
+
+        @include max(mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__content {
+        flex: 0 0 597px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 30px;
+
+        @include max(large) {
+            flex: 0 0 500px;
+        }
+
+        @include max(laptop) {
+            flex: 0 0 400px;
+            gap: 24px;
+        }
+
+        @include max(tablet) {
+            flex: 0 0 340px;
+        }
+
+        @include max(mobile) {
+            flex: 0 0 auto;
+            padding-bottom: 0;
+            gap: 20px;
+        }
+    }
+
+    &__map {
+        flex: 1 1 auto;
+        min-height: 700px;
+
+        @include max(large) {
+            min-height: 500px;
+        }
+
+        @include max(mobile) {
+            min-height: 280px;
+        }
+    }
+
+    &__info {
+        margin-top: auto;
+        flex: 0 0 auto;
+    }
+
+    &__item {
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+    }
+
+}
+
+.contacts-item {
+    gap: 20px;
+    align-items: flex-start;
+
+    @include max(tablet) {
+        gap: 12px;
+    }
+
+    &__icon {
+        flex: 0 0 auto;
+
+        svg {
+            width: 36px;
+            height: 36px;
+
+            @include max(laptop) {
+                width: 24px;
+                height: 24px;
+            }
+
+            @include max(tablet) {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+
+        @include max(laptop) {
+            gap: 24px;
+        }
+
+        @include max(mobile) {
+            gap: 20px;
+        }
+    }
+
+    &__title {
+        text-transform: none;
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @include max(laptop) {
+            gap: 8px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+
+        @include max(laptop) {
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        @include max(mobile) {
+            font-size: 12px;
+        }
+    }
+
+    &__param {
+        color: $c-text-light;
+        flex: 0 0 150px;
+
+        @include max(laptop) {
+            flex: 0 0 130px;
+        }
+
+        @include max(mobile) {
+            flex: 0 0 110px;
+        }
+    }
+
+    &__value {
+        flex: 1 1 auto;
+        transition: color $tr;
+
+        &:hover {
+            color: $c-accent;
+        }
+    }
+
+    &__address {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 150%;
+
+        @include max(laptop) {
+            font-size: 18px;
+        }
+
+        @include max(tablet) {
+            font-size: 16px;
+        }
+
+        @include max(xs) {
+            font-size: 14px;
+        }
+    }
+}

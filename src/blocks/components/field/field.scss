@@ -470,21 +470,23 @@
 
         .select2-selection--single,
         .select2-selection--multiple {
-            padding: 22px 20px;
+            padding: 15px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 10px;
-            color: $c-text;
+            color: $c-white;
             border-radius: 0;
             width: 100%;
             height: auto;
-            border: none;
-            background: transparent;
+            min-height: 60px;
+            background: #1B1B1B;
             cursor: pointer;
-            transition: all 0.3s;
-            min-height: 64px;
-
+            transition: all $tr;
+            border: 2px solid;
+            border-image-source: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+            border-image-slice: 20;
+            border-image-repeat: stretch;
 
             @include max(tablet) {
                 font-size: 14px;
@@ -502,7 +504,7 @@
                 font-size: 16px;
                 line-height: 1.1875em;
                 letter-spacing: 0;
-                color: $c-text;
+                color: $c-white;
                 width: 100%;
                 padding: 0;
             }
@@ -623,136 +625,14 @@
             .select2-selection--multiple {
                 padding: 0;
                 min-height: auto;
-
-                .select2-selection__rendered,
-                .select2-selection__placeholder {
-                    color: $c-white;
-                }
+                color: $c-text;
+                min-height: auto;
+                background: transparent;
+                border: none;
             }
         }
     }
 
-    /*&--noFormSelect .select2 {
-        
-    &.select2-container--default {
-        .select2-search--inline .select2-search__field {
-            margin-top: 0;
-            }
-            
-            .select2-selection--single,
-            .select2-selection--multiple {
-                
-            display: flex;
-            color: $c-white;
-                align-items: center;
-                justify-content: space-between;
-                border-radius: 0;
-                width: 100%;
-                height: auto;
-                border: none;
-                background: transparent;
-                cursor: pointer;
-                transition: all 0.3s;
-            
-
-
-                @include max(tablet) {
-                    font-size: 14px;
-                }
-
-                @include max(mobile) {
-                    padding: 13px 20px;
-                    min-height: 45px;
-                }
-
-                
-
-                .select2-selection__rendered .select2-selection__choice {
-                    margin-top: 0;
-                    margin-right: 0;
-                    background-color: transparent;
-                    display: flex;
-                    align-items: center;
-                    flex-direction: row-reverse;
-                    height: 19px;
-                    font-size: 13px;
-                    color: $c-accent;
-                    border-color: $c-accent;
-
-                }
-
-                .select2-selection__rendered .select2-selection__choice .select2-selection__choice__remove {
-                    margin-right: 0;
-                    margin-left: 5px;
-                    font-size: 20px;
-                    color: $c-accent;
-                }
-
-                .select2-selection__arrow {
-                    position: relative;
-                    flex-shrink: 0;
-                    flex-grow: 0;
-                    height: 10px;
-                    width: 10px;
-                    display: block;
-
-                    b {
-                        display: none;
-                    }
-
-                    &::before {
-                        content: '';
-                        width: 100%;
-                        height: 100%;
-                        display: block;
-                        background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.4' clip-path='url(%23clip0_636_25816)'%3E%3Cpath d='M5.20799 7.76458C5.03623 7.76458 4.86449 7.69821 4.73353 7.56573L0.612623 3.39498C0.35048 3.12967 0.35048 2.69951 0.612623 2.43431C0.874661 2.1691 1.2996 2.1691 1.56176 2.43431L5.20799 6.12482L8.85425 2.43444C9.11639 2.16923 9.54129 2.16923 9.8033 2.43444C10.0656 2.69964 10.0656 3.1298 9.8033 3.39511L5.68246 7.56586C5.55144 7.69836 5.3797 7.76458 5.20799 7.76458Z' fill='%230F0908'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_636_25816'%3E%3Crect width='9.58401' height='9.69985' fill='white' transform='translate(0.416016 0.150078)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
-                        background-size: 100%;
-                        transition: all 0.3s;
-                        transform: rotate(0deg);
-                    }
-                }
-            }
-
-            .select2-selection--multiple {
-                position: relative;
-            }
-
-            .select2-selection--multiple .select2-selection__rendered {
-                overflow-x: auto;
-                overflow-y: hidden;
-                flex-wrap: nowrap;
-                position: absolute;
-                width: calc(100% - 40px);
-
-                &::-webkit-scrollbar {
-                    width: 3px;
-                    height: 3px;
-                }
-
-                &::-webkit-scrollbar-track {
-                    background-color: $c-bg-main;
-                    border-radius: 1px;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background-color: $c-text;
-                    border-radius: 1px;
-                }
-            }
-
-            &.select2-container--open {
-
-                .select2-selection--single .select2-selection__arrow,
-                .select2-selection--multiple .select2-selection__arrow {
-                    &::before {
-                        content: '';
-                        transform: rotate(180deg);
-                        transition: all 0.3s;
-                    }
-                }
-            }
-        }
-    }*/
 }
 
 
@@ -869,7 +749,7 @@
             padding: 24px 25px;
             line-height: 100%;
             color: $c-white;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: $c-cards-bg;
             border: 1px solid $c-border;
 
             &::placeholder {

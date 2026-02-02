@@ -27,15 +27,22 @@ function textColorAnim(el) {
     }
 }
 
-/*function zoomInAnim(el) {
-    const zoomInAnims = el.querySelectorAll('[data-anim-type="zoomIn"]')
-
-    if(zoomInAnims.length > 0) {
-        zoomInAnims.forEach(item => {
-            commonAnimation(item)
-        });
-    }
-}*/
+function heightAnim(el, dutation = '2s') {
+    
+    const content = el.querySelector('[data-js="heightAnimContent"]')
+    
+    if(!content) return
+    
+    const contentHeight = content.offsetHeight
+    el.style.transform = `translateY(${contentHeight*2}px)`
+    el.style.transform = `translateY(20px)`
+    
+    setTimeout(() => {
+        el.style.transition = `all ${dutation} linear`
+        el.style.transform = 'translateY(0px)'
+        el.style.height = contentHeight + 'px'
+    }, 0)
+}
 
 function setAttributes(el, list) {
     if(Object.keys(list).length > 0) {
