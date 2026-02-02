@@ -68,6 +68,21 @@
         width: 100%;
         padding: 30px;
         font-size: 16px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $c-accent-hover;
+            border-radius: 2px;
+        }
 
         @include max(large) {
             padding: 16px;
@@ -87,27 +102,27 @@
 .pi-slider {
 
     &__wrapper {
-        padding: 42px 118px 87px;
+        padding: 42px 118px;
         background-color: $c-cards-bg;
 
         @include max(large) {
-            padding: 24px 30px 40px;
+            padding: 24px 30px;
         }
 
         @include max(laptop) {
-            padding: 24px 50px 40px;
+            padding: 24px 50px;
         }
 
         @include max(padding) {
-            padding: 24px 30px 40px;
+            padding: 24px 30px;
         }
 
         @include max(mobile) {
-            padding: 24px 100px 40px;
+            padding: 24px 100px;
         }
 
         @include max(xs) {
-            padding: 24px 50px 40px;
+            padding: 24px 50px;
         }
     }
 
@@ -126,6 +141,7 @@
             top: 0;
             width: 100%;
             height: 100%;
+            cursor: zoom-in;
         }
 
         img {

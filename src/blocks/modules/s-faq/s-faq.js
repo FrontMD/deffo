@@ -25,7 +25,7 @@ function sFaqAnim() {
                 sFaqMediaContent.style.position = 'absolute'
                 sFaqMediaContent.style.width = '100%'
                 sFaqMediaContent.style.height = '100%'
-                sFaqMediaContent.style.transition = 'width 2s linear, height 2s linear'
+                sFaqMediaContent.style.transition = 'width 1s linear, height 1s linear'
 
                 if(trigger) {
                     const tHeight = window.innerHeight - 100
@@ -35,13 +35,13 @@ function sFaqAnim() {
                         trigger.setAttribute('data-aos-offset', tHeight)
                         needOffsetList.forEach(item => {
                             item.setAttribute('data-aos-offset', tHeight)
-                            item.setAttribute('data-aos-delay', '2600')
+                            item.setAttribute('data-aos-delay', '1600')
                         })
                     } else {
                         trigger.setAttribute('data-aos-offset', sHeight)
                         needOffsetList.forEach(item => {
                             item.setAttribute('data-aos-offset', sHeight)
-                            item.setAttribute('data-aos-delay', '2600')
+                            item.setAttribute('data-aos-delay', '1600')
                         })
                     }
 
@@ -96,7 +96,7 @@ function sFaqAnim() {
             if(sFaqMedia && sFaqMediaContent && ww >= bp) {
                 sFaqMediaContent.style.width = mediaWidth + 'px'
                 sFaqMediaContent.style.height = contentHeight + 'px'
-                await delay(2100)
+                await delay(1100)
                 sFaqMediaContent.style.position = 'relative'
                 sFaqMediaContent.style.width = '100%'
             }

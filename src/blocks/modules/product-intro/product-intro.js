@@ -38,7 +38,7 @@ function productIntro() {
                 on: {
                     init: function() {
                         if(descText && wrapper && window.innerWidth >= 1024) {
-                            descText.style.minHeight = wrapper.offsetHeight + 'px'
+                            descText.style.height = wrapper.offsetHeight + 'px'
                         }
                     }
                 }
