@@ -109,7 +109,7 @@
         width: 1920px;
         height: 1080px;
         max-width: calc(95vw - 100px);
-        max-height: calc((95vw - 100px) * 0.5625);
+        max-height: calc(95vh - 70px);
 
         @include max(tablet) {
             max-width: calc(95vw - 40px);
