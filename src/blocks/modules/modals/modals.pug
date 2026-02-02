@@ -80,10 +80,7 @@ noindex
                     })
 
         //- 3D модель 
-        +modal({modalId:"piSliderModel"})(data-js="piSliderModel")
+        +modal({modalId:"piSliderModel", classes: 'modal--3d'})(data-js="piSliderModel")
             <div id="d3-model-wrap" class="d3-model-wrap" data-mtl="public/3d-models/model-1/r32.mtl" data-obj="public/3d-models/model-1/r32.obj">
-                <div class="d3-model-preloader">
-                    <img src="img/catalog/preloader.gif">
-                </div>
-                <canvas id="model_3d"></canvas>	
+                <canvas id="model_3d"></canvas>
             </div>

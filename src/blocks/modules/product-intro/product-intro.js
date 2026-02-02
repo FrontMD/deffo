@@ -100,7 +100,7 @@ function main3d(mtlFileLink, objFileLink) {
     controls.update();
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('#FFFFFF');
+    scene.background = new THREE.Color('#1B1B1B');
 
     var light = new THREE.AmbientLight( 0xFFFFFF, 1 );
     scene.add( light );

@@ -57,7 +57,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        background: $c-black;
+        background: $c-cards-bg;
         width: 100%;
         max-width: 700px;
         z-index: 9999;
@@ -79,4 +79,46 @@
         }
     }
 
+}
+
+.modal {
+    &--3d &__content {
+        max-width: 95vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include max(mobile) {
+            max-height: 100vh;
+            height: 100vh;
+            height: 100dvh;
+            width: 100vw;
+            max-width: 100vw;
+        }
+    }
+
+    &--3d &__inner {
+        margin: auto;
+    }
+
+}
+
+.d3-model-wrap {
+
+    #model_3d {
+        width: 1920px;
+        height: 1080px;
+        max-width: calc(95vw - 100px);
+        max-height: calc((95vw - 100px) * 0.5625);
+
+        @include max(tablet) {
+            max-width: calc(95vw - 40px);
+            max-height: calc((95vw - 40px) * 0.5625);
+        }
+
+        @include max(mobile) {
+            max-width: calc(95vw - 20px);
+            max-height: calc((95vw - 20px) * 0.5625);
+        }
+    }
 }

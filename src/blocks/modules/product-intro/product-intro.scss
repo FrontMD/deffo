@@ -412,19 +412,3 @@
         }
     }
 }
-
-.d3-model-wrap {
-    display: none;
-
-    #model_3d {
-        width: 1920px;
-        height: 1080px;
-        max-width: -webkit-calc(100vw - 150px);
-        max-width: -moz-calc(100vw - 150px);
-        max-width: calc(100vw - 150px);
-        max-height: -webkit-calc(100vh - 150px);
-        max-height: -moz-calc(100vh - 150px);
-        max-height: calc(100vh - 150px);
-        display: none;
-    }
-}
