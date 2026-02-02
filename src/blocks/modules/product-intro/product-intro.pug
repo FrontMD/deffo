@@ -43,11 +43,11 @@ mixin product-intro(props= defaultProductIntroProps)
                             .pi-slider__slider(data-js="piSliderSlider")
                                 .swiper-wrapper
                                     .swiper-slide.pi-slider__slide
-                                        a(href="img/catalog/bg_prod_1.webp" data-fancybox="productIntroSlider" data-thumb="img/catalog/bg_prod_1.webp")
-                                        img(src="img/catalog/bg_prod_1.webp" alt="")
+                                        a(href="img/catalog/prod_2.webp" data-fancybox="productIntroSlider" data-thumb="img/catalog/prod_2.webp")
+                                        img(src="img/catalog/prod_2.webp" alt="")
                                     .swiper-slide.pi-slider__slide
-                                        a(href="img/catalog/prod_5.webp" data-fancybox="productIntroSlider" data-thumb="img/catalog/prod_5.webp")
-                                        img(src="img/catalog/prod_5.webp" alt="")
+                                        a(href="img/catalog/prod_1.webp" data-fancybox="productIntroSlider" data-thumb="img/catalog/prod_1.webp")
+                                        img(src="img/catalog/prod_1.webp" alt="")
 
                         .pi-slider__controls
                             .slider-controls(data-js="sliderControls")&attributes(attributes)
@@ -59,13 +59,13 @@ mixin product-intro(props= defaultProductIntroProps)
                                         use(xlink:href=`img/sprites/sprite.svg#chevron_slider_next`)
                             .pi-slider__thumbs(data-js="piSliderThumbs")
                                 .swiper-wrapper
-                                    .swiper-slide.pi-slider__thumb.thumbs-disabled(data-disabled="true")
+                                    .swiper-slide.pi-slider__thumb.thumbs-disabled(data-disabled="true" data-modal="#piSliderModel")
                                         .pi-slider__3d 3D
-                                        img(src="img/catalog/prod_5.webp" alt="")
+                                        img(src="img/catalog/prod_1.webp" alt="")
                                     .swiper-slide.pi-slider__thumb
-                                        img(src="img/catalog/bg_prod_1.webp" alt="")
+                                        img(src="img/catalog/prod_2.webp" alt="")
                                     .swiper-slide.pi-slider__thumb
-                                        img(src="img/catalog/prod_5.webp" alt="")
+                                        img(src="img/catalog/prod_3.webp" alt="")
 
                 .product-intro__side.product-intro__side--last(data-js="productIntroSide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='productIntro']" data-aos-anchor-placement="top-center")
                     .pi-info
@@ -89,11 +89,11 @@ mixin product-intro(props= defaultProductIntroProps)
                             .pi-info__cards
                                 +prod-card({
                                     title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
-                                    img: 'img/catalog/prod_11.webp'
+                                    img: 'img/catalog/prod_1.webp'
                                 })
                                 +prod-card({
                                     title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
-                                    img: 'img/catalog/prod_11.webp'
+                                    img: 'img/catalog/prod_2.webp'
                                 })
 
                             .pi-info__note

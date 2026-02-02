@@ -36,8 +36,8 @@ function productIntro() {
                 slidesPerView: 1,
                 spaceBetween: 10,
                 on: {
-                    init: function() {
-                        if(descText && wrapper && window.innerWidth >= 1024) {
+                    afterInit: function() {
+                        if(descText && wrapper && window.innerWidth >= 768) {
                             descText.style.height = wrapper.offsetHeight + 'px'
                         }
                     }
@@ -83,3 +83,106 @@ function productIntroAnim(section) {
         opacityAnim(title)
     }
 }
+
+function main3d(mtlFileLink, objFileLink) {
+    const canvas = document.querySelector('#model_3d');
+    const renderer = new THREE.WebGLRenderer({canvas, antialias: true});
+
+    const fov = 45;
+    const aspect = 2;
+    const near = 0.1;
+    const far = 1000;
+    const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+    camera.position.set(45, 45, 45);
+
+    const controls = new THREE.OrbitControls(camera, canvas);
+    controls.target.set(0, 5, 0);
+    controls.update();
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color('#FFFFFF');
+
+    var light = new THREE.AmbientLight( 0xFFFFFF, 1 );
+    scene.add( light );
+
+    var light = new THREE.PointLight( 0xFFFFFFF, 0.1, 0 );
+    light.position.set( 0, 1000, -1000 );
+    scene.add( light );
+    var light = new THREE.PointLight( 0xFFFFFFF, 0.2, 0 );
+    light.position.set( 1000, -1000, 1000 );
+    scene.add( light );
+
+    function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
+        const halfSizeToFitOnScreen = sizeToFitOnScreen * 0.5;
+        const halfFovY = THREE.Math.degToRad(camera.fov * .5);
+        const distance = halfSizeToFitOnScreen / Math.tan(halfFovY);
+        const direction = (new THREE.Vector3())
+            .subVectors(camera.position, boxCenter)
+            .multiply(new THREE.Vector3(1, 0, 1))
+            .normalize();
+
+        camera.position.copy(direction.multiplyScalar(distance).add(boxCenter));
+
+        camera.near = boxSize / 100;
+        camera.far = boxSize * 100;
+
+        camera.updateProjectionMatrix();
+
+        camera.lookAt(boxCenter.x, boxCenter.y, boxCenter.z);
+    }
+
+    {
+        const objLoader = new THREE.OBJLoader2();
+        objLoader.loadMtl(mtlFileLink, null, (materials) => {
+            objLoader.setMaterials(materials);
+            objLoader.load(objFileLink, (event) => {
+
+
+                const root = event.detail.loaderRootNode;
+                scene.add(root);
+                const box = new THREE.Box3().setFromObject(root);
+
+                const boxSize = box.getSize(new THREE.Vector3()).length();
+                const boxCenter = box.getCenter(new THREE.Vector3());
+
+                frameArea(boxSize * 1.2, boxSize, boxCenter, camera);
+
+                controls.maxDistance = boxSize * 10;
+                controls.target.copy(boxCenter);
+                controls.update();
+                $('#d3-model-wrap').addClass('d3-model-wrap--after-loading');
+            });
+        });
+
+        console.log(objLoader)
+
+    }
+
+    function resizeRendererToDisplaySize(renderer) {
+        const canvas = renderer.domElement;
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+        const needResize = canvas.width !== width || canvas.height !== height;
+        if (needResize) {
+            renderer.setSize(width, height, false);
+        }
+        return needResize;
+    }
+
+    function render() {
+
+        if (resizeRendererToDisplaySize(renderer)) {
+            const canvas = renderer.domElement;
+            camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            camera.updateProjectionMatrix();
+        }
+
+        renderer.render(scene, camera);
+
+        requestAnimationFrame(render);
+    }
+
+    requestAnimationFrame(render);
+}
+
+    

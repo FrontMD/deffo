@@ -10,6 +10,7 @@
 @@include("./libs/swiper-bundle.min.js")
 @@include("./libs/aos.js")
 @@include("./libs/fancybox.umd.min.js")
+@@include("./libs/opti3d.min.js")
 
 //если желаете подключить библиотеку - раскомментируйте и добавьте @@
 // include("./libs/simplebar.min.js")

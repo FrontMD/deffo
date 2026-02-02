@@ -28,7 +28,7 @@ function getScrollbarWidth() {
     return scrollWidth
 }
 
-const jsTemplatePath = (typeof SITE_TEMPLATE_PATH !== 'undefined' && SITE_TEMPLATE_PATH ? SITE_TEMPLATE_PATH + '/' : '');
+const jsTemplatePath = (typeof SITE_TEMPLATE_PATH !== 'undefined' && SITE_TEMPLATE_PATH ? SITE_TEMPLATE_PATH + '/' : 'kjhkjhlkjhlkjhkljhkjh');
 
 document.addEventListener('DOMContentLoaded', () => {
     sectionBgSlider()
