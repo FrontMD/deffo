@@ -36,6 +36,28 @@
     &__row--reverse {
         flex-direction: row-reverse;
         justify-content: space-between;
+
+        @include max(tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__info {
+        padding-right: 7.065%;
+        padding-left: 0;
+
+        @include max(laptop) {
+            padding-right: 0;
+        }
+    }
+
+    &__row--reverse &__info {
+        padding-left: 7.065%;
+        padding-right: 0;
+
+        @include max(laptop) {
+            padding-left: 0;
+        }
     }
 
     &__title {
@@ -85,9 +107,6 @@
             object-fit: cover;
         }
 
-        /*img+.d-btn {
-            margin-top: 20px;
-        }*/
     }
 
     &__row--reverse &__img {

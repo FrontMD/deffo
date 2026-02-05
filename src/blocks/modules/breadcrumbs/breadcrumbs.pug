@@ -22,7 +22,7 @@ mixin breadcrumbs(props = defaultBreadCrumbsProps)
 
     section.section.breadcrumbs(class=checkProps.classes data-aos="fade-right" data-duration="600" data-aos-delay="1000")&attributes(attributes)
         .d-container
-            .custom-scrollbar.breadcrumbs__scroll(data-js="customScrollbar")
+            .breadcrumbs__scroll(data-js="customScrollbar")
                 ul.breadcrumbs__list
                     each val, index in checkProps.items
                         li.breadcrumbs__item(class= (index === checkProps.items.length - 1) ? "breadcrumbs__item--current" : "")

@@ -97,13 +97,6 @@ function validation() {
                                     error(input, 'Некорректный номер телефона').set()
                                 }
                                 break                              
-                            /*case 'file':
-                                if (valueField.length > 0) {
-                                    error(input).remove()
-                                } else {
-                                    error(input, 'Необходимо прикрепить файл').set()
-                                }
-                                break*/
                             case 'checkbox':
                                 if (field.checked) {
                                     error(input).remove()

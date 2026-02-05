@@ -108,6 +108,5 @@ function widthСalculation(targetInput, minValue, maxValue) {
     spanForWidth.innerHTML = targetInput.value;
 
     targetInput.style.width = spanForWidth.offsetWidth + 30 + 'px'; //ширина текста + отступы до кнопок
-    //item.style.width = spanForWidth.offsetWidth + 89 + 'px'; //ширина текста + отступы до кнопок + ширина кнопок
 
 }

@@ -63,7 +63,7 @@
 }
 
 
-/*.field {
+.field {
 
     &--checkbox {
         width: fit-content;
@@ -90,20 +90,21 @@
     &--checkbox .fake-checkbox {
         display: block;
         position: relative;
-        width: 40px;
-        height: 26px;
-        background-color: $c-text;
+        width: 32px;
+        height: 20px;
+        background-color: $c-border;
         flex-shrink: 0;
         flex-grow: 0;
         transition: all $tr;
         border-radius: 13px;
+        cursor: pointer;
 
         &::after {
             content: '';
             position: absolute;
-            width: 22px;
-            height: 22px;
-            left: 2px;
+            width: 14px;
+            height: 14px;
+            left: 3px;
             top: 50%;
             transform: translateY(-50%);
             background-color: $c-white;
@@ -113,14 +114,14 @@
     }
 
     &--checkbox input:checked~.fake-checkbox {
-        background-color: $c-accent;
+        background-color: #A37F6B;
     }
 
     &--checkbox input:checked~.fake-checkbox::after {
-        left: 16px;
+        left: 15px;
     }
 
-    &--checkbox .fake-checkbox {
+    /*&--checkbox .fake-checkbox {
         &--text {
             display: flex;
             align-items: flex-start;
@@ -178,8 +179,8 @@
             color: $c-white;
 
         }
-    }
-}*/
+    }*/
+}
 
 /*.field {
 
@@ -607,7 +608,7 @@
 .field {
 
     &--noFormSelect {
-        width: fit-content;
+        width: fit-content !important;
     }
 
     &--noFormSelect .select2 {
@@ -629,6 +630,72 @@
                 min-height: auto;
                 background: transparent;
                 border: none;
+            }
+        }
+    }
+
+}
+
+.field {
+
+    &--selectInFilter {
+        display: block;
+        width: fit-content;
+
+        @include max(mobile) {
+            width: 100%;
+        }
+    }
+
+    &--selectInFilter .select2 {
+        border-radius: 0;
+        background-color: $c-cards-bg;
+        border-radius: 40px;
+        width: fit-content !important;
+
+        @include max(mobile) {
+            width: 100% !important;
+        }
+
+        .selection {
+            width: auto;
+
+            @include max(mobile) {
+                width: 100% !important;
+            }
+        }
+
+        &.select2-container--default {
+
+            .select2-selection--single,
+            .select2-selection--multiple {
+                padding: 12px 25px;
+                min-height: 60px;
+                color: $c-white;
+                background: transparent;
+                border: none;
+                gap: 20px;
+            }
+
+            .select2-selection--single,
+            .select2-selection--multiple {
+
+                .select2-selection__rendered,
+                .select2-selection__placeholder {
+                    min-width: 90px;
+                    font-weight: 500;
+                }
+
+                .select2-selection__arrow {
+                    height: 24px;
+                    width: 24px;
+
+                    &::before {
+                        background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.28 5.9668L8.9333 10.3135C8.41997 10.8268 7.57997 10.8268 7.06664 10.3135L2.71997 5.9668' stroke='%23ffffff' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                    }
+                }
             }
         }
     }
@@ -723,23 +790,6 @@
     color: $c-text;
     transition: color $tr;
 }
-
-/*.field.active .select2 {
-    background-color: $c-text;
-    border-color: $c-border;
-    color: $c-white;
-
-    .select2-selection--single,
-    .select2-selection--multiple {
-        .select2-selection__rendered {
-            color: $c-white;
-        }
-
-        .select2-selection__arrow::before {
-            background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.332 6.00004L7.9987 9.33337L4.66537 6.00004' stroke='%23fff' stroke-linecap='square'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
-        }
-    }
-}*/
 
 .form--design2 {
     .field {

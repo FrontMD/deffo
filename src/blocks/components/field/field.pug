@@ -16,6 +16,7 @@
             }
         ],
         selectNoForm: false,
+        selectInFilter: false,
         hasError: false
     }
 
@@ -29,10 +30,11 @@ mixin field(props = defaultFieldProps)
             inputAttr: props.inputAttr ? props.inputAttr : defaultFieldProps.inputAttr,
             selectOptions: props.selectOptions ? props.selectOptions : defaultFieldProps.selectOptions,
             selectNoForm: props.selectNoForm ? props.selectNoForm : defaultFieldProps.selectNoForm,
+            selectInFilter: props.selectInFilter ? props.selectInFilter : defaultFieldProps.selectInFilter,
             hasError: props.hasError ? props.hasError : defaultFieldProps.hasError,
         }
 
-    label.field(class= `${checkProps.classes} ${checkProps.resetBtn ? "field--reset" : ""} ${checkProps.selectNoForm === true ? 'field--noFormSelect' : ''} ${checkProps.type === 'radio' ? 'field--radio' : ''} ${checkProps.type === 'checkbox' ? 'field--checkbox' : ''}` data-js='formField')&attributes(attributes)
+    label.field(class= `${checkProps.classes} ${checkProps.resetBtn ? "field--reset" : ""} ${checkProps.selectNoForm === true ? 'field--noFormSelect' : ''} ${checkProps.selectInFilter === true ? 'field--selectInFilter' : ''} ${checkProps.type === 'radio' ? 'field--radio' : ''} ${checkProps.type === 'checkbox' ? 'field--checkbox' : ''}` data-js='formField')&attributes(attributes)
         - if(checkProps.tag === 'input')
             input.field__input(type=checkProps.type placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
             - if(checkProps.type === 'radio')

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Каталог продукции</title>
+    <title>Каталог (категория)</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -260,74 +260,196 @@
                             <use xlink:href="img/sprites/sprite.svg#arrow_breadcrumbs"></use>
                           </svg></span>
                       </li>
-                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Каталог</span>
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Каталог</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_breadcrumbs"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item"><a href="javascript:void(0);">Фасады с решеткой</a><span class="breadcrumbs__separator">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_breadcrumbs"></use>
+                          </svg></span>
+                      </li>
+                      <li class="breadcrumbs__item breadcrumbs__item--current"><span>Фасад прямой с решеткой 6 №7</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </section>
-              <section class="s-catalog section section--inner" data-js="sCatalog"> 
-                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sCatalog']" data-aos-anchor-placement="top-center"> </div>
-                <div data-js="sCatalogTitle" data-anim-type="opacity"> 
-                      <div class="title  title--40">
-                        <h1 data-anim-type="textColor">Каталог продукции</h1>
+              <section class="section s-title section--inner" data-js="sTitle" data-anim-id="sTitle">
+                <div data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-anim-id='sTitle']" data-aos-anchor-placement="top-center"></div>
+                <div class="d-container">
+                  <div class="s-title__container">
+                    <div data-js="sTitleTitle" data-anim-type="opacity">
+                          <div class="title s-title__title title--40">
+                            <h2 data-anim-type="textColor">Фасады</h2>
+                          </div>
+                    </div>
+                    <div class="s-title__text text-editor" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor="[data-js=&quot;sTitle&quot;]" data-aos-anchor-placement="top-center">Многолетний опыт, профессиональные сотрудники, а также современное оборудование <br>и широкий выбор ассортимента наших каталогов позволяют с легкостью решать любые вопросы, <br>которые могут возникать перед нашими клиентами.</div>
+                  </div>
+                  <div class="s-title__filter catalog-filter" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" data-aos-anchor="[data-js=&quot;sTitle&quot;]" data-aos-anchor-placement="top-center">
+                    <form class="catalog-filter__form" action="#">
+                          <label class="field    field--selectInFilter  " data-js="formField">
+                            <select class="field__select" data-placeholder="Категория" data-js="formSelect">
+                              <option value="Виды продукции" selected>Виды продукции</option>
+                              <option value="Декоративные элементы">Декоративные элементы</option>
+                              <option value="Фрезеровки">Фрезеровки</option>
+                              <option value="Типы покрытия">Типы покрытия</option>
+                              <option value="Торцы фасадов">Торцы фасадов</option>
+                              <option value="Патина">Патина</option>
+                            </select>
+                          </label>
+                      <div class="catalog-filter__toggle filter-toggle">
+                            <label class="field      field--checkbox" data-js="formField">
+                              <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"></span>
+                            </label>
+                        <div class="filter-toggle__text">Только новинки</div>
                       </div>
-                </div>
-                <div class="s-catalog__list">
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_1.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>Виды продукции</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_2.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>Торцы фасадов</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_3.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>Патина</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_4.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>фрезеровки</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_5.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>Типы покрытия</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
-                  </div>
-                  <div class="catalog-card" data-js="catalogCard">
-                    <div class="catalog-card__bg"><img src="img/catalog/card_6.webp" alt=""></div>
-                    <div class="catalog-card__title" data-js="catalogCardTitle"><span>декоративные элементы</span></div><a class="catalog-card__link" href="javascript:void(0);"></a>
+                    </form><a class="d-btn catalog-filter__btn" href="javascript:void(0);" data-modal="#callbackModal"><span>Не нашли нужное?</span></a>
                   </div>
                 </div>
               </section>
-              <section class="s-conditions section section--inner" data-anim-id="sConditions"> 
+              <section class="prods-list section section--inner" data-js="prodsList">
                 <div class="d-container">
-                  <div class="s-conditions__list">
-                    <div class="condition-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom">
-                      <div class="condition-card__num">01</div>
-                      <div class="condition-card__icon"><img src="img/conditions/conditions_1.svg" alt=""></div>
-                      <div class="condition-card__title">ДОСТАВКА <br>И СБОРКА МЕБЕЛИ</div>
-                      <div class="condition-card__text text-editor">Доставим ваш заказ и соберём мебель на квартире в один день</div>
-                    </div>
-                    <div class="condition-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom">
-                      <div class="condition-card__num">02</div>
-                      <div class="condition-card__icon"><img src="img/conditions/conditions_2.svg" alt=""></div>
-                      <div class="condition-card__title">БЕСПЛАТНОЕ <br>ИЗГОТОВЛЕНИЕ</div>
-                      <div class="condition-card__text text-editor">3D-макета командой дизайнеров</div>
-                    </div>
-                    <div class="condition-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom">
-                      <div class="condition-card__num">03</div>
-                      <div class="condition-card__icon"><img src="img/conditions/conditions_3.svg" alt=""></div>
-                      <div class="condition-card__title">БЕСПЛАТНЫЙ <br>ЗАМЕР</div>
-                      <div class="condition-card__text text-editor">Вызови мастера на бесплатный замер для изготовления мебели</div>
-                    </div>
-                    <div class="condition-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800" data-aos-anchor="[data-anim-id='sConditions']" data-aos-anchor-placement="top-bottom">
-                      <div class="condition-card__num">04</div>
-                      <div class="condition-card__icon"><img src="img/conditions/conditions_4.svg" alt=""></div>
-                      <div class="condition-card__title">ГАРАНТИРУЕМ <br>ИЗГОТОВЛЕНИЕ В СРОК</div>
-                      <div class="condition-card__text text-editor">Выплачиваем неустойку 0,01% за каждый просроченный день</div>
-                    </div>
+                  <div class="prods-list__items" data-js="prodsList">
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_3.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №1</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_1.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №2</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_3.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №1</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_1.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №2</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_2.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №3</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_3.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №1</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_2.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №3</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_1.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №2</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_4.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №3</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_5.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №1</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_6.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №2</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_4.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №3</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_5.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №1</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_6.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №2</div>
+                        </div>
+                        <div class="prod-card" data-js="prodCard"><a class="prod-card__link" href="javascript:void(0);"></a>
+                          <div class="prod-card__top">
+                            <div class="prod-card__img"><img src="img/catalog/prod_4.webp" alt=""></div><a class="prod-card__favorite" href="javascript:void(0);">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#c_favorite"></use>
+                              </svg></a>
+                          </div>
+                          <div class="prod-card__title">Фасад прямой с решеткой №3</div>
+                        </div>
                   </div>
+                      <div class="pagination prods-list__pagination" data-js="pagination"><a class="pagination__page active" href="javascript:void(0);">1</a><a class="pagination__page" href="javascript:void(0);">2</a><a class="pagination__page" href="javascript:void(0);">3</a>
+                      </div>
                 </div>
               </section>
         </div>

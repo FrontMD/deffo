@@ -2,6 +2,7 @@
     const defaultProdsListProps = {
         classes: '',
         title: '',
+        hasPagination: false,
         cards: [
             {
                 title: 'Фасад прямой с решеткой №3',
@@ -69,14 +70,15 @@ mixin prods-list(props= defaultProdsListProps)
         const checkProps = {
             classes: props.classes ? props.classes : defaultProdsListProps.classes,
             title: props.title ? props.title : defaultProdsListProps.title,
+            hasPagination: props.hasPagination ? props.hasPagination : defaultProdsListProps.hasPagination,
             cards: props.cards ? props.cards : defaultProdsListProps.cards,
         }
 
     section.prods-list.section.section--inner(class= checkProps.classes data-js="prodsList")&attributes(attributes)
         .d-container
-            - if(checkProps.title)
+            - if(checkProps.title.length > 0)
                 div(data-js="scrollTrigger") 
-                div(data-js="prodsListTitle" data-anim-type='opacity') 
+                div(class="prods-list__title" data-js="prodsListTitle" data-anim-type='opacity') 
                     +title({
                         text: checkProps.title,
                         tag: 'h2',
@@ -91,4 +93,9 @@ mixin prods-list(props= defaultProdsListProps)
                     +prod-card(cardsList[cardsCount])
 
                     - cardsCount++
+
+            - if(checkProps.hasPagination === true)
+                +pagination({
+                    classes: 'prods-list__pagination'
+                })
 

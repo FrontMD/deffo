@@ -12,7 +12,7 @@ mixin s-download(props= defaultSDownloadProps)
     section.s-download.section.section--fh(class= checkProps.classes data-js="sDownload")&attributes(attributes)  
         div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sDownload']" data-aos-anchor-placement="top-center")
         .section__bg
-            img(src='img/home/download.webp' alt='').s-download__bg(data-anim-type="opacityLong" data-js="sDownloadBg")
+            img(src='img/home/download.webp' alt='' data-anim-type="opacityLong" data-js="sDownloadBg").s-download__bg
 
         .d-container
             .s-download__content

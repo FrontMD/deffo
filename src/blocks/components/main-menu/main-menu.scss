@@ -4,23 +4,11 @@
     gap: 5px;
     width: fit-content;
 
-    /*@include max(laptop) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-    }*/
-
     &__items {
         display: flex;
         align-items: center;
         gap: 5px;
         width: fit-content;
-
-        /*@include max(laptop) {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0;
-        }*/
     }
 
     &__item {
@@ -40,11 +28,6 @@
             font-size: 12px;
         }
 
-        /* @include max(laptop) {
-            flex-direction: column;
-            padding: 10px 0;
-            align-items: flex-start;
-        }*/
     }
 
     &__chevron {
@@ -95,19 +78,6 @@
         z-index: 10;
 
     }
-
-    /*&__submenu {
-
-        @include min(laptop) {
-            position: absolute;
-            left: 0;
-            top: 80%;
-            visibility: hidden;
-            opacity: 0;
-            transition: all $tr;
-            z-index: 10;
-        }
-    }*/
 }
 
 .main-menu {
@@ -162,11 +132,6 @@
     background-color: $c-bg-grey;
     border-radius: $br-10;
     padding: 15px 0;
-
-    /*@include max(laptop) {
-        padding: 0px;
-        background-color: transparent;
-    }*/
 
     &__item {
         position: relative;
