@@ -1,0 +1,27 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Акции"
+    - const fullHeader = false
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Акции',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+            +s-title({
+                title: 'Акции',
+                text: 'Будьте в курсе последних новостей и событий от компании Дядя Федор. <br>Узнайте о новинках мебельной индустрии, акциях и событиях нашей компании.'
+            })
+            +offer-cards
+

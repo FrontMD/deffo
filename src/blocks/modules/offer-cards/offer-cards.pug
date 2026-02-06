@@ -1,0 +1,107 @@
+-
+    const defaultOfferCardsProps = {
+        classes: '',
+        rows: [
+            {
+                img: "img/stocks/stock_2.webp",
+                title: 'Акционная цена <br>на фасады в эмали 4 600 ₽/м2!',
+                text: `
+                <p>Да-да, мы не повышаем цены, как все сейчас, а понижаем до рекордных цифр!</p>
+                <p>И уже с 06.10.2025 года готовы предложить СУПЕР ЦЕНУ — 4 600 ₽ за м2 фасадов без фрезеровки в трёх популярных цветах эмали — Ral9003, Ral1013, Ral7047!</p>
+                <p>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>`,
+                imgRight: false,
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        cMode: 'accent-br'
+                    },
+                ]
+            },
+            {
+                img: "img/stocks/stock_6.webp",
+                title: 'Акционная цена <br>на фасады в эмали 4 600 ₽/м2!',
+                text: `
+                <p>Да-да, мы не повышаем цены, как все сейчас, а понижаем до рекордных цифр!</p>
+                </>И уже с 06.10.2025 года готовы предложить СУПЕР ЦЕНУ — 4 600 ₽ за м2 фасадов без фрезеровки в трёх популярных цветах эмали — Ral9003, Ral1013, Ral7047!</p>
+                </>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>
+                `,
+                imgRight: true,
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        cMode: 'accent-br'
+                    }
+                ],
+            },
+            {
+                img: "img/stocks/stock_7.webp",
+                title: 'Акция на мультишпон -40%!',
+                text: `
+                <p>Скидка 40% на весь ассортимент мультишпона!</p>
+                <p>Предложение ограничено. Не упустите шанс.</p>
+                <p>В нашем ассортименте вы найдете широкий выбор различного шпона. Низкие цены, отличное качество и быстрая доставка — все для вашего удобства</p>
+                `,
+                imgRight: false,
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        cMode: 'accent-br'
+                    }
+                ],
+            },
+            {
+                img: "img/stocks/stock_8.webp",
+                title: 'Скидка 40% на фасады <br>категории "С" в матовой пленке!',
+                text: `
+                <p>Компания «Дядя Федор» с радостью объявляет о запуске новой акции!</p>
+                <p>С 27 октября стартует уникальная возможность приобрести высококачественные фасады категории С в матовой плёнке всего за 4000 руб/м²!</p>
+                <p>Это -40% на фасады, которые станут основой стильных и долговечных проектов — от лаконичных кухонь до роскошных гардеробных и гостиных.</p>
+                `,
+                imgRight: false,
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        cMode: 'accent-br'
+                    }
+                ],
+            },
+        ],
+    }
+
+mixin offer-cards(props= defaultOfferCardsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultOfferCardsProps.classes,
+            rows: props.rows ? props.rows : defaultOfferCardsProps.rows,
+        }
+
+    section.offer-cards.section.section--inner(class= checkProps.classes)&attributes(attributes)
+        .d-container
+            .offer-cards__container
+                - let rows = checkProps.rows 
+                - let count = 0
+
+                - while(count < rows.length)
+
+                    - let row = rows[count]
+                    - let dirClass = row.imgRight === true ? 'offer-cards__row--reverse' : ''
+
+                    .offer-cards__row(class=dirClass data-aos=`fade-up` data-aos-duration="600" data-aos-anchor-placement="top-bottom")
+                        .offer-cards__img(data-aos=`${row.imgRight === true ? 'fade-left' : 'fade-right'}` data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="top-bottom")
+                            img(src=row.img, alt="")
+                        .offer-cards__info
+                            +title({
+                                classes: 'offer-cards__title',
+                                text: row.title,
+                                size: '40'
+                            })(data-aos='fade-up' data-aos-duration="600" data-aos-delay="100" data-aos-anchor-placement="bottom-bottom")
+                            .offer-cards__text.text-editor(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="top-bottom")!= row.text
+                            - if(row.btns !== false)
+                                .offer-cards__btns
+                                    - let btnsCount = 0
+                                    - let btnsList = row.btns 
+                                    - while(btnsCount < btnsList.length) 
+                                        +btn(btnsList[btnsCount])(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom")
+
+                                        - btnsCount++
+                    - count++
