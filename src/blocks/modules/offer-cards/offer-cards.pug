@@ -10,6 +10,7 @@
                 <p>И уже с 06.10.2025 года готовы предложить СУПЕР ЦЕНУ — 4 600 ₽ за м2 фасадов без фрезеровки в трёх популярных цветах эмали — Ral9003, Ral1013, Ral7047!</p>
                 <p>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>`,
                 imgRight: false,
+                btnModal: '',
                 btns: [
                     {
                         name: 'Подробнее',
@@ -26,6 +27,7 @@
                 </>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>
                 `,
                 imgRight: true,
+                    btnModal: '',
                 btns: [
                     {
                         name: 'Подробнее',
@@ -42,6 +44,7 @@
                 <p>В нашем ассортименте вы найдете широкий выбор различного шпона. Низкие цены, отличное качество и быстрая доставка — все для вашего удобства</p>
                 `,
                 imgRight: false,
+                    btnModal: '',
                 btns: [
                     {
                         name: 'Подробнее',
@@ -57,7 +60,8 @@
                 <p>С 27 октября стартует уникальная возможность приобрести высококачественные фасады категории С в матовой плёнке всего за 4000 руб/м²!</p>
                 <p>Это -40% на фасады, которые станут основой стильных и долговечных проектов — от лаконичных кухонь до роскошных гардеробных и гостиных.</p>
                 `,
-                imgRight: false,
+                imgRight: true,
+                    btnModal: '',
                 btns: [
                     {
                         name: 'Подробнее',
@@ -87,6 +91,8 @@ mixin offer-cards(props= defaultOfferCardsProps)
                     - let dirClass = row.imgRight === true ? 'offer-cards__row--reverse' : ''
 
                     .offer-cards__row(class=dirClass data-aos=`fade-up` data-aos-duration="600" data-aos-anchor-placement="top-bottom")
+                        .offer-cards__pattern
+                            img(src="img/stocks/stock_pattern.svg" alt="")
                         .offer-cards__img(data-aos=`${row.imgRight === true ? 'fade-left' : 'fade-right'}` data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="top-bottom")
                             img(src=row.img, alt="")
                         .offer-cards__info
@@ -100,8 +106,11 @@ mixin offer-cards(props= defaultOfferCardsProps)
                                 .offer-cards__btns
                                     - let btnsCount = 0
                                     - let btnsList = row.btns 
-                                    - while(btnsCount < btnsList.length) 
-                                        +btn(btnsList[btnsCount])(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom")
+                                    - while(btnsCount < btnsList.length)
+                                        - if(row.btnModal.length > 0)
+                                            +btn(btnsList[btnsCount])(data-modal=`#${row.btnModal}` data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom")
+                                        - else
+                                            +btn(btnsList[btnsCount])(data-aos='fade-up' data-aos-duration="600" data-aos-delay="300" data-aos-anchor-placement="bottom-bottom")
 
                                         - btnsCount++
                     - count++

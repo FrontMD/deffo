@@ -1,0 +1,47 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Акции"
+    - const fullHeader = false
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Акции',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Акционная цена на фасады в эмали 4 600 ₽/м2!',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+            +offer-cards({
+                rows: [
+                    {
+                        img: "img/stocks/stock_2.webp",
+                        title: 'Акционная цена <br>на фасады в эмали 4 600 ₽/м2!',
+                        text: `
+                        <p>Да-да, мы не повышаем цены, как все сейчас, а понижаем до рекордных цифр!</p>
+                        <p>И уже с 06.10.2025 года готовы предложить СУПЕР ЦЕНУ — 4 600 ₽ за м2 фасадов без фрезеровки в трёх популярных цветах эмали — Ral9003, Ral1013, Ral7047!</p>
+                        <p>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>`,
+                        imgRight: false,
+                        btnModal: 'callbackModal',
+                        btns: [
+                            {
+                                classes: 'offer-cards__order',
+                                name: 'Оставить заявку',
+                                icon: 'arrow_btn'
+                            },
+                        ]
+                    }
+                ]
+            })
+

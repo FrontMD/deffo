@@ -1,0 +1,249 @@
+-
+    const defaultCatalogCategoryProps = {
+        classes: '',
+        rows: [
+            {
+                img: "img/stocks/stock_2.webp",
+                title: 'Акционная цена <br>на фасады в эмали 4 600 ₽/м2!',
+                text: `
+                <p>Да-да, мы не повышаем цены, как все сейчас, а понижаем до рекордных цифр!</p>
+                <p>И уже с 06.10.2025 года готовы предложить СУПЕР ЦЕНУ — 4 600 ₽ за м2 фасадов без фрезеровки в трёх популярных цветах эмали — Ral9003, Ral1013, Ral7047!</p>
+                <p>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>`,
+                imgRight: false,
+                btnModal: '',
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        cMode: 'accent-br'
+                    },
+                ]
+            },
+            {
+                img: "img/stocks/stock_6.webp",
+                title: 'Акционная цена <br>на фасады в эмали 4 600 ₽/м2!',
+                text: `
+                <p>Да-да, мы не повышаем цены, как все сейчас, а понижаем до рекордных цифр!</p>
+                </>И уже с 06.10.2025 года готовы предложить СУПЕР ЦЕНУ — 4 600 ₽ за м2 фасадов без фрезеровки в трёх популярных цветах эмали — Ral9003, Ral1013, Ral7047!</p>
+                </>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>
+                `,
+                imgRight: true,
+                    btnModal: '',
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        cMode: 'accent-br'
+                    }
+                ],
+            },
+            {
+                img: "img/stocks/stock_7.webp",
+                title: 'Акция на мультишпон -40%!',
+                text: `
+                <p>Скидка 40% на весь ассортимент мультишпона!</p>
+                <p>Предложение ограничено. Не упустите шанс.</p>
+                <p>В нашем ассортименте вы найдете широкий выбор различного шпона. Низкие цены, отличное качество и быстрая доставка — все для вашего удобства</p>
+                `,
+                imgRight: false,
+                    btnModal: '',
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        cMode: 'accent-br'
+                    }
+                ],
+            },
+            {
+                img: "img/stocks/stock_8.webp",
+                title: 'Скидка 40% на фасады <br>категории "С" в матовой пленке!',
+                text: `
+                <p>Компания «Дядя Федор» с радостью объявляет о запуске новой акции!</p>
+                <p>С 27 октября стартует уникальная возможность приобрести высококачественные фасады категории С в матовой плёнке всего за 4000 руб/м²!</p>
+                <p>Это -40% на фасады, которые станут основой стильных и долговечных проектов — от лаконичных кухонь до роскошных гардеробных и гостиных.</p>
+                `,
+                imgRight: true,
+                    btnModal: '',
+                btns: [
+                    {
+                        name: 'Подробнее',
+                        cMode: 'accent-br'
+                    }
+                ],
+            },
+        ],
+    }
+
+mixin catalog-category(props= defaultCatalogCategoryProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultCatalogCategoryProps.classes,
+            rows: props.rows ? props.rows : defaultCatalogCategoryProps.rows,
+        }
+
+    section.catalog-category.section.section--inner(class= checkProps.classes)&attributes(attributes)
+        .d-container
+            .catalog-category__layout
+                .catalog-category__sidebar.catalog-sidebar(data-js="catalogSidebar")
+                    .catalog-sidebar__filter-btn(data-js="catalogSidebarFilterOpen" data-aos-delay="200" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement='top-bottom')
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#filter`)
+
+                    form.catalog-filter(action="#" data-js="catalogSidebarCatalogFilter" data-aos-delay="200" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement='top-bottom')
+                        .catalog-sidebar__block
+                            .catalog-sidebar__title Новинка
+                            .checkbox-list
+                                +field({
+                                    type: 'checkbox',
+                                    checkboxText: 'Только новинки',
+                                    inputAttr: {
+                                        name: 'new'
+                                    }
+                                })
+                        .catalog-sidebar__block
+                            .catalog-sidebar__title Категории
+                            .checkbox-list
+                                +field({
+                                    type: 'checkbox',
+                                    checkboxText: 'Фасады базовые',
+                                    inputAttr: {
+                                        name: 'category'
+                                    }
+                                })
+                                +field({
+                                    type: 'checkbox',
+                                    checkboxText: 'Интегрированная ручка',
+                                    inputAttr: {
+                                        name: 'category'
+                                    }
+                                })
+                                +field({
+                                    type: 'checkbox',
+                                    checkboxText: 'Фасады под стекло №1',
+                                    inputAttr: {
+                                        name: 'category'
+                                    }
+                                })
+                                +field({
+                                    type: 'checkbox',
+                                    checkboxText: 'Фасады под стекло №2',
+                                    inputAttr: {
+                                        name: 'category'
+                                    }
+                                })
+                                +field({
+                                    type: 'checkbox',
+                                    checkboxText: 'Фасады под стекло №3',
+                                    inputAttr: {
+                                        name: 'category'
+                                    }
+                                })
+                                +field({
+                                    type: 'checkbox',
+                                    checkboxText: 'Фасады под стекло №4',
+                                    inputAttr: {
+                                        name: 'category'
+                                    }
+                                })
+                                +field({
+                                    type: 'checkbox',
+                                    checkboxText: 'Фасады с решеткой',
+                                    inputAttr: {
+                                        name: 'category'
+                                    }
+                                })
+
+                    .catalog-sidebar__block(data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" data-aos-anchor-placement='top-bottom')
+                        .catalog-sidebar__title Не нашли нужное?
+                        +form({
+                            btnText: 'Заказать звонок',
+                            btnCMode: 'full',
+                            text: 'Свяжитесь с нашим менеджером и он предложит Вам варианты.',
+                            privacyText: 'Я прочитал и согласен с <a href="javascript:void(0);" target="_blank">политикой</a> в отношении обработки персональных данных',
+                            design2: true,
+                        })
+                            +field({
+                                placeholder: 'Ваше имя',
+                                inputAttr: {
+                                    'required': '',
+                                    'data-type': 'letters'
+                                },
+                                hasError: true
+                            })
+                            +field({
+                                placeholder: 'Телефон',
+                                type: 'tel',
+                                inputAttr: {
+                                    'data-type': 'phoneNumber',
+                                    'required': '',
+                                    'data-v-name': 'phone'
+                                },
+                                hasError: true
+                            })
+
+                .catalog-category__main
+                    +prods-list({
+                        inner: true,
+                        hasPagination: true,
+                        cards: [
+                            {
+                                title: 'Фасад прямой с решеткой №1',
+                                img: 'img/catalog/prod_3.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №2',
+                                img: 'img/catalog/prod_1.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №1',
+                                img: 'img/catalog/prod_3.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №2',
+                                img: 'img/catalog/prod_1.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №3',
+                                img: 'img/catalog/prod_2.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №1',
+                                img: 'img/catalog/prod_3.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №3',
+                                img: 'img/catalog/prod_2.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №2',
+                                img: 'img/catalog/prod_1.webp',
+                            },
+
+                            {
+                                title: 'Фасад прямой с решеткой №3',
+                                img: 'img/catalog/prod_4.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №1',
+                                img: 'img/catalog/prod_5.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №2',
+                                img: 'img/catalog/prod_6.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №3',
+                                img: 'img/catalog/prod_4.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №1',
+                                img: 'img/catalog/prod_5.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №2',
+                                img: 'img/catalog/prod_6.webp',
+                            },
+                            {
+                                title: 'Фасад прямой с решеткой №3',
+                                img: 'img/catalog/prod_4.webp',
+                            },
+                        ]
+                    })

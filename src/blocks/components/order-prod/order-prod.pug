@@ -21,7 +21,7 @@ mixin order-prod(props = defaultOrderProdProps)
         .order-prod__img
             img(src=checkProps.img alt="")
         .order-prod__info
-            a.order-prod__title(href="javascript:void(0);") Фасад прямой под стекло 3 ВД №3
+            a.order-prod__title(href="javascript:void(0);")!= checkProps.title
             - if(checkProps.texts && checkProps.texts.length > 0)
                 - let textsCount = 0
                 - let textsList = checkProps.texts

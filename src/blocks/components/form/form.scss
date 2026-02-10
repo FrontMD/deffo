@@ -40,8 +40,7 @@
         font-weight: 400;
         font-size: 15px;
         line-height: 130%;
-        color: $c-text-light;
-        margin-top: 10px;
+        color: $c-white;
     }
 
     &__image-success {
@@ -53,14 +52,17 @@
         }
     }
 
-    &__title+&__fields,
-    &__text+&__fields,
-    &__fields+&__fields {
+    &__title+&__fields {
         margin-top: 30px;
 
         @include max(mobile) {
             margin-top: 20px;
         }
+    }
+
+    &__text+&__fields,
+    &__fields+&__fields {
+        margin-top: 15px;
     }
 
     &__fields {
@@ -259,6 +261,17 @@
         height: auto;
         min-height: 100%;
         visibility: visible;
+    }
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    @include max(mobile) {
+        gap: 10px;
     }
 }
 

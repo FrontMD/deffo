@@ -26,6 +26,7 @@
 @@include("../../blocks/modules/product-intro/product-intro.js")
 @@include("../../blocks/modules/gallery-list/gallery-list.js")
 @@include("../../blocks/modules/s-contacts/s-contacts.js")
+@@include("../../blocks/modules/catalog-category/catalog-category.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -53,4 +54,5 @@ document.addEventListener('DOMContentLoaded', () => {
     productIntro();
     galleryListAnim();
     sContacts();
+    catalogCategoryFilter();
 })

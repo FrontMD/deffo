@@ -1,0 +1,24 @@
+-
+    const defaultNCardProps = {
+        classes: '',
+        title: 'Каталоги DEFFO',
+        img: 'img/news/news_1.webp',
+        text: 'Чтобы продавать быстрее и увереннее, важно не только показать фото, но и дать клиенту «потрогать» материал: увидеть оттенок при разном освещении, почувствовать фактуру, сравнить варианты рядом. Поэтому мы подготовили для партнёров набор маркетинговых материалов, которые помогают закрывать сделки быстро.',
+    }
+
+mixin n-card(props = defaultNCardProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultNCardProps.classes,
+            title: props.title ? props.title : defaultNCardProps.title,
+            img: props.img ? props.img : defaultNCardProps.img,
+            text: props.text ? props.text : defaultNCardProps.text,
+        }
+
+    .n-card(class=checkProps.classes)&attributes(attributes)
+        .n-card__img
+            img(src=checkProps.img alt="")
+        .n-card__title!= checkProps.title
+        .n-card__text!= checkProps.text
+        a.n-card__link(href="javascript:void(0);") Подробнее
+

@@ -30,7 +30,7 @@ mixin s-title(props = defaultSTitleProps)
                         })
                 - if(checkProps.text.length > 0)
                     .s-title__text.text-editor(data-aos="fade-right" data-aos-duration="1000" data-aos-anchor='[data-js="sTitle"]' data-aos-anchor-placement='top-center')!= checkProps.text
-            - if(checkProps.hasFilter === true)
+            //- if(checkProps.hasFilter === true)
                 .s-title__filter.catalog-filter(data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" data-aos-anchor='[data-js="sTitle"]' data-aos-anchor-placement='top-center')
                     form.catalog-filter__form(action="#")
                         +field({

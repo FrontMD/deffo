@@ -3,6 +3,7 @@
         classes: '',
         title: '',
         hasPagination: false,
+        inner: false,
         cards: [
             {
                 title: 'Фасад прямой с решеткой №3',
@@ -71,21 +72,12 @@ mixin prods-list(props= defaultProdsListProps)
             classes: props.classes ? props.classes : defaultProdsListProps.classes,
             title: props.title ? props.title : defaultProdsListProps.title,
             hasPagination: props.hasPagination ? props.hasPagination : defaultProdsListProps.hasPagination,
+            inner: props.inner ? props.inner : defaultProdsListProps.inner,
             cards: props.cards ? props.cards : defaultProdsListProps.cards,
         }
 
-    section.prods-list.section.section--inner(class= checkProps.classes data-js="prodsList")&attributes(attributes)
-        .d-container
-            - if(checkProps.title.length > 0)
-                div(data-js="scrollTrigger") 
-                div(class="prods-list__title" data-js="prodsListTitle" data-anim-type='opacity') 
-                    +title({
-                        text: checkProps.title,
-                        tag: 'h2',
-                        size: '26',
-                        animColor: true
-                    })
-
+    - if(checkProps.inner === true)
+        .prods-list.prods-list--inner(class= checkProps.classes data-js="prodsList")&attributes(attributes)
             .prods-list__items(data-js="prodsList")
                 - let cardsCount = 0
                 - let cardsList = checkProps.cards
@@ -99,3 +91,28 @@ mixin prods-list(props= defaultProdsListProps)
                     classes: 'prods-list__pagination'
                 })
 
+    - else
+        section.prods-list.section.section--inner(class= checkProps.classes data-js="prodsList")&attributes(attributes)
+            .d-container
+                - if(checkProps.title.length > 0)
+                    div(data-js="scrollTrigger") 
+                    div(class="prods-list__title" data-js="prodsListTitle" data-anim-type='opacity') 
+                        +title({
+                            text: checkProps.title,
+                            tag: 'h2',
+                            size: '26',
+                            animColor: true
+                        })
+
+                .prods-list__items(data-js="prodsList")
+                    - let cardsCount = 0
+                    - let cardsList = checkProps.cards
+                    - while(cardsCount < cardsList.length)
+                        +prod-card(cardsList[cardsCount])
+
+                        - cardsCount++
+
+                - if(checkProps.hasPagination === true)
+                    +pagination({
+                        classes: 'prods-list__pagination'
+                    })
