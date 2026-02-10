@@ -1,4 +1,5 @@
 .d-btn {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,8 +7,7 @@
     width: fit-content;
     min-height: 59px;
     padding: 10px 25px;
-    background-color: #fff;
-    background-image: linear-gradient(90deg, #B68C74 0%, $c-accent-hover 100%);
+    background-color: $c-accent;
     font-family: $ff-montserrat;
     color: $c-white;
     font-weight: 600;
@@ -16,6 +16,7 @@
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
+    overflow: hidden;
     transition: all $tr;
 
     @include max(large) {
@@ -24,25 +25,46 @@
         padding: 10px 20px;
     }
 
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200%;
+        height: 100%;
+        background-image: linear-gradient(90deg, #B68C74 0%, $c-accent-hover 50%, #B68C74 100%);
+        transition: all 0.15s linear;
+    }
+
+    &:hover::after {
+        left: -100%;
+    }
+
     svg {
         width: 16px;
         height: 16px;
     }
 
-    &:hover {
-        background-image: linear-gradient(180deg, #B68C74 0%, $c-accent-hover 100%);
+    span,
+    svg {
+        position: relative;
+        z-index: 3;
     }
+
 
     &--transparent {
         padding: 0;
         color: $c-white;
         background-color: transparent;
-        background-image: none;
         min-height: auto;
 
         @include max(large) {
             min-height: auto;
             padding: 0;
+        }
+
+        &:after {
+            content: none;
         }
 
         svg {
@@ -57,28 +79,74 @@
 
     &--bordered {
         background-color: transparent;
-        background-image: none;
         transition: all $tr;
         border: solid 1px $c-border;
 
+        &:after {
+            content: none;
+        }
+
         &:hover {
-            background-image: none;
             border-color: $c-accent;
             color: $c-accent;
         }
     }
 
-    &--accent-br {
+    &--bordered-acc {
+        position: relative;
         background-color: transparent;
         background-image: none;
+        transition: all $tr;
+        color: $c-accent;
+        border: solid 1px;
+        border-image-source: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+        border-image-slice: 20;
+        border-image-repeat: stretch;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $c-accent-hover;
+            background-image: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+            opacity: 0;
+            transition: all $tr;
+        }
+
+        &:hover,
+        &.d-btn--active {
+            color: $c-white;
+        }
+
+        &:hover::after,
+        &.d-btn--active::after {
+            opacity: 1;
+            left: 0;
+        }
+
+        svg,
+        span {
+            position: relative;
+            z-index: 3;
+        }
+    }
+
+    &--accent-br {
+        background-color: transparent;
         transition: all $tr;
         border: solid 1px $c-border;
         color: $c-accent;
 
         &:hover {
-            background-image: none;
             border-color: $c-accent;
             color: $c-accent;
+        }
+
+        &:after {
+            content: none;
         }
     }
 
@@ -86,7 +154,6 @@
         padding: 0;
         color: $c-accent;
         background-color: transparent;
-        background-image: none;
         min-height: auto;
 
         @include max(large) {
@@ -106,7 +173,10 @@
 
         &:hover {
             color: $c-accent-hover;
-            background-image: none;
+        }
+
+        &:after {
+            content: none;
         }
     }
 
@@ -114,7 +184,6 @@
         padding: 13px 15px;
         color: $c-black;
         background-color: #AE846C;
-        background-image: none;
         min-height: 39px;
         border-radius: 20px;
         transition: all $tr;
@@ -132,6 +201,10 @@
         &:hover {
             color: $c-white;
             background-color: $c-accent-hover;
+        }
+
+        &:after {
+            content: none;
         }
     }
 

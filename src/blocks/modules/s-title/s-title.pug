@@ -3,7 +3,7 @@
         classes: '',
         title: '',
         text: '',
-        hasFilter: false
+        btns: []
     }
 
 mixin s-title(props = defaultSTitleProps)
@@ -12,7 +12,7 @@ mixin s-title(props = defaultSTitleProps)
             classes: props.classes ? props.classes : defaultSTitleProps.classes,
             title: props.title ? props.title : defaultSTitleProps.title,
             text: props.text ? props.text : defaultSTitleProps.text,
-            hasFilter: props.hasFilter ? props.hasFilter : defaultSTitleProps.hasFilter
+            btns: props.btns ? props.btns : defaultSTitleProps.btns
         }
 
     section.section.s-title.section--inner(class=checkProps.classes data-js="sTitle" data-anim-id="sTitle")&attributes(attributes)
@@ -30,48 +30,13 @@ mixin s-title(props = defaultSTitleProps)
                         })
                 - if(checkProps.text.length > 0)
                     .s-title__text.text-editor(data-aos="fade-right" data-aos-duration="1000" data-aos-anchor='[data-js="sTitle"]' data-aos-anchor-placement='top-center')!= checkProps.text
-            //- if(checkProps.hasFilter === true)
-                .s-title__filter.catalog-filter(data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" data-aos-anchor='[data-js="sTitle"]' data-aos-anchor-placement='top-center')
-                    form.catalog-filter__form(action="#")
-                        +field({
-                            tag: 'select',
-                            placeholder: 'Категория',
-                            selectOptions: [
-                                {
-                                    value: 'Виды продукции',
-                                    isActive: true
-                                },
-                                {
-                                    value: 'Декоративные элементы',
-                                    isActive: false
-                                },
-                                {
-                                    value: 'Фрезеровки',
-                                    isActive: false
-                                },
-                                {
-                                    value: 'Типы покрытия',
-                                    isActive: false
-                                },
-                                {
-                                    value: 'Торцы фасадов',
-                                    isActive: false
-                                },
-                                {
-                                    value: 'Патина',
-                                    isActive: false
-                                }
-                            ],
-                            selectInFilter: true,
-                        })
-                        .catalog-filter__toggle.filter-toggle
-                            +field({
-                                type: 'checkbox'
-                            })
-                            .filter-toggle__text Только новинки
-                    +btn({
-                        classes: 'catalog-filter__btn',
-                        name: 'Не нашли нужное?'
-                    })(data-modal="#callbackModal")
+            - if(checkProps.btns.length > 0)
+                .s-title__btns(data-aos="fade-up" data-aos-duration="600" data-aos-delay="500" data-aos-anchor='[data-js="sTitle"]' data-aos-anchor-placement='top-center')
+                    - let btnsCount = 0
+                    - let btnsList = checkProps.btns
+                    - while(btnsCount < btnsList.length)
+                        +btn(btnsList[btnsCount])
+
+                        - btnsCount++
 
 

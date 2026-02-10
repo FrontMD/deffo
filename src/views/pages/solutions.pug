@@ -1,0 +1,40 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Готовые решения"
+    - const fullHeader = false
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Готовые решения',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+            +s-title({
+                title: 'Готовые решения',
+                text: 'Многолетний опыт, профессиональные сотрудники, а также современное оборудование <br>и широкий выбор ассортимента наших каталогов позволяют с легкостью решать любые вопросы, <br>которые могут возникать перед нашими клиентами.',
+                btns: [
+                    {
+                        classes: 'd-btn--active',
+                        name: 'Все готовые решения',
+                        cMode: 'bordered-acc'
+                    },
+                    {
+                        name: 'Дизайнерские решения',
+                        cMode: 'bordered-acc'
+                    },
+
+                ]
+            })
+            +solutions-list
+
+

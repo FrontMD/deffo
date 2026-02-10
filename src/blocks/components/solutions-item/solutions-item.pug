@@ -1,0 +1,39 @@
+-
+    const defaultSolutionsItemProps = {
+        classes: '',
+        title: 'Гокли',
+        rows: [
+            {
+                text: 'Пленка ПВХ: Серый нубук',
+                isWhite: false
+            },
+            {
+                text: 'Фрезеровка: А6',
+                isWhite: false
+            },
+            {
+                text: 'Дизайнер: Смородинова Анна',
+                isWhite: true
+            }
+        ],
+        media: [],
+    }
+
+mixin solutions-item(props = defaultSolutionsItemProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSolutionsItemProps.classes,
+            title: props.title ? props.title : defaultSolutionsItemProps.title,
+            rows: props.rows ? props.rows : defaultSolutionsItemProps.rows,
+            media: props.media ? props.media : defaultSolutionsItemProps.media,
+        }
+
+    .solutions-item(class=checkProps.classes data-js="solutionsItem")&attributes(attributes)
+        .solutions-item__info
+            .solutions-item__title!= checkProps.title
+            .solutions-item__rows
+            +btn({
+                name: 'Подробнее'
+            })
+        .solutions-item__media
+

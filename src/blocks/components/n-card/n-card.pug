@@ -1,9 +1,9 @@
 -
     const defaultNCardProps = {
         classes: '',
-        title: 'Каталоги DEFFO',
+        title: 'Маркетинговые материалы DEFFO для роста ваших продаж',
         img: 'img/news/news_1.webp',
-        text: 'Чтобы продавать быстрее и увереннее, важно не только показать фото, но и дать клиенту «потрогать» материал: увидеть оттенок при разном освещении, почувствовать фактуру, сравнить варианты рядом. Поэтому мы подготовили для партнёров набор маркетинговых материалов, которые помогают закрывать сделки быстро.',
+        text: 'Чтобы продавать быстрее и увереннее, важно не только показать фото, но и дать клиенту «потрогать» материал: увидеть оттенок при разном освещении, почувствовать фактуру, сравнить варианты рядом. <br>Поэтому мы подготовили для партнёров набор маркетинговых материалов, которые помогают закрывать сделки быстро.',
     }
 
 mixin n-card(props = defaultNCardProps)
@@ -18,7 +18,7 @@ mixin n-card(props = defaultNCardProps)
     .n-card(class=checkProps.classes)&attributes(attributes)
         .n-card__img
             img(src=checkProps.img alt="")
-        .n-card__title!= checkProps.title
-        .n-card__text!= checkProps.text
-        a.n-card__link(href="javascript:void(0);") Подробнее
-
+        .n-card__info
+            .n-card__title!= checkProps.title
+            .n-card__text!= checkProps.text
+            a.n-card__link(href="javascript:void(0);") Подробнее

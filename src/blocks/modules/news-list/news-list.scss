@@ -1,0 +1,28 @@
+.news-list {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+
+        @include max(laptop) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include max(mobile) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 12px;
+        }
+    }
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 60px;
+
+        @include max(mobile) {
+            margin-top: 40px;
+        }
+    }
+}

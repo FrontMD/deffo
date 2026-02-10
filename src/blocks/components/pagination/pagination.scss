@@ -4,7 +4,7 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     align-items: center;
-    gap: 2px;
+    gap: 20px;
     width: 100%;
     margin: 0 auto;
 
@@ -12,8 +12,13 @@
         gap: 10px;
     }
 
+    &--center {
+        justify-content: center;
+    }
+
     &__page,
     &__separator {
+        position: relative;
         display: flex !important;
         align-items: center;
         justify-content: center;
@@ -38,16 +43,39 @@
             font-size: 14px;
             border-image-slice: 10;
         }
+
     }
 
     &__page {
         transition: all $tr;
 
-        &.active,
-        &:hover {
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
             background-color: $c-accent-hover;
-            background: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+            background-image: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+            opacity: 0;
+            transition: all $tr;
+        }
+
+        &:hover,
+        &.active {
+            background-image: none;
             color: $c-white !important;
+        }
+
+        &:hover::after,
+        &.active::after {
+            opacity: 1;
+        }
+
+        span {
+            position: relative;
+            z-index: 3;
         }
     }
 

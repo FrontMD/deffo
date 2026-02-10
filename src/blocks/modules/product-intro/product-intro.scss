@@ -353,6 +353,7 @@
     }
 
     &__favorite {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -363,13 +364,32 @@
         color: $c-accent;
         transition: color $tr;
 
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $c-accent-hover;
+            background-image: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
+            opacity: 0;
+            transition: all $tr;
+        }
+
         &:hover {
-            color: $c-accent-hover;
+            color: $c-white;
+        }
+
+        &:hover::after {
+            opacity: 1;
         }
 
         svg {
             width: 24px;
             height: 24px;
+            z-index: 3;
+            position: relative;
         }
     }
 

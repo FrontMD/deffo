@@ -17,11 +17,13 @@ mixin pagination(props = defaultPaginationProps)
             -if(checkProps.separator === true)
                 while i <= checkProps.count
                     -if(i < 4 || i == checkProps.count)
-                        a.pagination__page(href="javascript:void(0);" class= i===1 ? "active" : "")= i
+                        a.pagination__page(href="javascript:void(0);" class= i===1 ? "active" : "")
+                            span!= i
                     -if(i == 4)
                         .pagination__separator ...
                     - i++
             - else
                 while i <= checkProps.count
-                    a.pagination__page(href="javascript:void(0);" class= i===1 ? "active" : "")= i
+                    a.pagination__page(href="javascript:void(0);" class= i===1 ? "active" : "")
+                        span!= i
                     - i++
