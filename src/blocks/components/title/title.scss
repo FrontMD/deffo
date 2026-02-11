@@ -39,6 +39,25 @@
         }
     }
 
+    &--50 {
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 100%;
+        text-transform: uppercase;
+
+        @include max(large) {
+            font-size: 40px;
+        }
+
+        @include max(mobile) {
+            font-size: 32px;
+        }
+
+        @include max(xs) {
+            font-size: 26px;
+        }
+    }
+
     &--40 {
         font-size: 40px;
         font-weight: 500;
@@ -86,39 +105,21 @@
         }
     }
 
-    /*
-    &--22 {
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 130%;
-        text-transform: uppercase;
-        letter-spacing: -0.04em;
+    &--no-upper {
+        font-size: 40px;
+        text-transform: none;
 
-        @include max(laptop) {
-            font-size: 20px;
+        @include max(large) {
+            font-size: 40px;
         }
 
-    }
-
-    &--20 {
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 130%;
-        text-transform: uppercase;
-        letter-spacing: -0.04em;
-
-        @include max(laptop) {
-            font-size: 18px;
+        @include max(tablet) {
+            font-size: 32px;
         }
 
         @include max(mobile) {
-            font-size: 16px;
+            font-size: 26px;
         }
-
-        @include max(xs) {
-            font-size: 14px;
-        }
-
-    }*/
+    }
 
 }

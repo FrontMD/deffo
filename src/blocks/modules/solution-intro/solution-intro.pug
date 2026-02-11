@@ -10,7 +10,7 @@ mixin solution-intro(props= defaultSolutionIntroProps)
         }
 
     section.solution-intro.section(class= checkProps.classes data-js="solutionIntro")&attributes(attributes)    
-        .section__bg.section__bg--overlay
+        .section__bg
             picture
                 img(src='img/solutions/solutions_3.webp' alt='')
 
@@ -40,7 +40,7 @@ mixin solution-intro(props= defaultSolutionIntroProps)
                 +tooltip({
                     classes: 'solution-intro__tooltip',
                     text: 'Фасад прямой с интегрированной ручкой'
-                })(style="left: 54.4%; top: 76.8%;" data-anim-type='opacity')
+                })(style="left: 54.4%; top: 66.8%;" data-anim-type='opacity')
 
             .solution-intro__info(data-anim-id="solutionIntroInfo")
                 .condition-card.solution-intro__card(data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-anchor="[data-anim-id='solutionIntroInfo']" data-aos-anchor-placement="top-bottom")

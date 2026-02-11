@@ -21,6 +21,7 @@ mixin s-docs(props= defaultSDocsProps)
                     .section__title-block
                         div(data-js="sDocsTitle" data-anim-type='opacity')
                             +title({
+                                classes: 'title--no-upper',
                                 text: 'Техническая информация',
                                 tag: 'h1',
                                 size: '40',

@@ -31,7 +31,8 @@ function getScrollbarWidth() {
 const jsTemplatePath = (typeof SITE_TEMPLATE_PATH !== 'undefined' && SITE_TEMPLATE_PATH ? SITE_TEMPLATE_PATH + '/' : 'kjhkjhlkjhlkjhkljhkjh');
 
 document.addEventListener('DOMContentLoaded', () => {
-    sectionBgSlider()
+    searchInit();
+    sectionBgSlider();
     fancyboxInit();
 })
 
@@ -61,8 +62,8 @@ function fancyboxInit() {
         Carousel: {
             transition: "crossfade",
             Navigation: {
-                prevTpl: '<svg><use xlink:href="'+jsTemplatePath+'img/sprites/sprite.svg#chevron_slider_prev"></use></svg>',
-                nextTpl: '<svg><use xlink:href="'+jsTemplatePath+'img/sprites/sprite.svg#chevron_slider_next"></use></svg>',
+                prevTpl: '<svg><use xlink:href="'+jsTemplatePath+'img/sprites/sprite.svg#arrow_fancy_left"></use></svg>',
+                nextTpl: '<svg><use xlink:href="'+jsTemplatePath+'img/sprites/sprite.svg#arrow_fancy_right"></use></svg>',
               },
         },
         Thumbs: {
@@ -80,4 +81,72 @@ function fancyboxInit() {
         }
 
     });
+}
+
+// Поиск
+function searchInit() {
+    
+    const autoCompleteJS = new autoComplete({
+          selector: "[data-js='autoCompleteSearch']",
+          submit: true,
+          debounce: 300,
+          data: {
+              src: async (query) => {
+                try {
+                  const source = await fetch(`https://df-mdf.ru/catalog/search.json?term=${query}`);
+                  const data = await source.json();
+                  console.log(data)
+          
+                  return data;
+                } catch (error) {
+                  return error;
+                }
+              },
+              cache: false,
+              keys: ["label"],
+          },
+          resultsList: {
+              element: (list, data) => {
+                  if (!data.results.length) {
+                      const message = document.createElement("div");
+                      message.setAttribute("class", "no_result");
+                      message.innerHTML = `<span>Возможно позиция выведена, обратитесь к Вашему офис-менеджеру</span>`;
+                      list.prepend(message);
+                  }
+              },
+            noResults: true,
+          },
+          resultItem: {
+              highlight: true,
+              // tag: "p",
+              element: (list, data) => {
+                // console.log(list);
+                // console.log(data.value.image);
+                product_img = document.createElement('img');
+                product_img.setAttribute('height', 100);
+                product_img.setAttribute('width', 60);
+                product_img.src=data.value.image;
+    
+                list.prepend(product_img)
+              }
+          },
+          events: {
+            input: {
+                selection(event) {
+                    const feedback = event.detail;
+                    const input = autoCompleteJS.input;
+                    const selection = feedback.selection.value['label'].trim();
+                    previous_search_query = JSON.parse(window.sessionStorage.getItem('search_results') );
+                    if (previous_search_query === null) {
+                      window.sessionStorage.setItem('search_results', JSON.stringify(selection.split(",")) );
+                    } else {
+                      previous_search_query.push(selection);
+                      window.sessionStorage.setItem('search_results', JSON.stringify(previous_search_query) );  
+                    }
+                    location.href = event.detail.selection.value['value'];
+                }
+            },
+          }
+        });
+
 }

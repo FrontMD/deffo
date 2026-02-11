@@ -76,6 +76,10 @@ mixin main-menu(props = defaultMainMenuProps)
                         type: 'text',
                         title: '',
                         placeholder: 'Поиск по товарам',
+                        inputAttr: {
+                            'data-js': 'autoCompleteSearch'
+                        }
+
                     })
 
                     .menu-search__results.search-results

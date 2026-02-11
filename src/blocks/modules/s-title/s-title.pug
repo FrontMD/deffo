@@ -22,7 +22,7 @@ mixin s-title(props = defaultSTitleProps)
                 - if(checkProps.title.length > 0)
                     div(data-js="sTitleTitle" data-anim-type='opacity')
                         +title({
-                            classes: 's-title__title',
+                            classes: 'title--no-upper',
                             text: checkProps.title,
                             tag: 'h2',
                             size: '40',

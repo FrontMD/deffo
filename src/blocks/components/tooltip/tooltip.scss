@@ -10,8 +10,13 @@
         cursor: pointer;
 
         svg {
-            width: 15px;
-            height: 15px;
+            width: 66px;
+            height: 66px;
+
+            @include max(mobile) {
+                width: 33px;
+                height: 33px;
+            }
         }
     }
 
@@ -36,6 +41,13 @@
         transition: all $tr;
         visibility: hidden;
         opacity: 0;
+
+        @include max(mobile) {
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 200px;
+            text-align: center;
+        }
     }
 
     &.active &__tooltip {
@@ -43,5 +55,9 @@
         left: 13px;
         visibility: visible;
         opacity: 1;
+
+        @include max(mobile) {
+            left: 50%;
+        }
     }
 }

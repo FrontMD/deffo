@@ -19,6 +19,7 @@ mixin gallery-slider(props= defaultGallerySliderProps)
                 .section__header
                     div(data-js="gallerySliderTitle" data-anim-type='opacity')
                         +title({
+                            classes: 'title--no-upper',
                             tag: 'h2',
                             size: '40',
                             text: checkProps.title,

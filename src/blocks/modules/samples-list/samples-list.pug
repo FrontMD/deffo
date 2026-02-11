@@ -39,6 +39,7 @@ mixin samples-list(props= defaultSamplesListProps)
             .section__header
                 div(data-js="samplesListTitle" data-anim-type='opacity')
                     +title({
+                        classes: 'title--no-upper',
                         tag: 'h2',
                         size: '40',
                         text: checkProps.title,

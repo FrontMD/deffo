@@ -14,6 +14,7 @@ mixin cards-slider(props= defaultCardsSliderProps)
             .cards-slider__header
                 div(data-js="cardsSliderTitle" data-anim-type='opacity')
                     +title({
+                        classes: 'title--no-upper',
                         text: 'Популярные готовые решения',
                         tag: 'h2',
                         size: '40',

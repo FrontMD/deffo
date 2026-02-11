@@ -11,6 +11,7 @@
 @@include("./libs/aos.js")
 @@include("./libs/fancybox.umd.min.js")
 @@include("./libs/opti3d.min.js")
+@@include("./libs/autoComplete.min.js")
 
 //если желаете подключить библиотеку - раскомментируйте и добавьте @@
 // include("./libs/simplebar.min.js")

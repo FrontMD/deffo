@@ -2,6 +2,7 @@
     const defaultSolutionsItemProps = {
         classes: '',
         title: 'Гокли',
+        group: 'gokli',
         rows: [
             {
                 text: 'Пленка ПВХ: Серый нубук',
@@ -16,7 +17,25 @@
                 isWhite: true
             }
         ],
-        media: [],
+        media: [
+            {
+                file: 'img/solutions/solutions_2.webp',
+                isVideo: false
+            },
+            {
+                file: 'img/solutions/solutions_6.webp',
+                isVideo: false
+            },
+            {
+                file: 'img/solutions/solutions_1.webp',
+                isVideo: false
+            },
+            {
+                file: 'public/video/solution.mp4',
+                preview: 'img/solutions/solutions_3.webp',
+                isVideo: true
+            }
+        ],
     }
 
 mixin solutions-item(props = defaultSolutionsItemProps)
@@ -24,16 +43,97 @@ mixin solutions-item(props = defaultSolutionsItemProps)
         const checkProps = {
             classes: props.classes ? props.classes : defaultSolutionsItemProps.classes,
             title: props.title ? props.title : defaultSolutionsItemProps.title,
+            group: props.group ? props.group : defaultSolutionsItemProps.group,
             rows: props.rows ? props.rows : defaultSolutionsItemProps.rows,
             media: props.media ? props.media : defaultSolutionsItemProps.media,
         }
 
     .solutions-item(class=checkProps.classes data-js="solutionsItem")&attributes(attributes)
         .solutions-item__info
-            .solutions-item__title!= checkProps.title
+            +title({
+                text: checkProps.title,
+                size: '50',
+                tag: 'h2'
+            })
             .solutions-item__rows
+                - let rowsCounter = 0
+                - let rowsList = checkProps.rows
+                - while(rowsCounter < rowsList.length)
+                    - let row = rowsList[rowsCounter]
+                    - let classColor = row.isWhite === true ? 'solutions-item__row--white' : ''
+                    .solutions-item__row(class = classColor)!= row.text
+
+                    - rowsCounter++
+
             +btn({
-                name: 'Подробнее'
+                name: 'Подробнее',
+                cMode: 'accent-br'
             })
         .solutions-item__media
+            - let slidesList = checkProps.media
+            - let slide = slidesList[0]
+
+            a.solutions-item__photo(href= slide.file data-fancybox=checkProps.group)
+                - if(slide.isVideo === true)
+                    img(src=slide.preview)
+                    .solutions-item__play
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#play`)
+                - else
+                    img(src=slide.file)
+
+            .solutions-item__photos
+                - let thumbsCount = 1
+                - while(thumbsCount < slidesList.length)
+                    - let thumb = slidesList[thumbsCount]                        
+                    a.solutions-item__photo(href= thumb.file data-fancybox=checkProps.group)
+                        - if(thumb.isVideo === true)
+                            img(src=thumb.preview)
+                            .solutions-item__play
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#play`)
+                        - else
+                            img(src=thumb.file)
+
+                    - thumbsCount++
+
+
+
+
+
+            //-.solutions-item__slider
+                .swiper-wrapper
+                    - let slidesCount = 0
+                    - while(slidesCount < slidesList.length)
+                        - let slide = slidesList[slidesCount]                        
+                        a.swiper-slide.solutions-item__slide(href= slide.file)
+                            - if(slide.isVideo === true)
+                                .solutions-item__preview
+                                    img(src=slide.preview)
+                                .solutions-item__play
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#play`)
+                            - else
+                                .solutions-item__preview
+                                    img(src=slide.file)
+
+                        - slidesCount++
+
+            //-.solutions-item__thumbs
+                .swiper-wrapper
+                    - let thumbsCount = 0
+                    - while(thumbsCount < slidesList.length)
+                        - let thumb = slidesList[thumbsCount]                        
+                        .swiper-slide.solutions-item__thumb
+                            - if(thumb.isVideo === true)
+                                .solutions-item__preview
+                                    img(src=thumb.preview)
+                                .solutions-item__play
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#play`)
+                            - else
+                                .solutions-item__preview
+                                    img(src=thumb.file)
+
+                        - thumbsCount++
 

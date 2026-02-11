@@ -14,6 +14,7 @@ mixin s-catalog(props= defaultSCatalogProps)
         div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sCatalog']" data-aos-anchor-placement="top-center") 
         div(data-js="sCatalogTitle" data-anim-type='opacity') 
             +title({
+                classes: 'title--no-upper',
                 text: 'Каталог продукции',
                 tag: 'h1',
                 size: '40',

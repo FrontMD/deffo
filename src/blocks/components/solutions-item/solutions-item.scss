@@ -1,25 +1,89 @@
 .solutions-item {
     display: flex;
-    flex-direction: column;
     align-items: stretch;
-    gap: 30px;
-    padding: 20px 20px 40px;
-    background-color: $c-cards-bg;
+    gap: 24px;
     color: $c-white;
 
     @include max(laptop) {
-        padding: 12px 12px 32px;
-    }
-
-    @include max(xs) {
-        padding: 10px 10px 24px;
         gap: 20px;
     }
 
-    &__img {
+    @include max(mobile) {
+        flex-direction: column;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        flex: 0 0 440px;
+
+        @include max(laptop) {
+            flex: 0 0 330px;
+        }
+
+        @include max(tablet) {
+            flex: 0 0 280px;
+        }
+
+        @include max(mobile) {
+            flex: 0 0 auto;
+            gap: 12px;
+        }
+    }
+
+    &__rows {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        @include max(mobile) {
+            gap: 2px;
+        }
+    }
+
+    &__row {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 150%;
+        color: $c-text-light;
+
+        @include max(tablet) {
+            font-size: 15px;
+        }
+
+        &--white {
+            color: $c-white;
+        }
+    }
+
+    &__media {
+        display: grid;
+        grid-template-columns: minmax(0, 77.365%) minmax(0, 20.888%);
+        gap: 24px;
+
+        @include max(laptop) {
+            gap: 20px;
+        }
+
+        @include max(tablet) {
+            gap: 12px;
+        }
+
+        @include max(xs) {
+            gap: 8px;
+        }
+    }
+
+    &__photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
         width: 100%;
-        aspect-ratio: 1 / 1;
-        overflow: hidden;
+        aspect-ratio: 1 / 0.94;
+        cursor: zoom-in;
 
         img {
             width: 100%;
@@ -28,62 +92,81 @@
         }
     }
 
-    &__info {
+    &__play {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: 120px;
+        padding-left: 13px;
+        border-radius: 100%;
+        border: 1px solid $c-white;
+        color: $c-white;
+        opacity: 0.7;
+        transition: all $tr;
+        transform: translate(-50%, -50%);
+
+        @include max(large) {
+            width: 90px;
+            height: 90px;
+            padding-left: 9.75px;
+        }
+
+        @include max(laptop) {
+            width: 60px;
+            height: 60px;
+            padding-left: 6.667px;
+        }
+
+        @include max(mobile) {
+            width: 30px;
+            height: 30px;
+            padding-left: 3.25px;
+        }
+
+        &:hover {
+            opacity: 1;
+            border-color: $c-accent;
+            color: $c-accent;
+        }
+
+        svg {
+            width: 46.667px;
+            height: 57.334px;
+
+            @include max(large) {
+                width: 35px;
+                height: 43px;
+            }
+
+            @include max(laptop) {
+                width: 23.333px;
+                height: 28.666px;
+            }
+
+            @include max(mobile) {
+                width: 11.6667px;
+                height: 14.3338px;
+            }
+        }
+    }
+
+    &__photos {
         display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 20px;
-        flex: 1 1 auto;
-    }
 
-    &__title {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 150%;
-
-        @include max(xs) {
-            font-size: 16px;
-        }
-    }
-
-    &__text {
-        margin-bottom: 20px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-height: 6em;
-        color: $c-text-grey;
-
-
-        @include max(xs) {
-            font-size: 14px;
-        }
-    }
-
-    &__date {
-        color: $c-border;
-    }
-
-    &__link {
-        margin-top: auto;
-        width: fit-content;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 100%;
-        transition: all $tr;
-        color: $c-accent;
-
-        @include max(xs) {
-            font-size: 11px;
+        @include max(tablet) {
+            gap: 12px;
         }
 
-        &:hover {
-            color: $c-accent-hover;
+        @include max(xs) {
+            gap: 8px;
         }
     }
 }
