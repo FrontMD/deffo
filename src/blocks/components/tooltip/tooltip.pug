@@ -2,7 +2,7 @@
     const defaultTooltipProps = {
         classes: '',
         text: 'Аттестат выдает партнер гимназии',
-        icon: 'tooltip'
+        icon: 'img/tooltip.svg'
     }
 
 mixin tooltip(props= defaultTooltipProps)
@@ -16,5 +16,4 @@ mixin tooltip(props= defaultTooltipProps)
     .tooltip(class= checkProps.classes data-js="tooltip")&attributes(attributes)
         .tooltip__tooltip!= checkProps.text
         .tooltip__icon
-            svg
-                use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
+            img(src=checkProps.icon)

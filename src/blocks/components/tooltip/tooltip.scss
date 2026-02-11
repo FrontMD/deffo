@@ -9,9 +9,10 @@
         justify-content: center;
         cursor: pointer;
 
-        svg {
+        img {
             width: 66px;
             height: 66px;
+            object-fit: contain;
 
             @include max(mobile) {
                 width: 33px;

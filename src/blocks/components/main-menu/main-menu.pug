@@ -82,18 +82,19 @@ mixin main-menu(props = defaultMainMenuProps)
 
                     })
 
-                    .menu-search__results.search-results
-                        +order-prod({
-                            title: 'Фасад прямой под стекло 3 ВД №3',
-                            classes: 'search-results__item',
-                            texts: [
-                                '5 000 ₽'
-                            ]
-                        })
-                        +order-prod({
-                            title: 'Фасад прямой 3 ВД №3',
-                            classes: 'search-results__item',
-                            texts: [
-                                '5 000 ₽'
-                            ]
-                        })
+                    .menu-search__results(data-js="menuSearchResults")
+                        .search-results
+                            +order-prod({
+                                title: 'Фасад прямой под стекло 3 ВД №3',
+                                classes: 'search-results__item',
+                                texts: [
+                                    '5 000 ₽'
+                                ]
+                            })
+                            +order-prod({
+                                title: 'Фасад прямой 3 ВД №3',
+                                classes: 'search-results__item',
+                                texts: [
+                                    '5 000 ₽'
+                                ]
+                            })
