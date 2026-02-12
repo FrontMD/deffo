@@ -13,10 +13,8 @@ function galleryListAnim() {
             grid.setAttribute('data-anim-id', `galleryListGrid${idx}`)
             
             if(columnsCount > 1) {
-                //если больше одной колонки
                 const columnsEls = []
 
-                // формируем элементы колонок
                 for(let i = 0; i < columnsCount; i++) {
                     const col = document.createElement('div')
     
@@ -26,7 +24,6 @@ function galleryListAnim() {
                     columnsEls.push(col)
                 }
     
-                //распределяем карточки по колонкам
                 items.forEach((item, index) => {
                     let targetCol = index % columnsCount
                     setAttributes(item, {
@@ -39,11 +36,9 @@ function galleryListAnim() {
                     columnsEls[targetCol].appendChild(item)
                 })
 
-                //запускаем обработку скролла
                 initScrollParallax(columnsEls, grid)
 
             } else {
-                // если одна колонка, то карточкам добавляем анимацию
                 items.forEach(item => {
                     setAttributes(item, {
                         'data-aos': 'fade-up',

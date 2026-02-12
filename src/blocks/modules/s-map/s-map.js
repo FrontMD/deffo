@@ -12,7 +12,6 @@ function sMap() {
 	const mapWrap = sMap.querySelector('[data-js="sMapWrap"]')
 
     ymaps.ready(async function () {
-        // строим карту
         let center = startCenter
         let zoom = startZoom
     
@@ -33,7 +32,6 @@ function sMap() {
 			})
 		}
 
-        // отрисовывает точки на карте
         function renderPoints(items) {
             mapEx.geoObjects.removeAll()
     

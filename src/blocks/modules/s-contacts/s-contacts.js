@@ -4,8 +4,6 @@ function sContacts() {
     
     if(!contactsBlock) return
 
-    // Инициализация карты
-    
     const mapContainer = contactsBlock.querySelector('[data-js="sContactsMap"]')
     let mapPlacemarks = [...contactsBlock.querySelectorAll('[data-js="sContactsTabsOption"]')]
     let map = false
@@ -59,7 +57,6 @@ function sContacts() {
 
     });
 
-    // Работа табов
     const selectBlock = contactsBlock.querySelector('[data-js="sContactsTabsSelect"]')
     const select = selectBlock.querySelector('[data-js="formSelect"]')
     const options = select.querySelectorAll('[data-js="sContactsTabsOption"]')

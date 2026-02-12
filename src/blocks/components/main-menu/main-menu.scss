@@ -38,10 +38,6 @@
         transition: all $tr;
         color: $c-white;
 
-        /*@include max(laptop) {
-            display: none;
-        }*/
-
         svg {
             width: 16px;
             height: 16px;

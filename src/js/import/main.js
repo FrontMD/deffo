@@ -95,7 +95,9 @@ function searchInit() {
         results.setAttribute('id', resultsID)
 
         const autoCompleteJS = new autoComplete({
-              selector: "[data-js='autoCompleteSearch']",
+              selector: () => {
+                    return searchForm.querySelector("[data-js='autoCompleteSearch']");
+                }, 
               submit: true,
               debounce: 300,
               data: {
@@ -103,7 +105,6 @@ function searchInit() {
                     try {
                       const source = await fetch(`https://df-mdf.ru/catalog/search.json?term=${query}`);
                       const data = await source.json();
-                      console.log(data)
               
                       return data;
                     } catch (error) {
@@ -132,15 +133,33 @@ function searchInit() {
                   highlight: true,
                   element: (list, data) => {
                     list.classList.add('order-prod', 'search-results__item')
+                    list.innerHTML = ''
 
                     const imgContainer = document.createElement('div')
-                    imgContainer.classList.add('order-prod')
+                    imgContainer.classList.add('order-prod__img')
 
                     const img = document.createElement('img');
-                    img.src=data.value.image;
+                    img.src=data.image;
 
                     imgContainer.appendChild(img)
-                    list.prepend(product_img)
+                    list.appendChild(imgContainer)
+                    
+                    const info = document.createElement('div')
+                    info.classList.add('order-prod__info')
+
+                    const title = document.createElement('a')
+                    title.href = data.value;
+                    title.innerHTML = data.label.trim();
+                    title.classList.add('order-prod__title')
+                    info.appendChild(title)
+
+                    // добавить цену
+                    //const text = document.createElement('div')
+                    //text.innerHTML = data.....trim();
+                    //text.classList.add('order-prod__text')
+                    //info.appendChild(text)
+
+                    list.appendChild(info)
                   }
               },
               events: {

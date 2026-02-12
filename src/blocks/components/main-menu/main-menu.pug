@@ -62,7 +62,7 @@ mixin main-menu(props = defaultMainMenuProps)
 
         - if(checkProps.hasSearch === true) 
 
-            form.main-menu__search.menu-search(action="#" data-js="menuSearch")
+            form.main-menu__search.menu-search(action="/catalog.html" data-js="menuSearch")
                 .menu-search__btn(data-js="mainMenuItem" data-id="menuSearchToggle")
                     .menu-search__icon.menu-search__icon--open
                         svg
@@ -83,7 +83,22 @@ mixin main-menu(props = defaultMainMenuProps)
                     })
 
                     .menu-search__results(data-js="menuSearchResults")
-                        .search-results
+                        //-<div id="autoComplete_list_2" role="listbox" hidden="" class="search-results">
+                            <div class="order-prod search-results__item">
+                            <div class="order-prod__img"><img src="img/catalog/prod_2.webp" alt=""></div>
+                            <div class="order-prod__info">
+                            <a class="order-prod__title" href="javascript:void(0);">Фасад прямой под стекло 3 ВД №3</a>
+                                <div class="order-prod__text">5 000 ₽</div>
+                            </div>
+                            </div>
+                            <div class="order-prod search-results__item">
+                            <div class="order-prod__img"><img src="img/catalog/prod_2.webp" alt=""></div>
+                            <div class="order-prod__info"><a class="order-prod__title" href="javascript:void(0);">Фасад прямой 3 ВД №3</a>
+                                <div class="order-prod__text">5 000 ₽</div>
+                            </div>
+                            </div>
+                        //-</div>
+                        //-.search-results
                             +order-prod({
                                 title: 'Фасад прямой под стекло 3 ВД №3',
                                 classes: 'search-results__item',

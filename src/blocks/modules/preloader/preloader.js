@@ -11,15 +11,32 @@ function preloader() {
 
     if (!currentCookieValue) {
         linesHeight()
-        document.cookie = `${cookieName}=true`
+        document.cookie = `${cookieName}=true; path=/`
     } else {
-       diamonds()
+        diamonds()
     }
 
     async function linesHeight() {
         const linesList = preloader.querySelectorAll('[data-js="preloaderLine"]')
         const duration = parseFloat(window.getComputedStyle(linesList[0]).transitionDuration) * 1000;
         const animOrder = [2,6,4,1,9,5,0,8,3,7]
+        const video = logo.querySelector('video')
+        const img = logo.querySelector('img')
+
+        await delay(1000)
+
+        img.style.opacity = '0'
+        video.pause()
+        video.currentTime = 0;
+        video.style.opacity = '1'
+        await delay(200)
+        video.play()
+
+        await delay(3000)
+        video.style.transitionDuration = '0s'
+        video.style.opacity = '0'
+        img.removeAttribute('style')
+        img.style.transitionDuration = '0s'
 
         logo.setAttribute('class', 'preloader__logo preloader__logo--middle')
 
