@@ -98,6 +98,10 @@
     @include max(xs) {
         padding: 10px 10px 24px;
         gap: 20px;
+
+        .separator .separator__side {
+            width: 100px;
+        }
     }
 
     &__img {
