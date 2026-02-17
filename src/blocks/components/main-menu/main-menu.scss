@@ -256,7 +256,12 @@
 
     &__field .field__input {
         padding-top: 14px;
-        padding-bottom: 14px;
+        padding-bottom: 13px;
+
+        @include max(large) {
+            padding-top: 7px;
+            padding-bottom: 6px;
+        }
 
         @include max(laptop) {
             padding-top: 9px;
