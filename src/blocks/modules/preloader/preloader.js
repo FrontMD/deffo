@@ -39,7 +39,7 @@ function preloader() {
         img.style.transitionDuration = '0s'
         img.style.position = 'relative'
         img.style.top = '4.8%'
-        img.style.scale = '0.78'
+        img.style.scale = '0.767'
         img.style.opacity = 1
         video.style.opacity = '0'
         
