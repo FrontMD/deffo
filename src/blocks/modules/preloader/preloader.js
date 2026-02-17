@@ -34,10 +34,19 @@ function preloader() {
 
         await delay(3000)
         video.style.transitionDuration = '0s'
-        video.style.opacity = '0'
         img.removeAttribute('style')
         img.style.transitionDuration = '0s'
-
+        img.style.position = 'relative'
+        img.style.top = '4.8%'
+        img.style.scale = '0.78'
+        
+        await delay(300)
+        
+        video.style.opacity = '0'
+        img.style.transitionDuration = '3s'
+        img.style.transitionProperty = 'all'
+        img.style.top = '0'
+        img.style.scale = '1'
         logo.setAttribute('class', 'preloader__logo preloader__logo--middle')
 
         for(i = 0; i < animOrder.length; i++) {

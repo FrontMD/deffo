@@ -153,6 +153,10 @@
             user-select: none;
         }
 
+        img {
+            z-index: 8;
+        }
+
         video::-webkit-media-controls,
         video::-webkit-media-controls-panel,
         video::-webkit-media-controls-play-button,
