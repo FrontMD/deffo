@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuSearch();
     amountInput();
     tooltipsController();
+    adjustTooltips()
     slCardSlider();
     addSvgAnimStyle();
 })

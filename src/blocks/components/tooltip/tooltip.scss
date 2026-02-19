@@ -29,8 +29,9 @@
         border-radius: 30px;
         min-height: 40px;
         position: absolute;
-        left: 8px;
-        top: calc(100% - 10px);
+        left: calc(100% - 17px);
+        top: 50%;
+        transform: translateY(-50%);
         background-color: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(30px);
         font-weight: 400;
@@ -44,21 +45,42 @@
         opacity: 0;
 
         @include max(mobile) {
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 200px;
-            text-align: center;
+            left: calc(100% - 7px);
+            padding: 5px 10px;
+            font-size: 12px;
+            min-height: 25px;
+
         }
     }
 
     &.active &__tooltip {
-        top: calc(100% - 5px);
-        left: 13px;
+        left: calc(100% - 7px);
         visibility: visible;
         opacity: 1;
 
         @include max(mobile) {
-            left: 50%;
+            left: calc(100% - 2px)
+        }
+    }
+}
+
+.tooltip {
+    &--reverse &__tooltip {
+        left: auto;
+        right: calc(100% - 17px);
+        text-align: end;
+
+        @include max(mobile) {
+            right: calc(100% - 7px)
+        }
+    }
+
+    &--reverse.active &__tooltip {
+        left: auto;
+        right: calc(100% - 7px);
+
+        @include max(mobile) {
+            right: calc(100% - 2px)
         }
     }
 }

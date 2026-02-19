@@ -40,6 +40,11 @@ function productIntro() {
                         if(descText && wrapper && window.innerWidth >= 768) {
                             descText.style.height = wrapper.offsetHeight + 'px'
                         }
+                    },
+                    slidesUpdated: function() {
+                        if(descText && wrapper && window.innerWidth >= 768) {
+                            descText.style.height = wrapper.offsetHeight + 'px'
+                        }
                     }
                 }
             })

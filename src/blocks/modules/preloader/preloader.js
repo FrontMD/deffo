@@ -13,8 +13,7 @@ function preloader() {
         linesHeight()
         document.cookie = `${cookieName}=true; path=/`
     } else {
-        linesHeight()
-        //diamonds()
+        diamonds()
     }
 
     async function linesHeight() {
@@ -26,21 +25,20 @@ function preloader() {
 
         await delay(1000)
 
-        //img.style.opacity = '0'
         video.pause()
         video.currentTime = 0;
         video.style.opacity = '1'
-        await delay(200)
-        video.play()
-
-        await delay(3000)
-        video.style.transitionDuration = '0.3s'
         img.removeAttribute('style')
         img.style.transitionDuration = '0s'
         img.style.position = 'relative'
         img.style.top = '4.8%'
         img.style.scale = '0.767'
         img.style.opacity = 1
+        await delay(200)
+        video.play()
+
+        await delay(3000)
+        video.style.transitionDuration = '0.3s'
         video.style.opacity = '0'
         
         await delay(300)

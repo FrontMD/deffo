@@ -11,54 +11,55 @@ mixin s-catalog(props= defaultSCatalogProps)
         }
 
     section.s-catalog.section.section--inner(class= checkProps.classes data-js="sCatalog")&attributes(attributes) 
-        div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sCatalog']" data-aos-anchor-placement="top-center") 
-        div(data-js="sCatalogTitle" data-anim-type='opacity') 
-            +title({
-                classes: 'title--no-upper',
-                text: 'Каталог продукции',
-                tag: 'h1',
-                size: '40',
-                animColor: true
-            }) 
-        .s-catalog__list
-            .catalog-card(data-js="catalogCard")
-                .catalog-card__bg
-                    img(src="img/catalog/card_1.webp" alt="")
-                .catalog-card__title(data-js="catalogCardTitle")
-                    span Виды продукции
-                a(href="javascript:void(0);").catalog-card__link
+        .d-container
+            div(data-js="scrollTrigger" data-aos="fade-up" data-aos-duration="50" data-aos-anchor="[data-js='sCatalog']" data-aos-anchor-placement="top-center") 
+            div(data-js="sCatalogTitle" data-anim-type='opacity') 
+                +title({
+                    classes: 'title--no-upper',
+                    text: 'Каталог продукции',
+                    tag: 'h1',
+                    size: '40',
+                    animColor: true
+                }) 
+            .s-catalog__list
+                .catalog-card(data-js="catalogCard")
+                    .catalog-card__bg
+                        img(src="img/catalog/card_1.webp" alt="")
+                    .catalog-card__title(data-js="catalogCardTitle")
+                        span Виды продукции
+                    a(href="javascript:void(0);").catalog-card__link
 
-            .catalog-card(data-js="catalogCard")
-                .catalog-card__bg
-                    img(src="img/catalog/card_2.webp" alt="")
-                .catalog-card__title(data-js="catalogCardTitle")
-                    span Торцы фасадов
-                a(href="javascript:void(0);").catalog-card__link
+                .catalog-card(data-js="catalogCard")
+                    .catalog-card__bg
+                        img(src="img/catalog/card_2.webp" alt="")
+                    .catalog-card__title(data-js="catalogCardTitle")
+                        span Торцы фасадов
+                    a(href="javascript:void(0);").catalog-card__link
 
-            .catalog-card(data-js="catalogCard")
-                .catalog-card__bg
-                    img(src="img/catalog/card_3.webp" alt="")
-                .catalog-card__title(data-js="catalogCardTitle")
-                    span Патина
-                a(href="javascript:void(0);").catalog-card__link
+                .catalog-card(data-js="catalogCard")
+                    .catalog-card__bg
+                        img(src="img/catalog/card_3.webp" alt="")
+                    .catalog-card__title(data-js="catalogCardTitle")
+                        span Патина
+                    a(href="javascript:void(0);").catalog-card__link
 
-            .catalog-card(data-js="catalogCard")
-                .catalog-card__bg
-                    img(src="img/catalog/card_4.webp" alt="")
-                .catalog-card__title(data-js="catalogCardTitle")
-                    span фрезеровки
-                a(href="javascript:void(0);").catalog-card__link
+                .catalog-card(data-js="catalogCard")
+                    .catalog-card__bg
+                        img(src="img/catalog/card_4.webp" alt="")
+                    .catalog-card__title(data-js="catalogCardTitle")
+                        span фрезеровки
+                    a(href="javascript:void(0);").catalog-card__link
 
-            .catalog-card(data-js="catalogCard")
-                .catalog-card__bg
-                    img(src="img/catalog/card_5.webp" alt="")
-                .catalog-card__title(data-js="catalogCardTitle")
-                    span Типы покрытия
-                a(href="javascript:void(0);").catalog-card__link
+                .catalog-card(data-js="catalogCard")
+                    .catalog-card__bg
+                        img(src="img/catalog/card_5.webp" alt="")
+                    .catalog-card__title(data-js="catalogCardTitle")
+                        span Типы покрытия
+                    a(href="javascript:void(0);").catalog-card__link
 
-            .catalog-card(data-js="catalogCard")
-                .catalog-card__bg
-                    img(src="img/catalog/card_6.webp" alt="")
-                .catalog-card__title(data-js="catalogCardTitle")
-                    span декоративные элементы
-                a(href="javascript:void(0);").catalog-card__link
+                .catalog-card(data-js="catalogCard")
+                    .catalog-card__bg
+                        img(src="img/catalog/card_6.webp" alt="")
+                    .catalog-card__title(data-js="catalogCardTitle")
+                        span декоративные элементы
+                    a(href="javascript:void(0);").catalog-card__link

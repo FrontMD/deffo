@@ -51,11 +51,4 @@ mixin news-list(props= defaultNewsListProps)
                     - cardsCount++
 
             .news-list__controls
-                +btn({
-                    name: 'Загрузить еще',
-                    sMode: 'full',
-                    cMode: 'bordered-acc'
-                })(data-js="newsListMore")
-                +pagination({
-                    classes: 'pagination--center'
-                })
+                +pagination

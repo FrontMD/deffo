@@ -14,6 +14,6 @@ mixin tooltip(props= defaultTooltipProps)
         }
 
     .tooltip(class= checkProps.classes data-js="tooltip")&attributes(attributes)
-        .tooltip__tooltip!= checkProps.text
+        .tooltip__tooltip(data-js="tooltipTooltip")!= checkProps.text
         .tooltip__icon
             img(src=checkProps.icon)
