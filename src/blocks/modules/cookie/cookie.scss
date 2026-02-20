@@ -1,0 +1,69 @@
+.cookie {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(67, 67, 66, 0.5);
+    backdrop-filter: blur(40px);
+    z-index: 99;
+
+    @include max(mobile) {
+        bottom: 0;
+        left: 0;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        padding: 20px 0;
+
+        @include max(mobile) {
+            gap: 16px;
+            padding: 12px 10px;
+        }
+
+        @include max(xs) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        color: $c-white;
+
+        @include max(tablet) {
+            font-size: 14px;
+        }
+
+        @include max(mobile) {
+            font-size: 12px;
+        }
+    }
+
+    .cookie__text a {
+        display: inline;
+        color: $c-link;
+        transition: color $tr;
+    }
+
+    .cookie__text a:hover {
+        color: $c-accent;
+    }
+
+    &__btn {
+        flex: 0 0 auto;
+
+        @include max(xs) {
+            width: 100%;
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+}

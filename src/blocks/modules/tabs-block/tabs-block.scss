@@ -76,6 +76,10 @@
             }
         }
 
+        &.active {
+            pointer-events: none;
+        }
+
     }
 
     &__slides {
@@ -83,17 +87,6 @@
 
         @include max(tablet) {
             padding-top: 24px;
-        }
-    }
-
-    &__slide {
-        display: none;
-        opacity: 0;
-        transition: opacity 1s linear;
-
-        &.active {
-            display: block;
-            opacity: 1;
         }
     }
 }

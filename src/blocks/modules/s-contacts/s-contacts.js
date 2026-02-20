@@ -5,7 +5,7 @@ function sContacts() {
     if(!contactsBlock) return
 
     const mapContainer = contactsBlock.querySelector('[data-js="sContactsMap"]')
-    let mapPlacemarks = [...contactsBlock.querySelectorAll('[data-js="sContactsTabsOption"]')]
+    let mapPlacemarks = [...contactsBlock.querySelectorAll('[data-js="sContactsInfoItem"]')]
     let map = false
 
     ymaps.ready(function () {
@@ -28,10 +28,17 @@ function sContacts() {
         let myGeoObjects = []
         
         mapPlacemarks.forEach(placemark => {
+
+            const baloonContacts = placemark.getAttribute('data-baloon-contacts')?.replace(', ', ',').replace(',', '<br>')
             
             let currentPlacemark = new ymaps.Placemark(
                 placemark.dataset.coords.replace(/\s/g,"").split(","),
-                {},
+                {
+                    balloonContentHeader: placemark.getAttribute('data-baloon-title'),
+                    balloonContentBody:   placemark.getAttribute('data-baloon-address'),
+                    balloonContentFooter: baloonContacts,
+                    hintContent: placemark.getAttribute('data-baloon-title')
+                },
                 {
                     openEmptyBalloon: false,
                     iconLayout: 'default#image',
@@ -68,20 +75,19 @@ function sContacts() {
     })
 
     function contactsSwitch(tab) {
-
-        map.setCenter(getCoordsArr(tab.dataset.coords))
-
+        
         if(tab.dataset.js == 'contactsTabsTab') {
             tab.classList.add('active')
             selectBlock.classList.remove('active')
         } else {
             selectBlock.classList.add('active')
         }
-
+        
         infoItems.forEach((item, index) => {
             item.classList.remove('active')
-
+            
             if(index == tab.dataset.id) {
+                map.setCenter(getCoordsArr(item.dataset.coords))
                 item.classList.add('active')
             }
         })

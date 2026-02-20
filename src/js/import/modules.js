@@ -1,5 +1,5 @@
 @@include("../../blocks/modules/header/header.js")
-@@include("../../blocks/modules/header/header.js")
+@@include("../../blocks/modules/cookie/cookie.js")
 @@include("../../blocks/modules/modals/modals.js")
 @@include("../../blocks/modules/main-burger/main-burger.js")
 @@include("../../blocks/modules/solutions/solutions.js")
@@ -8,7 +8,6 @@
 @@include("../../blocks/modules/accordion/accordion.js")
 @@include("../../blocks/modules/s-map/s-map.js")
 @@include("../../blocks/modules/preloader/preloader.js")
-@@include("../../blocks/modules/tabs-block/tabs-block.js")
 @@include("../../blocks/modules/home-intro/home-intro.js")
 @@include("../../blocks/modules/home-catalog/home-catalog.js")
 @@include("../../blocks/modules/s-about/s-about.js")
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     newsSlider();
     accordion();
     sMap();
-    tabsBlockInit();
     homeCatalogAnim();
     sAboutAnim();
     sDownloadAnim();

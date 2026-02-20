@@ -1,7 +1,11 @@
 function preloader() {
     const preloader = document.querySelector('[data-js="preloader"]')
 
-    if(!preloader) return
+    if(!preloader) {
+        cookieInit();
+        return
+    }
+        
 
     lockBody()
 
@@ -109,6 +113,7 @@ function preloader() {
             });
             homeIntroAnim();
             solutionIntroAnim();
+            cookieInit();
         }, {once: true})
     
         figures.forEach(async (figure, i) => {
@@ -128,6 +133,8 @@ function preloader() {
             }
 
         })
+
+        
 
 
     }

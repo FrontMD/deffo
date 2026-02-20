@@ -82,20 +82,21 @@ mixin solutions-item(props = defaultSolutionsItemProps)
                 - else
                     img(src=slide.file)
 
-            .solutions-item__photos
-                - let thumbsCount = 1
-                - while(thumbsCount < slidesList.length)
-                    - let thumb = slidesList[thumbsCount]                        
-                    a.solutions-item__photo(href= thumb.file data-fancybox=checkProps.group)
-                        - if(thumb.isVideo === true)
-                            img(src=thumb.preview)
-                            .solutions-item__play
-                                svg
-                                    use(xlink:href=`img/sprites/sprite.svg#play`)
-                        - else
-                            img(src=thumb.file)
+            - if(slidesList.length > 1)
+                .solutions-item__photos
+                    - let thumbsCount = 1
+                    - while(thumbsCount < slidesList.length)
+                        - let thumb = slidesList[thumbsCount]                        
+                        a.solutions-item__photo(href= thumb.file data-fancybox=checkProps.group)
+                            - if(thumb.isVideo === true)
+                                img(src=thumb.preview)
+                                .solutions-item__play
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#play`)
+                            - else
+                                img(src=thumb.file)
 
-                    - thumbsCount++
+                        - thumbsCount++
 
 
 

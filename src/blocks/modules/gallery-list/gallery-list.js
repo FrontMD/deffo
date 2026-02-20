@@ -19,6 +19,7 @@ function galleryListAnim() {
                     const col = document.createElement('div')
     
                     col.classList.add("gallery-list__column")
+                    col.setAttribute('data-js', 'galleryListColumn')
     
                     grid.appendChild(col)
                     columnsEls.push(col)
@@ -56,6 +57,8 @@ function galleryListAnim() {
 
 }
 
+scrollTriggerParalaxCards = null
+
 function initScrollParallax(columnsEls, gridEl) {
     if (typeof gsap === 'undefined' || !gsap.registerPlugin || !ScrollTrigger) return;
 
@@ -84,11 +87,35 @@ function initScrollParallax(columnsEls, gridEl) {
         }, "0");
     });
 
-    let scrollTriggerObject = ScrollTrigger.create({
+    scrollTriggerParalaxCards = ScrollTrigger.create({
         trigger: gridEl,
         start: "top 30%",
         end: "bottom center",
         scrub: 2,
         animation: mainTimeline,
     });
+}
+
+function refreshScrollParallax(grid) {
+    if(!grid || !scrollTriggerParalaxCards) return
+
+    const cards = Array.from(grid.children).filter(child => {
+       return child.dataset.js === 'slCard'
+    });
+
+    const columns = grid.querySelectorAll('[data-js="galleryListColumn"]')
+
+    if(cards.length && columns.length) {
+        cards.forEach((card, index) => {
+            let targetCol = index % columns.length
+            setAttributes(card, {
+                'data-aos': 'fade-up',
+                'data-aos-duration': '600',
+                'data-aos-anchor-placement': 'top bottom'
+            }) 
+            columns[targetCol].appendChild(card)
+        })
+    }
+
+    scrollTriggerParalaxCards.refresh()
 }

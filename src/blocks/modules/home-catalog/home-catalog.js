@@ -6,7 +6,7 @@ function homeCatalogAnim() {
     
     homeCatalogs.forEach((homeCatalog, i) => {
         const currentId = `homeCatalog${i+1}`
-        const cardsList = homeCatalog.querySelector('[data-js="tabsBlockSlide"]')?.querySelectorAll('[data-js="catalogCard"]')
+        const cardsList = homeCatalog.querySelector('[data-js="homeCatalogList"]')?.querySelectorAll('[data-js="catalogCard"]')
         
         homeCatalog.setAttribute('data-anim-id', currentId)
         

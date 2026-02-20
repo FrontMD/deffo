@@ -1,0 +1,13 @@
+mixin cookie
+    .cookie.section(data-js='cookie')
+        .d-container
+            .cookie__container
+                .cookie__text.text-editor 
+                    p Сайт использует файлы Сookie, для организации взаимодействия пользователей с сайтом. Продолжая спользовать сайт, вы принимаете правила использования файлов Сookie.
+
+                +btn({
+                    classes: 'cookie__btn',
+                    sMode: '',
+                    cMode: 'accent',
+                    name: 'Принять',
+                })(data-js='cookieBtn')
