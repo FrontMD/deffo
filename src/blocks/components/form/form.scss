@@ -40,7 +40,7 @@
         font-weight: 400;
         font-size: 15px;
         line-height: 130%;
-        color: $c-white;
+        color: $c-text-grey;
     }
 
     &__image-success {
@@ -60,6 +60,7 @@
         }
     }
 
+    &__title+&__text,
     &__text+&__fields,
     &__fields+&__fields {
         margin-top: 15px;
@@ -203,9 +204,32 @@
         }
     }
 
+    &__links {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+    }
+
+    &__link {
+        color: $c-text-grey;
+        transition: all $tr;
+        text-decoration: underline;
+
+        &:hover {
+            color: $c-accent;
+        }
+    }
+
 }
 
 .form {
+
+    &--modal {
+        width: 100vw;
+        max-width: 100%;
+    }
 
     &--modal .form__content {
         max-height: calc(95vh - 70px);

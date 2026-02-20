@@ -37,7 +37,7 @@ noindex
                         hasError: true
                     })
 
-        //- обратный звонок
+        //- Задать вопрос
         +modal({modalId:"faqModal"})(data-js="faqModal")
             +form({
                 classes: 'form--modal',
@@ -84,3 +84,164 @@ noindex
             <div id="d3-model-wrap" class="d3-model-wrap" data-mtl="public/3d-models/model-1/r32.mtl" data-obj="public/3d-models/model-1/r32.obj">
                 <canvas id="model_3d"></canvas>
             </div>
+
+        //- Авторизация
+        +modal({modalId:"authModal"})(data-js="authModal")
+            form.form.form--modal.form--design2(action="#" data-validate novalidate)
+                .form__content(data-js='formContent')
+                    .form__title Авторизация
+                    .form__fields(data-js="formFields")
+                        +field({
+                            classes: '',
+                            type: 'text',
+                            title: '',
+                            placeholder: 'Логин',
+                            inputAttr: {
+                                'required': ''
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            classes: '',
+                            type: 'password',
+                            title: '',
+                            placeholder: 'Пароль',
+                            inputAttr: {
+                                'required': '',
+                            },
+                            hasError: true
+                        })
+
+                        +field({
+                            classes: '',
+                            type: 'checkbox',
+                            checkboxText: 'Запомнить меня на этом компьютере',
+                        })
+
+                    +btn({
+                        classes: 'form__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: 'Войти',
+                        sMode: 'full'
+                    })
+
+                    .form__links
+                        a.form__link(href="javascript:void(0);" data-modal="#regModal") Зарегистрироваться
+                        a.form__link(href="javascript:void(0);" data-modal="#passRecoveryModal") Забыли пароль?
+
+        //- Регистрация
+        +modal({modalId:"regModal"})(data-js="regModal")
+            form.form.form--modal.form--design2(action="#" data-validate novalidate)
+                .form__content(data-js='formContent')
+                    .form__title Регистрация
+                    .form__fields(data-js="formFields")
+                        +field({
+                            classes: '',
+                            type: 'text',
+                            title: '',
+                            placeholder: 'ФИО',
+                            inputAttr: {
+                                'required': '',
+                                'data-type': 'letters'
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            classes: '',
+                            type: 'text',
+                            title: '',
+                            placeholder: 'Название организации',
+                            inputAttr: {
+                                'required': '',
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            classes: '',
+                            type: 'text',
+                            title: '',
+                            placeholder: 'Логин',
+                            inputAttr: {
+                                'required': ''
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            classes: '',
+                            type: 'password',
+                            title: '',
+                            placeholder: 'Пароль',
+                            inputAttr: {
+                                'required': '',
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            classes: '',
+                            type: 'password',
+                            title: '',
+                            placeholder: 'Подтверждение пароля',
+                            inputAttr: {
+                                'required': '',
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            classes: '',
+                            type: 'text',
+                            title: '',
+                            placeholder: 'Email',
+                            inputAttr: {
+                                'required': '',
+                                'data-v-name': 'email'
+                            },
+                            hasError: true
+                        })
+                        +field({
+                            classes: '',
+                            type: 'checkbox',
+                            checkboxText: 'Запомнить меня на этом компьютере',
+                        })
+
+                    +btn({
+                        classes: 'form__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: 'Зарегистрироваться',
+                        sMode: 'full'
+                    })
+
+                    .form__links
+                        a.form__link(href="javascript:void(0);" data-modal="#authModal") Авторизация
+
+        //- Восстановление пароля
+        +modal({modalId:"passRecoveryModal"})(data-js="passRecoveryModal")
+            form.form.form--modal.form--design2(action="#" data-validate novalidate)
+                .form__content(data-js='formContent')
+                    .form__title Восстановление пароля
+                    .form__text Если вы забыли пароль, введите Email
+                    .form__fields(data-js="formFields")
+                        +field({
+                            classes: '',
+                            type: 'text',
+                            title: '',
+                            placeholder: 'Email',
+                            inputAttr: {
+                                'required': '',
+                                'data-v-name': 'email'
+                            },
+                            hasError: true
+                        })
+
+                    +btn({
+                        classes: 'form__submit',
+                        type: 'button',
+                        buttonType: 'submit',
+                        name: 'Восстановить',
+                        sMode: 'full'
+                    })
+
+                    .form__links
+                        a.form__link(href="javascript:void(0);" data-modal="#authModal") Авторизация
+                        a.form__link(href="javascript:void(0);" data-modal="#regModal") Регистрация

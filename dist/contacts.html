@@ -123,6 +123,115 @@
                     </div>
                   </div>
                 </div>
+                <div class="modal hystmodal" id="authModal" aria-hidden="true" data-js="authModal">
+                  <div class="hystmodal__wrap">
+                    <div class="hystmodal__window" role="dialog" aria-modal="true">
+                      <div class="modal__content">
+                        <div class="modal__close" data-hystclose>
+                          <svg> 
+                            <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                          </svg>
+                        </div>
+                        <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="formContent">
+                              <div class="form__title">Авторизация</div>
+                              <div class="form__fields" data-js="formFields">
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="text" placeholder="Логин" required=""><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="password" placeholder="Пароль" required=""><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field      field--checkbox" data-js="formField">
+                                      <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__input"></span><span class="fake-checkbox__text">Запомнить меня на этом компьютере</span></span>
+                                    </label>
+                              </div>
+                                  <button class="d-btn form__submit d-btn--full" type="submit"><span>Войти</span>
+                                  </button>
+                              <div class="form__links"><a class="form__link" href="javascript:void(0);" data-modal="#regModal">Зарегистрироваться</a><a class="form__link" href="javascript:void(0);" data-modal="#passRecoveryModal">Забыли пароль?</a></div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal hystmodal" id="regModal" aria-hidden="true" data-js="regModal">
+                  <div class="hystmodal__wrap">
+                    <div class="hystmodal__window" role="dialog" aria-modal="true">
+                      <div class="modal__content">
+                        <div class="modal__close" data-hystclose>
+                          <svg> 
+                            <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                          </svg>
+                        </div>
+                        <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="formContent">
+                              <div class="form__title">Регистрация</div>
+                              <div class="form__fields" data-js="formFields">
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="text" placeholder="ФИО" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="text" placeholder="Название организации" required=""><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="text" placeholder="Логин" required=""><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="password" placeholder="Пароль" required=""><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="password" placeholder="Подтверждение пароля" required=""><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="text" placeholder="Email" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                                    <label class="field      field--checkbox" data-js="formField">
+                                      <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__input"></span><span class="fake-checkbox__text">Запомнить меня на этом компьютере</span></span>
+                                    </label>
+                              </div>
+                                  <button class="d-btn form__submit d-btn--full" type="submit"><span>Зарегистрироваться</span>
+                                  </button>
+                              <div class="form__links"><a class="form__link" href="javascript:void(0);" data-modal="#authModal">Авторизация</a></div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal hystmodal" id="passRecoveryModal" aria-hidden="true" data-js="passRecoveryModal">
+                  <div class="hystmodal__wrap">
+                    <div class="hystmodal__window" role="dialog" aria-modal="true">
+                      <div class="modal__content">
+                        <div class="modal__close" data-hystclose>
+                          <svg> 
+                            <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                          </svg>
+                        </div>
+                        <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="formContent">
+                              <div class="form__title">Восстановление пароля</div>
+                              <div class="form__text">Если вы забыли пароль, введите Email</div>
+                              <div class="form__fields" data-js="formFields">
+                                    <label class="field      " data-js="formField">
+                                      <input class="field__input" type="text" placeholder="Email" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                    </label>
+                              </div>
+                                  <button class="d-btn form__submit d-btn--full" type="submit"><span>Восстановить</span>
+                                  </button>
+                              <div class="form__links"><a class="form__link" href="javascript:void(0);" data-modal="#authModal">Авторизация</a><a class="form__link" href="javascript:void(0);" data-modal="#regModal">Регистрация</a></div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
           </div>
         </noindex>
         <header class="site-header" data-js="siteHeader">
@@ -210,7 +319,7 @@
                         </svg></a><a class="site-header__control" href="javascript:void(0);">
                         <svg>
                           <use xlink:href="img/sprites/sprite.svg#basket"></use>
-                        </svg></a><a class="site-header__control" href="javascript:void(0);">
+                        </svg></a><a class="site-header__control" href="javascript:void(0);" data-modal="#authModal">
                         <svg>
                           <use xlink:href="img/sprites/sprite.svg#lk"></use>
                         </svg></a></div>
@@ -784,6 +893,115 @@
                     <div class="modal__inner" data-js="modalInner"><div id="d3-model-wrap" class="d3-model-wrap" data-mtl="public/3d-models/model-1/r32.mtl" data-obj="public/3d-models/model-1/r32.obj">
 <canvas id="model_3d"></canvas>
 </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal" id="authModal" aria-hidden="true" data-js="authModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                        <div class="form__content" data-js="formContent">
+                          <div class="form__title">Авторизация</div>
+                          <div class="form__fields" data-js="formFields">
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="text" placeholder="Логин" required=""><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="password" placeholder="Пароль" required=""><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field      field--checkbox" data-js="formField">
+                                  <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__input"></span><span class="fake-checkbox__text">Запомнить меня на этом компьютере</span></span>
+                                </label>
+                          </div>
+                              <button class="d-btn form__submit d-btn--full" type="submit"><span>Войти</span>
+                              </button>
+                          <div class="form__links"><a class="form__link" href="javascript:void(0);" data-modal="#regModal">Зарегистрироваться</a><a class="form__link" href="javascript:void(0);" data-modal="#passRecoveryModal">Забыли пароль?</a></div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal" id="regModal" aria-hidden="true" data-js="regModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                        <div class="form__content" data-js="formContent">
+                          <div class="form__title">Регистрация</div>
+                          <div class="form__fields" data-js="formFields">
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="text" placeholder="ФИО" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="text" placeholder="Название организации" required=""><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="text" placeholder="Логин" required=""><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="password" placeholder="Пароль" required=""><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="password" placeholder="Подтверждение пароля" required=""><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="text" placeholder="Email" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                                <label class="field      field--checkbox" data-js="formField">
+                                  <input class="field__input" type="checkbox" placeholder=""><span class="fake-checkbox"><span class="fake-checkbox__input"></span><span class="fake-checkbox__text">Запомнить меня на этом компьютере</span></span>
+                                </label>
+                          </div>
+                              <button class="d-btn form__submit d-btn--full" type="submit"><span>Зарегистрироваться</span>
+                              </button>
+                          <div class="form__links"><a class="form__link" href="javascript:void(0);" data-modal="#authModal">Авторизация</a></div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal" id="passRecoveryModal" aria-hidden="true" data-js="passRecoveryModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <form class="form form--modal form--design2" action="#" data-validate novalidate>
+                        <div class="form__content" data-js="formContent">
+                          <div class="form__title">Восстановление пароля</div>
+                          <div class="form__text">Если вы забыли пароль, введите Email</div>
+                          <div class="form__fields" data-js="formFields">
+                                <label class="field      " data-js="formField">
+                                  <input class="field__input" type="text" placeholder="Email" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                          </div>
+                              <button class="d-btn form__submit d-btn--full" type="submit"><span>Восстановить</span>
+                              </button>
+                          <div class="form__links"><a class="form__link" href="javascript:void(0);" data-modal="#authModal">Авторизация</a><a class="form__link" href="javascript:void(0);" data-modal="#regModal">Регистрация</a></div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
