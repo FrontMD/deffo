@@ -1,73 +1,67 @@
 -
     const defaultCatalogCategoryProps = {
         classes: '',
-        rows: [
+        cards: [
             {
-                img: "img/stocks/stock_2.webp",
-                title: 'Акционная цена <br>на фасады в эмали 4 600 ₽/м2!',
-                text: `
-                <p>Да-да, мы не повышаем цены, как все сейчас, а понижаем до рекордных цифр!</p>
-                <p>И уже с 06.10.2025 года готовы предложить СУПЕР ЦЕНУ — 4 600 ₽ за м2 фасадов без фрезеровки в трёх популярных цветах эмали — Ral9003, Ral1013, Ral7047!</p>
-                <p>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>`,
-                imgRight: false,
-                btnModal: '',
-                btns: [
-                    {
-                        name: 'Подробнее',
-                        cMode: 'accent-br'
-                    },
-                ]
+                title: 'Фасад прямой с решеткой №1',
+                img: 'img/catalog/prod_3.webp',
             },
             {
-                img: "img/stocks/stock_6.webp",
-                title: 'Акционная цена <br>на фасады в эмали 4 600 ₽/м2!',
-                text: `
-                <p>Да-да, мы не повышаем цены, как все сейчас, а понижаем до рекордных цифр!</p>
-                </>И уже с 06.10.2025 года готовы предложить СУПЕР ЦЕНУ — 4 600 ₽ за м2 фасадов без фрезеровки в трёх популярных цветах эмали — Ral9003, Ral1013, Ral7047!</p>
-                </>При этом — несмотря на то, что называем мы эти фасады «без фрезеровки» - как всегда мы выполним абсолютно любой обкат без дополнительных наценок! А это часто способно очень преобразить любой фасад!</p>
-                `,
-                imgRight: true,
-                    btnModal: '',
-                btns: [
-                    {
-                        name: 'Подробнее',
-                        cMode: 'accent-br'
-                    }
-                ],
+                title: 'Фасад прямой с решеткой №2',
+                img: 'img/catalog/prod_1.webp',
             },
             {
-                img: "img/stocks/stock_7.webp",
-                title: 'Акция на мультишпон -40%!',
-                text: `
-                <p>Скидка 40% на весь ассортимент мультишпона!</p>
-                <p>Предложение ограничено. Не упустите шанс.</p>
-                <p>В нашем ассортименте вы найдете широкий выбор различного шпона. Низкие цены, отличное качество и быстрая доставка — все для вашего удобства</p>
-                `,
-                imgRight: false,
-                    btnModal: '',
-                btns: [
-                    {
-                        name: 'Подробнее',
-                        cMode: 'accent-br'
-                    }
-                ],
+                title: 'Фасад прямой с решеткой №1',
+                img: 'img/catalog/prod_3.webp',
             },
             {
-                img: "img/stocks/stock_8.webp",
-                title: 'Скидка 40% на фасады <br>категории "С" в матовой пленке!',
-                text: `
-                <p>Компания «Дядя Федор» с радостью объявляет о запуске новой акции!</p>
-                <p>С 27 октября стартует уникальная возможность приобрести высококачественные фасады категории С в матовой плёнке всего за 4000 руб/м²!</p>
-                <p>Это -40% на фасады, которые станут основой стильных и долговечных проектов — от лаконичных кухонь до роскошных гардеробных и гостиных.</p>
-                `,
-                imgRight: true,
-                    btnModal: '',
-                btns: [
-                    {
-                        name: 'Подробнее',
-                        cMode: 'accent-br'
-                    }
-                ],
+                title: 'Фасад прямой с решеткой №2',
+                img: 'img/catalog/prod_1.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №3',
+                img: 'img/catalog/prod_2.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №1',
+                img: 'img/catalog/prod_3.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №3',
+                img: 'img/catalog/prod_2.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №2',
+                img: 'img/catalog/prod_1.webp',
+            },
+
+            {
+                title: 'Фасад прямой с решеткой №3',
+                img: 'img/catalog/prod_4.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №1',
+                img: 'img/catalog/prod_5.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №2',
+                img: 'img/catalog/prod_6.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №3',
+                img: 'img/catalog/prod_4.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №1',
+                img: 'img/catalog/prod_5.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №2',
+                img: 'img/catalog/prod_6.webp',
+            },
+            {
+                title: 'Фасад прямой с решеткой №3',
+                img: 'img/catalog/prod_4.webp',
             },
         ],
     }
@@ -76,7 +70,7 @@ mixin catalog-category(props= defaultCatalogCategoryProps)
     -
         const checkProps = {
             classes: props.classes ? props.classes : defaultCatalogCategoryProps.classes,
-            rows: props.rows ? props.rows : defaultCatalogCategoryProps.rows,
+            cards: props.cards ? props.cards : defaultCatalogCategoryProps.cards,
         }
 
     section.catalog-category.section.section--inner(class= checkProps.classes)&attributes(attributes)
@@ -183,67 +177,5 @@ mixin catalog-category(props= defaultCatalogCategoryProps)
                     +prods-list({
                         inner: true,
                         hasPagination: true,
-                        cards: [
-                            {
-                                title: 'Фасад прямой с решеткой №1',
-                                img: 'img/catalog/prod_3.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №2',
-                                img: 'img/catalog/prod_1.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №1',
-                                img: 'img/catalog/prod_3.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №2',
-                                img: 'img/catalog/prod_1.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №3',
-                                img: 'img/catalog/prod_2.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №1',
-                                img: 'img/catalog/prod_3.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №3',
-                                img: 'img/catalog/prod_2.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №2',
-                                img: 'img/catalog/prod_1.webp',
-                            },
-
-                            {
-                                title: 'Фасад прямой с решеткой №3',
-                                img: 'img/catalog/prod_4.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №1',
-                                img: 'img/catalog/prod_5.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №2',
-                                img: 'img/catalog/prod_6.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №3',
-                                img: 'img/catalog/prod_4.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №1',
-                                img: 'img/catalog/prod_5.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №2',
-                                img: 'img/catalog/prod_6.webp',
-                            },
-                            {
-                                title: 'Фасад прямой с решеткой №3',
-                                img: 'img/catalog/prod_4.webp',
-                            },
-                        ]
+                        cards: checkProps.cards
                     })

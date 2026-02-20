@@ -10,10 +10,13 @@
 
         @include max(tablet) {
             flex-direction: column;
+            gap: 10px;
         }
     }
 
     &__main {
+        flex: 1 1 auto;
+
         @include max(tablet) {
             order: -1;
         }
@@ -89,6 +92,7 @@
         @include max(tablet) {
             width: 100%;
             gap: 20px;
+            margin-top: 20px;
         }
     }
 

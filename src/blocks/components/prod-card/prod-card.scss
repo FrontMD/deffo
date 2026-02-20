@@ -171,8 +171,52 @@
             font-size: 12px;
         }
     }
+}
 
-    &:hover &__title {
-        color: $c-accent;
+.prod-card {
+    &--cover &__top {
+        padding: 30px 30px 10px;
+        background-color: transparent;
+
+        @include max(laptop) {
+            padding: 10px 10px 0;
+        }
+
+        @include max(xs) {
+            padding: 0;
+        }
+
+    }
+
+    &--cover &__img {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 1 / 1.454;
+        transition: box-shadow $tr;
+
+        @include max(laptop) {
+            border-radius: 15px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &--cover:hover &__img {
+        box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.3);
+    }
+
+    &--cover &__favorite {
+        right: 40px;
+        top: 40px;
+
+        @include max(laptop) {
+            right: 20px;
+            top: 20px;
+        }
     }
 }
