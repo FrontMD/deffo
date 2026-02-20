@@ -23,10 +23,10 @@ function sAboutAnim() {
                     videoAnimEl.classList.add('animated')
                 }, {once: true})
 
-                text?.setAttribute('data-aos-delay', '2400')
+                text?.setAttribute('data-aos-delay', '2000')
                 if(cards.length) {
                     [...cards].reverse().forEach((card, i) => {
-                        card.setAttribute('data-aos-delay', `${3000 - i * 100}`)
+                        card.setAttribute('data-aos-delay', `${2800 - i * 100}`)
                     })
                 }
             }

@@ -87,7 +87,7 @@ function preloader() {
         const els = preloader.querySelectorAll('[data-js="heightAnim"]')
 
         els.forEach(el => {
-            heightAnim(el)
+            heightAnim(el, '1s')
         })
     }
 

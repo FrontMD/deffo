@@ -536,7 +536,7 @@ video[data-anim-type="height"] {
 
 	&.animated {
 		height: 100% !important;
-		transition: height 1s linear;
+		transition: height 0.7s linear;
 	}
 }
 
@@ -548,7 +548,7 @@ video[data-anim-type="widthReverse"] {
 
 	&.animated {
 		width: 0 !important;
-		transition: width 1s linear;
+		transition: width 0.7s linear;
 	}
 }
 

@@ -17,7 +17,7 @@ function homeCatalogAnim() {
                         setAttributes(card, {
                             'data-aos': 'fade-up',
                             'data-aos-anchor': `[data-anim-id="${currentId}"]`,
-                            'data-aos-duration': '1000',
+                            'data-aos-duration': '600',
                             'data-aos-anchor-placement': 'top-center'
                         })
                         break
@@ -26,7 +26,7 @@ function homeCatalogAnim() {
                         setAttributes(card, {
                             'data-aos': 'fade-up',
                             'data-aos-anchor': `[data-anim-id="${currentId}"]`,
-                            'data-aos-duration': '1000',
+                            'data-aos-duration': '600',
                             'data-aos-delay': `${i * 200 + 400}`,
                             'data-aos-anchor-placement': 'top-center'
                         })
@@ -36,7 +36,7 @@ function homeCatalogAnim() {
                         setAttributes(card, {
                             'data-aos': 'fade-up',
                             'data-aos-anchor': `[data-anim-id="${currentId}"]`,
-                            'data-aos-duration': '1000',
+                            'data-aos-duration': '600',
                             'data-aos-delay': `${i * 200 - 400}`,
                             'data-aos-anchor-placement': 'top-center'
                         })
@@ -45,7 +45,7 @@ function homeCatalogAnim() {
                         setAttributes(card, {
                             'data-aos': 'fade-up',
                             'data-aos-anchor': `[data-anim-id="${currentId}"]`,
-                            'data-aos-duration': '1000',
+                            'data-aos-duration': '600',
                             'data-aos-delay': `${i * 200}`,
                             'data-aos-anchor-placement': 'top-center'
                         })
@@ -62,8 +62,8 @@ function homeCatalogAnim() {
                             setAttributes(cardTitle, {
                                 'data-aos': 'fade-up',
                                 'data-aos-anchor': `[data-anim-id="${currentId}"]`,
-                                'data-aos-duration': '1000',
-                                'data-aos-delay': `${cardDelay + 200}`,
+                                'data-aos-duration': '500',
+                                'data-aos-delay': `${cardDelay}`,
                             'data-aos-anchor-placement': 'top-center'
                             })
                         }
@@ -72,8 +72,8 @@ function homeCatalogAnim() {
                     setAttributes(tabsBlockList, {
                         'data-aos': 'fade-up',
                         'data-aos-anchor': `[data-anim-id="${currentId}"]`,
-                        'data-aos-duration': '1000',
-                        'data-aos-delay': `${cardDelay + 400}`,
+                        'data-aos-duration': '600',
+                        'data-aos-delay': `${cardDelay}`,
                             'data-aos-anchor-placement': 'top-center'
                     })
                     

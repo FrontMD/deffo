@@ -25,7 +25,7 @@ function sFaqAnim() {
                 sFaqMediaContent.style.position = 'absolute'
                 sFaqMediaContent.style.width = '100%'
                 sFaqMediaContent.style.height = '100%'
-                sFaqMediaContent.style.transition = 'width 1s linear, height 1s linear'
+                sFaqMediaContent.style.transition = 'width 0.7s linear, height 0.7s linear'
 
                 if(trigger) {
                     const tHeight = window.innerHeight - 100
@@ -35,13 +35,13 @@ function sFaqAnim() {
                         trigger.setAttribute('data-aos-offset', tHeight)
                         needOffsetList.forEach(item => {
                             item.setAttribute('data-aos-offset', tHeight)
-                            item.setAttribute('data-aos-delay', '1600')
+                            item.setAttribute('data-aos-delay', '1300')
                         })
                     } else {
                         trigger.setAttribute('data-aos-offset', sHeight)
                         needOffsetList.forEach(item => {
                             item.setAttribute('data-aos-offset', sHeight)
-                            item.setAttribute('data-aos-delay', '1600')
+                            item.setAttribute('data-aos-delay', '1300')
                         })
                     }
 
@@ -65,20 +65,20 @@ function sFaqAnim() {
                         trigger.setAttribute('data-aos-offset', tHeight)
                         needOffsetList.forEach(item => {
                             item.setAttribute('data-aos-offset', tHeight)
-                            item.setAttribute('data-aos-delay', '600')
+                            item.setAttribute('data-aos-delay', '300')
                         })
                     } else {
                         trigger.setAttribute('data-aos-offset', sHeight)
                         needOffsetList.forEach(item => {
                             item.setAttribute('data-aos-offset', sHeight)
-                            item.setAttribute('data-aos-delay', '600')
+                            item.setAttribute('data-aos-delay', '300')
                         })
                     }
                 } else {
                     trigger.setAttribute('data-aos-offset', tHeight / 2)
                     needOffsetList.forEach(item => {
                         item.setAttribute('data-aos-offset', tHeight / 2)
-                        item.setAttribute('data-aos-delay', '600')
+                        item.setAttribute('data-aos-delay', '300')
                     })
                 }
 
@@ -96,14 +96,14 @@ function sFaqAnim() {
             if(sFaqMedia && sFaqMediaContent && ww >= bp) {
                 sFaqMediaContent.style.width = mediaWidth + 'px'
                 sFaqMediaContent.style.height = contentHeight + 'px'
-                await delay(1100)
+                await delay(800)
                 sFaqMediaContent.style.position = 'relative'
                 sFaqMediaContent.style.width = '100%'
             }
     
             if(title) {
                 opacityAnim(title)
-                await delay(1000)
+                await delay(700)
             }
     
             if(spoilers.length > 0) {

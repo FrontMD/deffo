@@ -66,7 +66,7 @@ function solutionsAnim(solutions) {
                 if(slider) commonAnimation(slider)
                 if(header) commonAnimation(header)
                 
-                await delay(2000)
+                await delay(1500)
             }
 
             if(title) {
