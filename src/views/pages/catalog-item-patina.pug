@@ -1,0 +1,34 @@
+extends ../layouts/default
+
+block variables
+    - const title = "Карточка товара Патина"
+    - const fullHeader = false 
+
+block content
+    .page(data-js="page")
+        .page-layout
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'DEFFO',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Каталог',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Фасады с решеткой',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Фасад прямой с решеткой 6 №7',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+            +product-intro({
+                title: 'Патина',
+                isPatina: true
+            })
+            +patina-list

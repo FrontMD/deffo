@@ -69,6 +69,19 @@ function productIntro() {
 
                 needSync = true
             });
+        } else {
+            const piPatina = section.querySelector('[data-js="piPatina"]')
+            const img = piPatina.querySelector('.pi-patina__img > img')
+
+            if(img && descText && piPatina && window.innerWidth >= 768) {
+                if (img.complete && img.naturalWidth > 0 ) {
+                    descText.style.height = piPatina.offsetHeight + 'px'
+                } else {
+                    img.onload = () => {
+                        descText.style.height = piPatina.offsetHeight + 'px'
+                    };
+                }
+            }
         }
 
         productIntroAnim(section)

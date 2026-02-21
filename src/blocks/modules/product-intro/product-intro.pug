@@ -1,12 +1,16 @@
 -
     const defaultProductIntroProps = {
         classes: '',
+        title: 'Фасад прямой под стекло 3 ВД №5 (3*2)',
+        isPatina: false
     }
 
 mixin product-intro(props= defaultProductIntroProps)
     -
         const checkProps = {
-            classes: props.classes ? props.classes : defaultProductIntroProps.classes
+            classes: props.classes ? props.classes : defaultProductIntroProps.classes,
+            title: props.title ? props.title : defaultProductIntroProps.title,
+            isPatina: props.isPatina ? props.isPatina : defaultProductIntroProps.isPatina
         }
 
     section.product-intro.section.section--inner(class= checkProps.classes data-js="productIntro" data-anim-id="productIntro")&attributes(attributes)
@@ -17,7 +21,7 @@ mixin product-intro(props= defaultProductIntroProps)
                         classes: 'title--no-upper',
                         tag: 'h2',
                         size: '40',
-                        text: 'Фасад прямой под стекло 3 ВД №5 (3*2)',
+                        text: checkProps.title,
                         animColor: true
                     })
             .product-intro__grid
@@ -39,34 +43,51 @@ mixin product-intro(props= defaultProductIntroProps)
                         })
 
                 .product-intro__side.product-intro__side--slider(data-js="productIntroSide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='productIntro']" data-aos-anchor-placement="top-center")
-                    .pi-slider(data-js="piSlider")
-                        .pi-slider__wrapper(data-js="piSliderWrapper")
-                            .pi-slider__slider(data-js="piSliderSlider")
-                                .swiper-wrapper
-                                    .swiper-slide.pi-slider__slide
-                                        a(href="img/catalog/prod_2.webp" data-fancybox="productIntroSlider" data-thumb="img/catalog/prod_2.webp")
-                                        img(src="img/catalog/prod_2.webp" alt="")
-                                    .swiper-slide.pi-slider__slide
-                                        a(href="img/catalog/prod_1.webp" data-fancybox="productIntroSlider" data-thumb="img/catalog/prod_1.webp")
-                                        img(src="img/catalog/prod_1.webp" alt="")
+                    - if(checkProps.isPatina === true)
+                        .pi-patina(data-js="piPatina")
+                            .pi-patina__img
+                                img(src="img/catalog/pi_patina.webp" alt="")
+                                +tooltip({
+                                    classes: 'pi-patina__tooltip',
+                                    text: 'Фасад прямой глухой 6А'
+                                })(style="left: -0.9%; top: 0%;")
+                                +tooltip({
+                                    classes: 'pi-patina__tooltip',
+                                    text: 'Фасад прямой глухой 6А'
+                                })(style="left: 43.69%; top: 0.8%;")
+                                +tooltip({
+                                    classes: 'pi-patina__tooltip',
+                                    text: 'Фасад прямой с интегрированной ручкой'
+                                })(style="left: 42%; top: 25%;")
+                    - else
+                        .pi-slider(data-js="piSlider")
+                            .pi-slider__wrapper(data-js="piSliderWrapper")
+                                .pi-slider__slider(data-js="piSliderSlider")
+                                    .swiper-wrapper
+                                        .swiper-slide.pi-slider__slide
+                                            a(href="img/catalog/prod_2.webp" data-fancybox="productIntroSlider" data-thumb="img/catalog/prod_2.webp")
+                                            img(src="img/catalog/prod_2.webp" alt="")
+                                        .swiper-slide.pi-slider__slide
+                                            a(href="img/catalog/prod_1.webp" data-fancybox="productIntroSlider" data-thumb="img/catalog/prod_1.webp")
+                                            img(src="img/catalog/prod_1.webp" alt="")
 
-                        .pi-slider__controls
-                            .slider-controls(data-js="sliderControls")&attributes(attributes)
-                                button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
-                                    svg
-                                        use(xlink:href=`img/sprites/sprite.svg#chevron_slider_prev`)
-                                button.slider-control.slider-control--next(type="button" data-js='sliderNext')
-                                    svg
-                                        use(xlink:href=`img/sprites/sprite.svg#chevron_slider_next`)
-                            .pi-slider__thumbs(data-js="piSliderThumbs")
-                                .swiper-wrapper
-                                    .swiper-slide.pi-slider__thumb.thumbs-disabled(data-disabled="true" data-modal="#piSliderModel")
-                                        .pi-slider__3d 3D
-                                        img(src="img/catalog/prod_1.webp" alt="")
-                                    .swiper-slide.pi-slider__thumb
-                                        img(src="img/catalog/prod_2.webp" alt="")
-                                    .swiper-slide.pi-slider__thumb
-                                        img(src="img/catalog/prod_3.webp" alt="")
+                            .pi-slider__controls
+                                .slider-controls(data-js="sliderControls")&attributes(attributes)
+                                    button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                                        svg
+                                            use(xlink:href=`img/sprites/sprite.svg#chevron_slider_prev`)
+                                    button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                                        svg
+                                            use(xlink:href=`img/sprites/sprite.svg#chevron_slider_next`)
+                                .pi-slider__thumbs(data-js="piSliderThumbs")
+                                    .swiper-wrapper
+                                        .swiper-slide.pi-slider__thumb.thumbs-disabled(data-disabled="true" data-modal="#piSliderModel")
+                                            .pi-slider__3d 3D
+                                            img(src="img/catalog/prod_1.webp" alt="")
+                                        .swiper-slide.pi-slider__thumb
+                                            img(src="img/catalog/prod_2.webp" alt="")
+                                        .swiper-slide.pi-slider__thumb
+                                            img(src="img/catalog/prod_3.webp" alt="")
 
                 .product-intro__side.product-intro__side--last(data-js="productIntroSide" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="[data-anim-id='productIntro']" data-aos-anchor-placement="top-center")
                     .pi-info
@@ -84,21 +105,27 @@ mixin product-intro(props= defaultProductIntroProps)
                                     name: 'Заказать',
                                     icon: 'basket'
                                 })
+                            - if(checkProps.isPatina === true)
+                                .pi-info__note
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#attention`)
+                                    span ВНИМАНИЕ! При необходимости, особенности нанесения патины на каждом фасаде и виде продукции, декоре уточняйте у производителя. Производитель оставляет за собой право патинировать продукцию согласно внутренним правилам.
 
-                        .pi-info__block
-                            .product-intro__subtitle Фасад используется:
-                            .pi-info__cards
-                                +prod-card({
-                                    title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
-                                    img: 'img/catalog/prod_1.webp'
-                                })
-                                +prod-card({
-                                    title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
-                                    img: 'img/catalog/prod_2.webp'
-                                })
+                        - if(checkProps.isPatina !== true)
+                            .pi-info__block
+                                .product-intro__subtitle Фасад используется:
+                                .pi-info__cards
+                                    +prod-card({
+                                        title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
+                                        img: 'img/catalog/prod_1.webp'
+                                    })
+                                    +prod-card({
+                                        title: 'Фасад прямой под стекло 3 ВД №10 (2*1)',
+                                        img: 'img/catalog/prod_2.webp'
+                                    })
 
-                            .pi-info__note
-                                svg
-                                    use(xlink:href=`img/sprites/sprite.svg#attention`)
-                                span Цвета могут отличаться от оригинала, обязательно смотрите образцы!
+                                .pi-info__note
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#attention`)
+                                    span Цвета могут отличаться от оригинала, обязательно смотрите образцы!
 

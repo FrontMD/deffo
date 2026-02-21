@@ -23,7 +23,15 @@ mixin prod-card(props = defaultProdCardProps)
         a.prod-card__link(href="javascript:void(0);")
         .prod-card__top
             .prod-card__img
-                img(src=checkProps.img, alt="")
+                - if(Array.isArray(checkProps.img))
+                    - let imgCount = 0
+                    - let imgList = checkProps.img
+                    - while(imgCount < imgList.length)
+                        img(src=imgList[imgCount])  
+
+                        -imgCount++
+                - else
+                    img(src=checkProps.img)
 
             a.prod-card__favorite(href="javascript:void(0);")
                 svg

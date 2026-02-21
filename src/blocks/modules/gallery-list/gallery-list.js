@@ -100,7 +100,7 @@ function refreshScrollParallax(grid) {
     if(!grid || !scrollTriggerParalaxCards) return
 
     const cards = Array.from(grid.children).filter(child => {
-       return child.dataset.js === 'slCard'
+       return child.dataset.js === 'prodCard'
     });
 
     const columns = grid.querySelectorAll('[data-js="galleryListColumn"]')

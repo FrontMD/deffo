@@ -1,0 +1,51 @@
+-
+    const defaultPatinaListProps = {
+        classes: '',
+        cards: [
+            {
+                classes: 'prod-card--square prod-card--cover',
+                img: 'img/catalog/patina_1.webp',
+                title: 'золото',
+            },
+            {
+                classes: 'prod-card--square prod-card--cover',
+                img: 'img/catalog/patina_2.webp',
+                title: 'коричневая',
+            },
+            {
+                classes: 'prod-card--square prod-card--cover',
+                img: 'img/catalog/patina_3.webp',
+                title: 'медь',
+            },
+            {
+                classes: 'prod-card--square prod-card--cover',
+                img: 'img/catalog/patina_4.webp',
+                title: 'светло-коричневая',
+            },
+            {
+                classes: 'prod-card--square prod-card--cover',
+                img: 'img/catalog/patina_5.webp',
+                title: 'серебро',
+            }
+        ]
+    }
+
+mixin patina-list(props= defaultPatinaListProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultPatinaListProps.classes,
+            cards: props.cards ? props.cards : defaultPatinaListProps.cards,
+
+        }
+
+    section.patina-list.section.section--inner(class= checkProps.classes data-js="patinaList")&attributes(attributes)
+        .d-container
+            .patina-list__items
+                - let cardsCount = 0
+                - let cardsList = checkProps.cards
+                - while(cardsCount < cardsList.length)
+                    - cardsList[cardsCount].index = cardsCount
+                    +prod-card(cardsList[cardsCount])(data-anim-id="patinaListItem")
+
+                    - cardsCount++
+

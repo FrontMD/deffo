@@ -113,7 +113,7 @@
             padding: 24px 50px;
         }
 
-        @include max(padding) {
+        @include max(tablet) {
             padding: 24px 30px;
         }
 
@@ -274,6 +274,41 @@
     }
 }
 
+.pi-patina {
+    padding: 42px 85px;
+    background-color: $c-cards-bg;
+
+    @include max(large) {
+        padding: 24px 30px;
+    }
+
+    @include max(laptop) {
+        padding: 24px 50px;
+    }
+
+    @include max(tablet) {
+        padding: 24px;
+    }
+
+    @include max(mobile) {
+        padding: 20px;
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__tooltip {
+        position: absolute;
+        z-index: 5;
+    }
+}
+
 .pi-info {
     display: flex;
     flex-direction: column;
@@ -405,7 +440,7 @@
     }
 
     &__note {
-        margin-top: auto;
+        margin-top: 40px;
         display: flex;
         align-items: center;
         gap: 20px;
@@ -420,6 +455,7 @@
         }
 
         svg {
+            flex: 0 0 auto;
             width: 24px;
             height: 24px;
             color: $c-accent;
@@ -430,5 +466,9 @@
 
             }
         }
+    }
+
+    &__cards~&__note {
+        margin-top: auto;
     }
 }

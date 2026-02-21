@@ -27,6 +27,7 @@
 @@include("../../blocks/modules/s-contacts/s-contacts.js")
 @@include("../../blocks/modules/catalog-category/catalog-category.js")
 @@include("../../blocks/modules/news-list/news-list.js")
+@@include("../../blocks/modules/patina-list/patina-list.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     header();
@@ -55,4 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
     sContacts();
     catalogCategoryFilter();
     newsListAnim();
+    patinaListAnim();
 })

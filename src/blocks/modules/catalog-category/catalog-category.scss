@@ -30,7 +30,7 @@
     gap: 50px;
 
     @include max(large) {
-        gap: 32px;
+        gap: 10px 32px;
     }
 
     @include max(tablet) {
@@ -44,6 +44,10 @@
         .catalog-sidebar__block {
             width: fit-content;
         }
+    }
+
+    &.active {
+        margin-bottom: 20px;
     }
 }
 

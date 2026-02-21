@@ -3,80 +3,96 @@
         classes: '',
         cards: [
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_1.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+                img: 'img/catalog/sample_1.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_2.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+                img: 'img/catalog/sample_2.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_3.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+                img: 'img/catalog/sample_3.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_4.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
+                img: 'img/catalog/sample_4.webp'
             },
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_5.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
-            },
-
-            {
-                title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_6.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+                img: 'img/catalog/sample_5.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_7.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+                img: 'img/catalog/sample_6.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_8.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
-            },
-            {
-                title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_9.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+                img: 'img/catalog/sample_7.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_10.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+                img: 'img/catalog/sample_8.webp'
+            },
+            {
+                classes: 'prod-card--facade',
+                title: 'MI34 Мрамор Белый, С99/1',
+                img: 'img/catalog/sample_9.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_11.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+                img: 'img/catalog/sample_10.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_12.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
-            },
-            {
-                title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_13.webp', 'img/catalog/sample_6.webp', 'img/catalog/sample_11.webp']
+                img: 'img/catalog/sample_11.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_14.webp', 'img/catalog/sample_11.webp', 'img/catalog/sample_16.webp']
+                img: 'img/catalog/sample_12.webp'
+            },
+            {
+                classes: 'prod-card--facade',
+                title: 'MI34 Мрамор Белый, С99/1',
+                img: 'img/catalog/sample_13.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_15.webp', 'img/catalog/sample_1.webp', 'img/catalog/sample_6.webp']
+                img: 'img/catalog/sample_14.webp'
             },
 
             {
+                classes: 'prod-card--facade',
                 title: 'MI34 Мрамор Белый, С99/1',
-                images: ['img/catalog/sample_16.webp', 'img/catalog/sample_2.webp', 'img/catalog/sample_7.webp']
+                img: 'img/catalog/sample_15.webp'
+            },
+
+            {
+                classes: 'prod-card--facade',
+                title: 'MI34 Мрамор Белый, С99/1',
+                img: 'img/catalog/sample_16.webp'
             },
         ],
     }
@@ -95,7 +111,7 @@ mixin gallery-list(props= defaultGalleryListProps)
                 - let cardsList = checkProps.cards
                 - while(cardsCount < cardsList.length)
                     - cardsList[cardsCount].index = cardsCount
-                    +sl-card(cardsList[cardsCount])(data-anim-id="galleryListItem")
+                    +prod-card(cardsList[cardsCount])(data-anim-id="galleryListItem")
 
                     - cardsCount++
 
