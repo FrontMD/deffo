@@ -171,6 +171,37 @@
             font-size: 12px;
         }
     }
+
+    &__slider {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__pagination.swiper-pagination-bullets {
+        position: absolute;
+        bottom: 26px;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 5px;
+        z-index: 3;
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 5px;
+            background-color: $c-text-light;
+            border-radius: 30px;
+            margin: 0;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $c-bullet-active;
+        }
+    }
 }
 
 .prod-card {

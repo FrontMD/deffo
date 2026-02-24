@@ -4,7 +4,9 @@
         title: 'Фасад прямой с решеткой №1',
         img: 'img/catalog/prod_1.webp',
         tags: [],
-        isFavorite: false
+        isFavorite: false,
+        isSlider: false,
+        slides: []
     }
 
 mixin prod-card(props = defaultProdCardProps)
@@ -15,6 +17,8 @@ mixin prod-card(props = defaultProdCardProps)
             img: props.img ? props.img : defaultDlBtnProps.img,
             tags: props.tags ? props.tags : defaultDlBtnProps.tags,
             isFavorite: props.isFavorite ? props.isFavorite : defaultDlBtnProps.isFavorite,
+            isSlider: props.isSlider ? props.isSlider : defaultDlBtnProps.isSlider,
+            slides: props.slides ? props.slides : defaultDlBtnProps.slides,
         }
 
         let favoriteClass = checkProps.isFavorite === true ? ' prod-card--favorite' : ''
@@ -22,16 +26,29 @@ mixin prod-card(props = defaultProdCardProps)
     .prod-card(class=checkProps.classes + favoriteClass data-js="prodCard")&attributes(attributes)
         a.prod-card__link(href="javascript:void(0);")
         .prod-card__top
-            .prod-card__img
-                - if(Array.isArray(checkProps.img))
-                    - let imgCount = 0
-                    - let imgList = checkProps.img
-                    - while(imgCount < imgList.length)
-                        img(src=imgList[imgCount])  
+            - if(checkProps.isSlider === true)
+                .prod-card__slider(data-js="prodCardSlider")
+                    .prod-card__pagination(data-js="prodCardPagination")
+                    .swiper-wrapper
+                        - let slidesCount = 0
+                        - let slidesList = checkProps.slides
+                        - while(slidesCount < slidesList.length)
+                            .swiper-slide.prod-card__img
+                                img(src=slidesList[slidesCount])  
 
-                        -imgCount++
-                - else
-                    img(src=checkProps.img)
+                            -slidesCount++
+
+            - else
+                .prod-card__img
+                    - if(Array.isArray(checkProps.img))
+                        - let imgCount = 0
+                        - let imgList = checkProps.img
+                        - while(imgCount < imgList.length)
+                            img(src=imgList[imgCount])  
+
+                            -imgCount++
+                    - else
+                        img(src=checkProps.img)
 
             a.prod-card__favorite(href="javascript:void(0);")
                 svg

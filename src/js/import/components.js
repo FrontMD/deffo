@@ -5,6 +5,7 @@
 @@include("../../blocks/components/tooltip/tooltip.js")
 @@include("../../blocks/components/sl-card/sl-card.js")
 @@include("../../blocks/components/slider-controls/slider-controls.js")
+@@include("../../blocks/components/prod-card/prod-card.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     selects();
@@ -15,4 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
     adjustTooltips()
     slCardSlider();
     addSvgAnimStyle();
+    prodCardSliders();
 })
