@@ -38,7 +38,7 @@ function galleryListAnim() {
                 })
 
                 initScrollParallax(columnsEls, grid)
-
+ 
             } else {
                 items.forEach(item => {
                     setAttributes(item, {
@@ -98,7 +98,7 @@ function initScrollParallax(columnsEls, gridEl) {
 
 function refreshScrollParallax(grid) {
     prodCardSliders()
-    
+
     if(!grid || !scrollTriggerParalaxCards) return
 
     const cards = Array.from(grid.children).filter(child => {

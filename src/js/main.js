@@ -12,6 +12,8 @@
 @@include("./libs/fancybox.umd.min.js")
 @@include("./libs/opti3d.min.js")
 @@include("./libs/autoComplete.min.js")
+@@include("./libs/gsap.min.js")
+@@include("./libs/ScrollTrigger.min.js")
 
 //если желаете подключить библиотеку - раскомментируйте и добавьте @@
 // include("./libs/simplebar.min.js")
