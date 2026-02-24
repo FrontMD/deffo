@@ -37,7 +37,7 @@ mixin footer
                         .site-footer__title Связаться с менеджером:
                         +form({
                             btnText: 'Заказать звонок',
-                        })
+                        })(data-ajax-form-inline method="post")
                             +field({
                                 placeholder: 'Ваше имя',
                                 inputAttr: {

@@ -31,7 +31,7 @@ mixin partner-form(props= defaultPartnerFormProps)
                         btnCMode: 'accent',
                         privacyText: 'Я прочитал и согласен с <a href="javascript:void(0);" target="_blank">политикой</a> в отношении обработки персональных данных',
                         design2: true,
-                    })
+                    })(data-ajax-form-inline method="post")
                         +field({
                             placeholder: 'Ваше имя',
                             inputAttr: {

@@ -1,36 +1,3 @@
-window.formsProcessors = {}; // Функция из данного объекта будет вызвана в случае успешной валидации формы. Значение атрибута data-formprocessor формы будут служить ключами для функций-обработчиков
-window.formsSending = {}; // Хранилище индикаторов отправки для избежания повторной отправки
-//window.formsProcessors должны добавляться в additional.js
-
-//включать в formsProcessors в случае успешной отправки там, где это требуется
-function defaultAfterSubmit(form, doReset) {
-    if(doReset===true){
-        let fileFields = form.querySelectorAll('.field-file[data-js="formField"]')
-        form.reset();
-
-        //сбрасываем поле ФАЙЛ
-        if(fileFields.length > 0) {
-            fileFields.forEach(fileField => {
-                let placeholderText = fileField.getAttribute('data-placeholder');
-                let fileName = fileField.querySelector('[data-js="fileName"]');
-
-                fileField.classList.remove('field-file--full');
-                fileName.innerHTML = placeholderText;
-            });
-        }
-    }
-
-    //проверяем какой тип благодарности в форме и показываем его
-    if(form.querySelector("[data-js='form-thanks']") !== null) {
-        form.style.minHeight = form.offsetHeight + 'px'
-        form.classList.add("form--sent")
-    } else {
-        thanksMessageShow();
-    }
-
-    toggleLoading(form, false)
-}
-
 function validation() {
 
     let forms = document.querySelectorAll('[data-validate]')
@@ -158,12 +125,12 @@ function validation() {
 
                 // тут отправляем данные
                 if (errors === 0) {
-
                     toggleLoading(form, true)
-                    
-                    
-                    defaultAfterSubmit(form, true)
-                    //window.ajaxForm(form, form.getAttribute('action'))
+                    const submitEvent = new Event('submitAfterValidate', {
+                        bubbles: false,
+                        cancelable: true
+                    });
+                    form.dispatchEvent(submitEvent);
                 }
             }
 
@@ -221,3 +188,43 @@ function inputMasksInit(form) {
         })
     }
 }
+
+//включать в случае успешной отправки там, где это требуется
+function defaultAfterSubmit(form, doReset) {
+    if(doReset===true){
+        let fileFields = form.querySelectorAll('.field-file[data-js="formField"]')
+        form.reset();
+
+        //сбрасываем поле ФАЙЛ
+        if(fileFields.length > 0) {
+            fileFields.forEach(fileField => {
+                let placeholderText = fileField.getAttribute('data-placeholder');
+                let fileName = fileField.querySelector('[data-js="fileName"]');
+
+                fileField.classList.remove('field-file--full');
+                fileName.innerHTML = placeholderText;
+            });
+        }
+    }
+
+    //проверяем какой тип благодарности в форме и показываем его
+    if(form.querySelector("[data-js='form-thanks']") !== null) {
+        form.style.minHeight = form.offsetHeight + 'px'
+        form.classList.add("form--sent")
+    } else {
+        thanksMessageShow();
+    }
+
+    toggleLoading(form, false)
+}
+
+// отправка форм
+let modalForm = typeof AjaxFormSubmit !== 'undefined' ? new AjaxFormSubmit('form[data-ajax-form]', {
+    debug: false,
+    callback: defaultAfterSubmit,
+}) : null;
+
+let inlineForm = typeof AjaxFormSubmit !== 'undefined' ? new AjaxFormSubmit('form[data-ajax-form-inline]', {
+    debug: false,
+    callback: defaultAfterSubmit,
+}) : null;
