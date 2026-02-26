@@ -594,19 +594,19 @@ video[data-anim-type="widthReverse"] {
 		}
 
 		.f-thumbs__slide {
-			width: 100px;
-			height: 67px;
+			width: 64px;
+			height: 64px;
 			margin: 0 10px 0 0;
 
 			@include max(tablet) {
-				width: 100px;
-				height: 67px;
+				width: 64px;
+				height: 64px;
 				margin: 0 10px 0 0;
 			}
 
 			@include max(mobile) {
-				width: 80px;
-				height: 54px;
+				width: 00px;
+				height: 50px;
 				margin: 0 5px 0 0;
 			}
 
@@ -715,20 +715,15 @@ video[data-anim-type="widthReverse"] {
 			}
 
 			svg {
-				width: 7.5px;
-				height: 13.5px;
+				width: 16px;
+				height: 16px;
 				color: $c-accent;
 				box-shadow: none;
 				filter: none;
 
-				@include max(tablet) {
-					width: 10px;
-					height: 18px;
-				}
-
 				@include max(mobile) {
-					width: 10px;
-					height: 18px;
+					width: 12px;
+					height: 12px;
 				}
 			}
 

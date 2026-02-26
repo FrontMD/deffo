@@ -53,11 +53,11 @@ function adjustTooltips() {
     if (window.innerWidth - rect.right < 20) {
       const parent = tooltip.closest('[data-js="tooltip"]');
       if (parent) {
-        const parentRect = parent.getBoundingClientRect();
-        const spaceRight = window.innerWidth - parentRect.right;
-        const spaceLeft = parentRect.left;
-        
-        if (spaceRight > spaceLeft) {
+          const parentRect = parent.getBoundingClientRect();
+          const spaceRight = window.innerWidth - parentRect.right;
+          const spaceLeft = parentRect.left;
+          
+          if (spaceRight > spaceLeft) {
           tooltip.style.maxWidth = `${spaceRight - 10}px`;
         } else {
           parent.classList.add('tooltip--reverse');

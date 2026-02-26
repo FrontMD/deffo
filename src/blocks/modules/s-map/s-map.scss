@@ -56,6 +56,12 @@
         }
     }
 
+    @include max(420) {
+        .ymaps-2-1-79-balloon_layout_panel {
+            padding-bottom: 70px;
+        }
+    }
+
     &__full {
         position: absolute;
         left: 0;
@@ -91,6 +97,12 @@
             width: 18px;
             height: 18px;
             transition: all $tr-long;
+        }
+
+        @include max(420) {
+            .ymaps-2-1-79-balloon_layout_panel {
+                padding-bottom: 0;
+            }
         }
     }
 

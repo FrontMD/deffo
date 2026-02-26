@@ -8,6 +8,21 @@
     padding-left: 0;
     padding-right: 0;
 
+    @include max(large) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include max(tablet) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include max(mobile) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     &__top {
         flex: 1 1 auto;
         min-height: 480px;

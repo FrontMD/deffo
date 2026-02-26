@@ -63,7 +63,7 @@ mixin solutions-list(props= defaultSolutionsListProps)
             cards: props.cards ? props.cards : defaultSolutionsListProps.cards,
         }
 
-    section.solutions-list.section.section--inner(class= checkProps.classes)&attributes(attributes)
+    section.solutions-list.section.section--inner(class= checkProps.classes data-js="solutionsList")&attributes(attributes)
         .d-container
             .solutions-list__items
                 - let cardsCount = 0

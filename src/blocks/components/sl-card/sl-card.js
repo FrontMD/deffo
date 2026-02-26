@@ -1,24 +1,42 @@
 function slCardSlider() {
-    const slCards = document.querySelectorAll('[data-js="slCard"]')
+    const sliders = document.querySelectorAll('[data-js="slCardSlider"]')
 
-    if(slCards.length < 1) return
+    if(sliders.length < 1) return
 
-    slCards.forEach(card => {
-        const slider = card.querySelector('[data-js="slCardSlider"]')
-        const pagination = card.querySelector('[data-js="slCardPagination"]')
+    sliders.forEach(slider => {
+        const pagination = slider.querySelector('[data-js="slCardPagination"]')
 
         const sliderEx = new Swiper(slider, {
             slidesPerView: 1,
-            spaceBetween: 5,
+            effect: 'fade',
             pagination: {
                 el: pagination,
                 type: 'bullets',
+                clickable: true
             },
             on: {
-                init: function (swiper) {
-                    if(swiper.slides.length > 1 && pagination) {
-                        pagination.classList.add('active')
-                    }
+                init(swiper) {
+                    swiper.el.addEventListener('mousemove', (e) => {
+                        const rect = swiper.el.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const totalWidth = rect.width;
+                        const zoneCount = swiper.slides.length;
+                        const zoneWidth = totalWidth / zoneCount;
+                        const currentZoneIndex = Math.floor(x / zoneWidth);
+                        
+                        swiper.slideTo(currentZoneIndex);
+                    });
+
+                    swiper.el.addEventListener('click', (e) => {
+                        const rect = swiper.el.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const totalWidth = rect.width;
+                        const zoneCount = swiper.slides.length;
+                        const zoneWidth = totalWidth / zoneCount;
+                        const currentZoneIndex = Math.floor(x / zoneWidth);
+                        
+                        swiper.slideTo(currentZoneIndex);
+                    });
                 }
             }
         })

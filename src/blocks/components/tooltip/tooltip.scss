@@ -75,6 +75,7 @@
         text-align: end;
 
         @include max(mobile) {
+            left: auto;
             right: calc(100% - 7px)
         }
     }
@@ -84,6 +85,7 @@
         right: calc(100% - 7px);
 
         @include max(mobile) {
+            left: auto;
             right: calc(100% - 2px)
         }
     }

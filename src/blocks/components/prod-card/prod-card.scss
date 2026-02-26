@@ -22,7 +22,7 @@
         justify-content: center;
         background-color: $c-cards-bg;
 
-        @include max(laptop) {
+        @include max(large) {
             padding: 20px 24px 20px;
         }
 
@@ -209,6 +209,10 @@
         padding: 30px 30px 10px;
         background-color: transparent;
 
+        @include max(large) {
+            padding: 24px 24px 10px;
+        }
+
         @include max(laptop) {
             padding: 10px 10px 0;
         }
@@ -256,6 +260,10 @@
     &--decor &__top {
         padding: 30px 30px 10px;
         background-color: transparent;
+
+        @include max(large) {
+            padding: 24px 24px 10px;
+        }
 
         @include max(laptop) {
             padding: 10px 10px 0;
@@ -315,6 +323,10 @@
     &--facade &__top {
         background-color: transparent;
         padding: 32px 40px 0;
+
+        @include max(large) {
+            padding: 24px 32px 0;
+        }
 
         @include max(laptop) {
             padding: 10px 10px 0;

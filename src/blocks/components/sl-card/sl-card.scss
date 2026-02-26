@@ -32,12 +32,12 @@
     &__slider {
         overflow: hidden;
         width: 100%;
+        position: relative;
     }
 
     &__pagination.swiper-pagination-bullets {
-        position: relative;
-        margin-top: 20px;
-        bottom: auto;
+        position: absolute;
+        bottom: 26px;
         display: flex;
         align-items: stretch;
         justify-content: center;
@@ -51,16 +51,12 @@
             background-color: $c-text-light;
             border-radius: 30px;
             margin: 0;
+            opacity: 1;
         }
 
         .swiper-pagination-bullet-active {
             background-color: $c-bullet-active;
         }
-    }
-
-    &__pagination:has(~ .sl-card__text) {
-        margin-top: -20px;
-        margin-bottom: 20px;
     }
 
     &__text {

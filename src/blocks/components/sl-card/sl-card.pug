@@ -21,6 +21,7 @@ mixin sl-card(props = defaultSlCardProps)
         - if(checkProps.title)
             .sl-card__title!= checkProps.title
         .sl-card__slider(data-js="slCardSlider")
+            .sl-card__pagination(data-js="slCardPagination")
             .swiper-wrapper
                 - let imgCount = 0
                 - let imgList = checkProps.images 
@@ -29,7 +30,7 @@ mixin sl-card(props = defaultSlCardProps)
                         img(src=imgList[imgCount], alt="")
 
                     - imgCount++
-        .sl-card__pagination(data-js="slCardPagination")
+
         - if(checkProps.desc)
             .sl-card__text.text-editor!= checkProps.desc
 

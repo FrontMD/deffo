@@ -48,7 +48,7 @@ mixin solutions-item(props = defaultSolutionsItemProps)
             media: props.media ? props.media : defaultSolutionsItemProps.media,
         }
 
-    .solutions-item(class=checkProps.classes data-js="solutionsItem")&attributes(attributes)
+    .solutions-item(class=checkProps.classes data-js="solutionsItem" data-aos="fade-up" data-aos-duration="1000")&attributes(attributes)
         .solutions-item__info
             +title({
                 text: checkProps.title,

@@ -66,6 +66,7 @@ function header() {
 
     function headerAnim(menu) {
         const menuItems = menu.querySelectorAll("[data-js='mainMenuItem']")
+        const menuSearch = menu.querySelector("[data-js='menuSearch']")
 
         let delayCount = 100
         
@@ -78,10 +79,18 @@ function header() {
             });
         }
 
+        if(menuSearch) {
+            menuSearch.setAttribute('data-aos', 'fade-up')
+            menuSearch.setAttribute('data-aos-duration', '600')
+            menuSearch.setAttribute('data-aos-delay', `${delayCount + 100}`)
+           
+        }
+
         if(headerSides.length > 0) {
             headerSides.forEach(item => {
                item.setAttribute('data-aos-delay', `${delayCount + 100}`)
             });
         }
+
     }
 }

@@ -3,6 +3,8 @@ function galleryListAnim() {
 
     if(galleryLists.length < 1) return
 
+    window.scrollTo(0, 0);
+
     galleryLists.forEach((list, idx) => {
         const grid = list.querySelector('[data-js="galleryListGrid"]')
         const items = list.querySelectorAll('[data-anim-id="galleryListItem"]')
