@@ -279,7 +279,7 @@
         }
     }
 
-    &:has(.site-header__small .select2.select2-container--open)~.select2-container--open .select2-dropdown {
+    &:has(.site-header__small):has(.select2.select2-container--open)~.select2-container--open .select2-dropdown {
         left: auto !important;
         right: -110px !important;
         min-width: fit-content;
