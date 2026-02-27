@@ -156,7 +156,7 @@
         }
 
         a {
-            text-decoration: underline;
+            text-decoration: none;
             transition: all $tr;
 
             &:hover {
@@ -178,6 +178,7 @@
         color: $c-text-grey;
 
         a {
+            font-weight: 600;
             color: $c-white;
         }
     }
@@ -187,19 +188,6 @@
         font-size: 16px;
         line-height: 150%;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     &__callback {
         margin-top: auto;
@@ -214,4 +202,7 @@
     }
 
 
+    .form .form-privacy__text a {
+        text-decoration: none;
+    }
 }
