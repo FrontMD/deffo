@@ -40,6 +40,8 @@
     }
 
     &__side--slider {
+        z-index: 3;
+
         @include max(mobile) {
             order: -1;
         }

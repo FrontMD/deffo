@@ -125,16 +125,49 @@ mixin header(isFull=false)
                                         icon: 'arrow_top_right'
 
                                     })(data-modal="#callbackModal")
-                                .site-header__controls
-                                    a.site-header__control(href="javascript:void(0);")
-                                        svg
-                                            use(xlink:href=`img/sprites/sprite.svg#favorite`)
-                                    a.site-header__control(href="javascript:void(0);")
-                                        svg
-                                            use(xlink:href=`img/sprites/sprite.svg#basket`)
-                                    a.site-header__control(href="javascript:void(0);" data-modal="#authModal")
-                                        svg
-                                            use(xlink:href=`img/sprites/sprite.svg#lk`)
+                                .site-header__rc  
+                                    form(action="#").site-header__region
+                                        +field({
+                                            tag: 'select',
+                                            placeholder: 'Выберите город',
+                                            selectOptions: [
+                                                {
+                                                    value: 'Воронеж',
+                                                    isActive: false
+                                                },
+                                                {
+                                                    value: 'Краснодар',
+                                                    isActive: false
+                                                },
+                                                {
+                                                    value: 'Пятигорск',
+                                                    isActive: true
+                                                },
+                                                {
+                                                    value: 'Санкт-Петербург',
+                                                    isActive: false
+                                                },
+                                                {
+                                                    value: 'Севастополь',
+                                                    isActive: false
+                                                },
+                                                {
+                                                    value: 'Сочи',
+                                                    isActive: false
+                                                }
+                                            ],
+                                            selectNoForm: true,
+                                        })  
+                                    .site-header__controls
+                                        a.site-header__control(href="javascript:void(0);")
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#favorite`)
+                                        a.site-header__control(href="javascript:void(0);")
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#basket`)
+                                        a.site-header__control(href="javascript:void(0);" data-modal="#authModal")
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#lk`)
 
                             .site-header__burger(data-js='mainBurgerOpen' data-aos="fade-left" data-aos-duration="600")
                                 svg 
@@ -157,6 +190,7 @@ mixin header(isFull=false)
                                 +socials({
                                     mode: 'header'
                                 })
+
                                 .site-header__contacts
                                     a.site-header__contact(href="tel:+78002220026") +7 (800) 222-00-26
                                     +btn({
@@ -166,16 +200,49 @@ mixin header(isFull=false)
                                         icon: 'arrow_top_right'
 
                                     })(data-modal="#callbackModal")
-                                .site-header__controls
-                                    a.site-header__control(href="javascript:void(0);")
-                                        svg
-                                            use(xlink:href=`img/sprites/sprite.svg#favorite`)
-                                    a.site-header__control(href="javascript:void(0);")
-                                        svg
-                                            use(xlink:href=`img/sprites/sprite.svg#basket`)
-                                    a.site-header__control(href="javascript:void(0);" data-modal="#authModal")
-                                        svg
-                                            use(xlink:href=`img/sprites/sprite.svg#lk`)
+                                .site-header__rc  
+                                    form(action="#").site-header__region
+                                        +field({
+                                            tag: 'select',
+                                            placeholder: 'Выберите город',
+                                            selectOptions: [
+                                                {
+                                                    value: 'Воронеж',
+                                                    isActive: false
+                                                },
+                                                {
+                                                    value: 'Краснодар',
+                                                    isActive: false
+                                                },
+                                                {
+                                                    value: 'Пятигорск',
+                                                    isActive: true
+                                                },
+                                                {
+                                                    value: 'Санкт-Петербург',
+                                                    isActive: false
+                                                },
+                                                {
+                                                    value: 'Севастополь',
+                                                    isActive: false
+                                                },
+                                                {
+                                                    value: 'Сочи',
+                                                    isActive: false
+                                                }
+                                            ],
+                                            selectNoForm: true,
+                                        })  
+                                    .site-header__controls
+                                        a.site-header__control(href="javascript:void(0);")
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#favorite`)
+                                        a.site-header__control(href="javascript:void(0);")
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#basket`)
+                                        a.site-header__control(href="javascript:void(0);" data-modal="#authModal")
+                                            svg
+                                                use(xlink:href=`img/sprites/sprite.svg#lk`)
 
                             .site-header__burger(data-js='mainBurgerOpen' data-aos="fade-left" data-aos-duration="600")
                                 svg 
