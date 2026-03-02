@@ -4,6 +4,7 @@ function homeIntroAnim() {
     if(!homeIntro) return
 
     const menuItemsList = document.querySelector('[data-js="siteHeader"]')?.querySelectorAll('[data-js="mainMenuItem"][data-aos]')
+    const slider = homeIntro.querySelector('[data-js="sectionBgSlider"]')
     const vw = window.innerWidth
     const vwPoint = 1320
 
@@ -29,5 +30,13 @@ function homeIntroAnim() {
 
         commonAnimation(separator)
         commonAnimation(btn)
+
+        if(slider) {
+            slider.swiper.params.autoplay = {
+                delay: 3000,
+            };
+
+            slider.swiper.autoplay.start();
+        }
     }
 }

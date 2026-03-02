@@ -17,4 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
     slCardSlider();
     addSvgAnimStyle();
     prodCardSliders();
+    prodCardFavorite();
 })

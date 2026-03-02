@@ -50,7 +50,7 @@ mixin prod-card(props = defaultProdCardProps)
                     - else
                         img(src=checkProps.img)
 
-            a.prod-card__favorite(href="javascript:void(0);")
+            a.prod-card__favorite(href="javascript:void(0);" data-js="prodCardFavorite")
                 svg
                     use(xlink:href=`img/sprites/sprite.svg#c_favorite`)
 

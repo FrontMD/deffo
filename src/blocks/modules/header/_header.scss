@@ -279,7 +279,7 @@
         }
     }
 
-    &:has(.site-header__small):has(.select2.select2-container--open)~.select2-container--open .select2-dropdown {
+    &:has(.site-header__small>.site-header__side>.site-header__rc>.site-header__region>.field>.select2.select2-container--open)~.select2-container--open .select2-dropdown {
         left: auto !important;
         right: -110px !important;
         min-width: fit-content;
@@ -289,7 +289,6 @@
             right: -93px !important;
         }
     }
-
 }
 
 .site-header {

@@ -172,8 +172,6 @@ function main3d(mtlFileLink, objFileLink) {
             });
         });
 
-        console.log(objLoader)
-
     }
 
     function resizeRendererToDisplaySize(renderer) {

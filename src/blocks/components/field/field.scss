@@ -412,6 +412,8 @@
         border-radius: $br-10;
         padding: 10px 5px 10px 10px;
         top: 10px;
+        min-width: fit-content;
+        min-width: max-content;
 
         .select2-search {
             display: none;

@@ -44,7 +44,9 @@ function sectionBgSlider() {
 
     sectionBgSliders.forEach(slider => {
         const sliderEx = new Swiper(slider, {
-            slidesPerView: 1
+            slidesPerView: 1,
+            loop: true,
+            speed: 1000
         })
     })
 }

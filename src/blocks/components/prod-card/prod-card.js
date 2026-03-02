@@ -42,3 +42,23 @@ function prodCardSliders() {
         })
     })
 }
+
+function prodCardFavorite() {
+    const cards = document.querySelectorAll('[data-js="prodCard"]')
+
+    if(!cards.length) return
+
+    cards.forEach(card => {
+        const favorite = card.querySelector('[data-js="prodCardFavorite"]')
+
+        if(favorite) {
+            favorite.addEventListener('click', () => {
+                if(card.classList.contains('prod-card--favorite')) {
+                    card.classList.remove('prod-card--favorite')
+                } else {
+                    card.classList.add('prod-card--favorite')
+                } 
+            })
+        }
+    })
+}
