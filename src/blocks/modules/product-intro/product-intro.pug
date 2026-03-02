@@ -98,9 +98,9 @@ mixin product-intro(props= defaultProductIntroProps)
                                 .pi-info__tag МДФ 19 мм.
                                 .pi-info__tag МДФ 22 мм.
                             .pi-info__controls
-                                a.pi-info__favorite(href="javascript:void(0);")
+                                a.pi-info__favorite(href="javascript:void(0);" data-js="piInfoFavorite")
                                     svg 
-                                        use(xlink:href=`img/sprites/sprite.svg#favorite`)
+                                        use(xlink:href=`img/sprites/sprite.svg#c_favorite`)
                                 +btn({
                                     name: 'Заказать',
                                     icon: 'basket'

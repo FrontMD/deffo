@@ -6,6 +6,7 @@ function productIntro() {
     productIntros.forEach(section => {
         const sliderBlock = section.querySelector('[data-js="piSlider"]')
         const descText = section.querySelector('[data-js="productIntroText"]')
+        const favorite = section.querySelector('[data-js="piInfoFavorite"]')
 
         if(sliderBlock) {
             const slider = sliderBlock.querySelector('[data-js="piSliderSlider"]')
@@ -82,6 +83,17 @@ function productIntro() {
                     };
                 }
             }
+        }
+
+        if(favorite) {
+            favorite.addEventListener('click', () => {
+                if(favorite.classList.contains('active')) {
+                    favorite.classList.remove('active')
+                } else {
+                    favorite.classList.add('active')
+                } 
+            })
+
         }
 
         productIntroAnim(section)

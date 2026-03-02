@@ -398,7 +398,7 @@
         border: 1px solid;
         border-image-source: linear-gradient(90deg, #B68C74 0%, #865F46 100%);
         border-image-slice: 20;
-        color: $c-accent;
+        color: transparent;
         transition: color $tr;
 
         &:after {
@@ -414,8 +414,8 @@
             transition: all $tr;
         }
 
-        &:hover {
-            color: $c-white;
+        &.active {
+            color: $c-favorite;
         }
 
         &:hover::after {
@@ -427,6 +427,12 @@
             height: 24px;
             z-index: 3;
             position: relative;
+            stroke: $c-accent;
+            stroke-width: 2px;
+        }
+
+        &:hover svg {
+            stroke: $c-white;
         }
     }
 
