@@ -72,6 +72,8 @@
         svg {
             width: 36px;
             height: 36px;
+            stroke: $c-white;
+            stroke-width: 1.5px;
 
             @include max(laptop) {
                 width: 24px;
